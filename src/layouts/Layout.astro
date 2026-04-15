@@ -170,5 +170,21 @@ const { title, description = '347 Happy Life Happy World — Awakening meditatio
   </head>
   <body class="bg-ivory text-body antialiased font-sans">
     <slot />
+
+    <!-- Scroll reveal observer -->
+    <script>
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              obs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+        document.querySelectorAll('.gold-line').forEach(el => obs.observe(el));
+      }
+    </script>
   </body>
 </html>

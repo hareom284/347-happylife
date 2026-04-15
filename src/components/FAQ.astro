@@ -1,0 +1,30 @@
+---
+interface Props {
+  faqs: { q: string; a: string }[];
+}
+
+const { faqs } = Astro.props;
+---
+
+<section id="faq" class="scroll-mt-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+      <div class="text-center mb-12">
+        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">Common Questions</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-violet">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-3">
+        {faqs.map((faq) => (
+          <details class="bg-white rounded-2xl border border-oat-border shadow-clay group">
+            <summary class="flex items-center justify-between p-6 font-medium text-violet">
+              <span class="pr-4">{faq.q}</span>
+              <svg class="w-5 h-5 text-warm-silver shrink-0 faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-warm-charcoal text-sm leading-relaxed -mt-2">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>

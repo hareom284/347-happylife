@@ -39,7 +39,7 @@
   --color-body-light: #4A4A5A;
   --color-body-muted: #6B6B7B;
 
-  /* === Mapped aliases (so existing classes keep working) === */
+  /* === Mapped aliases === */
   --color-violet: #1B2D5B;
   --color-violet-dark: #0D1B3E;
   --color-violet-light: #2A4080;
@@ -70,12 +70,107 @@
   --shadow-elevated: 0 12px 40px rgba(13,27,62,0.08), 0 2px 8px rgba(13,27,62,0.06);
 }
 
-/* Smooth scroll only for users who don't prefer reduced motion */
+/* ===== SPIRITUAL ENHANCEMENTS ===== */
+
+/* 1. Gold text selection */
+::selection { background: rgba(197, 165, 90, 0.25); color: #1B2D5B; }
+::-moz-selection { background: rgba(197, 165, 90, 0.25); color: #1B2D5B; }
+
+/* 2. Custom scrollbar — subtle gold */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FAFBFD; }
+::-webkit-scrollbar-thumb { background: rgba(197, 165, 90, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(197, 165, 90, 0.5); }
+
+/* 3. Breathing pulse — mimics natural breath (4s cycle) */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+.breathe { animation: breathe 4s ease-in-out infinite; }
+
+/* 4. Gentle scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Staggered children reveal */
+.stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.stagger > .reveal:nth-child(2) { transition-delay: 150ms; }
+.stagger > .reveal:nth-child(3) { transition-delay: 300ms; }
+.stagger > .reveal:nth-child(4) { transition-delay: 450ms; }
+.stagger > .reveal:nth-child(5) { transition-delay: 600ms; }
+.stagger > .reveal:nth-child(6) { transition-delay: 750ms; }
+
+/* 5. Slow contemplative hover for cards */
+.card-calm {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.6s ease;
+}
+.card-calm:hover { transform: translateY(-4px); }
+
+/* 6. Gold accent line under headings */
+.gold-line { position: relative; display: inline-block; }
+.gold-line::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C5A55A, transparent);
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              left 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.gold-line.visible::after { width: 60%; left: 20%; }
+
+/* 7. Ethereal image overlay */
+.ethereal { position: relative; }
+.ethereal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(27,45,91,0.06), rgba(197,165,90,0.04));
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* 8. Floating particles — like dust in temple light */
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-12px) translateX(6px); }
+  66% { transform: translateY(6px) translateX(-8px); }
+}
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(197, 165, 90, 0.15);
+  animation: float 8s ease-in-out infinite;
+}
+
+/* 9. Meditative body text spacing */
+.meditative-text {
+  font-size: 1.125rem;
+  line-height: 2;
+  letter-spacing: 0.01em;
+  word-spacing: 0.05em;
+}
+
+/* ===== CORE SITE STYLES ===== */
+
+/* Smooth scroll */
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
 
-/* Respect reduced motion for all animations */
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -83,9 +178,10 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .reveal { opacity: 1; transform: none; }
 }
 
-/* Focus states for keyboard navigation */
+/* Focus states */
 *:focus-visible {
   outline: 2px solid #C5A55A;
   outline-offset: 2px;
@@ -97,36 +193,19 @@
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
-
 .whatsapp-bar {
   animation: slideUp 0.5s ease-out 1s forwards;
   opacity: 0;
 }
 
 /* FAQ accordion */
-details summary {
-  cursor: pointer;
-  list-style: none;
-}
-details summary::-webkit-details-marker {
-  display: none;
-}
-details[open] summary .faq-chevron {
-  transform: rotate(180deg);
-}
-.faq-chevron {
-  transition: transform 0.2s ease;
-}
+details summary { cursor: pointer; list-style: none; }
+details summary::-webkit-details-marker { display: none; }
+details[open] summary .faq-chevron { transform: rotate(180deg); }
+.faq-chevron { transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
 
-/* Screen reader only utility */
+/* Screen reader utility */
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border-width: 0;
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
 }

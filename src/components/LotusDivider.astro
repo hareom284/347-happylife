@@ -1,0 +1,15 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`flex justify-center py-6 md:py-8 ${className}`}>
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="opacity-20 breathe" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="24" cy="24" r="22" stroke="#C5A55A" stroke-width="0.5"/>
+    <circle cx="24" cy="24" r="15" stroke="#C5A55A" stroke-width="0.5"/>
+    <circle cx="24" cy="24" r="8" stroke="#C5A55A" stroke-width="0.5"/>
+    <circle cx="24" cy="24" r="3" fill="#C5A55A" opacity="0.3"/>
+  </svg>
+</div>

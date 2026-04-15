@@ -1,0 +1,66 @@
+---
+interface Props {
+  waMsg: (course: string) => string;
+}
+
+const { waMsg } = Astro.props;
+---
+
+<section class="bg-violet-dark text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(200,220,240,0.06),transparent_70%)]"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28 relative">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-sky-mist font-semibold text-xs uppercase tracking-[0.2em] mb-4">Sacred Practice with Master Sawan</p>
+          <h2 class="font-heading text-3xl md:text-5xl font-bold leading-tight mb-6">
+            Chanting &<br>Meditation Retreat
+          </h2>
+          <p class="text-white/70 text-lg leading-relaxed mb-8">
+            Experience the harmony of sacred chanting and mindful awareness with Master Sawan. Calm the mind, open your heart, and awaken inner peace through the power of sound and presence.
+          </p>
+          <div class="flex items-center gap-6 mb-8">
+            <div>
+              <span class="text-3xl font-heading font-bold text-sky-mist">500</span>
+              <span class="text-white/60 ml-1">THB</span>
+              <span class="text-white/60 text-sm ml-1">(~$14 USD)</span>
+            </div>
+            <div class="w-px h-8 bg-white/20"></div>
+            <div class="text-white/60 text-sm">2 Hours</div>
+          </div>
+          <a href={waMsg('Chanting & Meditation Retreat')} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white text-violet px-6 py-3 rounded-full font-semibold hover:bg-sky-mist-light transition-all hover:-translate-y-0.5 hover:shadow-lg">
+            Book This Retreat
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm rounded-card p-6 border border-white/10">
+            <div class="w-10 h-10 bg-sky-mist/20 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-sky-mist" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+            </div>
+            <h4 class="font-semibold text-sm mb-1">Purify Mind</h4>
+            <p class="text-white/50 text-xs">Sacred chanting to purify mind and energy</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-card p-6 border border-white/10">
+            <div class="w-10 h-10 bg-deep-calm-light/20 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-deep-calm-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h4 class="font-semibold text-sm mb-1">Present Moment</h4>
+            <p class="text-white/50 text-xs">Reconnect with mindful awareness</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-card p-6 border border-white/10">
+            <div class="w-10 h-10 bg-soft-aura/20 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-soft-aura" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <h4 class="font-semibold text-sm mb-1">Emotional Balance</h4>
+            <p class="text-white/50 text-xs">Deep relaxation and inner harmony</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-card p-6 border border-white/10">
+            <div class="w-10 h-10 bg-sky-mist/20 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-sky-mist" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            </div>
+            <h4 class="font-semibold text-sm mb-1">Peace & Clarity</h4>
+            <p class="text-white/50 text-xs">Spiritual connection and insight</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

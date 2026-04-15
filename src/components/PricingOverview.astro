@@ -1,0 +1,38 @@
+---
+---
+
+<section class="bg-white border-y border-oat-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+      <div class="text-center mb-12">
+        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">All Programs at a Glance</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-violet">Pricing Overview</h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <div class="rounded-card border border-oat-border overflow-hidden shadow-card">
+          <div class="bg-violet-dark text-white px-6 py-3 grid grid-cols-3 text-xs font-semibold uppercase tracking-widest">
+            <span>Course</span><span class="text-center">Duration</span><span class="text-right">Price</span>
+          </div>
+          <div class="divide-y divide-oat-border">
+            {[
+              { name: "Chanting & Meditation (Master Sawan)", dur: "2 hours", thb: "500", usd: "14" },
+              { name: "347 Awakening — 3 Hours", dur: "3 hours", thb: "1,700", usd: "47" },
+              { name: "347 Awakening — 1 Day", dur: "Full day", thb: "5,200", usd: "147", highlight: true },
+              { name: "347 Awakening — 3 Days", dur: "3 days", thb: "12,500", usd: "347" },
+              { name: "Private Session (1:1)", dur: "3 hours", thb: "2,500", usd: "77" },
+            ].map((c) => (
+              <div class={`grid grid-cols-3 items-center px-6 py-4 text-sm ${c.highlight ? 'bg-soft-aura/50' : 'hover:bg-ivory'} transition-colors`}>
+                <span class="font-medium text-violet">{c.name}</span>
+                <span class="text-center text-warm-silver text-xs">{c.dur}</span>
+                <span class="text-right">
+                  <span class="font-bold text-deep-calm">{c.thb} THB</span>
+                  <span class="text-warm-silver text-xs ml-1">(~${c.usd})</span>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p class="text-warm-silver text-xs text-center mt-4">Please wear modest, comfortable clothing. Payment accepted on the day of your session.</p>
+      </div>
+    </div>
+  </section>
