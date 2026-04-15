@@ -8,16 +8,16 @@ const { waMsg } = Astro.props;
 
 <section id="courses" class="scroll-mt-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16 reveal">
         <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">347 Awakening</p>
-        <h2 class="font-heading text-4xl md:text-5xl font-bold text-violet">Life Transformation Experience</h2>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-violet gold-line">Life Transformation Experience</h2>
         <p class="text-warm-charcoal mt-3">Choose your depth of awakening — from a 3-hour journey to a full 3-day transformation</p>
       </div>
 
       <!-- 3 Main Experience Cards -->
-      <div class="grid lg:grid-cols-3 gap-6 mb-12">
+      <div class="grid lg:grid-cols-3 gap-6 mb-12 stagger">
         <!-- 3 Hours -->
-        <div class="bg-white rounded-card border border-oat-border shadow-card overflow-hidden hover:shadow-elevated transition-shadow">
+        <div class="bg-white rounded-card border border-oat-border shadow-card overflow-hidden card-calm reveal">
           <div class="bg-gradient-to-br from-deep-calm to-deep-calm-dark p-7 text-white">
             <span class="bg-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Experience</span>
             <h3 class="font-heading text-2xl font-bold mt-3">3 Hours</h3>
@@ -40,7 +40,7 @@ const { waMsg } = Astro.props;
         </div>
 
         <!-- 1 Day — Most Popular -->
-        <div class="bg-white rounded-card border-2 border-violet shadow-elevated overflow-hidden hover:shadow-elevated transition-shadow relative">
+        <div class="bg-white rounded-card border-2 border-violet shadow-elevated overflow-hidden card-calm reveal relative">
           <div class="absolute -top-0 left-0 right-0 bg-violet text-white text-center text-xs font-bold py-1.5 uppercase tracking-widest">Most Popular</div>
           <div class="bg-gradient-to-br from-violet to-violet-dark p-7 pt-10 text-white">
             <span class="bg-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Deep Dive</span>
@@ -64,7 +64,7 @@ const { waMsg } = Astro.props;
         </div>
 
         <!-- 3 Days — Full Transformation -->
-        <div class="bg-white rounded-card border border-oat-border shadow-card overflow-hidden hover:shadow-elevated transition-shadow">
+        <div class="bg-white rounded-card border border-oat-border shadow-card overflow-hidden card-calm reveal">
           <div class="bg-gradient-to-br from-[#0A1530] to-violet-dark p-7 text-white">
             <span class="bg-sky-mist/20 text-sky-mist text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Full Transformation</span>
             <h3 class="font-heading text-2xl font-bold mt-3">3 Days</h3>

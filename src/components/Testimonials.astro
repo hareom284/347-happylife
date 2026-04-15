@@ -9,9 +9,9 @@ const { testimonials, googleMapsLink } = Astro.props;
 
 <section id="testimonials" class="scroll-mt-20 bg-ivory-dark">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16 reveal">
         <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">Google Reviews</p>
-        <h2 class="font-heading text-4xl md:text-5xl font-bold text-violet">What Our Students Say</h2>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-violet gold-line">What Our Students Say</h2>
         <div class="flex items-center justify-center gap-2 mt-4">
           <div class="flex items-center gap-1" role="img" aria-label="5.0 stars">
             {[1,2,3,4,5].map(() => (<svg aria-hidden="true" class="w-5 h-5 text-deep-calm" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>))}
@@ -22,7 +22,7 @@ const { testimonials, googleMapsLink } = Astro.props;
       </div>
 
       <!-- Featured review -->
-      <div class="bg-violet rounded-card p-8 md:p-10 mb-8 relative overflow-hidden">
+      <div class="bg-violet rounded-card p-8 md:p-10 mb-8 relative overflow-hidden reveal">
         <div class="absolute top-4 right-6 text-white/10 font-heading text-[120px] leading-none select-none">"</div>
         <div class="relative">
           <div class="flex items-center gap-1 mb-5" role="img" aria-label="5 out of 5 stars">
@@ -45,9 +45,9 @@ const { testimonials, googleMapsLink } = Astro.props;
       </div>
 
       <!-- Review cards grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 stagger">
         {testimonials.map((t) => (
-          <div class="bg-white rounded-card p-6 border-l-4 border-l-deep-calm border border-oat-border shadow-card hover:shadow-elevated transition-all hover:-translate-y-0.5">
+          <div class="bg-white rounded-card p-6 border-l-4 border-l-deep-calm border border-oat-border shadow-card card-calm reveal">
             <!-- Quote icon -->
             <div class="text-deep-calm/20 font-heading text-4xl leading-none mb-2 select-none">"</div>
             <p class="text-body-light text-sm leading-relaxed mb-5">{t.text}</p>
