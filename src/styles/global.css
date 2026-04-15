@@ -1,63 +1,63 @@
 @import "tailwindcss";
 
 @theme {
-  /* ===== NEW BRAND PALETTE ===== */
-  --color-ivory: #F8F5EE;
-  --color-ivory-dark: #F0EDE4;
+  /* ===== LUXURY BLUE, GOLD & WHITE ===== */
+
+  /* White / Ivory backgrounds */
+  --color-ivory: #FAFBFD;
+  --color-ivory-dark: #F0F2F7;
+
+  /* Royal Blue - primary brand color */
+  --color-royal: #1B2D5B;
+  --color-royal-light: #2A4080;
+  --color-royal-mid: #1E3468;
+
+  /* Deep Blue - dark sections */
+  --color-deep-blue: #0D1B3E;
+  --color-navy: #101D42;
+
+  /* Gold - luxury accent */
+  --color-gold: #C5A55A;
+  --color-gold-light: #D4BB7C;
+  --color-gold-bright: #E2C96D;
+  --color-gold-dark: #A68B3C;
+  --color-gold-muted: #B8A472;
+
+  /* Sky / Light blue accents */
   --color-sky-mist: #C8DCF0;
   --color-sky-mist-light: #E3EDF8;
-  --color-violet: #6B5EA8;
-  --color-violet-dark: #5A4E91;
-  --color-violet-light: #8578C0;
-  --color-deep-calm: #4A8FAB;
-  --color-deep-calm-dark: #3D7A94;
-  --color-deep-calm-light: #5BA3BF;
-  --color-soft-aura: #E8E4F5;
-  --color-soft-aura-dark: #D8D2EC;
+  --color-sky-blue: #6B9FD4;
+
+  /* Soft surfaces */
+  --color-soft-aura: #E8ECF5;
+  --color-soft-aura-dark: #D4DAE8;
   --color-morning-sage: #D5E5D5;
   --color-morning-sage-dark: #C0D8C0;
-  --color-body: #2D2D2D;
-  --color-body-light: #555555;
-  --color-body-muted: #8A8A8A;
 
-  /* ===== LEGACY (keeping for any leftover references) ===== */
-  --color-cream: #F8F5EE;
-  --color-cream-dark: #F0EDE4;
-  --color-oat-border: #D8D2CC;
-  --color-oat-light: #EAE6DF;
-  --color-warm-silver: #9f9b93;
-  --color-warm-charcoal: #555555;
-  --color-dark-charcoal: #2D2D2D;
+  /* Body text (WCAG AA compliant) */
+  --color-body: #1A1A2E;
+  --color-body-light: #4A4A5A;
+  --color-body-muted: #6B6B7B;
 
-  --color-forest-900: #3A5A4A;
-  --color-forest-800: #4A6B5A;
-  --color-forest-700: #5A7C6A;
-  --color-forest-600: #4A8FAB;
-  --color-forest-500: #5BA3BF;
-  --color-forest-400: #7BBDD3;
-  --color-forest-300: #A8D5E5;
-  --color-forest-200: #D5E5D5;
-  --color-forest-100: #E8F0E8;
-  --color-forest-50: #F2F8F2;
+  /* === Mapped aliases (so existing classes keep working) === */
+  --color-violet: #1B2D5B;
+  --color-violet-dark: #0D1B3E;
+  --color-violet-light: #2A4080;
+  --color-deep-calm: #C5A55A;
+  --color-deep-calm-dark: #A68B3C;
+  --color-deep-calm-light: #D4BB7C;
 
-  --color-saffron-700: #5A4E91;
-  --color-saffron-600: #6B5EA8;
-  --color-saffron-500: #8578C0;
-  --color-saffron-400: #C8DCF0;
-  --color-saffron-300: #E3EDF8;
-  --color-saffron-200: #E8E4F5;
-  --color-saffron-100: #F3F1FA;
-
-  --color-lotus-700: #5A4E91;
-  --color-lotus-500: #6B5EA8;
-  --color-lotus-400: #8578C0;
-  --color-lotus-300: #C1B0FF;
-
-  --color-deep-purple: #6B5EA8;
-  --color-purple-600: #5A4E91;
-  --color-purple-300: #C1B0FF;
-
-  --color-sky-500: #4A8FAB;
+  /* Legacy references */
+  --color-cream: #FAFBFD;
+  --color-cream-dark: #F0F2F7;
+  --color-oat-border: #D4DAE8;
+  --color-oat-light: #E8ECF5;
+  --color-warm-silver: #6B6B7B;
+  --color-warm-charcoal: #4A4A5A;
+  --color-dark-charcoal: #1A1A2E;
+  --color-deep-purple: #1B2D5B;
+  --color-purple-600: #0D1B3E;
+  --color-purple-300: #C8DCF0;
 
   --font-heading: 'Cormorant Garamond', 'Georgia', serif;
   --font-sans: 'Inter', system-ui, sans-serif;
@@ -65,15 +65,34 @@
   --radius-card: 20px;
   --radius-section: 32px;
 
-  --shadow-clay: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-card: 0 4px 16px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.06);
-  --shadow-elevated: 0 10px 40px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-clay: 0 1px 3px rgba(13,27,62,0.06), 0 1px 2px rgba(13,27,62,0.04);
+  --shadow-card: 0 4px 20px rgba(13,27,62,0.06), 0 1px 3px rgba(13,27,62,0.08);
+  --shadow-elevated: 0 12px 40px rgba(13,27,62,0.08), 0 2px 8px rgba(13,27,62,0.06);
 }
 
-html {
-  scroll-behavior: smooth;
+/* Smooth scroll only for users who don't prefer reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
+/* Respect reduced motion for all animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus states for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #C5A55A;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* WhatsApp sticky bar */
 @keyframes slideUp {
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -84,6 +103,7 @@ html {
   opacity: 0;
 }
 
+/* FAQ accordion */
 details summary {
   cursor: pointer;
   list-style: none;
@@ -96,4 +116,17 @@ details[open] summary .faq-chevron {
 }
 .faq-chevron {
   transition: transform 0.2s ease;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
 }

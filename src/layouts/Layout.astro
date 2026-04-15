@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = '347 Happy Life Happy World — Awakening meditation & life transformation experience at Srisuphan Silver Temple, Chiang Mai, Thailand. Vipassana, mindfulness & inner coaching with Master Kaie. Guided over 800+ international students.' } = Astro.props;
+const { title, description = '347 Happy Life Happy World — Awakening meditation & life transformation experience at Srisuphan Silver Temple, Chiang Mai, Thailand. Vipassana, mindfulness retreat & inner coaching with Master Kaie. Best meditation retreat in Chiang Mai for beginners and experienced meditators. English-speaking, 800+ international students from 38+ countries.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,14 +15,34 @@ const { title, description = '347 Happy Life Happy World — Awakening meditatio
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="keywords" content="meditation retreat Chiang Mai, vipassana retreat Thailand, mindfulness course Chiang Mai, Buddhist meditation Thailand, awakening meditation, silent retreat Thailand, meditation course Thailand, beginner meditation retreat Chiang Mai, Master Kaie, 347 Happy Life" />
+    <meta name="keywords" content="meditation retreat Chiang Mai, vipassana retreat Chiang Mai, meditation course Chiang Mai, mindfulness retreat Chiang Mai, spiritual retreat Chiang Mai, awakening meditation retreat, life transformation retreat Thailand, Buddhist meditation Chiang Mai, meditation retreat Thailand, best meditation retreat Thailand, silent retreat Chiang Mai, meditation center Chiang Mai, silver temple meditation, Srisuphan temple meditation, Wat Srisuphan meditation class, chiang mai temple meditation experience, meditation retreat Chiang Mai 2026, affordable meditation retreat Thailand, beginner meditation retreat Chiang Mai, meditation retreat Thailand for beginners english, english speaking meditation retreat Thailand, vipassana retreat Thailand, self discovery retreat Chiang Mai, inner peace retreat Thailand, consciousness awakening retreat, spiritual awakening retreat Asia, meditation for life change Thailand, chiang mai wellness retreat, meditation retreat near me, Master Kaie meditation, 347 Happy Life Happy World, 347 awakening" />
 
+    <!-- GEO Tags -->
+    <meta name="geo.region" content="TH-50" />
+    <meta name="geo.placename" content="Chiang Mai" />
+    <meta name="geo.position" content="18.7762;98.9865" />
+    <meta name="ICBM" content="18.7762, 98.9865" />
+
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://347awakening.com" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="347 Happy Life Happy World" />
+    <meta property="og:image" content="https://347awakening.com/images/hero-main.jpg" />
+    <meta property="og:image:alt" content="347 Happy Life Happy World — Awakening meditation retreat in Chiang Mai, Thailand" />
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content="Awakening meditation & life transformation at Silver Temple, Chiang Mai. Guided by Master Kaie. 800+ students, 38+ countries." />
+    <meta name="twitter:image" content="https://347awakening.com/images/hero-main.jpg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://347awakening.com" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -30,50 +50,121 @@ const { title, description = '347 Happy Life Happy World — Awakening meditatio
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
 
+    <!-- Structured Data: LocalBusiness -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "347 Happy Life Happy World",
-      "description": "Meditation retreat for Awakening & a Better Life in Chiang Mai, Thailand",
+      "alternateName": "347 Awakening",
+      "description": "Awakening meditation & life transformation experience at Srisuphan Silver Temple, Chiang Mai, Thailand. Vipassana, mindfulness & inner coaching with Master Kaie.",
       "url": "https://347awakening.com",
       "telephone": "+66944265297",
       "email": "347happylifehappyworld@gmail.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Srisuphan Temple, Wua Lai Road",
+        "streetAddress": "Srisuphan Temple (Wat Sri Suphan), Wua Lai Road",
         "addressLocality": "Chiang Mai",
         "addressRegion": "Chiang Mai",
+        "postalCode": "50100",
         "addressCountry": "TH"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 18.7762,
-        "longitude": 98.9865
+        "latitude": 18.7787367,
+        "longitude": 98.983646
       },
-      "priceRange": "500-5200 THB",
+      "hasMap": "https://www.google.com/maps/place/347+Happy+life+meditation+retreat/@18.7787367,98.9810711,17z",
+      "priceRange": "$47-$347",
+      "currenciesAccepted": "THB, USD",
+      "paymentAccepted": "Cash, Bank Transfer",
       "openingHours": "Mo-Su 09:00-17:00",
-      "image": "https://347awakening.com/images/hero.jpg",
+      "image": [
+        "https://347awakening.com/images/hero-main.jpg",
+        "https://347awakening.com/images/silver-temple-front.png"
+      ],
+      "sameAs": [
+        "https://web.facebook.com/profile.php?id=61550271392068",
+        "https://www.instagram.com/kaie_awaken",
+        "https://youtube.com/@kaie347happylife",
+        "https://www.tiktok.com/@347_happylifehappyworld"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Master Kaie",
+        "jobTitle": "Meditation Master for Awakening & a Better Life"
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "800"
-      }
+        "ratingValue": "4.9",
+        "reviewCount": "800",
+        "bestRating": "5"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Chiang Mai" },
+        { "@type": "Country", "name": "Thailand" }
+      ],
+      "knowsLanguage": ["en", "th"],
+      "keywords": "meditation retreat, vipassana, awakening meditation, life transformation, mindfulness, Chiang Mai, Thailand, Silver Temple"
     })} />
 
+    <!-- Structured Data: Course offerings -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Course",
-      "name": "347 Happy Life Happy World Meditation Course",
-      "description": "Meditation retreat blending Buddhist Vipassana with inner coaching techniques for awakening",
+      "name": "347 Awakening — Life Transformation Experience",
+      "description": "Awakening meditation retreat blending Buddhist Vipassana with inner coaching techniques for life transformation in Chiang Mai, Thailand",
       "provider": {
+        "@type": "Organization",
+        "name": "347 Happy Life Happy World",
+        "url": "https://347awakening.com"
+      },
+      "coursePrerequisites": "No prior meditation experience required",
+      "educationalLevel": "Beginner to Advanced",
+      "inLanguage": "en",
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Srisuphan Silver Temple",
+        "address": "Wua Lai Road, Chiang Mai, Thailand"
+      },
+      "offers": [
+        { "@type": "Offer", "name": "Chanting & Meditation (Master Sawan)", "price": "500", "priceCurrency": "THB", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "347 Awakening 3 Hours", "price": "47", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "347 Awakening 1 Day", "price": "147", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "347 Awakening 3 Days", "price": "347", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Private Session 1:1", "price": "77", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+      ]
+    })} />
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do I need meditation experience for this retreat?", "acceptedAnswer": { "@type": "Answer", "text": "Not at all! Our courses are designed for complete beginners as well as experienced practitioners. Master Kaie adapts guidance to your level." }},
+        { "@type": "Question", "name": "What language is instruction in?", "acceptedAnswer": { "@type": "Answer", "text": "All courses are taught in English by Master Kaie, who has guided over 800 international students from 38+ countries." }},
+        { "@type": "Question", "name": "How much does a meditation retreat cost in Chiang Mai?", "acceptedAnswer": { "@type": "Answer", "text": "347 Awakening experiences range from $47 (1,700 THB) for 3 hours to $347 (12,500 THB) for 3 days. We also offer Chanting & Meditation with Master Sawan for 500 THB and Private 1:1 sessions for $77 (2,500 THB)." }},
+        { "@type": "Question", "name": "Where is the meditation retreat located in Chiang Mai?", "acceptedAnswer": { "@type": "Answer", "text": "We practice at Srisuphan Silver Temple (Wat Sri Suphan) on Wua Lai Road in Chiang Mai's Old City, about 15 minutes from the airport." }},
+        { "@type": "Question", "name": "Can beginners do vipassana in Thailand?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely! Our 347 Awakening method is specifically designed to be accessible to beginners while offering depth for experienced practitioners." }},
+        { "@type": "Question", "name": "What is awakening meditation?", "acceptedAnswer": { "@type": "Answer", "text": "Awakening meditation is our unique approach that blends Buddhist Vipassana with inner coaching techniques. The 347 method focuses on Body-Mind-Spirit alignment, leading to genuine life transformation and inner peace." }},
+        { "@type": "Question", "name": "Can I join the meditation retreat online?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We offer online sessions via WhatsApp or Zoom. Online course packages are available at $47, $97, and $147." }}
+      ]
+    })} />
+
+    <!-- Structured Data: Person (Master Kaie) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Master Kaie",
+      "jobTitle": "Meditation Master for Awakening & a Better Life",
+      "description": "Founder of 347 Happy Life Happy World. Guided over 800 international students from 38+ countries to awaken their consciousness through meditation.",
+      "worksFor": {
         "@type": "Organization",
         "name": "347 Happy Life Happy World"
       },
-      "offers": [
-        { "@type": "Offer", "name": "Beginner", "price": "500", "priceCurrency": "THB" },
-        { "@type": "Offer", "name": "Intermediate", "price": "700", "priceCurrency": "THB" },
-        { "@type": "Offer", "name": "Advanced", "price": "1000", "priceCurrency": "THB" },
-        { "@type": "Offer", "name": "Special Package", "price": "2000", "priceCurrency": "THB" }
+      "url": "https://347awakening.com",
+      "sameAs": [
+        "https://www.instagram.com/kaie_awaken",
+        "https://www.tiktok.com/@347_happylifehappyworld"
       ]
     })} />
   </head>

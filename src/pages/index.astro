@@ -6,15 +6,18 @@ const waMsg = (course: string) => `https://wa.me/66944265297?text=${encodeURICom
 const fb = 'https://web.facebook.com/profile.php?id=61550271392068';
 const ig = 'https://www.instagram.com/kaie_awaken';
 const yt = 'https://youtube.com/@kaie347happylife';
+const tt = 'https://www.tiktok.com/@347_happylifehappyworld';
 const email = '347happylifehappyworld@gmail.com';
-const mapEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777.5!2d98.9865!3d18.7762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSrisuphan+Temple!5e0!3m2!1sen!2sth!4v1';
+const mapEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777.5!2d98.9810711!3d18.7787367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da31004702f2c5%3A0x4660cea33addd1fc!2s347%20Happy%20life%20meditation%20retreat!5e0!3m2!1sen!2sth!4v1';
+const googleMapsLink = 'https://www.google.com/maps/place/347+Happy+life+meditation+retreat/@18.7787367,98.9810711,17z/data=!3m1!4b1!4m6!3m5!1s0x30da31004702f2c5:0x4660cea33addd1fc!8m2!3d18.7787316!4d98.983646!16s%2Fg%2F11vt0mkk_0';
 
 const testimonials = [
-  { name: "Sarah M.", country: "Australia", flag: "🇦🇺", text: "Master Kaie's guidance helped me find a peace I didn't know existed within me. The 347 method is truly transformative.", course: "Private 1:1" },
-  { name: "Thomas B.", country: "Germany", flag: "🇩🇪", text: "I've attended meditation retreats across Asia, and this was the most impactful. The combination of coaching and meditation is unique.", course: "Special Package" },
-  { name: "Yuki T.", country: "Japan", flag: "🇯🇵", text: "Even as a complete beginner, I felt welcomed and guided every step. I left with tools I use daily.", course: "Beginner" },
-  { name: "Marie L.", country: "France", flag: "🇫🇷", text: "The Vipassana day retreat changed my perspective on life. Master Kaie has a gift for making deep teachings accessible.", course: "Vipassana Full Day" },
-  { name: "David K.", country: "USA", flag: "🇺🇸", text: "I came skeptical and left awakened. The 347 approach bridges ancient wisdom with practical modern life.", course: "Advanced" },
+  { name: "Greg G.", text: "Best meditation experience I had in a while, and the best in Thailand. Her approach is really beginner friendly and helps to understand and learn about Meditation. I recommend taking this course if you are in Chiang Mai.", time: "3 months ago" },
+  { name: "Y vdm", text: "I've been meditating for six years, but with her, you get so much useful information and practical meditation that you can immediately apply in your daily life. She's a very inspiring woman. Suitable for all levels.", time: "5 months ago" },
+  { name: "Mario Hartwig", text: "It is rare to encounter such an open, calming, and healing atmosphere, a space of mindfulness where, through Kaie's empathetic guidance, it becomes possible to find a connection to one's natural origins.", time: "8 months ago" },
+  { name: "Ella Simpson", text: "She has a great approach to meditation and mindfulness and how they can help throughout life. She breaks things down well and I left the session feeling very calm and motivated to maintain a mindfulness practice.", time: "3 weeks ago" },
+  { name: "Todd W.", text: "Very positive experience with Master Kaie. I did the three day retreat and also had the opportunity to do a chanting and sound healing session. I liked the practical personal development focus of the program.", time: "2 months ago" },
+  { name: "Elodie B.", text: "If you don't understand why you're not happy, sad, lost... go see her. Every human being should learn and understand this fundamental aspect of Life, because... that's Life!", time: "10 months ago" },
 ];
 
 const faqs = [
@@ -30,36 +33,36 @@ const faqs = [
 ];
 ---
 
-<Layout title="347 Happy Life Happy World | Awakening Meditation & Life Transformation in Chiang Mai">
+<Layout title="347 Awakening | Meditation Retreat Chiang Mai — Life Transformation at Silver Temple, Thailand">
 
   <!-- NAVIGATION -->
-  <nav class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-oat-border/60">
+  <nav aria-label="Main navigation" class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-oat-border/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2.5 group">
         <div class="w-10 h-10 bg-violet rounded-full flex items-center justify-center group-hover:bg-deep-calm-dark transition-colors">
           <span class="text-white text-xs font-bold tracking-tight">347</span>
         </div>
         <div class="hidden sm:block">
-          <span class="font-heading text-lg font-semibold text-violet leading-none">Happy Life</span>
-          <span class="block text-[10px] uppercase tracking-[0.2em] text-body-muted font-medium">Happy World</span>
+          <span class="font-heading text-lg font-semibold text-violet leading-none">347 Awakening</span>
+          <span class="block text-xs uppercase tracking-[0.2em] text-body-muted font-medium">Life Transformation Experience</span>
         </div>
       </a>
 
       <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-body">
         <a href="#about" class="hover:text-deep-calm transition-colors">About</a>
         <a href="#courses" class="hover:text-deep-calm transition-colors">Courses</a>
-        <a href="#vipassana" class="hover:text-deep-calm transition-colors">Vipassana</a>
-        <a href="#private" class="hover:text-deep-calm transition-colors">Private</a>
+        <a href="#courses" class="hover:text-deep-calm transition-colors">Experiences</a>
+
         <a href="#master-kaie" class="hover:text-deep-calm transition-colors">Master Kaie</a>
         <a href="#testimonials" class="hover:text-deep-calm transition-colors">Reviews</a>
         <a href="#faq" class="hover:text-deep-calm transition-colors">FAQ</a>
       </div>
 
       <div class="flex items-center gap-3">
-        <a href={wa} target="_blank" rel="noopener" class="bg-deep-calm text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-deep-calm-dark-dark transition-all hover:shadow-lg">
-          Book Now
+        <a href={wa} target="_blank" rel="noopener" class="bg-deep-calm text-violet-dark px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-deep-calm-dark hover:text-white transition-all hover:shadow-lg">
+          Book Now<span class="sr-only"> via WhatsApp (opens in new tab)</span>
         </a>
-        <button id="menu-toggle" class="lg:hidden p-2 -mr-2" aria-label="Toggle menu">
+        <button id="menu-toggle" class="lg:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
       </div>
@@ -68,8 +71,7 @@ const faqs = [
       <div class="flex flex-col gap-1 pt-2 text-sm font-medium">
         <a href="#about" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">About</a>
         <a href="#courses" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">Courses</a>
-        <a href="#vipassana" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">Vipassana</a>
-        <a href="#private" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">Private</a>
+        <a href="#courses" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">Experiences</a>
         <a href="#master-kaie" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">Master Kaie</a>
         <a href="#testimonials" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">Reviews</a>
         <a href="#faq" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">FAQ</a>
@@ -122,32 +124,21 @@ const faqs = [
     </div>
   </section>
 
-  <!-- ==================== PHOTO GALLERY (Airbnb-style) ==================== -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 -mt-12 relative z-30 mb-16">
-    <div class="grid grid-cols-4 grid-rows-2 gap-2 h-72 md:h-96 rounded-card overflow-hidden shadow-elevated">
-      <!-- Large: Hero image from Instagram -->
-      <div class="col-span-2 row-span-2 relative group overflow-hidden">
-        <img src="/images/hero-main.jpg" alt="347 Happy Life Happy World — Awakening meditation & life transformation experience in Chiang Mai" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-        <div class="absolute bottom-4 left-4">
-          <span class="bg-white/90 backdrop-blur-sm text-body text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">Awakening Meditation & Life Transformation</span>
-        </div>
+  <!-- ==================== PHOTO GALLERY ==================== -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 -mt-10 relative z-30 mb-16">
+    <!-- Mobile: 2 columns stacked, Desktop: 4 columns -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
+      <div class="aspect-square relative overflow-hidden rounded-xl md:rounded-2xl shadow-card">
+        <img src="/images/hero-main.jpg" alt="Master Kaie with international meditation students in Chiang Mai" class="w-full h-full object-cover object-[50%_40%] hover:scale-105 transition-transform duration-700" />
       </div>
-      <!-- International group -->
-      <div class="relative overflow-hidden group">
-        <img src="/images/retreat-3.jpg" alt="International meditation group with Master Kaie — students from around the world" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+      <div class="aspect-square relative overflow-hidden rounded-xl md:rounded-2xl shadow-card">
+        <img src="/images/silver-temple-front.png" alt="Srisuphan Silver Temple — sacred meditation location in Chiang Mai" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" loading="lazy" />
       </div>
-      <!-- Master Kaie with student -->
-      <div class="relative overflow-hidden group">
-        <img src="/images/retreat-2.jpg" alt="Master Kaie with student at Srisuphan Temple, Chiang Mai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+      <div class="aspect-square relative overflow-hidden rounded-xl md:rounded-2xl shadow-card">
+        <img src="/images/retreat-2.jpg" alt="Master Kaie with student at Srisuphan Silver Temple" class="w-full h-full object-cover object-[50%_20%] hover:scale-105 transition-transform duration-700" loading="lazy" />
       </div>
-      <!-- Temple meditation session -->
-      <div class="relative overflow-hidden group">
-        <img src="/images/retreat-temple-session.png" alt="Awakening meditation session at Srisuphan Silver Temple, Chiang Mai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-      </div>
-      <!-- Group meditation -->
-      <div class="relative overflow-hidden group">
-        <img src="/images/retreat-meditation.png" alt="Group meditation — life transformation experience in Chiang Mai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+      <div class="aspect-square relative overflow-hidden rounded-xl md:rounded-2xl shadow-card">
+        <img src="/images/retreat-3.jpg" alt="Meditation retreat group — students from around the world" class="w-full h-full object-cover object-[50%_40%] hover:scale-105 transition-transform duration-700" loading="lazy" />
       </div>
     </div>
   </section>
@@ -200,8 +191,8 @@ const faqs = [
         </div>
         <div class="w-px h-10 bg-oat-border hidden md:block"></div>
         <div>
-          <div class="flex items-center justify-center gap-1 text-violet-light">
-            {[1,2,3,4,5].map(() => (<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>))}
+          <div class="flex items-center justify-center gap-1 text-violet-light" role="img" aria-label="5 out of 5 stars">
+            {[1,2,3,4,5].map(() => (<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>))}
           </div>
           <div class="text-xs uppercase tracking-widest text-warm-silver mt-1">5.0 Rating</div>
         </div>
@@ -276,7 +267,7 @@ const faqs = [
               <!-- Center -->
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-20 h-20 bg-soft-aura rounded-full flex items-center justify-center border-2 border-violet/20">
-                  <span class="font-heading text-sm font-bold text-violet text-center leading-tight">347<br><span class="text-[9px] uppercase tracking-wider text-body-muted">Method</span></span>
+                  <span class="font-heading text-sm font-bold text-violet text-center leading-tight">347<br><span class="text-xs uppercase tracking-wider text-body-muted">Method</span></span>
                 </div>
               </div>
 
@@ -307,13 +298,13 @@ const faqs = [
 
               <!-- Connecting arrows (SVG circle) -->
               <svg class="absolute inset-6 w-[calc(100%-48px)] h-[calc(100%-48px)]" viewBox="0 0 200 200" fill="none">
-                <circle cx="100" cy="100" r="85" stroke="#6B5EA8" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.3"/>
+                <circle cx="100" cy="100" r="85" stroke="#1B2D5B" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.3"/>
                 <!-- Arrow indicators -->
-                <path d="M100 15 L105 25 L95 25 Z" fill="#6B5EA8" opacity="0.4" transform="rotate(72, 100, 100)"/>
-                <path d="M100 15 L105 25 L95 25 Z" fill="#6B5EA8" opacity="0.4" transform="rotate(144, 100, 100)"/>
-                <path d="M100 15 L105 25 L95 25 Z" fill="#6B5EA8" opacity="0.4" transform="rotate(216, 100, 100)"/>
-                <path d="M100 15 L105 25 L95 25 Z" fill="#6B5EA8" opacity="0.4" transform="rotate(288, 100, 100)"/>
-                <path d="M100 15 L105 25 L95 25 Z" fill="#6B5EA8" opacity="0.4" transform="rotate(360, 100, 100)"/>
+                <path d="M100 15 L105 25 L95 25 Z" fill="#1B2D5B" opacity="0.4" transform="rotate(72, 100, 100)"/>
+                <path d="M100 15 L105 25 L95 25 Z" fill="#1B2D5B" opacity="0.4" transform="rotate(144, 100, 100)"/>
+                <path d="M100 15 L105 25 L95 25 Z" fill="#1B2D5B" opacity="0.4" transform="rotate(216, 100, 100)"/>
+                <path d="M100 15 L105 25 L95 25 Z" fill="#1B2D5B" opacity="0.4" transform="rotate(288, 100, 100)"/>
+                <path d="M100 15 L105 25 L95 25 Z" fill="#1B2D5B" opacity="0.4" transform="rotate(360, 100, 100)"/>
               </svg>
             </div>
             <p class="text-center text-body-light text-sm mt-6 leading-relaxed">
@@ -332,7 +323,7 @@ const faqs = [
     <!-- Full-width Silver Temple background -->
     <div class="absolute inset-0">
       <img src="/images/silver-temple-front.png" alt="Srisuphan Silver Temple, Chiang Mai" class="w-full h-full object-cover" loading="lazy" />
-      <div class="absolute inset-0 bg-gradient-to-b from-[#2a2250]/92 via-[#2a2250]/88 to-[#2a2250]/94"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0D1B3E]/92 via-[#0D1B3E]/88 to-[#0D1B3E]/94"></div>
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,rgba(200,220,240,0.12),transparent_50%)]"></div>
     </div>
 
@@ -351,92 +342,93 @@ const faqs = [
 
         <!-- Left: Pyramid (clean, no side labels) -->
         <div class="flex justify-center lg:sticky lg:top-24">
-          <div class="w-full max-w-[360px]">
-            <svg viewBox="0 0 360 500" class="w-full drop-shadow-2xl" xmlns="http://www.w3.org/2000/svg">
+          <div class="w-full max-w-[400px]">
+            <svg viewBox="0 0 440 560" class="w-full drop-shadow-2xl" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="gS" x1="0.5" y1="0" x2="0.5" y2="1">
-                  <stop offset="0%" stop-color="white" stop-opacity="0.95"/>
-                  <stop offset="100%" stop-color="#E8E4F5" stop-opacity="0.88"/>
+                  <stop offset="0%" stop-color="#E8D5A3"/>
+                  <stop offset="100%" stop-color="#C5A55A"/>
                 </linearGradient>
                 <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#E8E4F5" stop-opacity="0.85"/>
-                  <stop offset="100%" stop-color="#C8DCF0" stop-opacity="0.78"/>
+                  <stop offset="0%" stop-color="#D4DAE8" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#C8DCF0" stop-opacity="0.8"/>
                 </linearGradient>
                 <linearGradient id="gL" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#D5E5D5" stop-opacity="0.82"/>
-                  <stop offset="100%" stop-color="#E8E4F5" stop-opacity="0.72"/>
+                  <stop offset="0%" stop-color="#C8DCF0" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#D4DAE8" stop-opacity="0.7"/>
                 </linearGradient>
                 <linearGradient id="gF" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#F0EDE4" stop-opacity="0.6"/>
-                  <stop offset="100%" stop-color="#E8E4F5" stop-opacity="0.6"/>
+                  <stop offset="0%" stop-color="white" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="white" stop-opacity="0.08"/>
                 </linearGradient>
                 <filter id="gl"><feGaussianBlur stdDeviation="8"/></filter>
-                <filter id="gl2"><feGaussianBlur stdDeviation="3"/></filter>
               </defs>
 
-              <!-- Soft glow behind pyramid -->
-              <polygon points="180,30 20,420 340,420" fill="white" opacity="0.04" filter="url(#gl)"/>
+              <!-- Golden glow at top -->
+              <circle cx="200" cy="20" r="35" fill="#C5A55A" opacity="0.15" filter="url(#gl)"/>
+              <circle cx="200" cy="22" r="5" fill="#E2C96D" opacity="0.9"/>
 
-              <!-- Top divine light -->
-              <circle cx="180" cy="8" r="30" fill="white" opacity="0.15" filter="url(#gl)"/>
-              <circle cx="180" cy="12" r="4" fill="white" opacity="0.8"/>
-              <line x1="180" y1="16" x2="180" y2="42" stroke="white" stroke-width="1" opacity="0.3"/>
+              <!-- ═══ TIER 1: SPIRIT / MIND / BODY (Gold) ═══ -->
+              <!-- SPIRIT label above pyramid -->
+              <text x="200" y="52" text-anchor="middle" fill="#E2C96D" font-size="16" font-weight="700" font-family="Georgia, serif" letter-spacing="4">SPIRIT</text>
 
-              <!-- ═══ TIER 1: SPIRIT / MIND / BODY ═══ -->
-              <polygon points="180,40 135,100 225,100" fill="url(#gS)" stroke="white" stroke-width="1.5"/>
-              <text x="180" y="80" text-anchor="middle" fill="#4a3d8f" font-size="14" font-weight="700" font-family="Georgia, serif" letter-spacing="3">SPIRIT</text>
+              <!-- Spirit triangle -->
+              <polygon points="200,60 155,120 245,120" fill="url(#gS)" stroke="#C5A55A" stroke-width="1.5" opacity="0.9"/>
 
-              <polygon points="135,106 112,158 248,158 225,106" fill="url(#gS)" stroke="white" stroke-width="1" opacity="0.92"/>
-              <text x="180" y="140" text-anchor="middle" fill="#4a3d8f" font-size="14" font-weight="600" font-family="Georgia, serif" letter-spacing="2">MIND</text>
+              <!-- Mind -->
+              <polygon points="155,126 128,180 272,180 245,126" fill="url(#gS)" stroke="#C5A55A" stroke-width="1" opacity="0.8"/>
+              <text x="200" y="160" text-anchor="middle" fill="#1B2D5B" font-size="15" font-weight="700" font-family="Georgia, serif" letter-spacing="2">MIND</text>
 
-              <polygon points="112,164 88,218 272,218 248,164" fill="url(#gS)" stroke="white" stroke-width="1" opacity="0.85"/>
-              <text x="180" y="200" text-anchor="middle" fill="#4a3d8f" font-size="14" font-weight="600" font-family="Georgia, serif" letter-spacing="2">BODY</text>
+              <!-- Body -->
+              <polygon points="128,186 100,240 300,240 272,186" fill="url(#gS)" stroke="#C5A55A" stroke-width="1" opacity="0.7"/>
+              <text x="200" y="220" text-anchor="middle" fill="#1B2D5B" font-size="15" font-weight="700" font-family="Georgia, serif" letter-spacing="2">BODY</text>
 
-              <!-- Tier 1 bracket -->
-              <line x1="233" y1="55" x2="233" y2="210" stroke="white" stroke-width="1" opacity="0.2"/>
-              <line x1="233" y1="130" x2="248" y2="130" stroke="white" stroke-width="1" opacity="0.3"/>
-              <rect x="252" y="118" width="98" height="26" rx="13" fill="white" opacity="0.12"/>
-              <text x="301" y="135" text-anchor="middle" fill="white" font-size="9" font-weight="600" font-family="Inter, sans-serif" letter-spacing="1.5" opacity="0.8">ALIGNMENT</text>
+              <!-- ALIGNMENT label -->
+              <text x="365" y="155" text-anchor="middle" fill="#C5A55A" font-size="10" font-weight="700" font-family="Inter, sans-serif" letter-spacing="2">ALIGNMENT</text>
+              <line x1="255" y1="152" x2="320" y2="152" stroke="#C5A55A" stroke-width="0.8" opacity="0.4"/>
 
-              <!-- Dashed divider -->
-              <line x1="80" y1="226" x2="280" y2="226" stroke="white" stroke-width="1" stroke-dasharray="6 4" opacity="0.2"/>
+              <!-- Gold divider -->
+              <line x1="90" y1="250" x2="310" y2="250" stroke="#C5A55A" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
 
               <!-- ═══ TIER 2: AWAKENING ═══ -->
-              <polygon points="86,232 76,260 284,260 274,232" fill="url(#gA)" stroke="white" stroke-width="0.8"/>
-              <text x="180" y="252" text-anchor="middle" fill="#2D2D2D" font-size="12" font-weight="600" font-family="Inter, sans-serif">Wisdom</text>
+              <polygon points="98,258 88,288 312,288 302,258" fill="#1B2D5B" stroke="#C5A55A" stroke-width="0.8" opacity="0.9"/>
+              <text x="200" y="280" text-anchor="middle" fill="#E2C96D" font-size="13" font-weight="600" font-family="Inter, sans-serif">Wisdom</text>
 
-              <polygon points="75,266 65,294 295,294 285,266" fill="url(#gA)" stroke="white" stroke-width="0.8" opacity="0.92"/>
-              <text x="180" y="286" text-anchor="middle" fill="#2D2D2D" font-size="12" font-weight="500" font-family="Inter, sans-serif">Meditation</text>
+              <polygon points="87,294 77,324 323,324 313,294" fill="#1B2D5B" stroke="#C5A55A" stroke-width="0.8" opacity="0.8"/>
+              <text x="200" y="316" text-anchor="middle" fill="#E2C96D" font-size="13" font-weight="500" font-family="Inter, sans-serif">Meditation</text>
 
-              <polygon points="64,300 54,328 306,328 296,300" fill="url(#gA)" stroke="white" stroke-width="0.8" opacity="0.84"/>
-              <text x="180" y="320" text-anchor="middle" fill="#2D2D2D" font-size="12" font-weight="500" font-family="Inter, sans-serif">Mindfulness</text>
+              <polygon points="76,330 66,360 334,360 324,330" fill="#1B2D5B" stroke="#C5A55A" stroke-width="0.8" opacity="0.7"/>
+              <text x="200" y="352" text-anchor="middle" fill="#E2C96D" font-size="13" font-weight="500" font-family="Inter, sans-serif">Mindfulness</text>
 
-              <polygon points="53,334 43,362 317,362 307,334" fill="url(#gA)" stroke="white" stroke-width="0.8" opacity="0.76"/>
-              <text x="180" y="354" text-anchor="middle" fill="#2D2D2D" font-size="12" font-weight="500" font-family="Inter, sans-serif">Morality</text>
+              <polygon points="65,366 55,396 345,396 335,366" fill="#1B2D5B" stroke="#C5A55A" stroke-width="0.8" opacity="0.6"/>
+              <text x="200" y="388" text-anchor="middle" fill="#E2C96D" font-size="13" font-weight="500" font-family="Inter, sans-serif">Morality</text>
 
-              <!-- Tier 2 bracket -->
-              <line x1="295" y1="238" x2="295" y2="356" stroke="white" stroke-width="1" opacity="0.2"/>
-              <line x1="295" y1="297" x2="310" y2="297" stroke="white" stroke-width="1" opacity="0.3"/>
-              <rect x="314" y="285" width="98" height="26" rx="13" fill="white" opacity="0.12"/>
-              <text x="363" y="302" text-anchor="middle" fill="white" font-size="9" font-weight="600" font-family="Inter, sans-serif" letter-spacing="1.5" opacity="0.8">AWAKENING</text>
+              <!-- AWAKENING label -->
+              <text x="395" y="330" text-anchor="middle" fill="white" font-size="10" font-weight="700" font-family="Inter, sans-serif" letter-spacing="2" opacity="0.8">AWAKENING</text>
+              <line x1="340" y1="327" x2="370" y2="327" stroke="white" stroke-width="0.8" opacity="0.3"/>
 
-              <!-- Dashed divider -->
-              <line x1="38" y1="370" x2="322" y2="370" stroke="white" stroke-width="1" stroke-dasharray="6 4" opacity="0.2"/>
+              <!-- Gold divider -->
+              <line x1="48" y1="404" x2="352" y2="404" stroke="#C5A55A" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
 
               <!-- ═══ TIER 3: LIFE TRANSFORMATION ═══ -->
-              <polygon points="41,375 36,400 324,400 319,375" fill="url(#gL)" stroke="white" stroke-width="0.8"/>
-              <text x="180" y="393" text-anchor="middle" fill="#4a3d8f" font-size="13" font-weight="700" font-family="Georgia, serif">Life Purpose</text>
+              <polygon points="53,410 48,438 352,438 347,410" fill="#0D1B3E" stroke="#C5A55A" stroke-width="0.8" opacity="0.9"/>
+              <text x="200" y="430" text-anchor="middle" fill="#E2C96D" font-size="14" font-weight="700" font-family="Georgia, serif">Life Purpose</text>
 
-              <polygon points="35,406 30,432 330,432 325,406" fill="url(#gL)" stroke="white" stroke-width="0.8" opacity="0.85"/>
-              <text x="116" y="424" text-anchor="middle" fill="#2D2D2D" font-size="10.5" font-weight="500">Holistic Health</text>
-              <text x="244" y="424" text-anchor="middle" fill="#2D2D2D" font-size="10.5" font-weight="500">Self Development</text>
+              <polygon points="47,444 42,472 358,472 353,444" fill="#0D1B3E" stroke="#C5A55A" stroke-width="0.8" opacity="0.8"/>
+              <text x="135" y="464" text-anchor="middle" fill="#C5A55A" font-size="11" font-weight="500">Holistic Health</text>
+              <text x="265" y="464" text-anchor="middle" fill="#C5A55A" font-size="11" font-weight="500">Self Development</text>
 
-              <rect x="27" y="438" width="306" height="28" rx="4" fill="url(#gL)" stroke="white" stroke-width="0.8" opacity="0.75"/>
-              <text x="180" y="457" text-anchor="middle" fill="#2D2D2D" font-size="11" font-weight="500">Soul Work</text>
+              <rect x="38" y="478" width="324" height="28" rx="4" fill="#0D1B3E" stroke="#C5A55A" stroke-width="0.8" opacity="0.7"/>
+              <text x="200" y="497" text-anchor="middle" fill="#C5A55A" font-size="12" font-weight="500">Soul Work</text>
+
+              <!-- TRANSFORMATION label -->
+              <text x="405" y="460" text-anchor="middle" fill="#C5A55A" font-size="9" font-weight="700" font-family="Inter, sans-serif" letter-spacing="1.5" opacity="0.8">LIFE</text>
+              <text x="405" y="472" text-anchor="middle" fill="#C5A55A" font-size="9" font-weight="700" font-family="Inter, sans-serif" letter-spacing="1">TRANSFORMATION</text>
+              <line x1="365" y1="466" x2="385" y2="466" stroke="#C5A55A" stroke-width="0.8" opacity="0.4"/>
 
               <!-- Foundation -->
-              <rect x="18" y="474" width="324" height="32" rx="6" fill="url(#gF)" stroke="white" stroke-width="0.8"/>
-              <text x="180" y="495" text-anchor="middle" fill="#666" font-size="10" font-weight="500">Health  ·  Emotion Balance  ·  Love Relationship</text>
+              <rect x="28" y="514" width="344" height="34" rx="6" fill="#0D1B3E" stroke="#C5A55A" stroke-width="0.5" opacity="0.5"/>
+              <text x="200" y="536" text-anchor="middle" fill="#C5A55A" font-size="11" font-weight="500" opacity="0.8">Health  ·  Emotion Balance  ·  Love Relationship</text>
             </svg>
           </div>
         </div>
@@ -452,9 +444,9 @@ const faqs = [
               <div class="flex-1">
                 <h4 class="text-white text-lg font-semibold mb-1">Alignment</h4>
                 <div class="flex flex-wrap gap-1.5 mb-3">
-                  <span class="text-[10px] uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2 py-0.5 rounded-full border border-sky-mist/15">Spirit</span>
-                  <span class="text-[10px] uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2 py-0.5 rounded-full border border-sky-mist/15">Mind</span>
-                  <span class="text-[10px] uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2 py-0.5 rounded-full border border-sky-mist/15">Body</span>
+                  <span class="text-xs uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2 py-0.5 rounded-full border border-sky-mist/15">Spirit</span>
+                  <span class="text-xs uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2 py-0.5 rounded-full border border-sky-mist/15">Mind</span>
+                  <span class="text-xs uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2 py-0.5 rounded-full border border-sky-mist/15">Body</span>
                 </div>
                 <p class="text-white/65 text-sm leading-relaxed">Connect with your highest self. When Spirit, Mind, and Body align, you access a state of pure awareness and inner peace.</p>
               </div>
@@ -470,10 +462,10 @@ const faqs = [
               <div class="flex-1">
                 <h4 class="text-white text-lg font-semibold mb-1">Awakening</h4>
                 <div class="flex flex-wrap gap-1.5 mb-3">
-                  <span class="text-[10px] uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Morality</span>
-                  <span class="text-[10px] uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Mindfulness</span>
-                  <span class="text-[10px] uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Meditation</span>
-                  <span class="text-[10px] uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Wisdom</span>
+                  <span class="text-xs uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Morality</span>
+                  <span class="text-xs uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Mindfulness</span>
+                  <span class="text-xs uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Meditation</span>
+                  <span class="text-xs uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Wisdom</span>
                 </div>
                 <p class="text-white/65 text-sm leading-relaxed">The four pillars of Buddhist practice guide your inner transformation — from ethical living to the deepest wisdom.</p>
               </div>
@@ -489,10 +481,10 @@ const faqs = [
               <div class="flex-1">
                 <h4 class="text-white text-lg font-semibold mb-1">Life Transformation</h4>
                 <div class="flex flex-wrap gap-1.5 mb-3">
-                  <span class="text-[10px] uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Purpose</span>
-                  <span class="text-[10px] uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Health</span>
-                  <span class="text-[10px] uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Soul</span>
-                  <span class="text-[10px] uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Balance</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Purpose</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Health</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Soul</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Balance</span>
                 </div>
                 <p class="text-white/65 text-sm leading-relaxed">Apply your awakening to every dimension of life — purpose, health, relationships, and soul work become one integrated journey.</p>
               </div>
@@ -540,24 +532,24 @@ const faqs = [
     </div>
   </section>
 
-  <!-- ==================== CHANTING RETREAT ==================== -->
+  <!-- ==================== CHANTING & MEDITATION (Master Sawan) ==================== -->
   <section class="bg-violet-dark text-white relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(132,231,165,0.08),transparent_70%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(200,220,240,0.06),transparent_70%)]"></div>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28 relative">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <p class="text-sky-mist font-semibold text-xs uppercase tracking-[0.2em] mb-4">Sacred Practice</p>
+          <p class="text-sky-mist font-semibold text-xs uppercase tracking-[0.2em] mb-4">Sacred Practice with Master Sawan</p>
           <h2 class="font-heading text-3xl md:text-5xl font-bold leading-tight mb-6">
             Chanting &<br>Meditation Retreat
           </h2>
           <p class="text-white/70 text-lg leading-relaxed mb-8">
-            Experience the harmony of sacred chanting and mindful awareness. Calm the mind, open your heart, and awaken inner peace through sound and presence.
+            Experience the harmony of sacred chanting and mindful awareness with Master Sawan. Calm the mind, open your heart, and awaken inner peace through the power of sound and presence.
           </p>
           <div class="flex items-center gap-6 mb-8">
             <div>
               <span class="text-3xl font-heading font-bold text-sky-mist">500</span>
               <span class="text-white/60 ml-1">THB</span>
-              <span class="text-white/40 text-sm ml-1">(~$14 USD)</span>
+              <span class="text-white/60 text-sm ml-1">(~$14 USD)</span>
             </div>
             <div class="w-px h-8 bg-white/20"></div>
             <div class="text-white/60 text-sm">2 Hours</div>
@@ -600,234 +592,150 @@ const faqs = [
     </div>
   </section>
 
-  <!-- ==================== COURSE LEVELS ==================== -->
+  <!-- ==================== 347 AWAKENING EXPERIENCES ==================== -->
   <section id="courses" class="scroll-mt-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
       <div class="text-center mb-16">
-        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">Programs</p>
-        <h2 class="font-heading text-4xl md:text-5xl font-bold text-violet">Course Levels</h2>
-        <p class="text-warm-charcoal mt-3">Choose your starting point on the path of awakening</p>
+        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">347 Awakening</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-violet">Life Transformation Experience</h2>
+        <p class="text-warm-charcoal mt-3">Choose your depth of awakening — from a 3-hour journey to a full 3-day transformation</p>
       </div>
 
+      <!-- 3 Main Experience Cards -->
       <div class="grid lg:grid-cols-3 gap-6 mb-12">
-        <!-- Beginner -->
-        <div class="bg-white rounded-card border border-oat-border shadow-card overflow-hidden hover:shadow-elevated transition-shadow group">
+        <!-- 3 Hours -->
+        <div class="bg-white rounded-card border border-oat-border shadow-card overflow-hidden hover:shadow-elevated transition-shadow">
           <div class="bg-gradient-to-br from-deep-calm to-deep-calm-dark p-7 text-white">
-            <div class="flex items-center justify-between mb-4">
-              <span class="bg-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Beginner</span>
-              <span class="text-white/60 text-sm">2 Hours</span>
-            </div>
-            <h3 class="font-heading text-2xl font-bold">Start Your Journey</h3>
+            <span class="bg-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Experience</span>
+            <h3 class="font-heading text-2xl font-bold mt-3">3 Hours</h3>
             <div class="mt-3 flex items-baseline gap-2">
-              <span class="text-3xl font-bold">500</span><span class="opacity-70 text-sm">THB</span>
-              <span class="text-white/40 text-xs ml-1">(~$14 USD)</span>
+              <span class="text-4xl font-bold">$47</span>
+              <span class="opacity-70 text-sm">(1,700 THB)</span>
             </div>
           </div>
           <div class="p-7">
             <h4 class="text-xs font-semibold uppercase tracking-widest text-warm-silver mb-4">What's Included</h4>
             <ul class="space-y-2.5 text-sm text-warm-charcoal mb-6">
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 347 Principle model introduction</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Basic meditation techniques</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Breathing for stress release</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 347 Awakening Meditation</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Body-Mind-Spirit connection</li>
               <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Mindfulness practice</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Observing thoughts & emotions</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Tea & refreshments</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Inner coaching techniques</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Reflection & sharing</li>
             </ul>
-            <a href={waMsg('Beginner Course (500 THB)')} target="_blank" rel="noopener" class="block w-full text-center bg-deep-calm text-white py-3 rounded-full font-medium hover:bg-deep-calm-dark transition-all text-sm">Book Beginner</a>
+            <a href={waMsg('347 Awakening 3 Hours ($47 / 1,700 THB)')} target="_blank" rel="noopener" class="block w-full text-center bg-deep-calm text-white py-3 rounded-full font-medium hover:bg-deep-calm-dark transition-all text-sm">Book 3 Hours</a>
           </div>
         </div>
 
-        <!-- Intermediate -->
-        <div class="bg-white rounded-card border border-oat-border shadow-card overflow-hidden hover:shadow-elevated transition-shadow group">
-          <div class="bg-gradient-to-br from-violet to-violet-dark p-7 text-white">
-            <div class="flex items-center justify-between mb-4">
-              <span class="bg-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Intermediate</span>
-              <span class="text-white/60 text-sm">2 Hours</span>
-            </div>
-            <h3 class="font-heading text-2xl font-bold">Deepen Your Practice</h3>
+        <!-- 1 Day — Most Popular -->
+        <div class="bg-white rounded-card border-2 border-violet shadow-elevated overflow-hidden hover:shadow-elevated transition-shadow relative">
+          <div class="absolute -top-0 left-0 right-0 bg-violet text-white text-center text-xs font-bold py-1.5 uppercase tracking-widest">Most Popular</div>
+          <div class="bg-gradient-to-br from-violet to-violet-dark p-7 pt-10 text-white">
+            <span class="bg-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Deep Dive</span>
+            <h3 class="font-heading text-2xl font-bold mt-3">1 Day</h3>
             <div class="mt-3 flex items-baseline gap-2">
-              <span class="text-3xl font-bold">700</span><span class="opacity-70 text-sm">THB</span>
-              <span class="text-white/40 text-xs ml-1">(~$20 USD)</span>
+              <span class="text-4xl font-bold">$147</span>
+              <span class="opacity-70 text-sm">(5,200 THB)</span>
             </div>
           </div>
           <div class="p-7">
             <h4 class="text-xs font-semibold uppercase tracking-widest text-warm-silver mb-4">What's Included</h4>
             <ul class="space-y-2.5 text-sm text-warm-charcoal mb-6">
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Vipassana Practice</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Mind-Body-Spirit connection</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Letting Go practice</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Observer Practice</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Life Wheel for holistic balance</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Tea & refreshments</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Everything in 3 Hours, plus:</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Deep Vipassana meditation</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Awakening practices</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Life Wheel transformation</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Connect to your true self</li>
             </ul>
-            <a href={waMsg('Intermediate Course (700 THB)')} target="_blank" rel="noopener" class="block w-full text-center bg-violet-dark text-white py-3 rounded-full font-medium hover:bg-violet transition-all text-sm">Book Intermediate</a>
+            <a href={waMsg('347 Awakening 1 Day ($147 / 5,200 THB)')} target="_blank" rel="noopener" class="block w-full text-center bg-violet text-white py-3 rounded-full font-medium hover:bg-violet-dark transition-all text-sm">Book 1 Day</a>
           </div>
         </div>
 
-        <!-- Advanced -->
-        <div class="bg-white rounded-card border border-oat-border shadow-card overflow-hidden hover:shadow-elevated transition-shadow group">
-          <div class="bg-gradient-to-br from-violet to-violet-dark p-7 text-white">
-            <div class="flex items-center justify-between mb-4">
-              <span class="bg-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Advanced</span>
-              <span class="text-white/60 text-sm">2 Hours</span>
-            </div>
-            <h3 class="font-heading text-2xl font-bold">Awakening & Freedom</h3>
+        <!-- 3 Days — Full Transformation -->
+        <div class="bg-white rounded-card border border-oat-border shadow-card overflow-hidden hover:shadow-elevated transition-shadow">
+          <div class="bg-gradient-to-br from-[#0A1530] to-violet-dark p-7 text-white">
+            <span class="bg-sky-mist/20 text-sky-mist text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Full Transformation</span>
+            <h3 class="font-heading text-2xl font-bold mt-3">3 Days</h3>
             <div class="mt-3 flex items-baseline gap-2">
-              <span class="text-3xl font-bold">1,000</span><span class="opacity-70 text-sm">THB</span>
-              <span class="text-white/40 text-xs ml-1">(~$28 USD)</span>
+              <span class="text-4xl font-bold">$347</span>
+              <span class="opacity-70 text-sm">(12,500 THB)</span>
             </div>
           </div>
           <div class="p-7">
             <h4 class="text-xs font-semibold uppercase tracking-widest text-warm-silver mb-4">What's Included</h4>
             <ul class="space-y-2.5 text-sm text-warm-charcoal mb-6">
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Deep meditation techniques</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Higher spiritual energy connection</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Roots of suffering & transcendence</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Awakening Practices</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Transform life & inspire others</li>
-              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Tea & refreshments</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Complete 347 awakening journey</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Deep spiritual transformation</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Advanced meditation & Vipassana</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Life purpose & soul work</li>
+              <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Full life transformation experience</li>
             </ul>
-            <a href={waMsg('Advanced Course (1,000 THB)')} target="_blank" rel="noopener" class="block w-full text-center bg-violet-dark text-white py-3 rounded-full font-medium hover:bg-violet transition-all text-sm">Book Advanced</a>
+            <a href={waMsg('347 Awakening 3 Days ($347 / 12,500 THB)')} target="_blank" rel="noopener" class="block w-full text-center bg-violet-dark text-white py-3 rounded-full font-medium hover:bg-violet transition-all text-sm">Book 3 Days</a>
           </div>
         </div>
       </div>
 
-      <!-- Special Package -->
-      <div class="bg-gradient-to-r from-deep-calm via-violet to-violet-dark rounded-card p-[2px]">
-        <div class="bg-ivory rounded-[18px] p-8 md:p-12">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
-              <span class="inline-block bg-soft-aura text-violet text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-widest">Best Value</span>
-              <h3 class="font-heading text-2xl md:text-3xl font-bold text-violet mb-2">Special Package — All 3 Levels</h3>
-              <p class="text-warm-charcoal">Beginner + Intermediate + Advanced — complete your awakening journey</p>
-            </div>
-            <div class="text-center md:text-right shrink-0">
-              <div class="flex items-baseline gap-2 justify-center md:justify-end">
-                <span class="text-4xl font-bold text-deep-calm font-heading">2,000</span>
-                <span class="text-warm-charcoal">THB</span>
+      <!-- Private Session + Online -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Private 1:1 -->
+        <div class="bg-white rounded-card border-2 border-deep-calm shadow-card p-8 relative">
+          <div class="absolute -top-3 left-6 bg-sky-mist text-violet text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Private</div>
+          <h3 class="font-heading text-2xl font-bold text-violet mb-1">Private Session (1:1)</h3>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="text-4xl font-bold text-deep-calm font-heading">$77</span>
+            <span class="text-warm-charcoal text-sm">(2,500 THB)</span>
+          </div>
+          <p class="text-warm-silver text-sm mb-5">3 Hours &middot; Personalized awakening experience</p>
+          <ul class="space-y-2 text-sm text-warm-charcoal mb-6">
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 1-on-1 with Master Kaie</li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Customized meditation for your needs</li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Personal energy & blockage discovery</li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Inner coaching & life guidance</li>
+          </ul>
+          <a href={waMsg('Private 1:1 Session ($77 / 2,500 THB)')} target="_blank" rel="noopener" class="block w-full text-center bg-deep-calm text-white py-3.5 rounded-full font-semibold hover:bg-deep-calm-dark transition-all text-sm">Book Private Session</a>
+        </div>
+
+        <!-- Online Course Package -->
+        <div class="bg-gradient-to-br from-violet-dark to-[#0A1530] rounded-card p-8 text-white relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(200,220,240,0.08),transparent_50%)]"></div>
+          <div class="relative">
+            <span class="inline-block bg-white/15 text-sky-mist text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Online Available</span>
+            <h3 class="font-heading text-2xl font-bold mb-2">Online Course Package</h3>
+            <p class="text-white/60 text-sm mb-6">Transform from anywhere in the world via WhatsApp or Zoom</p>
+            <div class="flex flex-wrap gap-3 mb-6">
+              <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+                <span class="block text-xl font-bold">$47</span>
+                <span class="text-white/50 text-xs">Basic</span>
               </div>
-              <p class="text-warm-silver text-sm"><span class="line-through">2,200 THB</span> <span class="text-deep-calm font-medium">Save 200 THB</span></p>
-              <p class="text-warm-silver text-xs mt-1">~$56 USD</p>
-              <a href={waMsg('Special Package - All 3 Levels (2,000 THB)')} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-deep-calm text-white px-6 py-3 rounded-full font-semibold hover:bg-deep-calm-dark transition-all mt-4 text-sm hover:-translate-y-0.5 hover:shadow-lg">Book Special Package</a>
+              <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+                <span class="block text-xl font-bold">$97</span>
+                <span class="text-white/50 text-xs">Standard</span>
+              </div>
+              <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+                <span class="block text-xl font-bold">$147</span>
+                <span class="text-white/50 text-xs">Premium</span>
+              </div>
             </div>
+            <a href={waMsg('Online Course Package — interested to learn more')} target="_blank" rel="noopener" class="block w-full text-center bg-white text-violet py-3.5 rounded-full font-semibold hover:bg-sky-mist-light transition-all text-sm">Ask About Online Courses</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ==================== VIPASSANA ==================== -->
-  <section id="vipassana" class="bg-violet-dark text-white scroll-mt-20 relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(193,176,255,0.1),transparent_60%)]"></div>
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28 relative">
-      <div class="text-center mb-16">
-        <p class="text-soft-aura font-semibold text-xs uppercase tracking-[0.2em] mb-4">Deep Practice</p>
-        <h2 class="font-heading text-4xl md:text-5xl font-bold leading-tight mb-4">Vipassana Meditation</h2>
-        <p class="text-soft-aura/80 text-lg max-w-2xl mx-auto">Awaken your mind, transform your life through the ancient practice of insight meditation.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white/[0.07] backdrop-blur-sm rounded-card p-8 border border-white/10 hover:bg-white/10 transition-colors">
-          <div class="flex items-center justify-between mb-6">
-            <span class="bg-sky-mist text-violet text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest">Half-Day</span>
-            <div class="text-right">
-              <span class="text-2xl font-bold font-heading">700</span> <span class="text-white/60 text-sm">THB</span>
-              <p class="text-white/40 text-xs">~$20 USD</p>
-            </div>
-          </div>
-          <p class="text-soft-aura/70 text-sm mb-5">09:00 — 12:00 (3 hours)</p>
-          <ul class="space-y-3 text-sm">
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-soft-aura mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Welcome & 347 Approach introduction</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-soft-aura mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Body-Mind-Spirit connections</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-soft-aura mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Vipassana practice</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-soft-aura mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Mindfulness in daily life</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-soft-aura mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Reflection & sharing</li>
-          </ul>
-          <a href={waMsg('Vipassana Half-Day (700 THB)')} target="_blank" rel="noopener" class="mt-6 block w-full text-center bg-white text-violet-dark py-3 rounded-full font-semibold hover:bg-soft-aura-dark transition-all text-sm">Book Half-Day</a>
-        </div>
-
-        <div class="bg-white/[0.07] backdrop-blur-sm rounded-card p-8 border border-deep-calm/30 hover:bg-white/10 transition-colors relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky-mist text-violet text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
-          <div class="flex items-center justify-between mb-6">
-            <span class="bg-deep-calm text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest">Full Day</span>
-            <div class="text-right">
-              <span class="text-2xl font-bold font-heading">1,000</span> <span class="text-white/60 text-sm">THB</span>
-              <p class="text-white/40 text-xs">~$28 USD</p>
-            </div>
-          </div>
-          <p class="text-soft-aura/70 text-sm mb-5">09:00 — 16:00 (7 hours)</p>
-          <ul class="space-y-3 text-sm">
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-soft-aura mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Everything in Half-Day, plus:</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-sky-mist mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Deep meditation (Walking, Standing, Sitting, Lying)</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-sky-mist mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Awakening practice</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-sky-mist mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Connect to your true self</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-sky-mist mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Extended reflection & sharing</li>
-          </ul>
-          <a href={waMsg('Vipassana Full Day (1,000 THB)')} target="_blank" rel="noopener" class="mt-6 block w-full text-center bg-sky-mist text-violet py-3 rounded-full font-semibold hover:bg-sky-mist-light transition-all text-sm">Book Full Day</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== PRIVATE COURSES ==================== -->
-  <section id="private" class="scroll-mt-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
-      <div class="text-center mb-16">
-        <p class="text-violet font-semibold text-xs uppercase tracking-[0.2em] mb-4">Exclusive Experience</p>
-        <h2 class="font-heading text-4xl md:text-5xl font-bold text-violet mb-4">Private Awakening Course</h2>
-        <p class="text-warm-charcoal text-lg max-w-2xl mx-auto">A transformative 1-on-1 or small group experience with Master Kaie, designed for deep personal awakening.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white rounded-card border-2 border-deep-calm shadow-elevated p-8 relative">
-          <div class="absolute -top-3 left-6 bg-sky-mist text-violet text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Premium</div>
-          <h3 class="font-heading text-2xl font-bold text-violet mb-1">Private 1:1 Journey</h3>
-          <div class="flex items-baseline gap-2 mb-1">
-            <span class="text-4xl font-bold text-deep-calm font-heading">5,200</span><span class="text-warm-charcoal">THB</span>
-          </div>
-          <p class="text-warm-silver text-sm mb-6">~$146 USD &middot; 6 hours &middot; 1 month follow-up</p>
-          <ul class="space-y-2.5 text-sm text-warm-charcoal mb-6">
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Discover your unique energy & hidden blockages</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Deep Awakening Meditation designed for you</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Reconnect with your inner true self</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Reprogram mind for clarity & flow</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-violet mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 1 month personal follow-up guidance</li>
-          </ul>
-          <a href={waMsg('Private 1:1 Awakening Journey (5,200 THB)')} target="_blank" rel="noopener" class="block w-full text-center bg-violet text-white py-3.5 rounded-full font-semibold hover:bg-violet-dark transition-all text-sm">Book Private Session</a>
-        </div>
-
-        <div class="bg-white rounded-card border border-oat-border shadow-card p-8">
-          <h3 class="font-heading text-2xl font-bold text-violet mb-1">Small Group (2–5 people)</h3>
-          <div class="flex items-baseline gap-2 mb-1">
-            <span class="text-4xl font-bold text-deep-calm font-heading">4,200</span><span class="text-warm-charcoal">THB / person</span>
-          </div>
-          <p class="text-warm-silver text-sm mb-6">~$118 USD &middot; 6 hours &middot; 1 month group connection</p>
-          <ul class="space-y-2.5 text-sm text-warm-charcoal mb-6">
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Awakening Meditation with group synergy</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Mindfulness for living in the present</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Shared emotional healing & energy release</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Heart-opening group practices</li>
-            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 1 month group connection & practice</li>
-          </ul>
-          <a href={waMsg('Small Group Awakening (4,200 THB/person)')} target="_blank" rel="noopener" class="block w-full text-center bg-deep-calm text-white py-3.5 rounded-full font-semibold hover:bg-deep-calm-dark transition-all text-sm">Book Group Session</a>
-        </div>
-      </div>
-
+      <!-- Location options -->
       <div class="mt-8 grid sm:grid-cols-3 gap-4">
         <div class="bg-soft-aura/40 rounded-2xl p-5 border border-soft-aura text-center">
           <svg class="w-6 h-6 text-deep-calm mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           <h4 class="font-semibold text-sm text-violet">On-site</h4>
-          <p class="text-warm-charcoal text-xs mt-1">Srisuphan Temple, Chiang Mai</p>
+          <p class="text-warm-charcoal text-xs mt-1">Srisuphan Silver Temple, Chiang Mai</p>
         </div>
         <div class="bg-soft-aura/40 rounded-2xl p-5 border border-soft-aura text-center">
           <svg class="w-6 h-6 text-deep-calm mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-          <h4 class="font-semibold text-sm text-violet">Other Space</h4>
-          <p class="text-warm-charcoal text-xs mt-1">Chiang Mai Meditation Space</p>
+          <h4 class="font-semibold text-sm text-violet">Meditation Space</h4>
+          <p class="text-warm-charcoal text-xs mt-1">Chiang Mai location</p>
         </div>
         <div class="bg-soft-aura/40 rounded-2xl p-5 border border-soft-aura text-center">
           <svg class="w-6 h-6 text-deep-calm mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
           <h4 class="font-semibold text-sm text-violet">Online</h4>
-          <p class="text-warm-charcoal text-xs mt-1">WhatsApp / Zoom</p>
+          <p class="text-warm-charcoal text-xs mt-1">WhatsApp / Zoom worldwide</p>
         </div>
       </div>
     </div>
@@ -863,14 +771,18 @@ const faqs = [
 
         <!-- YouTube Video Embed -->
         <div>
-          <div class="aspect-video rounded-card overflow-hidden bg-deep-calm border border-white/10 shadow-elevated">
-            <div class="w-full h-full flex items-center justify-center text-white/40">
-              <div class="text-center">
-                <svg class="w-16 h-16 mx-auto mb-3 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                <p class="text-sm">Add a YouTube video ID to embed</p>
-                <p class="text-xs mt-1 text-white/30">Replace this with an iframe from your YouTube channel</p>
-              </div>
-            </div>
+          <div class="flex justify-center">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@347_happylifehappyworld/video/7484144831330045202" data-video-id="7484144831330045202" style="max-width: 340px;min-width: 280px;">
+              <section>
+                <a target="_blank" title="@347_happylifehappyworld" href="https://www.tiktok.com/@347_happylifehappyworld?refer=embed">@347_happylifehappyworld</a>
+                Ask and answer yourself
+                <a title="meditationmaster" target="_blank" href="https://www.tiktok.com/tag/meditationmaster?refer=embed">#meditationmaster</a>
+                <a title="chiangmai" target="_blank" href="https://www.tiktok.com/tag/chiangmai?refer=embed">#chiangmai</a>
+                <a title="happiness" target="_blank" href="https://www.tiktok.com/tag/happiness?refer=embed">#happiness</a>
+                <a title="spirit" target="_blank" href="https://www.tiktok.com/tag/spirit?refer=embed">#spirit</a>
+                <a title="mind" target="_blank" href="https://www.tiktok.com/tag/mind?refer=embed">#mind</a>
+              </section>
+            </blockquote>
           </div>
           <p class="text-center mt-3">
             <a href={yt} target="_blank" rel="noopener" class="text-sky-mist text-sm hover:underline inline-flex items-center gap-1.5">
@@ -887,29 +799,74 @@ const faqs = [
   <section id="testimonials" class="scroll-mt-20 bg-ivory-dark">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
       <div class="text-center mb-16">
-        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">Student Experiences</p>
+        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">Google Reviews</p>
         <h2 class="font-heading text-4xl md:text-5xl font-bold text-violet">What Our Students Say</h2>
+        <div class="flex items-center justify-center gap-2 mt-4">
+          <div class="flex items-center gap-1" role="img" aria-label="5.0 stars">
+            {[1,2,3,4,5].map(() => (<svg aria-hidden="true" class="w-5 h-5 text-deep-calm" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>))}
+          </div>
+          <span class="text-body font-semibold">4.9</span>
+          <span class="text-body-muted text-sm">on Google Maps</span>
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {testimonials.map((t) => (
-          <div class="bg-white rounded-card p-7 border border-oat-border shadow-card hover:shadow-elevated transition-shadow">
-            <div class="flex items-center gap-1 mb-4">
-              {[1,2,3,4,5].map(() => (<svg class="w-4 h-4 text-violet-light" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>))}
+      <!-- Featured review -->
+      <div class="bg-violet rounded-card p-8 md:p-10 mb-8 relative overflow-hidden">
+        <div class="absolute top-4 right-6 text-white/10 font-heading text-[120px] leading-none select-none">"</div>
+        <div class="relative">
+          <div class="flex items-center gap-1 mb-5" role="img" aria-label="5 out of 5 stars">
+            {[1,2,3,4,5].map(() => (<svg aria-hidden="true" class="w-5 h-5 text-deep-calm" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>))}
+          </div>
+          <p class="text-white font-heading text-xl md:text-2xl leading-relaxed italic mb-6">"This meditation retreat really challenges you to think deeply about your life and what it means. Even after just one session, my mind calmed down and I could see things more clearly."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+              <span class="text-white font-semibold">J</span>
             </div>
-            <p class="text-warm-charcoal text-sm leading-relaxed mb-5 italic">"{t.text}"</p>
-            <div class="flex items-center justify-between">
+            <div>
+              <p class="text-white font-semibold text-sm">Joanna J Wilkin</p>
+              <div class="flex items-center gap-1.5 text-white/60 text-xs">
+                <svg aria-hidden="true" class="w-3 h-3" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                Google Review &middot; 7 months ago
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review cards grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {testimonials.map((t) => (
+          <div class="bg-white rounded-card p-6 border-l-4 border-l-deep-calm border border-oat-border shadow-card hover:shadow-elevated transition-all hover:-translate-y-0.5">
+            <!-- Quote icon -->
+            <div class="text-deep-calm/20 font-heading text-4xl leading-none mb-2 select-none">"</div>
+            <p class="text-body-light text-sm leading-relaxed mb-5">{t.text}</p>
+            <div class="flex items-center justify-between pt-4 border-t border-oat-border">
               <div class="flex items-center gap-2.5">
-                <span class="text-xl">{t.flag}</span>
+                <div class="w-9 h-9 bg-violet/10 rounded-full flex items-center justify-center">
+                  <span class="text-violet font-semibold text-sm">{t.name.charAt(0)}</span>
+                </div>
                 <div>
                   <p class="font-semibold text-sm text-violet">{t.name}</p>
-                  <p class="text-warm-silver text-xs">{t.country}</p>
+                  <p class="text-body-muted text-xs">{t.time}</p>
                 </div>
               </div>
-              <span class="text-xs text-warm-silver bg-oat-light px-2.5 py-1 rounded-full">{t.course}</span>
+              <svg aria-hidden="true" class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
             </div>
           </div>
         ))}
+      </div>
+
+      <!-- Bottom: See all + Leave review -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+        <a href={googleMapsLink} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white border border-oat-border text-body font-semibold text-sm px-6 py-3 rounded-full shadow-clay hover:shadow-card transition-all">
+          <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          See all reviews on Google
+          <span class="sr-only"> (opens in new tab)</span>
+        </a>
+        <a href={googleMapsLink} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-deep-calm text-violet-dark font-semibold text-sm px-6 py-3 rounded-full hover:bg-deep-calm-dark hover:text-white transition-all">
+          Leave a Review
+          <span class="sr-only"> on Google Maps (opens in new tab)</span>
+        </a>
       </div>
     </div>
   </section>
@@ -929,15 +886,14 @@ const faqs = [
           </div>
           <div class="divide-y divide-oat-border">
             {[
-              { name: "Chanting & Meditation", dur: "2 hours", thb: "500", usd: "14" },
-              { name: "347 Beginner", dur: "2 hours", thb: "500", usd: "14" },
-              { name: "347 Intermediate", dur: "2 hours", thb: "700", usd: "20" },
-              { name: "347 Advanced", dur: "2 hours", thb: "1,000", usd: "28" },
-              { name: "Special Package (All 3)", dur: "6 hours", thb: "2,000", usd: "56", highlight: true },
-              { name: "Vipassana Half-Day", dur: "3 hours", thb: "700", usd: "20" },
-              { name: "Vipassana Full Day", dur: "7 hours", thb: "1,000", usd: "28" },
-              { name: "Private 1:1", dur: "6 hours + follow-up", thb: "5,200", usd: "146" },
-              { name: "Small Group (2-5)", dur: "6 hours + follow-up", thb: "4,200/pp", usd: "118" },
+              { name: "Chanting & Meditation (Master Sawan)", dur: "2 hours", thb: "500", usd: "14" },
+              { name: "347 Awakening — 3 Hours", dur: "3 hours", thb: "1,700", usd: "47" },
+              { name: "347 Awakening — 1 Day", dur: "Full day", thb: "5,200", usd: "147", highlight: true },
+              { name: "347 Awakening — 3 Days", dur: "3 days", thb: "12,500", usd: "347" },
+              { name: "Private Session (1:1)", dur: "3 hours", thb: "2,500", usd: "77" },
+              { name: "Online Course — Basic", dur: "Online", thb: "—", usd: "47" },
+              { name: "Online Course — Standard", dur: "Online", thb: "—", usd: "97" },
+              { name: "Online Course — Premium", dur: "Online", thb: "—", usd: "147" },
             ].map((c) => (
               <div class={`grid grid-cols-3 items-center px-6 py-4 text-sm ${c.highlight ? 'bg-soft-aura/50' : 'hover:bg-ivory'} transition-colors`}>
                 <span class="font-medium text-violet">{c.name}</span>
@@ -1016,21 +972,60 @@ const faqs = [
   </section>
 
   <!-- ==================== FINAL CTA ==================== -->
-  <section class="bg-gradient-to-br from-violet-dark via-deep-calm-dark to-violet-dark text-white">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-20 md:py-28 text-center">
-      <p class="text-sky-mist font-semibold text-xs uppercase tracking-[0.2em] mb-4">Your Transformation Begins Here</p>
-      <h2 class="font-heading text-4xl md:text-5xl font-bold leading-tight mb-6">Step Into Your Awakening</h2>
-      <p class="text-white/70 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+  <section class="relative overflow-hidden">
+    <!-- Temple background -->
+    <div class="absolute inset-0">
+      <img src="/images/silver-temple-front.png" alt="" class="w-full h-full object-cover" loading="lazy" aria-hidden="true" />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0A1530]/92 via-[#0D1B3E]/88 to-[#0A1530]/95"></div>
+    </div>
+
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <!-- Golden radial glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(197,165,90,0.12),transparent_65%)]"></div>
+      <!-- Lotus SVG -->
+      <svg class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] opacity-[0.04]" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 10 C100 10, 60 40, 50 80 C50 80, 70 60, 100 55 C130 60, 150 80, 150 80 C140 40, 100 10, 100 10Z" fill="#C5A55A"/>
+        <path d="M100 10 C100 10, 40 50, 25 90 C25 90, 55 65, 100 58 C145 65, 175 90, 175 90 C160 50, 100 10, 100 10Z" fill="#C5A55A" opacity="0.6"/>
+        <path d="M100 10 C100 10, 20 60, 5 100 C5 100, 40 70, 100 62 C160 70, 195 100, 195 100 C180 60, 100 10, 100 10Z" fill="#C5A55A" opacity="0.3"/>
+        <ellipse cx="100" cy="105" rx="90" ry="8" fill="#C5A55A" opacity="0.2"/>
+      </svg>
+      <!-- Side gold lines -->
+      <div class="absolute top-20 left-10 w-px h-32 bg-gradient-to-b from-transparent via-deep-calm/20 to-transparent"></div>
+      <div class="absolute top-20 right-10 w-px h-32 bg-gradient-to-b from-transparent via-deep-calm/20 to-transparent"></div>
+      <div class="absolute bottom-20 left-10 w-px h-32 bg-gradient-to-b from-transparent via-deep-calm/20 to-transparent"></div>
+      <div class="absolute bottom-20 right-10 w-px h-32 bg-gradient-to-b from-transparent via-deep-calm/20 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 py-24 md:py-36 text-center">
+      <!-- Gold decorative line -->
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <div class="w-12 h-px bg-deep-calm/50"></div>
+        <svg class="w-5 h-5 text-deep-calm" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <div class="w-12 h-px bg-deep-calm/50"></div>
+      </div>
+
+      <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.25em] mb-5">Your Transformation Begins Here</p>
+      <h2 class="font-heading text-4xl md:text-6xl font-bold leading-tight mb-6 text-white">Step Into Your<br><span class="text-deep-calm">Awakening</span></h2>
+      <p class="text-white/65 text-lg leading-relaxed mb-12 max-w-xl mx-auto">
         Experience awakening meditation and life transformation in Chiang Mai. Whether you're a complete beginner or a seasoned practitioner, your path to a new life is waiting.
       </p>
+
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href={wa} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#20bd5a] transition-all hover:-translate-y-0.5 hover:shadow-xl shadow-lg">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Book via WhatsApp
         </a>
-        <a href={`mailto:${email}`} class="inline-flex items-center justify-center gap-2 bg-white/10 text-white px-8 py-4 rounded-full text-lg font-medium border border-white/20 hover:bg-white/20 transition-all">
+        <a href={`mailto:${email}`} class="inline-flex items-center justify-center gap-2 bg-deep-calm/20 text-deep-calm px-8 py-4 rounded-full text-lg font-semibold border border-deep-calm/30 hover:bg-deep-calm hover:text-violet-dark transition-all">
           Email Us
         </a>
+      </div>
+
+      <!-- Bottom gold line -->
+      <div class="flex items-center justify-center gap-3 mt-12">
+        <div class="w-20 h-px bg-deep-calm/30"></div>
+        <div class="w-2 h-2 bg-deep-calm/40 rounded-full"></div>
+        <div class="w-20 h-px bg-deep-calm/30"></div>
       </div>
     </div>
   </section>
@@ -1045,7 +1040,7 @@ const faqs = [
               <span class="text-violet text-sm font-bold">347</span>
             </div>
             <div>
-              <div class="font-heading text-xl font-bold">Happy Life Happy World</div>
+              <div class="font-heading text-xl font-bold">347 Awakening</div>
               <div class="text-sky-mist text-xs uppercase tracking-widest">Meditation for Awakening</div>
             </div>
           </div>
@@ -1053,14 +1048,17 @@ const faqs = [
             Guided by Master Kaie at Srisuphan Temple, Chiang Mai. Awakening through the 347 method of Body-Mind-Spirit harmony.
           </p>
           <div class="flex gap-3 mt-6">
-            <a href={fb} target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Facebook">
+            <a href={fb} target="_blank" rel="noopener" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Facebook">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
-            <a href={ig} target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Instagram">
+            <a href={ig} target="_blank" rel="noopener" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Instagram">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
-            <a href={yt} target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="YouTube">
+            <a href={yt} target="_blank" rel="noopener" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="YouTube">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href={tt} target="_blank" rel="noopener" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="TikTok">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.17v-3.45a4.85 4.85 0 01-1.99-.43l-.01-4.6z"/></svg>
             </a>
           </div>
         </div>
@@ -1077,17 +1075,23 @@ const faqs = [
         <div>
           <h3 class="font-semibold text-sm mb-4 uppercase tracking-widest text-white/50">Course Times</h3>
           <ul class="text-white/70 text-sm space-y-2">
-            <li>10:00 – 12:00 <span class="text-white/40">(Morning)</span></li>
-            <li>14:00 – 16:00 <span class="text-white/40">(Afternoon)</span></li>
-            <li>09:00 – 12:00 <span class="text-white/40">(Half-day)</span></li>
-            <li>09:00 – 16:00 <span class="text-white/40">(Full day)</span></li>
+            <li>10:00 – 12:00 <span class="text-white/60">(Morning)</span></li>
+            <li>14:00 – 16:00 <span class="text-white/60">(Afternoon)</span></li>
+            <li>09:00 – 12:00 <span class="text-white/60">(Half-day)</span></li>
+            <li>09:00 – 16:00 <span class="text-white/60">(Full day)</span></li>
           </ul>
         </div>
       </div>
 
-      <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-xs">
-        <p>&copy; 2026 347 Happy Life Happy World. All rights reserved.</p>
-        <p>Srisuphan Temple, Chiang Mai, Thailand</p>
+      <!-- SEO-rich footer content -->
+      <div class="border-t border-white/10 mt-12 pt-8">
+        <p class="text-white/60 text-xs leading-relaxed mb-6 max-w-3xl mx-auto text-center">
+          347 Happy Life Happy World is a meditation retreat and life transformation center located at Srisuphan Silver Temple (Wat Sri Suphan) in Chiang Mai, Thailand. We offer awakening meditation courses, vipassana retreats, mindfulness workshops, and spiritual retreats for international visitors. Our English-speaking meditation master, Master Kaie, has guided over 800 students from 38+ countries through Buddhist meditation, inner coaching, and consciousness awakening programs. Whether you're looking for a meditation retreat in Chiang Mai, a beginner-friendly vipassana course in Thailand, or a private spiritual awakening experience, 347 Awakening welcomes you to transform your life through the ancient wisdom of Body, Mind, and Spirit alignment.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-white/60 text-xs">
+          <p>&copy; 2026 347 Awakening. All rights reserved.</p>
+          <p>Meditation Retreat at Srisuphan Silver Temple, Chiang Mai, Thailand</p>
+        </div>
       </div>
     </div>
   </footer>
@@ -1102,11 +1106,39 @@ const faqs = [
     </div>
   </div>
 
+  <!-- TikTok embed (suppress console spam) -->
+  <script>
+    (function() {
+      const origLog = console.log;
+      const origWarn = console.warn;
+      const filter = (fn) => (...args) => {
+        if (args[0] && typeof args[0] === 'string' && (args[0].includes('TikTok') || args[0].includes('SES Removing'))) return;
+        fn.apply(console, args);
+      };
+      console.log = filter(origLog);
+      console.warn = filter(origWarn);
+      const s = document.createElement('script');
+      s.src = 'https://www.tiktok.com/embed.js';
+      s.async = true;
+      s.onload = () => {
+        setTimeout(() => { console.log = origLog; console.warn = origWarn; }, 3000);
+      };
+      document.body.appendChild(s);
+    })();
+  </script>
+
   <!-- Mobile menu script -->
   <script>
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('mobile-menu');
-    toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
-    menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu?.classList.add('hidden')));
+    toggle?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+      const isOpen = !menu?.classList.contains('hidden');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }));
   </script>
 </Layout>
