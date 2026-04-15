@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===== NEW BRAND PALETTE ===== */
+  --color-ivory: #F8F5EE;
+  --color-ivory-dark: #F0EDE4;
+  --color-sky-mist: #C8DCF0;
+  --color-sky-mist-light: #E3EDF8;
+  --color-violet: #6B5EA8;
+  --color-violet-dark: #5A4E91;
+  --color-violet-light: #8578C0;
+  --color-deep-calm: #4A8FAB;
+  --color-deep-calm-dark: #3D7A94;
+  --color-deep-calm-light: #5BA3BF;
+  --color-soft-aura: #E8E4F5;
+  --color-soft-aura-dark: #D8D2EC;
+  --color-morning-sage: #D5E5D5;
+  --color-morning-sage-dark: #C0D8C0;
+  --color-body: #2D2D2D;
+  --color-body-light: #555555;
+  --color-body-muted: #8A8A8A;
+
+  /* ===== LEGACY (keeping for any leftover references) ===== */
+  --color-cream: #F8F5EE;
+  --color-cream-dark: #F0EDE4;
+  --color-oat-border: #D8D2CC;
+  --color-oat-light: #EAE6DF;
+  --color-warm-silver: #9f9b93;
+  --color-warm-charcoal: #555555;
+  --color-dark-charcoal: #2D2D2D;
+
+  --color-forest-900: #3A5A4A;
+  --color-forest-800: #4A6B5A;
+  --color-forest-700: #5A7C6A;
+  --color-forest-600: #4A8FAB;
+  --color-forest-500: #5BA3BF;
+  --color-forest-400: #7BBDD3;
+  --color-forest-300: #A8D5E5;
+  --color-forest-200: #D5E5D5;
+  --color-forest-100: #E8F0E8;
+  --color-forest-50: #F2F8F2;
+
+  --color-saffron-700: #5A4E91;
+  --color-saffron-600: #6B5EA8;
+  --color-saffron-500: #8578C0;
+  --color-saffron-400: #C8DCF0;
+  --color-saffron-300: #E3EDF8;
+  --color-saffron-200: #E8E4F5;
+  --color-saffron-100: #F3F1FA;
+
+  --color-lotus-700: #5A4E91;
+  --color-lotus-500: #6B5EA8;
+  --color-lotus-400: #8578C0;
+  --color-lotus-300: #C1B0FF;
+
+  --color-deep-purple: #6B5EA8;
+  --color-purple-600: #5A4E91;
+  --color-purple-300: #C1B0FF;
+
+  --color-sky-500: #4A8FAB;
+
+  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --radius-card: 20px;
+  --radius-section: 32px;
+
+  --shadow-clay: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-card: 0 4px 16px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-elevated: 0 10px 40px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.whatsapp-bar {
+  animation: slideUp 0.5s ease-out 1s forwards;
+  opacity: 0;
+}
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary .faq-chevron {
+  transform: rotate(180deg);
+}
+.faq-chevron {
+  transition: transform 0.2s ease;
+}

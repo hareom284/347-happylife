@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '347 Happy Life Happy World — Awakening meditation & life transformation experience at Srisuphan Silver Temple, Chiang Mai, Thailand. Vipassana, mindfulness & inner coaching with Master Kaie. Guided over 800+ international students.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="meditation retreat Chiang Mai, vipassana retreat Thailand, mindfulness course Chiang Mai, Buddhist meditation Thailand, awakening meditation, silent retreat Thailand, meditation course Thailand, beginner meditation retreat Chiang Mai, Master Kaie, 347 Happy Life" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://347awakening.com" />
+    <meta property="og:locale" content="en_US" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "347 Happy Life Happy World",
+      "description": "Meditation retreat for Awakening & a Better Life in Chiang Mai, Thailand",
+      "url": "https://347awakening.com",
+      "telephone": "+66944265297",
+      "email": "347happylifehappyworld@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Srisuphan Temple, Wua Lai Road",
+        "addressLocality": "Chiang Mai",
+        "addressRegion": "Chiang Mai",
+        "addressCountry": "TH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 18.7762,
+        "longitude": 98.9865
+      },
+      "priceRange": "500-5200 THB",
+      "openingHours": "Mo-Su 09:00-17:00",
+      "image": "https://347awakening.com/images/hero.jpg",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "800"
+      }
+    })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "347 Happy Life Happy World Meditation Course",
+      "description": "Meditation retreat blending Buddhist Vipassana with inner coaching techniques for awakening",
+      "provider": {
+        "@type": "Organization",
+        "name": "347 Happy Life Happy World"
+      },
+      "offers": [
+        { "@type": "Offer", "name": "Beginner", "price": "500", "priceCurrency": "THB" },
+        { "@type": "Offer", "name": "Intermediate", "price": "700", "priceCurrency": "THB" },
+        { "@type": "Offer", "name": "Advanced", "price": "1000", "priceCurrency": "THB" },
+        { "@type": "Offer", "name": "Special Package", "price": "2000", "priceCurrency": "THB" }
+      ]
+    })} />
+  </head>
+  <body class="bg-ivory text-body antialiased font-sans">
+    <slot />
+  </body>
+</html>
