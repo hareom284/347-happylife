@@ -1,43 +1,71 @@
-# Astro Starter Kit: Minimal
+# 347 Awakening — 347awakening.com
+
+Marketing site for **347 Happy Life Happy World**, an awakening-meditation and
+life-transformation experience at Srisuphan Silver Temple, Chiang Mai, Thailand,
+guided by Master Kaie.
+
+Built with [Astro 6](https://astro.build) and [Tailwind CSS 4](https://tailwindcss.com).
+Deployed as a static site to the apex domain `347awakening.com` via GitHub Pages
+(see `CNAME`).
+
+## Quick start
 
 ```sh
-npm create astro@latest -- --template minimal
+nvm use            # pins to Node 22 (see .nvmrc)
+npm install
+npm run dev        # http://localhost:4321
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+| Command           | What it does                                  |
+| :---------------- | :-------------------------------------------- |
+| `npm run dev`     | Start local dev server at `localhost:4321`    |
+| `npm run build`   | Build production site to `./dist/`            |
+| `npm run preview` | Preview the built site locally                |
+| `npm run astro`   | Run Astro CLI (e.g. `npm run astro -- check`) |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project layout
 
 ```text
-/
-├── public/
+.
+├── astro.config.mjs      # site URL, sitemap + Tailwind Vite plugin
+├── public/               # static assets served at /
+│   ├── favicon.svg|ico
+│   ├── robots.txt
+│   └── images/           # photos used across the site
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/       # one Astro component per section
+│   ├── data/site.ts      # all copy: links, pricing, testimonials, FAQ, etc.
+│   ├── layouts/Layout.astro   # <head>, SEO, JSON-LD, global scripts
+│   ├── pages/index.astro      # composes the single landing page
+│   └── styles/global.css # Tailwind theme + bespoke animations
+└── CNAME                 # GitHub Pages custom domain
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Editing content
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Almost every piece of copy — pricing, testimonials, FAQs, contact links, the 347
+philosophy framework — lives in [`src/data/site.ts`](./src/data/site.ts). Update
+that file and the rest of the site re-renders from the same data.
 
-Any static assets, like images, can be placed in the `public/` directory.
+- **Pricing and courses** — `src/components/CourseCards.astro` and `PricingOverview.astro`
+- **Hero copy** — `src/components/Hero.astro`
+- **Testimonials** — `testimonials` in `src/data/site.ts` (JSON-LD review count auto-syncs)
+- **FAQ** — `faqs` in `src/data/site.ts` (FAQPage JSON-LD auto-generates from this)
+- **Featured TikTok** — `featuredTiktok` in `src/data/site.ts`
 
-## 🧞 Commands
+## SEO
 
-All commands are run from the root of the project, from a terminal:
+The site ships structured data for LocalBusiness, Course, FAQPage, and Person,
+plus Open Graph, Twitter Card, canonical, and GEO meta tags. The FAQPage and
+AggregateRating blocks are generated from `src/data/site.ts` so they cannot
+drift from what the page actually renders.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+`@astrojs/sitemap` generates `/sitemap-index.xml` at build time. `public/robots.txt`
+points to it.
 
-## 👀 Want to learn more?
+## Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Any push to the default branch triggers a build and deploys `dist/` to
+`347awakening.com`. See `.github/` for the workflow.

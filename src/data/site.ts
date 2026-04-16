@@ -173,39 +173,71 @@ export type Faq = { q: string; a: string };
 
 export const faqs: Faq[] = [
   {
-    q: 'Do I need meditation experience?',
-    a: 'Not at all! Our Beginner course is designed for complete newcomers. We also have Intermediate and Advanced courses for experienced practitioners. Master Kaie adapts guidance to your level.',
+    q: 'What is the best meditation retreat in Chiang Mai?',
+    a: 'The 347 Awakening meditation retreat at Srisuphan Silver Temple is one of the most recommended experiences in Chiang Mai, with 5-star Google reviews from over 800 international students from 38+ countries. Led by Master Kaie, it blends Buddhist Vipassana meditation with modern inner coaching — suitable for beginners and experienced practitioners alike.',
+  },
+  {
+    q: 'How much does a meditation retreat in Chiang Mai cost?',
+    a: '347 Awakening experiences range from $47 (1,700 THB) for a 3-hour session to $347 (12,500 THB) for a full 3-day retreat. Chanting & Meditation with Master Sawan is 500 THB, and private 1:1 sessions are $77 (2,500 THB). Online packages start at $47.',
+  },
+  {
+    q: 'Do I need meditation experience to join?',
+    a: 'Not at all. Our beginner course is designed for complete newcomers — most of our students had never meditated before. Intermediate and advanced options are available for experienced practitioners. Master Kaie adapts every session to your level and intention.',
+  },
+  {
+    q: 'What is Vipassana meditation and is it good for beginners?',
+    a: 'Vipassana is an ancient Buddhist insight meditation that develops mindful awareness of body and mind. Yes, it is excellent for beginners — the 347 Awakening method blends Vipassana with practical inner coaching so even first-time meditators can experience profound clarity and calm in their very first session.',
+  },
+  {
+    q: 'Can meditation really help with stress and anxiety?',
+    a: 'Yes. Many of our students come seeking relief from stress, anxiety, overthinking, or emotional burnout. Meditation directly calms the nervous system, clears mental clutter, and teaches you to observe thoughts without being controlled by them. Most students report feeling noticeably lighter and more peaceful after just one 3-hour session.',
   },
   {
     q: 'What language is instruction in?',
-    a: 'All courses are taught in English by Master Kaie, who has guided over 800 international students.',
+    a: 'All courses are taught in English by Master Kaie, who has guided over 800 international students from 38+ countries. No Thai language is required.',
+  },
+  {
+    q: 'Where is the retreat located?',
+    a: 'We practice at Srisuphan Silver Temple (Wat Sri Suphan) on Wua Lai Road in Chiang Mai Old City, about 15 minutes from Chiang Mai International Airport. It is one of the most sacred and beautiful temples in Chiang Mai, entirely handcrafted in silver.',
+  },
+  {
+    q: 'How do I get to Srisuphan Temple from Chiang Mai Airport?',
+    a: 'Srisuphan Temple is about 15 minutes from Chiang Mai International Airport. You can take a Grab taxi, a red songthaew, or a tuk-tuk — all are affordable and readily available. The address is Wua Lai Road, Chiang Mai 50100.',
+  },
+  {
+    q: 'What should I wear to a meditation retreat?',
+    a: 'Please wear modest, comfortable clothing — preferably white or light-coloured. Loose pants and a comfortable top work well. We practice sitting, walking, and lying meditation, so comfort and freedom of movement matter more than style.',
+  },
+  {
+    q: "What's included in the price?",
+    a: 'All courses include meditation instruction, guided practice, course materials, and tea/water. The Private and Small Group packages also include 1 month of follow-up guidance via WhatsApp or Zoom.',
+  },
+  {
+    q: 'Is accommodation or food included?',
+    a: 'Accommodation and meals are not included in the course price. We can recommend affordable guesthouses and vegetarian-friendly restaurants in the Wua Lai neighbourhood. Chiang Mai offers excellent budget-to-luxury options within walking distance.',
+  },
+  {
+    q: 'Can I join the meditation retreat online?',
+    a: 'Yes. We offer online sessions via WhatsApp or Zoom for students who cannot visit Chiang Mai in person. Online course packages are available at $47, $97, and $147. Contact us via WhatsApp to arrange a session in your time zone.',
+  },
+  {
+    q: 'Is this a silent retreat or a guided retreat?',
+    a: 'Our retreats are guided — Master Kaie teaches, explains, and supports you throughout. We do include periods of silent practice, but you are never left alone without instruction. This makes 347 Awakening far more accessible than traditional 10-day silent retreats.',
+  },
+  {
+    q: 'What is the difference between mindfulness and meditation?',
+    a: 'Mindfulness is the quality of present-moment awareness that can be practiced any time. Meditation is the formal training — specific techniques that build and deepen mindfulness. In our 347 method, you learn both: formal meditation technique for the cushion, and mindfulness skills to carry into daily life.',
+  },
+  {
+    q: 'What is the cancellation policy?',
+    a: 'Free cancellation up to 24 hours before your scheduled session. For Private or Group bookings, please notify us 48 hours in advance for a full refund.',
+  },
+  {
+    q: 'How do I book?',
+    a: "Simply click any 'Book Now' button to message us on WhatsApp. We'll confirm your date, time, and course. Payment is made in cash or by bank transfer on the day of your session.",
   },
   {
     q: 'What should I wear?',
     a: 'Please wear modest, comfortable clothing — preferably white or light-colored. Loose pants and a comfortable top work well. We practice sitting, walking, and lying meditation.',
-  },
-  {
-    q: "What's included in the price?",
-    a: 'All courses include meditation instruction, guided practice, course materials, and tea/water. The Private and Small Group packages also include 1 month of follow-up guidance.',
-  },
-  {
-    q: 'How do I get to Srisuphan Temple?',
-    a: 'Srisuphan Temple (Wat Sri Suphan) is located on Wua Lai Road in Chiang Mai Old City, about 15 minutes from Chiang Mai International Airport. You can take a red songthaew, Grab taxi, or tuk-tuk.',
-  },
-  {
-    q: 'Can I join online?',
-    a: 'Yes! We offer online sessions via WhatsApp or Zoom for those who cannot visit Chiang Mai in person. Contact us to arrange your online session.',
-  },
-  {
-    q: 'What is the cancellation policy?',
-    a: 'Free cancellation up to 24 hours before your scheduled session. For Private/Group bookings, please notify us 48 hours in advance for a full refund.',
-  },
-  {
-    q: 'Is accommodation or food included?',
-    a: 'Accommodation and meals are not included in the course price. We can recommend nearby guesthouses and restaurants in the Wua Lai area. Chiang Mai has excellent affordable options.',
-  },
-  {
-    q: 'How do I book?',
-    a: "Simply click any 'Book Now' button to message us on WhatsApp. We'll confirm your date, time, and course. Payment is made on the day of your session.",
   },
 ];
