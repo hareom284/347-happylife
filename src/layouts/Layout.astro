@@ -7,7 +7,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Awakening meditation & life transformation retreat in Chiang Mai, Thailand. Vipassana, mindfulness & inner coaching with Master Kaie at Silver Temple. English-speaking, beginner-friendly. From $47.' } = Astro.props;
+const { title, description = 'Meditation retreat in Chiang Mai — Vipassana & mindfulness with Master Kaie at Silver Temple. Beginner-friendly, English-speaking. From $47.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,7 +16,7 @@ const { title, description = 'Awakening meditation & life transformation retreat
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="keywords" content="meditation retreat Chiang Mai, vipassana Thailand, mindfulness retreat, awakening meditation, Master Kaie, Silver Temple meditation, 347 Awakening" />
+    <meta name="keywords" content="meditation retreat Chiang Mai, vipassana retreat Thailand, mindfulness retreat Chiang Mai, Buddhist meditation retreat Thailand, Master Kaie, 347 Awakening, Silver Temple Chiang Mai" />
     <meta name="author" content="Master Kaie" />
     <meta name="publisher" content="347 Happy Life Happy World" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -52,13 +52,37 @@ const { title, description = 'Awakening meditation & life transformation retreat
     <!-- Canonical -->
     <link rel="canonical" href="https://347awakening.com" />
 
-    <!-- Preload LCP hero background -->
-    <link rel="preload" as="image" href="/images/silver-temple-front.webp" type="image/webp" fetchpriority="high" />
+    <!-- Preload LCP hero background. imagesrcset tells the browser which
+         variant to fetch so we don't preload a bigger one than we'll render. -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+      href="/images/silver-temple-front-480.webp"
+      imagesrcset="/images/silver-temple-front-480.webp 480w, /images/silver-temple-front-800.webp 800w, /images/silver-temple-front.webp 1024w"
+      imagesizes="100vw"
+    />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Fonts. We use Google Fonts but can't inline the CSS (it changes per
+         browser). The two things we can do: (1) preconnect to gstatic only —
+         googleapis connects for a tiny CSS file and doesn't need a dedicated
+         handshake slot; (2) declare &display=swap so text paints in the
+         system fallback while the webfont is fetching. -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      media="print" onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+    </noscript>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />

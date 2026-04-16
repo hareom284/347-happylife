@@ -1,9 +1,13 @@
 ---
 ---
 
-<section class="bg-gradient-to-b from-sky-mist-light/50 to-ivory">
+<section aria-labelledby="core-questions-heading" class="bg-gradient-to-b from-sky-mist-light/50 to-ivory">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-28 text-center">
-      <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4 reveal">The Questions That Begin Your Awakening</p>
+      {/* Visually the eyebrow + intro paragraph serve as the section header;
+          add a screen-reader-only h2 so the heading hierarchy stays sequential
+          (Hero h1 → here h2 → card h3s), as required by WCAG. */}
+      <h2 id="core-questions-heading" class="sr-only">The Questions That Begin Your Awakening</h2>
+      <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4 reveal" aria-hidden="true">The Questions That Begin Your Awakening</p>
       <p class="text-warm-charcoal text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10 reveal">
         Why do people suffer even when they have everything? Why does the mind create so much chaos? Is there a deeper peace beyond thoughts and emotions? These are the questions that led Master Kaie on her own awakening journey.
       </p>

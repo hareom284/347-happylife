@@ -47,6 +47,13 @@
   --color-deep-calm-dark: #A68B3C;
   --color-deep-calm-light: #D4BB7C;
 
+  /* gold-ink: a WCAG-AA safe gold used for TEXT or button backgrounds on
+     light surfaces. 4.79:1 on #FFFFFF, which passes AA for normal-size text.
+     Use this everywhere you'd otherwise write `text-deep-calm` against an
+     ivory / white background, or `bg-deep-calm text-white` as a CTA. */
+  --color-gold-ink: #8A6F26;
+  --color-gold-ink-dark: #6F5820;
+
   /* Legacy references */
   --color-cream: #FAFBFD;
   --color-cream-dark: #F0F2F7;
@@ -260,6 +267,23 @@
 @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
   .bg-parallax {
     background-attachment: fixed;
+  }
+}
+
+/* Silver-temple hero background — served at the size actually needed.
+   The Layout <link rel="preload"> must point at the same URL the mobile
+   breakpoint loads (480w), since Lighthouse audits the mobile viewport. */
+.hero-temple-bg {
+  background-image: url('/images/silver-temple-front-480.webp');
+}
+@media (min-width: 768px) {
+  .hero-temple-bg {
+    background-image: url('/images/silver-temple-front-800.webp');
+  }
+}
+@media (min-width: 1280px) {
+  .hero-temple-bg {
+    background-image: url('/images/silver-temple-front.webp');
   }
 }
 

@@ -37,7 +37,7 @@ const selfAccess = [
 <section id="about" class="scroll-mt-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
       <div class="max-w-3xl mx-auto text-center mb-16 reveal">
-        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">Awakening Meditation & Life Transformation</p>
+        <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Awakening Meditation & Life Transformation</p>
         <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6 text-violet gold-line">
           347 Happy Life<br>Happy World
         </h2>
@@ -82,7 +82,7 @@ const selfAccess = [
 
               <!-- HAPPY - top left -->
               <div class="absolute top-[18%] left-0 -translate-x-1">
-                <div class="bg-deep-calm text-white px-4 py-2.5 rounded-full text-sm font-semibold shadow-card text-center">HAPPY</div>
+                <div class="bg-gold-ink text-white px-4 py-2.5 rounded-full text-sm font-semibold shadow-card text-center">HAPPY</div>
               </div>
 
               <!-- Connecting arrows (SVG circle) -->
@@ -97,7 +97,7 @@ const selfAccess = [
               </svg>
             </div>
             <p class="text-center text-body-light text-sm mt-6 leading-relaxed">
-              When Spirit, Mind, and Body are aligned through meditation, you become truly <strong class="text-deep-calm">Healthy</strong> and <strong class="text-violet">Happy</strong> — the natural state of awakening.
+              When Spirit, Mind, and Body are aligned through meditation, you become truly <strong class="text-gold-ink">Healthy</strong> and <strong class="text-violet">Happy</strong> — the natural state of awakening.
             </p>
           </div>
         </div>
@@ -111,7 +111,14 @@ const selfAccess = [
   <section class="relative overflow-hidden">
     <!-- Full-width Silver Temple background -->
     <div class="absolute inset-0">
-      <img src="/images/silver-temple-front.webp" alt="Srisuphan Silver Temple (Wat Sri Suphan) on Wua Lai Road, Chiang Mai \u2014 home of the 347 Awakening meditation retreat" width="1024" height="741" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+      <img
+        src="/images/silver-temple-front-800.webp"
+        srcset="/images/silver-temple-front-480.webp 480w, /images/silver-temple-front-800.webp 800w, /images/silver-temple-front.webp 1024w"
+        sizes="100vw"
+        alt="Srisuphan Silver Temple (Wat Sri Suphan) on Wua Lai Road, Chiang Mai — home of the 347 Awakening meditation retreat"
+        width="1024" height="741"
+        class="w-full h-full object-cover" loading="lazy" decoding="async"
+      />
       <div class="absolute inset-0 bg-gradient-to-b from-[#0D1B3E]/92 via-[#0D1B3E]/88 to-[#0D1B3E]/94"></div>
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,rgba(200,220,240,0.12),transparent_50%)]"></div>
     </div>
@@ -299,7 +306,7 @@ const selfAccess = [
   <section id="self-access-path" class="scroll-mt-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
       <div class="max-w-2xl mx-auto text-center mb-12 reveal">
-        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 4-Step Self-Access Path</p>
+        <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 4-Step Self-Access Path</p>
         <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-violet leading-tight tracking-tight mb-5">
           From Clean Life to Free Mind
         </h2>
@@ -312,14 +319,14 @@ const selfAccess = [
         {selfAccess.map((step, i) => (
           <div class="bg-ivory rounded-card border border-soft-aura shadow-card p-7 hover:shadow-elevated transition-shadow card-calm">
             <div class="flex items-baseline gap-3 mb-3">
-              <span class="font-heading text-2xl font-bold text-deep-calm/70 leading-none">
+              <span class="font-heading text-2xl font-bold text-gold-ink/70 leading-none">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <h3 class="font-heading text-2xl font-bold text-violet leading-snug">{step.name}</h3>
               <span class="ml-auto bg-soft-aura text-violet text-xs font-medium px-3 py-1 rounded-full border border-soft-aura-dark">{step.short}</span>
             </div>
             <p class="text-warm-charcoal text-sm leading-relaxed mb-3">{step.body}</p>
-            <p class="text-deep-calm text-sm italic font-medium border-l-2 border-deep-calm/40 pl-3">{step.principle}</p>
+            <p class="text-gold-ink text-sm italic font-medium border-l-2 border-gold-ink/40 pl-3">{step.principle}</p>
           </div>
         ))}
       </div>
@@ -328,13 +335,13 @@ const selfAccess = [
       <div class="mt-10 reveal">
         <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-violet/80">
           <span>Morality</span>
-          <span class="text-deep-calm">→</span>
+          <span class="text-gold-ink">→</span>
           <span>Mindfulness</span>
-          <span class="text-deep-calm">→</span>
+          <span class="text-gold-ink">→</span>
           <span>Meditation</span>
-          <span class="text-deep-calm">→</span>
+          <span class="text-gold-ink">→</span>
           <span>Wisdom</span>
-          <span class="text-deep-calm">→</span>
+          <span class="text-gold-ink">→</span>
           <span class="bg-violet text-white px-3 py-1 rounded-full uppercase tracking-widest text-xs">Awakening</span>
         </div>
       </div>
@@ -345,7 +352,7 @@ const selfAccess = [
   <section id="seven-transformations" class="scroll-mt-20 bg-ivory">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
       <div class="max-w-2xl mx-auto text-center mb-12 reveal">
-        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 7 Life Transformations</p>
+        <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 7 Life Transformations</p>
         <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-violet leading-tight tracking-tight mb-5">
           Where Awakening Meets Daily Life
         </h2>
@@ -359,7 +366,7 @@ const selfAccess = [
         {firstSix.map((t, i) => (
           <div class="bg-white rounded-card border border-oat-border shadow-card p-6 hover:shadow-elevated transition-shadow card-calm">
             <div class="flex items-start gap-4">
-              <span class="font-heading text-2xl font-bold text-deep-calm/70 shrink-0 leading-none pt-1">
+              <span class="font-heading text-2xl font-bold text-gold-ink/70 shrink-0 leading-none pt-1">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <div>
@@ -385,11 +392,11 @@ const selfAccess = [
 
       <!-- The Essence of 347 — closing brand mantra -->
       <div class="mt-14 text-center reveal">
-        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.25em] mb-5">The Essence of 347</p>
+        <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.25em] mb-5">The Essence of 347</p>
         <div class="font-heading text-2xl md:text-3xl lg:text-4xl text-violet leading-relaxed">
           <p>Awaken the mind.</p>
           <p>Balance the life.</p>
-          <p class="text-deep-calm">Transform the world.</p>
+          <p class="text-gold-ink">Transform the world.</p>
         </div>
       </div>
     </div>
@@ -403,10 +410,10 @@ const selfAccess = [
         <div class="bg-soft-aura/40 rounded-card p-8 border border-soft-aura">
           <h3 class="font-heading text-xl font-bold mb-5 text-violet">This is for you if you want to:</h3>
           <ul class="space-y-3 text-warm-charcoal">
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Release stress, suffering, and restless thoughts</span></li>
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Cultivate mindfulness, meditation, and inner awareness</span></li>
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Discover the 347 path of awakening through Vipassana</span></li>
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-deep-calm mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Live with calm presence and empowered peace</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-gold-ink mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Release stress, suffering, and restless thoughts</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-gold-ink mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Cultivate mindfulness, meditation, and inner awareness</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-gold-ink mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Discover the 347 path of awakening through Vipassana</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-gold-ink mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Live with calm presence and empowered peace</span></li>
           </ul>
         </div>
         <div class="bg-soft-aura rounded-card p-8 border border-soft-aura-dark">

@@ -82,23 +82,66 @@ const tiktokProfile = `https://www.tiktok.com/@${featuredTiktok.username}?refer=
     </div>
   </section>
 
-  <!-- TikTok embed (suppress console spam) -->
+  <!-- TikTok embed is heavy (~715 KiB of JS + its own fonts). We only want
+       to pay that cost if the viewer actually scrolls close to this section. -->
   <script>
-    (function() {
-      const origLog = console.log;
-      const origWarn = console.warn;
-      const filter = (fn) => (...args) => {
-        if (args[0] && typeof args[0] === 'string' && (args[0].includes('TikTok') || args[0].includes('SES Removing'))) return;
-        fn.apply(console, args);
+    (function () {
+      const embed = document.querySelector('.tiktok-embed');
+      if (!embed) return;
+
+      let loaded = false;
+      const load = () => {
+        if (loaded) return;
+        loaded = true;
+
+        // Suppress TikTok's noisy console output during startup.
+        const origLog = console.log;
+        const origWarn = console.warn;
+        const filter = (fn) => (...args) => {
+          if (args[0] && typeof args[0] === 'string' && (args[0].includes('TikTok') || args[0].includes('SES Removing'))) return;
+          fn.apply(console, args);
+        };
+        console.log = filter(origLog);
+        console.warn = filter(origWarn);
+
+        const s = document.createElement('script');
+        s.src = 'https://www.tiktok.com/embed.js';
+        s.async = true;
+        s.onload = () => {
+          setTimeout(() => { console.log = origLog; console.warn = origWarn; }, 3000);
+        };
+        document.body.appendChild(s);
+
+        // embed.js injects an <iframe> into the blockquote with no title,
+        // which fails WCAG 2.4.1 / axe's frame-title rule. Watch for it and
+        // label it so the page stays accessible.
+        const mo = new MutationObserver((mutations, obs) => {
+          const iframe = embed.querySelector('iframe') || document.querySelector('.tiktok-embed iframe');
+          if (iframe) {
+            if (!iframe.getAttribute('title')) {
+              iframe.setAttribute('title', 'Master Kaie — meditation teaching (TikTok video)');
+            }
+            obs.disconnect();
+          }
+        });
+        mo.observe(document.body, { childList: true, subtree: true });
+        // Safety net: stop watching after 15s so we don't leak.
+        setTimeout(() => mo.disconnect(), 15000);
       };
-      console.log = filter(origLog);
-      console.warn = filter(origWarn);
-      const s = document.createElement('script');
-      s.src = 'https://www.tiktok.com/embed.js';
-      s.async = true;
-      s.onload = () => {
-        setTimeout(() => { console.log = origLog; console.warn = origWarn; }, 3000);
-      };
-      document.body.appendChild(s);
+
+      // Load as soon as the embed is within 300px of the viewport. On older
+      // browsers without IntersectionObserver, fall back to idle loading.
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) { load(); io.disconnect(); break; }
+          }
+        }, { rootMargin: '300px' });
+        io.observe(embed);
+      } else if ('requestIdleCallback' in window) {
+        requestIdleCallback(load, { timeout: 4000 });
+      } else {
+        setTimeout(load, 2500);
+      }
     })();
   </script>
