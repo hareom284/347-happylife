@@ -198,6 +198,107 @@
   opacity: 0;
 }
 
+/* ===== AMBIENCE LAYER ===== */
+
+/* Brand text selection — gold tint with violet text */
+::selection {
+  background: rgba(197, 165, 90, 0.28);
+  color: #1B2D5B;
+}
+::-moz-selection {
+  background: rgba(197, 165, 90, 0.28);
+  color: #1B2D5B;
+}
+
+/* Scroll progress indicator — thin gold line at top of viewport */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #C5A55A, #E2C96D);
+  z-index: 100;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* Hero entry — staggered fade-rise on initial page load */
+@keyframes heroFadeRise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-entry > * {
+  opacity: 0;
+  animation: heroFadeRise 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-entry > *:nth-child(1) { animation-delay: 100ms; }
+.hero-entry > *:nth-child(2) { animation-delay: 350ms; }
+.hero-entry > *:nth-child(3) { animation-delay: 600ms; }
+.hero-entry > *:nth-child(4) { animation-delay: 850ms; }
+.hero-entry > *:nth-child(5) { animation-delay: 1100ms; }
+.hero-entry > *:nth-child(6) { animation-delay: 1350ms; }
+
+/* Hero background parallax (desktop only — iOS ignores fixed-attachment) */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .bg-parallax {
+    background-attachment: fixed;
+  }
+}
+
+/* Lotus draw-in — concentric circles draw themselves on reveal */
+.lotus-draw circle[stroke] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.lotus-draw.visible circle[stroke]:nth-of-type(1) { stroke-dashoffset: 0; transition-delay: 0ms; }
+.lotus-draw.visible circle[stroke]:nth-of-type(2) { stroke-dashoffset: 0; transition-delay: 250ms; }
+.lotus-draw.visible circle[stroke]:nth-of-type(3) { stroke-dashoffset: 0; transition-delay: 500ms; }
+.lotus-draw circle[fill] {
+  opacity: 0;
+  transition: opacity 0.8s ease 1s;
+}
+.lotus-draw.visible circle[fill] { opacity: 0.3; }
+
+/* Stat counter — initial state hidden so the count-up starts cleanly */
+.stat-counter { font-variant-numeric: tabular-nums; }
+
+/* Ambient mandala — slow background rotation */
+@keyframes mandalaRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.mandala-spin {
+  animation: mandalaRotate 90s linear infinite;
+  transform-origin: center;
+}
+
+/* Section transition fades — soft gradient bands at the top of strongly-colored sections.
+   Apply with class "section-fade-top" on the inner-section background to soften the edge above it. */
+.section-fade-top {
+  position: relative;
+}
+.section-fade-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.04), transparent);
+  pointer-events: none;
+}
+
+/* Reduced-motion specific overrides for the new animations */
+@media (prefers-reduced-motion: reduce) {
+  .hero-entry > * { opacity: 1 !important; animation: none !important; transform: none !important; }
+  .lotus-draw circle[stroke] { stroke-dashoffset: 0 !important; }
+  .lotus-draw circle[fill] { opacity: 0.3 !important; }
+  .mandala-spin { animation: none !important; }
+  .scroll-progress { display: none !important; }
+}
+
 /* FAQ accordion */
 details summary { cursor: pointer; list-style: none; }
 details summary::-webkit-details-marker { display: none; }

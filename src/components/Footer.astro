@@ -1,4 +1,6 @@
 ---
+import { vision } from '../data/site';
+
 interface Props {
   wa: string;
   email: string;
@@ -63,8 +65,19 @@ const { wa, email, fb, ig, yt, tt } = Astro.props;
         </div>
       </div>
 
+      <!-- Brand vision tagline + mission -->
+      <div class="border-t border-white/10 mt-12 pt-10 text-center">
+        <p class="font-heading text-lg md:text-xl italic text-sky-mist/90 leading-relaxed max-w-2xl mx-auto">
+          {vision.tagline}
+        </p>
+        <p class="text-white/55 text-xs md:text-sm leading-relaxed max-w-2xl mx-auto mt-5">
+          <span class="text-white/70 font-semibold uppercase tracking-[0.2em] text-[10px] mr-2">Our Mission</span>
+          {vision.mission}
+        </p>
+      </div>
+
       <!-- SEO-rich footer content -->
-      <div class="border-t border-white/10 mt-12 pt-8">
+      <div class="mt-10 pt-8 border-t border-white/10">
         <p class="text-white/60 text-xs leading-relaxed mb-6 max-w-3xl mx-auto text-center">
           347 Happy Life Happy World is a meditation retreat and life transformation center located at Srisuphan Silver Temple (Wat Sri Suphan) in Chiang Mai, Thailand. We offer awakening meditation courses, vipassana retreats, mindfulness workshops, and spiritual retreats for international visitors. Our English-speaking meditation master, Master Kaie, has guided over 800 students from 38+ countries through Buddhist meditation, inner coaching, and consciousness awakening programs. Whether you're looking for a meditation retreat in Chiang Mai, a beginner-friendly vipassana course in Thailand, or a private spiritual awakening experience, 347 Awakening welcomes you to transform your life through the ancient wisdom of Body, Mind, and Spirit alignment.
         </p>

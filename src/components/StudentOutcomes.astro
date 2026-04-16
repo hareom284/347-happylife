@@ -1,0 +1,24 @@
+---
+// All copy below is from the Transformation Story doc — "The Result" passage.
+const outcomes = ['More Peace', 'More Awareness', 'More Freedom', 'More Meaning'];
+---
+
+<section id="outcomes" class="scroll-mt-20 bg-white border-y border-oat-border">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-24 text-center">
+    <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4 reveal">What Students Experience</p>
+    <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-violet leading-tight tracking-tight mb-6 reveal">
+      They no longer feel trapped by their thoughts.
+    </h2>
+    <p class="text-warm-charcoal text-base md:text-lg leading-relaxed mb-10 reveal">
+      Students who experience the 347 journey often say that something inside them changes forever. They begin to live with:
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-3 md:gap-4 stagger">
+      {outcomes.map((o) => (
+        <span class="bg-soft-aura/40 border border-soft-aura-dark text-violet font-heading text-lg md:text-xl font-semibold px-6 py-3 rounded-full reveal">
+          {o}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

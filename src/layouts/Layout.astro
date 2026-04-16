@@ -104,8 +104,8 @@ const { title, description = '347 Happy Life Happy World — Awakening meditatio
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "800",
+        "ratingValue": "5.0",
+        "reviewCount": "6",
         "bestRating": "5"
       },
       "areaServed": [
@@ -178,11 +178,17 @@ const { title, description = '347 Happy Life Happy World — Awakening meditatio
     })} />
   </head>
   <body class="bg-ivory text-body antialiased font-sans">
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
     <slot />
 
-    <!-- Scroll reveal observer -->
+    <!-- Scroll reveal observer + animations -->
     <script>
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Scroll reveal — adds .visible to .reveal, .gold-line, .lotus-draw
+      if (!reduce) {
         const obs = new IntersectionObserver((entries) => {
           entries.forEach(e => {
             if (e.isIntersecting) {
@@ -191,8 +197,59 @@ const { title, description = '347 Happy Life Happy World — Awakening meditatio
             }
           });
         }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-        document.querySelectorAll('.gold-line').forEach(el => obs.observe(el));
+        document.querySelectorAll('.reveal, .gold-line, .lotus-draw').forEach(el => obs.observe(el));
+      }
+
+      // Stat counter — counts up from 0 to data-target when scrolled into view
+      const counters = document.querySelectorAll('.stat-counter');
+      if (counters.length) {
+        const animateCount = (el) => {
+          const target = Number(el.dataset.target || el.textContent || 0);
+          const suffix = el.dataset.suffix || '';
+          if (reduce || !target) {
+            el.textContent = target + suffix;
+            return;
+          }
+          const duration = 1500;
+          const start = performance.now();
+          const tick = (now) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // out-expo easing
+            const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const current = Math.round(target * eased);
+            el.textContent = current + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        };
+        const cobs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              animateCount(e.target);
+              cobs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.6 });
+        counters.forEach(c => {
+          // Initialize to 0 so it doesn't flash the final number before animation
+          c.textContent = '0' + (c.dataset.suffix || '');
+          cobs.observe(c);
+        });
+      }
+
+      // Scroll progress bar
+      const bar = document.getElementById('scroll-progress');
+      if (bar && !reduce) {
+        const onScroll = () => {
+          const h = document.documentElement;
+          const scrolled = h.scrollTop;
+          const max = h.scrollHeight - h.clientHeight;
+          const pct = max > 0 ? (scrolled / max) * 100 : 0;
+          bar.style.width = pct + '%';
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
       }
     </script>
   </body>

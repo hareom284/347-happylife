@@ -1,53 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import PhotoGallery from '../components/PhotoGallery.astro';
-import CoreQuestions from '../components/CoreQuestions.astro';
-import TrustBar from '../components/TrustBar.astro';
-import About from '../components/About.astro';
-import ChantingRetreat from '../components/ChantingRetreat.astro';
-import CourseCards from '../components/CourseCards.astro';
-import MasterKaie from '../components/MasterKaie.astro';
-import Testimonials from '../components/Testimonials.astro';
-import PricingOverview from '../components/PricingOverview.astro';
-import FAQ from '../components/FAQ.astro';
-import MapSection from '../components/MapSection.astro';
-import FinalCTA from '../components/FinalCTA.astro';
-import Footer from '../components/Footer.astro';
-import WhatsAppBar from '../components/WhatsAppBar.astro';
-import LotusDivider from '../components/LotusDivider.astro';
-
-const wa = 'https://wa.me/66944265297';
-const waMsg = (course: string) => `https://wa.me/66944265297?text=${encodeURIComponent(`Hello, I'm interested in the ${course}. Could you help me book?`)}`;
-const fb = 'https://web.facebook.com/profile.php?id=61550271392068';
-const ig = 'https://www.instagram.com/kaie_awaken';
-const yt = 'https://youtube.com/@kaie347happylife';
-const tt = 'https://www.tiktok.com/@347_happylifehappyworld';
-const email = '347happylifehappyworld@gmail.com';
-const mapEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777.5!2d98.9810711!3d18.7787367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da31004702f2c5%3A0x4660cea33addd1fc!2s347%20Happy%20life%20meditation%20retreat!5e0!3m2!1sen!2sth!4v1';
-const googleMapsLink = 'https://www.google.com/maps/place/347+Happy+life+meditation+retreat/@18.7787367,98.9810711,17z/data=!3m1!4b1!4m6!3m5!1s0x30da31004702f2c5:0x4660cea33addd1fc!8m2!3d18.7787316!4d98.983646!16s%2Fg%2F11vt0mkk_0';
-
-const testimonials = [
-  { name: "Greg G.", text: "Best meditation experience I had in a while, and the best in Thailand. Her approach is really beginner friendly and helps to understand and learn about Meditation. I recommend taking this course if you are in Chiang Mai.", time: "3 months ago" },
-  { name: "Y vdm", text: "I've been meditating for six years, but with her, you get so much useful information and practical meditation that you can immediately apply in your daily life. She's a very inspiring woman. Suitable for all levels.", time: "5 months ago" },
-  { name: "Mario Hartwig", text: "It is rare to encounter such an open, calming, and healing atmosphere, a space of mindfulness where, through Kaie's empathetic guidance, it becomes possible to find a connection to one's natural origins.", time: "8 months ago" },
-  { name: "Ella Simpson", text: "She has a great approach to meditation and mindfulness and how they can help throughout life. She breaks things down well and I left the session feeling very calm and motivated to maintain a mindfulness practice.", time: "3 weeks ago" },
-  { name: "Todd W.", text: "Very positive experience with Master Kaie. I did the three day retreat and also had the opportunity to do a chanting and sound healing session. I liked the practical personal development focus of the program.", time: "2 months ago" },
-  { name: "Elodie B.", text: "If you don't understand why you're not happy, sad, lost... go see her. Every human being should learn and understand this fundamental aspect of Life, because... that's Life!", time: "10 months ago" },
-];
-
-const faqs = [
-  { q: "Do I need meditation experience?", a: "Not at all! Our Beginner course is designed for complete newcomers. We also have Intermediate and Advanced courses for experienced practitioners. Master Kaie adapts guidance to your level." },
-  { q: "What language is instruction in?", a: "All courses are taught in English by Master Kaie, who has guided over 800 international students." },
-  { q: "What should I wear?", a: "Please wear modest, comfortable clothing — preferably white or light-colored. Loose pants and a comfortable top work well. We practice sitting, walking, and lying meditation." },
-  { q: "What's included in the price?", a: "All courses include meditation instruction, guided practice, course materials, and tea/water. The Private and Small Group packages also include 1 month of follow-up guidance." },
-  { q: "How do I get to Srisuphan Temple?", a: "Srisuphan Temple (Wat Sri Suphan) is located on Wua Lai Road in Chiang Mai Old City, about 15 minutes from Chiang Mai International Airport. You can take a red songthaew, Grab taxi, or tuk-tuk." },
-  { q: "Can I join online?", a: "Yes! We offer online sessions via WhatsApp or Zoom for those who cannot visit Chiang Mai in person. Contact us to arrange your online session." },
-  { q: "What is the cancellation policy?", a: "Free cancellation up to 24 hours before your scheduled session. For Private/Group bookings, please notify us 48 hours in advance for a full refund." },
-  { q: "Is accommodation or food included?", a: "Accommodation and meals are not included in the course price. We can recommend nearby guesthouses and restaurants in the Wua Lai area. Chiang Mai has excellent affordable options." },
-  { q: "How do I book?", a: "Simply click any 'Book Now' button to message us on WhatsApp. We'll confirm your date, time, and course. Payment is made on the day of your session." },
-];
+import {
+  Navbar, Footer, WhatsAppBar,
+  Hero, PhotoGallery, CoreQuestions,
+  About, OriginStory, MasterKaie, TeachingMethod, StudentOutcomes,
+  ChantingRetreat, CourseCards, PricingOverview,
+  Testimonials, FAQ, MapSection, FinalCTA,
+  LotusDivider,
+} from '../components/index.astro';
+import {
+  wa, email, social, waMsg,
+  mapEmbed, googleMapsLink,
+  testimonials, faqs,
+} from '../data/site';
 ---
 
 <Layout title="347 Awakening | Meditation Retreat Chiang Mai — Life Transformation at Silver Temple, Thailand">
@@ -56,20 +21,22 @@ const faqs = [
   <Hero wa={wa} />
   <PhotoGallery />
   <CoreQuestions />
-  <TrustBar />
   <About />
   <LotusDivider />
   <ChantingRetreat waMsg={waMsg} />
   <CourseCards waMsg={waMsg} />
+  <PricingOverview wa={wa} />
   <LotusDivider />
-  <MasterKaie yt={yt} />
-  <Testimonials testimonials={testimonials} googleMapsLink={googleMapsLink} />
+  <OriginStory />
+  <MasterKaie yt={social.yt} />
+  <TeachingMethod />
+  <StudentOutcomes />
+  <Testimonials testimonials={testimonials} googleMapsLink={googleMapsLink} wa={wa} />
   <LotusDivider />
-  <PricingOverview />
   <FAQ faqs={faqs} />
-  <MapSection mapEmbed={mapEmbed} />
   <FinalCTA wa={wa} email={email} />
-  <Footer wa={wa} email={email} fb={fb} ig={ig} yt={yt} tt={tt} />
+  <MapSection mapEmbed={mapEmbed} />
+  <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
   <WhatsAppBar wa={wa} />
 
 </Layout>

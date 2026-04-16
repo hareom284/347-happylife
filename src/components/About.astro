@@ -1,4 +1,37 @@
 ---
+import { philosophy347 } from '../data/site';
+
+const transformations = philosophy347.transformations.items;
+const firstSix = transformations.slice(0, 6);
+const summit = transformations[6];
+
+// 4 Self-Access steps — pulled from the Philosophy doc with both rich and short descriptions
+const selfAccess = [
+  {
+    name: 'Morality',
+    short: 'Clean life',
+    body: 'A stable foundation for the mind. When we live with honesty, compassion, and responsibility, the mind becomes lighter and more peaceful.',
+    principle: 'Live in a way that allows your mind to rest.',
+  },
+  {
+    name: 'Mindfulness',
+    short: 'Aware mind',
+    body: 'The ability to observe the present moment with clarity. We notice that thoughts arise, emotions arise, experiences arise — but we are not those thoughts or emotions.',
+    principle: 'Awareness creates space between the mind and the observer.',
+  },
+  {
+    name: 'Meditation',
+    short: 'Stable mind',
+    body: 'The practice of stabilising and calming the mind. Thoughts slow down, awareness expands, and inner clarity appears.',
+    principle: 'This is the gateway to deeper insight.',
+  },
+  {
+    name: 'Wisdom',
+    short: 'Free mind',
+    body: 'Seeing the true nature of life — that everything changes, attachment creates suffering, and peace exists within. The natural result of deep awareness and meditation practice.',
+    principle: 'It leads to freedom of the mind.',
+  },
+];
 ---
 
 <section id="about" class="scroll-mt-20">
@@ -11,45 +44,6 @@
         <p class="text-warm-charcoal text-lg leading-relaxed">
           Do you ever feel lost in your thoughts? Or that your mind never truly rests even when your body does? It is your time to let go of what no longer serves you — and return home to your true self. Through awakening meditation, you will experience a life transformation from within.
         </p>
-      </div>
-
-      <!-- The 347 Framework -->
-      <div class="grid md:grid-cols-3 gap-6 mb-16">
-        <div class="bg-white rounded-card border border-oat-border shadow-card p-8 text-center hover:shadow-elevated transition-shadow">
-          <div class="w-16 h-16 bg-sky-mist-light border-2 border-sky-mist rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <span class="text-deep-calm text-2xl font-heading font-bold">3</span>
-          </div>
-          <h3 class="font-heading text-2xl font-bold mb-3 text-violet">Dimensions</h3>
-          <div class="flex justify-center gap-2 mb-4">
-            <span class="bg-soft-aura/40 text-deep-calm text-sm font-medium px-3 py-1 rounded-full border border-soft-aura">Body</span>
-            <span class="bg-soft-aura/40 text-deep-calm text-sm font-medium px-3 py-1 rounded-full border border-soft-aura">Mind</span>
-            <span class="bg-soft-aura/40 text-deep-calm text-sm font-medium px-3 py-1 rounded-full border border-soft-aura">Spirit</span>
-          </div>
-          <p class="text-warm-charcoal text-sm leading-relaxed">The three dimensions of human existence working in harmony</p>
-        </div>
-
-        <div class="bg-white rounded-card border border-oat-border shadow-card p-8 text-center hover:shadow-elevated transition-shadow">
-          <div class="w-16 h-16 bg-soft-aura border-2 border-soft-aura-dark rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <span class="text-violet text-2xl font-heading font-bold">4</span>
-          </div>
-          <h3 class="font-heading text-2xl font-bold mb-3 text-violet">Steps</h3>
-          <div class="flex flex-wrap justify-center gap-2 mb-4">
-            <span class="bg-soft-aura text-violet text-sm font-medium px-3 py-1 rounded-full border border-soft-aura-dark">Precept</span>
-            <span class="bg-soft-aura text-violet text-sm font-medium px-3 py-1 rounded-full border border-soft-aura-dark">Meditation</span>
-            <span class="bg-soft-aura text-violet text-sm font-medium px-3 py-1 rounded-full border border-soft-aura-dark">Mindfulness</span>
-            <span class="bg-soft-aura text-violet text-sm font-medium px-3 py-1 rounded-full border border-soft-aura-dark">Wisdom</span>
-          </div>
-          <p class="text-warm-charcoal text-sm leading-relaxed">The four steps on the path to awakening</p>
-        </div>
-
-        <div class="bg-white rounded-card border border-oat-border shadow-card p-8 text-center hover:shadow-elevated transition-shadow">
-          <div class="w-16 h-16 bg-soft-aura/20 border-2 border-purple-300 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <span class="text-violet-dark text-2xl font-heading font-bold">7</span>
-          </div>
-          <h3 class="font-heading text-2xl font-bold mb-3 text-violet">Life Wheels</h3>
-          <p class="text-warm-charcoal text-sm leading-relaxed mb-3">The inner journey to true happiness — balancing all seven dimensions of your life</p>
-          <p class="text-deep-calm text-sm font-medium">Daily mindfulness + inner coaching</p>
-        </div>
       </div>
 
       <!-- WELLBEING CYCLE -->
@@ -130,7 +124,8 @@
           <span class="text-white/80">Srisuphan Silver Temple, Chiang Mai</span>
         </div>
         <h3 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">The Path of Awakening</h3>
-        <p class="text-white/50 mt-4 max-w-lg mx-auto text-sm md:text-base">The 347 framework — your journey from foundation to spiritual alignment</p>
+        <p class="text-white/70 mt-4 max-w-xl mx-auto text-base md:text-lg italic font-heading">347 is not just a number — it is a map of human awakening.</p>
+        <p class="text-white/45 mt-2 max-w-lg mx-auto text-xs md:text-sm uppercase tracking-[0.2em]">The Sacred Path of Inner Awakening</p>
       </div>
 
       <div class="grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-14 items-start">
@@ -296,6 +291,106 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- THE 4 SELF-ACCESS STEPS — payoff of the pyramid's middle tier -->
+  <section id="self-access-path" class="scroll-mt-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
+      <div class="max-w-2xl mx-auto text-center mb-12 reveal">
+        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 4-Step Self-Access Path</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-violet leading-tight tracking-tight mb-5">
+          From Clean Life to Free Mind
+        </h2>
+        <p class="text-warm-charcoal text-base md:text-lg leading-relaxed">
+          Self-Access is the journey of reconnecting with your true nature through conscious inner development — a four-step path from a clean life to a free mind.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto stagger">
+        {selfAccess.map((step, i) => (
+          <div class="bg-ivory rounded-card border border-soft-aura shadow-card p-7 hover:shadow-elevated transition-shadow card-calm reveal">
+            <div class="flex items-baseline gap-3 mb-3">
+              <span class="font-heading text-2xl font-bold text-deep-calm/70 leading-none">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <h3 class="font-heading text-2xl font-bold text-violet leading-snug">{step.name}</h3>
+              <span class="ml-auto bg-soft-aura text-violet text-xs font-medium px-3 py-1 rounded-full border border-soft-aura-dark">{step.short}</span>
+            </div>
+            <p class="text-warm-charcoal text-sm leading-relaxed mb-3">{step.body}</p>
+            <p class="text-deep-calm text-sm italic font-medium border-l-2 border-deep-calm/40 pl-3">{step.principle}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Path flow: Morality → Mindfulness → Meditation → Wisdom → Awakening -->
+      <div class="mt-10 reveal">
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-violet/80">
+          <span>Morality</span>
+          <span class="text-deep-calm">→</span>
+          <span>Mindfulness</span>
+          <span class="text-deep-calm">→</span>
+          <span>Meditation</span>
+          <span class="text-deep-calm">→</span>
+          <span>Wisdom</span>
+          <span class="text-deep-calm">→</span>
+          <span class="bg-violet text-white px-3 py-1 rounded-full uppercase tracking-widest text-xs">Awakening</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE 7 LIFE TRANSFORMATIONS — payoff of the pyramid's top tier -->
+  <section id="seven-transformations" class="scroll-mt-20 bg-ivory">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
+      <div class="max-w-2xl mx-auto text-center mb-12 reveal">
+        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 7 Life Transformations</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-violet leading-tight tracking-tight mb-5">
+          Where Awakening Meets Daily Life
+        </h2>
+        <p class="text-warm-charcoal text-base md:text-lg leading-relaxed">
+          Real awakening must transform real life. The 347 system aligns seven essential dimensions — and when they align, life becomes peaceful and meaningful.
+        </p>
+      </div>
+
+      <!-- 6 transformations -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-5 stagger">
+        {firstSix.map((t, i) => (
+          <div class="bg-white rounded-card border border-oat-border shadow-card p-6 hover:shadow-elevated transition-shadow card-calm reveal">
+            <div class="flex items-start gap-4">
+              <span class="font-heading text-2xl font-bold text-deep-calm/70 shrink-0 leading-none pt-1">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 class="font-heading text-lg font-bold text-violet mb-1.5">{t.name}</h3>
+                <p class="text-warm-charcoal text-sm leading-relaxed">{t.body}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Summit: Life Purpose (the ultimate transformation) -->
+      <div class="bg-gradient-to-br from-violet to-violet-dark rounded-card shadow-elevated p-7 md:p-9 text-white reveal">
+        <div class="flex items-start gap-5 max-w-3xl mx-auto">
+          <span class="font-heading text-3xl font-bold text-sky-mist shrink-0 leading-none pt-1">07</span>
+          <div>
+            <p class="text-sky-mist text-xs uppercase tracking-[0.2em] font-semibold mb-2">The Ultimate Transformation</p>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold mb-2">{summit.name}</h3>
+            <p class="text-white/80 text-base leading-relaxed">{summit.body} When purpose becomes clear, life gains direction — and you begin to live not only for survival, but for contribution and impact.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Essence of 347 — closing brand mantra -->
+      <div class="mt-14 text-center reveal">
+        <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.25em] mb-5">The Essence of 347</p>
+        <div class="font-heading text-2xl md:text-3xl lg:text-4xl text-violet leading-relaxed">
+          <p>Awaken the mind.</p>
+          <p>Balance the life.</p>
+          <p class="text-deep-calm">Transform the world.</p>
+        </div>
       </div>
     </div>
   </section>

@@ -1,0 +1,97 @@
+---
+const beats = [
+  {
+    label: 'The Search',
+    title: 'Successful on the outside, restless within.',
+    body: "Like many people in the modern world, life appeared successful on the outside — yet inside there were questions that material success could not answer. Kaie began a long inner journey to find what was real.",
+  },
+  {
+    label: 'The Discovery',
+    title: 'The mind itself creates the world we experience.',
+    body: 'Through years of meditation and deep observation, one truth became unmistakable: when the mind is unconscious, life becomes confusion and suffering. When awareness awakens, life transforms.',
+  },
+  {
+    label: 'The System',
+    title: 'A path simple enough for modern life.',
+    body: 'Traditional teachings often felt too abstract for modern people. So Kaie developed a new approach — a structured framework that makes awakening simple, practical, and transformational. That system became 347.',
+  },
+];
+---
+
+<section id="origin" class="scroll-mt-20 bg-violet-dark text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_30%,rgba(200,169,81,0.08),transparent_55%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_80%,rgba(200,220,240,0.05),transparent_55%)]"></div>
+
+  <!-- Ambient mandala — slow rotation, very low opacity, atmospheric only -->
+  <svg
+    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] opacity-[0.04] mandala-spin pointer-events-none"
+    viewBox="0 0 200 200"
+    fill="none"
+    aria-hidden="true"
+  >
+    <circle cx="100" cy="100" r="95" stroke="#C5A55A" stroke-width="0.4"/>
+    <circle cx="100" cy="100" r="78" stroke="#C5A55A" stroke-width="0.4"/>
+    <circle cx="100" cy="100" r="60" stroke="#C5A55A" stroke-width="0.4"/>
+    <circle cx="100" cy="100" r="42" stroke="#C5A55A" stroke-width="0.4"/>
+    <circle cx="100" cy="100" r="24" stroke="#C5A55A" stroke-width="0.4"/>
+    {Array.from({ length: 12 }).map((_, i) => (
+      <line
+        x1="100"
+        y1="5"
+        x2="100"
+        y2="195"
+        stroke="#C5A55A"
+        stroke-width="0.3"
+        transform={`rotate(${i * 15} 100 100)`}
+      />
+    ))}
+    {Array.from({ length: 8 }).map((_, i) => (
+      <ellipse
+        cx="100"
+        cy="50"
+        rx="6"
+        ry="40"
+        stroke="#C5A55A"
+        stroke-width="0.4"
+        transform={`rotate(${i * 45} 100 100)`}
+      />
+    ))}
+  </svg>
+
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+    <div class="text-center mb-14 reveal">
+      <p class="text-sky-mist font-semibold text-xs uppercase tracking-[0.2em] mb-4">How 347 Was Born</p>
+      <h2 class="font-heading text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-5">
+        The Story Behind the System
+      </h2>
+      <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+        347 didn't begin as a method. It began as a question — one that sent Master Kaie on a long journey inward.
+      </p>
+    </div>
+
+    <ol class="relative space-y-10 md:space-y-12 max-w-3xl mx-auto">
+      <!-- Vertical timeline rail -->
+      <div class="absolute left-[15px] md:left-5 top-3 bottom-3 w-px bg-gradient-to-b from-deep-calm/60 via-deep-calm/20 to-transparent" aria-hidden="true"></div>
+
+      {beats.map((beat, i) => (
+        <li class="relative pl-12 md:pl-16 reveal">
+          <span class="absolute left-0 top-1 w-8 h-8 md:w-10 md:h-10 rounded-full bg-deep-calm/20 border border-deep-calm/40 flex items-center justify-center font-heading text-sm font-bold text-deep-calm">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <p class="text-deep-calm font-semibold text-xs uppercase tracking-[0.2em] mb-2">{beat.label}</p>
+          <h3 class="font-heading text-xl md:text-2xl font-bold text-white leading-snug mb-3">{beat.title}</h3>
+          <p class="text-white/70 leading-relaxed">{beat.body}</p>
+        </li>
+      ))}
+    </ol>
+
+    <div class="text-center mt-14 reveal">
+      <p class="font-heading text-lg md:text-xl text-sky-mist/90 italic leading-relaxed max-w-2xl mx-auto">
+        "Awakening is not escaping life. It is living life fully — with consciousness."
+      </p>
+      <p class="text-white/55 text-sm leading-relaxed max-w-xl mx-auto mt-6">
+        Not temporary happiness. A deep, sustainable happiness that comes from awareness.
+      </p>
+    </div>
+  </div>
+</section>

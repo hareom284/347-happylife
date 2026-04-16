@@ -8,7 +8,7 @@ const { wa } = Astro.props;
 
 <section class="relative overflow-hidden bg-violet-dark text-white min-h-[90vh] flex items-center">
     <div class="absolute inset-0 bg-gradient-to-b from-violet-dark/90 via-violet-dark/70 to-violet-dark/90 z-10"></div>
-    <div class="absolute inset-0 bg-[url('/images/silver-temple-front.png')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-[url('/images/silver-temple-front.png')] bg-cover bg-center bg-parallax"></div>
 
     <!-- Floating golden particles -->
     <div class="absolute inset-0 z-10 pointer-events-none overflow-hidden">
@@ -21,7 +21,7 @@ const { wa } = Astro.props;
     </div>
 
     <div class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 py-24 md:py-32 w-full">
-      <div class="max-w-3xl">
+      <div class="max-w-3xl hero-entry">
         <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm mb-8">
           <span class="w-2 h-2 bg-deep-calm-light rounded-full breathe"></span>
           Awakening Meditation Experience, Chiang Mai
@@ -30,6 +30,10 @@ const { wa } = Astro.props;
         <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight mb-6">
           Awaken Your Life Through <em class="text-sky-mist not-italic">Meditation</em>
         </h1>
+
+        <p class="font-heading text-xl md:text-2xl text-sky-mist/90 italic leading-relaxed mb-5 max-w-xl">
+          Awaken your mind. Transform your life. Create your happy world.
+        </p>
 
         <p class="text-lg md:text-xl text-white/80 leading-relaxed mb-4 max-w-xl">
           A life transformation experience at Chiang Mai's sacred Silver Temple. Discover awakening meditation that blends Buddhist Vipassana with inner coaching — guided by Master Kaie.
