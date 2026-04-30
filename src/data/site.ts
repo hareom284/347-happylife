@@ -236,8 +236,4 @@ export const faqs: Faq[] = [
     q: 'How do I book?',
     a: "Simply click any 'Book Now' button to message us on WhatsApp. We'll confirm your date, time, and course. Payment is made in cash or by bank transfer on the day of your session.",
   },
-  {
-    q: 'What should I wear?',
-    a: 'Please wear modest, comfortable clothing — preferably white or light-colored. Loose pants and a comfortable top work well. We practice sitting, walking, and lying meditation.',
-  },
 ];

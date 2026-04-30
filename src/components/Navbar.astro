@@ -11,15 +11,26 @@ const { wa } = Astro.props;
       <a href="/" class="flex items-center gap-3 group">
         <img src="/images/logo-icon.png" alt="347 Awakening Logo" class="h-16 sm:h-20 w-auto object-contain drop-shadow-md group-hover:opacity-80 transition-opacity" />
         <div class="hidden sm:block">
-          <span class="font-heading text-lg font-semibold text-violet leading-none">347 Awakening</span>
-          <span class="block text-xs uppercase tracking-[0.2em] text-body-muted font-medium">Life Transformation Experience</span>
+          <span class="font-heading text-xl md:text-2xl font-semibold text-violet leading-none">347 Awakening</span>
+          <span class="block text-sm uppercase tracking-[0.2em] text-body-muted font-medium mt-0.5">Life Transformation Experience</span>
         </div>
       </a>
 
       <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-body">
         <a href="#about" class="hover:text-deep-calm transition-colors">About</a>
         <a href="#courses" class="hover:text-deep-calm transition-colors">Courses</a>
-        <a href="#origin" class="hover:text-deep-calm transition-colors">Master Kaie</a>
+        <div class="relative" id="masters-dropdown">
+          <button class="hover:text-deep-calm transition-colors flex items-center gap-1" aria-expanded="false" aria-haspopup="true">
+            Masters
+            <svg class="w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 hidden" id="masters-menu">
+            <div class="bg-white rounded-xl shadow-elevated border border-oat-border/60 py-2 min-w-[180px]">
+              <a href="#origin" class="block px-4 py-2.5 hover:bg-soft-aura text-sm text-body hover:text-deep-calm transition-colors">Master Kaie</a>
+              <a href="#master-sawan" class="block px-4 py-2.5 hover:bg-soft-aura text-sm text-body hover:text-deep-calm transition-colors">Master Sawan</a>
+            </div>
+          </div>
+        </div>
         <a href="#teaching-method" class="hover:text-deep-calm transition-colors">Method</a>
         <a href="#testimonials" class="hover:text-deep-calm transition-colors">Reviews</a>
         <a href="#faq" class="hover:text-deep-calm transition-colors">FAQ</a>
@@ -38,7 +49,11 @@ const { wa } = Astro.props;
       <div class="flex flex-col gap-1 pt-2 text-sm font-medium">
         <a href="#about" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">About</a>
         <a href="#courses" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">Courses</a>
-        <a href="#origin" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">Master Kaie</a>
+        <div class="py-1.5 px-2">
+          <span class="text-body-muted text-xs uppercase tracking-[0.15em] font-semibold">Masters</span>
+          <a href="#origin" class="block py-2 px-3 hover:bg-soft-aura-dark/30 rounded-lg">Master Kaie</a>
+          <a href="#master-sawan" class="block py-2 px-3 hover:bg-soft-aura-dark/30 rounded-lg">Master Sawan</a>
+        </div>
         <a href="#teaching-method" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">Method</a>
         <a href="#testimonials" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">Reviews</a>
         <a href="#faq" class="py-2.5 px-2 hover:bg-soft-aura-dark/30 rounded-lg">FAQ</a>
@@ -46,7 +61,7 @@ const { wa } = Astro.props;
     </div>
   </nav>
 
-  <!-- Mobile menu script -->
+  <!-- Mobile menu & desktop dropdown script -->
   <script>
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('mobile-menu');
@@ -58,5 +73,26 @@ const { wa } = Astro.props;
     menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
       menu?.classList.add('hidden');
       toggle?.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Masters dropdown (desktop)
+    const dropdown = document.getElementById('masters-dropdown');
+    const dropBtn = dropdown?.querySelector('button');
+    const dropMenu = document.getElementById('masters-menu');
+    const chevron = dropBtn?.querySelector('svg');
+
+    dropdown?.addEventListener('mouseenter', () => {
+      dropMenu?.classList.remove('hidden');
+      chevron?.classList.add('rotate-180');
+      dropBtn?.setAttribute('aria-expanded', 'true');
+    });
+    dropdown?.addEventListener('mouseleave', () => {
+      dropMenu?.classList.add('hidden');
+      chevron?.classList.remove('rotate-180');
+      dropBtn?.setAttribute('aria-expanded', 'false');
+    });
+    dropMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      dropMenu?.classList.add('hidden');
+      chevron?.classList.remove('rotate-180');
     }));
   </script>

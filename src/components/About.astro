@@ -70,13 +70,13 @@ const selfAccess = [
                 <div class="bg-morning-sage text-body px-4 py-2.5 rounded-full text-sm font-semibold shadow-card text-center">HEALTHY</div>
               </div>
 
-              <!-- MIND - bottom right -->
-              <div class="absolute bottom-[18%] right-0 translate-x-1">
+              <!-- MIND - bottom left -->
+              <div class="absolute bottom-[18%] left-0 -translate-x-1">
                 <div class="bg-sky-mist text-body px-5 py-2.5 rounded-full text-sm font-semibold shadow-card text-center">MIND</div>
               </div>
 
-              <!-- BODY - bottom left -->
-              <div class="absolute bottom-[18%] left-0 -translate-x-1">
+              <!-- BODY - bottom right -->
+              <div class="absolute bottom-[18%] right-0 translate-x-1">
                 <div class="bg-soft-aura text-body px-5 py-2.5 rounded-full text-sm font-semibold shadow-card text-center">BODY</div>
               </div>
 
@@ -85,15 +85,28 @@ const selfAccess = [
                 <div class="bg-gold-ink text-white px-4 py-2.5 rounded-full text-sm font-semibold shadow-card text-center">HAPPY</div>
               </div>
 
-              <!-- Connecting arrows (SVG circle) -->
+              <!-- Connecting arcs with arrowheads — clockwise: SPIRIT → HEALTHY → BODY → MIND → HAPPY → SPIRIT -->
               <svg class="absolute inset-6 w-[calc(100%-48px)] h-[calc(100%-48px)]" viewBox="0 0 200 200" fill="none">
-                <circle cx="100" cy="100" r="85" stroke="#1B2D5B" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.3"/>
-                <!-- Arrow indicators -->
-                <path d="M100 15 L105 25 L95 25 Z" fill="#1B2D5B" opacity="0.4" transform="rotate(72, 100, 100)"/>
-                <path d="M100 15 L105 25 L95 25 Z" fill="#1B2D5B" opacity="0.4" transform="rotate(144, 100, 100)"/>
-                <path d="M100 15 L105 25 L95 25 Z" fill="#1B2D5B" opacity="0.4" transform="rotate(216, 100, 100)"/>
-                <path d="M100 15 L105 25 L95 25 Z" fill="#1B2D5B" opacity="0.4" transform="rotate(288, 100, 100)"/>
-                <path d="M100 15 L105 25 L95 25 Z" fill="#1B2D5B" opacity="0.4" transform="rotate(360, 100, 100)"/>
+                <defs>
+                  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 Z" fill="#1B2D5B" opacity="0.5"/>
+                  </marker>
+                </defs>
+
+                <!-- Arc: SPIRIT (top, 270°) → HEALTHY (top-right, 342°) -->
+                <path d="M 113 16 A 85 85 0 0 1 168 38" stroke="#1B2D5B" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35" marker-end="url(#arrow)"/>
+
+                <!-- Arc: HEALTHY (342°) → BODY (bottom-right, 54°) -->
+                <path d="M 180 55 A 85 85 0 0 1 180 148" stroke="#1B2D5B" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35" marker-end="url(#arrow)"/>
+
+                <!-- Arc: BODY (54°) → MIND (bottom-left, 126°) -->
+                <path d="M 168 163 A 85 85 0 0 1 32 163" stroke="#1B2D5B" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35" marker-end="url(#arrow)"/>
+
+                <!-- Arc: MIND (126°) → HAPPY (top-left, 198°) -->
+                <path d="M 20 148 A 85 85 0 0 1 20 55" stroke="#1B2D5B" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35" marker-end="url(#arrow)"/>
+
+                <!-- Arc: HAPPY (198°) → SPIRIT (top, 270°) -->
+                <path d="M 32 38 A 85 85 0 0 1 87 16" stroke="#1B2D5B" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35" marker-end="url(#arrow)"/>
               </svg>
             </div>
             <p class="text-center text-body-light text-sm mt-6 leading-relaxed">
@@ -146,18 +159,6 @@ const selfAccess = [
                   <stop offset="0%" stop-color="#E8D5A3"/>
                   <stop offset="100%" stop-color="#C5A55A"/>
                 </linearGradient>
-                <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#D4DAE8" stop-opacity="0.9"/>
-                  <stop offset="100%" stop-color="#C8DCF0" stop-opacity="0.8"/>
-                </linearGradient>
-                <linearGradient id="gL" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#C8DCF0" stop-opacity="0.8"/>
-                  <stop offset="100%" stop-color="#D4DAE8" stop-opacity="0.7"/>
-                </linearGradient>
-                <linearGradient id="gF" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="white" stop-opacity="0.15"/>
-                  <stop offset="100%" stop-color="white" stop-opacity="0.08"/>
-                </linearGradient>
                 <filter id="gl"><feGaussianBlur stdDeviation="8"/></filter>
               </defs>
 
@@ -166,17 +167,13 @@ const selfAccess = [
               <circle cx="200" cy="22" r="5" fill="#E2C96D" opacity="0.9"/>
 
               <!-- TIER 1: SPIRIT / MIND / BODY (Gold) -->
-              <!-- SPIRIT label above pyramid -->
               <text x="200" y="52" text-anchor="middle" fill="#E2C96D" font-size="16" font-weight="700" font-family="Georgia, serif" letter-spacing="4">SPIRIT</text>
 
-              <!-- Spirit triangle -->
               <polygon points="200,60 155,120 245,120" fill="url(#gS)" stroke="#C5A55A" stroke-width="1.5" opacity="0.9"/>
 
-              <!-- Mind -->
               <polygon points="155,126 128,180 272,180 245,126" fill="url(#gS)" stroke="#C5A55A" stroke-width="1" opacity="0.8"/>
               <text x="200" y="160" text-anchor="middle" fill="#1B2D5B" font-size="15" font-weight="700" font-family="Georgia, serif" letter-spacing="2">MIND</text>
 
-              <!-- Body -->
               <polygon points="128,186 100,240 300,240 272,186" fill="url(#gS)" stroke="#C5A55A" stroke-width="1" opacity="0.7"/>
               <text x="200" y="220" text-anchor="middle" fill="#1B2D5B" font-size="15" font-weight="700" font-family="Georgia, serif" letter-spacing="2">BODY</text>
 
@@ -235,15 +232,15 @@ const selfAccess = [
           <!-- Alignment card -->
           <div class="bg-white/[0.08] backdrop-blur-md rounded-2xl p-6 md:p-7 border border-white/[0.12] hover:bg-white/[0.12] transition-all duration-300">
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-sky-mist/30 to-soft-aura/20 rounded-2xl flex items-center justify-center shrink-0 border border-white/10">
-                <svg class="w-6 h-6 text-sky-mist" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+              <div class="w-12 h-12 bg-gradient-to-br from-deep-calm/30 to-deep-calm-light/20 rounded-2xl flex items-center justify-center shrink-0 border border-deep-calm/20">
+                <span class="text-deep-calm-light font-heading font-bold text-xl">3</span>
               </div>
               <div class="flex-1">
                 <h4 class="text-white text-lg font-semibold mb-1">Alignment</h4>
                 <div class="flex flex-wrap gap-1.5 mb-3">
-                  <span class="text-xs uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2 py-0.5 rounded-full border border-sky-mist/15">Spirit</span>
-                  <span class="text-xs uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2 py-0.5 rounded-full border border-sky-mist/15">Mind</span>
-                  <span class="text-xs uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2 py-0.5 rounded-full border border-sky-mist/15">Body</span>
+                  <span class="text-xs uppercase tracking-wider text-deep-calm-light/90 bg-deep-calm/15 px-2.5 py-1 rounded-full border border-deep-calm/20">Spirit</span>
+                  <span class="text-xs uppercase tracking-wider text-deep-calm-light/90 bg-deep-calm/15 px-2.5 py-1 rounded-full border border-deep-calm/20">Mind</span>
+                  <span class="text-xs uppercase tracking-wider text-deep-calm-light/90 bg-deep-calm/15 px-2.5 py-1 rounded-full border border-deep-calm/20">Body</span>
                 </div>
                 <p class="text-white/65 text-sm leading-relaxed">Connect with your highest self. When Spirit, Mind, and Body align, you access a state of pure awareness and inner peace.</p>
               </div>
@@ -253,16 +250,16 @@ const selfAccess = [
           <!-- Awakening card -->
           <div class="bg-white/[0.08] backdrop-blur-md rounded-2xl p-6 md:p-7 border border-white/[0.12] hover:bg-white/[0.12] transition-all duration-300">
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-deep-calm-light/25 to-soft-aura/15 rounded-2xl flex items-center justify-center shrink-0 border border-white/10">
-                <svg class="w-6 h-6 text-sky-mist" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              <div class="w-12 h-12 bg-gradient-to-br from-sky-mist/20 to-soft-aura/10 rounded-2xl flex items-center justify-center shrink-0 border border-sky-mist/15">
+                <span class="text-sky-mist font-heading font-bold text-xl">4</span>
               </div>
               <div class="flex-1">
                 <h4 class="text-white text-lg font-semibold mb-1">Awakening</h4>
                 <div class="flex flex-wrap gap-1.5 mb-3">
-                  <span class="text-xs uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Morality</span>
-                  <span class="text-xs uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Mindfulness</span>
-                  <span class="text-xs uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Meditation</span>
-                  <span class="text-xs uppercase tracking-wider text-soft-aura/80 bg-soft-aura/10 px-2 py-0.5 rounded-full border border-soft-aura/15">Wisdom</span>
+                  <span class="text-xs uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2.5 py-1 rounded-full border border-sky-mist/15">Wisdom</span>
+                  <span class="text-xs uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2.5 py-1 rounded-full border border-sky-mist/15">Meditation</span>
+                  <span class="text-xs uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2.5 py-1 rounded-full border border-sky-mist/15">Mindfulness</span>
+                  <span class="text-xs uppercase tracking-wider text-sky-mist/80 bg-sky-mist/10 px-2.5 py-1 rounded-full border border-sky-mist/15">Morality</span>
                 </div>
                 <p class="text-white/65 text-sm leading-relaxed">The four pillars of Buddhist practice guide your inner transformation — from ethical living to the deepest wisdom.</p>
               </div>
@@ -272,16 +269,19 @@ const selfAccess = [
           <!-- Life Transformation card -->
           <div class="bg-white/[0.08] backdrop-blur-md rounded-2xl p-6 md:p-7 border border-white/[0.12] hover:bg-white/[0.12] transition-all duration-300">
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-morning-sage/25 to-soft-aura/15 rounded-2xl flex items-center justify-center shrink-0 border border-white/10">
-                <svg class="w-6 h-6 text-morning-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              <div class="w-12 h-12 bg-gradient-to-br from-morning-sage/20 to-soft-aura/10 rounded-2xl flex items-center justify-center shrink-0 border border-morning-sage/15">
+                <span class="text-morning-sage font-heading font-bold text-xl">7</span>
               </div>
               <div class="flex-1">
                 <h4 class="text-white text-lg font-semibold mb-1">Life Transformation</h4>
                 <div class="flex flex-wrap gap-1.5 mb-3">
-                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Purpose</span>
-                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Health</span>
-                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Soul</span>
-                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2 py-0.5 rounded-full border border-morning-sage/15">Balance</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2.5 py-1 rounded-full border border-morning-sage/15">Life Purpose</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2.5 py-1 rounded-full border border-morning-sage/15">Holistic Health</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2.5 py-1 rounded-full border border-morning-sage/15">Self Development</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2.5 py-1 rounded-full border border-morning-sage/15">Soul Work</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2.5 py-1 rounded-full border border-morning-sage/15">Emotion Balance</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2.5 py-1 rounded-full border border-morning-sage/15">Love & Relationship</span>
+                  <span class="text-xs uppercase tracking-wider text-morning-sage/80 bg-morning-sage/10 px-2.5 py-1 rounded-full border border-morning-sage/15">Health</span>
                 </div>
                 <p class="text-white/65 text-sm leading-relaxed">Apply your awakening to every dimension of life — purpose, health, relationships, and soul work become one integrated journey.</p>
               </div>
@@ -302,8 +302,56 @@ const selfAccess = [
     </div>
   </section>
 
+  <!-- THE 3 ALIGNMENTS — payoff of the pyramid's top tier -->
+  <section id="three-alignments" class="scroll-mt-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
+      <div class="max-w-2xl mx-auto text-center mb-12 reveal">
+        <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 3 Alignments</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-violet leading-tight tracking-tight mb-5 gold-line">
+          Spirit, Mind & Body
+        </h2>
+        <p class="text-warm-charcoal text-base md:text-lg leading-relaxed">
+          True wellbeing begins when all three dimensions of your being are in harmony. Most people live disconnected — the 347 method brings them back into alignment.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto reveal">
+        <!-- Spirit -->
+        <div class="bg-ivory rounded-card border border-soft-aura shadow-card p-7 hover:shadow-elevated transition-shadow card-calm text-center">
+          <div class="w-14 h-14 bg-deep-calm/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-gold-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <h3 class="font-heading text-2xl font-bold text-violet mb-3">Spirit</h3>
+          <p class="text-warm-charcoal text-sm leading-relaxed">Your deepest awareness — the part of you beyond thoughts, emotions, and identity. When spirit is awakened, you experience life with clarity and peace.</p>
+        </div>
+
+        <!-- Mind -->
+        <div class="bg-ivory rounded-card border border-soft-aura shadow-card p-7 hover:shadow-elevated transition-shadow card-calm text-center">
+          <div class="w-14 h-14 bg-sky-mist-light/50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-violet" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3 class="font-heading text-2xl font-bold text-violet mb-3">Mind</h3>
+          <p class="text-warm-charcoal text-sm leading-relaxed">The seat of thoughts, emotions, and perception. A calm mind sees clearly. A restless mind creates suffering. Meditation trains the mind to return to stillness.</p>
+        </div>
+
+        <!-- Body -->
+        <div class="bg-ivory rounded-card border border-soft-aura shadow-card p-7 hover:shadow-elevated transition-shadow card-calm text-center">
+          <div class="w-14 h-14 bg-morning-sage/20 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-violet" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-heading text-2xl font-bold text-violet mb-3">Body</h3>
+          <p class="text-warm-charcoal text-sm leading-relaxed">Your physical vessel and gateway to awareness. Through mindful breathing and body awareness, you ground yourself in the present moment and release tension.</p>
+        </div>
+      </div>
+
+      <p class="font-heading text-lg md:text-xl text-violet/70 italic max-w-2xl mx-auto text-center mt-10 reveal">
+        When these three align, you don't just feel better — you begin to live from a completely different place within yourself.
+      </p>
+    </div>
+  </section>
+
   <!-- THE 4 SELF-ACCESS STEPS — payoff of the pyramid's middle tier -->
-  <section id="self-access-path" class="scroll-mt-20 bg-white">
+  <section id="self-access-path" class="scroll-mt-20 bg-ivory">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
       <div class="max-w-2xl mx-auto text-center mb-12 reveal">
         <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 4-Step Self-Access Path</p>
@@ -349,7 +397,7 @@ const selfAccess = [
   </section>
 
   <!-- THE 7 LIFE TRANSFORMATIONS — payoff of the pyramid's top tier -->
-  <section id="seven-transformations" class="scroll-mt-20 bg-ivory">
+  <section id="seven-transformations" class="scroll-mt-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
       <div class="max-w-2xl mx-auto text-center mb-12 reveal">
         <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 7 Life Transformations</p>
