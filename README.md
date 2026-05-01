@@ -1,7 +1,7 @@
 # 347 Awakening — 347awakening.com
 
 Marketing site for **347 Happy Life Happy World**, an awakening-meditation and
-life-transformation experience at Srisuphan Silver Temple, Chiang Mai, Thailand,
+life-transformation experience at Silver Temple, Chiang Mai, Thailand,
 guided by Master Kaie.
 
 Built with [Astro 6](https://astro.build) and [Tailwind CSS 4](https://tailwindcss.com).

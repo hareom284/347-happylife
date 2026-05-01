@@ -1,43 +1,70 @@
 ---
 ---
 
-<section aria-labelledby="core-questions-heading" class="bg-gradient-to-b from-sky-mist-light/50 to-ivory">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-28 text-center">
-      {/* Visually the eyebrow + intro paragraph serve as the section header;
-          add a screen-reader-only h2 so the heading hierarchy stays sequential
-          (Hero h1 → here h2 → card h3s), as required by WCAG. */}
+<section aria-labelledby="core-questions-heading" class="relative overflow-hidden bg-violet-dark py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
       <h2 id="core-questions-heading" class="sr-only">The Questions That Begin Your Awakening</h2>
-      <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4 reveal" aria-hidden="true">The Questions That Begin Your Awakening</p>
-      <p class="text-warm-charcoal text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10 reveal">
+      <p class="text-deep-calm-light font-semibold text-xs uppercase tracking-[0.2em] mb-4 reveal" aria-hidden="true">The Questions That Begin Your Awakening</p>
+      <p class="text-white/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-14 reveal">
         Why do people suffer even when they have everything? Why does the mind create so much chaos? Is there a deeper peace beyond thoughts and emotions? These are the questions that led Master Kaie on her own awakening journey.
       </p>
-      <div class="grid md:grid-cols-3 gap-6 mb-12 stagger">
-        <!-- Card 1: Who am I — Violet accent -->
-        <div class="bg-white/80 backdrop-blur-sm rounded-card p-8 border border-soft-aura border-l-4 border-l-violet shadow-card hover:shadow-elevated transition-all reveal card-calm">
-          <div class="w-14 h-14 bg-soft-aura/40 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-violet" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12 stagger">
+
+        <!-- Card 1: Who am I — SOLID RED -->
+        <div class="group relative rounded-card p-8 md:p-10 shadow-card hover:shadow-elevated transition-all duration-500 reveal card-calm overflow-hidden bg-gradient-to-br from-[#D32F2F] to-[#B71C1C]">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+          <div class="relative z-10">
+            <div class="w-18 h-18 w-[72px] h-[72px] bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+              <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-white italic mb-4">"Who am I?"</h3>
+            <div class="w-12 h-0.5 bg-white/30 mx-auto mb-4"></div>
+            <p class="text-white/85 text-base leading-relaxed">Discover your true self beyond the roles, labels, and stories you've been told.</p>
           </div>
-          <h3 class="font-heading text-2xl md:text-3xl font-bold text-violet italic mb-3">"Who am I?"</h3>
-          <p class="text-warm-charcoal text-base leading-relaxed">Discover your true self beyond the roles, labels, and stories you've been told.</p>
         </div>
-        <!-- Card 2: Why was I born — Gold accent -->
-        <div class="bg-white/80 backdrop-blur-sm rounded-card p-8 border border-soft-aura border-l-4 border-l-gold-ink shadow-card hover:shadow-elevated transition-all reveal card-calm">
-          <div class="w-14 h-14 bg-deep-calm/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-gold-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+
+        <!-- Card 2: Why was I born — SOLID YELLOW -->
+        <div class="group relative rounded-card p-8 md:p-10 shadow-card hover:shadow-elevated transition-all duration-500 reveal card-calm overflow-hidden bg-gradient-to-br from-[#FBC02D] to-[#F9A825]">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+          <div class="relative z-10">
+            <div class="w-[72px] h-[72px] bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+              <svg class="w-9 h-9 text-[#5D4037]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-[#3E2723] italic mb-4">"Why was I born on this earth?"</h3>
+            <div class="w-12 h-0.5 bg-[#5D4037]/30 mx-auto mb-4"></div>
+            <p class="text-[#4E342E]/90 text-base leading-relaxed">Understand your purpose and the deeper meaning behind your existence.</p>
           </div>
-          <h3 class="font-heading text-2xl md:text-3xl font-bold text-violet italic mb-3">"Why was I born on this earth?"</h3>
-          <p class="text-warm-charcoal text-base leading-relaxed">Understand your purpose and the deeper meaning behind your existence.</p>
         </div>
-        <!-- Card 3: What is my mission — Sky blue accent -->
-        <div class="bg-white/80 backdrop-blur-sm rounded-card p-8 border border-soft-aura border-l-4 border-l-sky-blue shadow-card hover:shadow-elevated transition-all reveal card-calm">
-          <div class="w-14 h-14 bg-sky-mist-light/50 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-sky-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+
+        <!-- Card 3: What is my mission — SOLID WHITE -->
+        <div class="group relative rounded-card p-8 md:p-10 shadow-card hover:shadow-elevated transition-all duration-500 reveal card-calm overflow-hidden bg-white border border-soft-aura">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-sacred-red/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          <div class="absolute bottom-0 left-0 w-24 h-24 bg-sacred-yellow/5 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+          <div class="relative z-10">
+            <div class="w-[72px] h-[72px] bg-gradient-to-br from-sacred-red/10 to-sacred-yellow/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+              <svg class="w-9 h-9 text-sacred-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-dark-charcoal italic mb-4">"What is my mission?"</h3>
+            <div class="w-12 h-0.5 bg-gradient-to-r from-sacred-red/30 to-sacred-yellow/40 mx-auto mb-4"></div>
+            <p class="text-warm-charcoal text-base leading-relaxed">Awaken to the unique path and contribution only you can make in this world.</p>
           </div>
-          <h3 class="font-heading text-2xl md:text-3xl font-bold text-violet italic mb-3">"What is my mission?"</h3>
-          <p class="text-warm-charcoal text-base leading-relaxed">Awaken to the unique path and contribution only you can make in this world.</p>
         </div>
+
       </div>
-      <p class="font-heading text-xl md:text-2xl text-violet/80 italic max-w-2xl mx-auto leading-relaxed">
+
+      <p class="font-heading text-xl md:text-2xl text-white/80 italic max-w-2xl mx-auto leading-relaxed reveal">
         Through the 347 method, you don't receive borrowed answers — you awaken your own.
       </p>
     </div>

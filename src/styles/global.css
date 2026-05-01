@@ -54,6 +54,16 @@
   --color-gold-ink: #8A6F26;
   --color-gold-ink-dark: #6F5820;
 
+  /* Red & Yellow accents — Core Questions cards */
+  --color-sacred-red: #C62828;
+  --color-sacred-red-light: #EF5350;
+  --color-sacred-red-dark: #8E0000;
+  --color-sacred-red-glow: rgba(198, 40, 40, 0.12);
+  --color-sacred-yellow: #F9A825;
+  --color-sacred-yellow-light: #FDD835;
+  --color-sacred-yellow-dark: #C17900;
+  --color-sacred-yellow-glow: rgba(249, 168, 37, 0.15);
+
   /* Legacy references */
   --color-cream: #FAFBFD;
   --color-cream-dark: #F0F2F7;
@@ -169,7 +179,16 @@
   border-radius: inherit;
 }
 
-/* 8. Floating particles — like dust in temple light */
+/* 8. Candle flame flicker — gentle breathing glow */
+@keyframes candleFlicker {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  25% { opacity: 0.25; transform: scale(1.08); }
+  50% { opacity: 0.12; transform: scale(0.95); }
+  75% { opacity: 0.22; transform: scale(1.05); }
+}
+.candle-glow { animation: candleFlicker 3s ease-in-out infinite; }
+
+/* 9. Floating particles — like dust in temple light */
 @keyframes float {
   0%, 100% { transform: translateY(0) translateX(0); }
   33% { transform: translateY(-12px) translateX(6px); }

@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { wa } from '../data/site';
+---
+
+<Layout title="Book Your Retreat | 347 Awakening — Meditation Retreat Chiang Mai" description="Book your meditation retreat at 347 Awakening in Chiang Mai. Fill out the form to reserve your spot with Master Kaie at Silver Temple.">
+
+  <section class="bg-ivory py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+
+      <div class="text-center mb-10">
+        <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Reserve Your Spot</p>
+        <h1 class="font-heading text-4xl md:text-5xl font-bold text-violet leading-tight mb-4">
+          Book Your Retreat
+        </h1>
+        <p class="text-warm-charcoal text-lg leading-relaxed max-w-xl mx-auto">
+          Fill out the form below to book your meditation retreat at Silver Temple, Chiang Mai.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-card border border-soft-aura shadow-card overflow-hidden">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSekYKRZvxFQxHTrV90chNtr1u5uKjkLCzlApNsbhSYDr0HISQ/viewform?embedded=true"
+          width="100%"
+          height="1200"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="347 Awakening Booking Form"
+          loading="lazy"
+          class="w-full"
+        >Loading…</iframe>
+      </div>
+
+      <p class="mt-6 text-center text-body-muted text-sm">
+        Prefer to book directly? <a href={wa} target="_blank" rel="noopener noreferrer" class="text-gold-ink hover:text-gold-ink-dark underline transition-colors">Message us on WhatsApp</a>
+        &middot;
+        <a href="/" class="text-gold-ink hover:text-gold-ink-dark underline transition-colors">Back to homepage</a>
+      </p>
+
+    </div>
+  </section>
+
+</Layout>

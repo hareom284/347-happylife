@@ -9,7 +9,7 @@ const { wa } = Astro.props;
 <nav aria-label="Main navigation" class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-oat-border/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between">
       <a href="/" class="flex items-center gap-3 group">
-        <img src="/images/logo-icon.png" alt="347 Awakening Logo" class="h-16 sm:h-20 w-auto object-contain drop-shadow-md group-hover:opacity-80 transition-opacity" />
+        <img src="/images/logo-icon.webp" alt="347 Awakening Logo" class="h-16 sm:h-20 w-auto object-contain drop-shadow-md group-hover:opacity-80 transition-opacity" />
         <div class="hidden sm:block">
           <span class="font-heading text-xl md:text-2xl font-semibold text-violet leading-none">347 Awakening</span>
           <span class="block text-sm uppercase tracking-[0.2em] text-body-muted font-medium mt-0.5">Life Transformation Experience</span>
@@ -37,8 +37,8 @@ const { wa } = Astro.props;
       </div>
 
       <div class="flex items-center gap-3">
-        <a href={wa} target="_blank" rel="noopener noreferrer" class="bg-deep-calm text-violet-dark px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-deep-calm-dark hover:text-white transition-all hover:shadow-lg">
-          Book Now<span class="sr-only"> via WhatsApp (opens in new tab)</span>
+        <a href="/booking" class="bg-deep-calm text-violet-dark px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-deep-calm-dark hover:text-white transition-all hover:shadow-lg">
+          Book Now
         </a>
         <button id="menu-toggle" class="lg:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>

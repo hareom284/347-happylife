@@ -128,7 +128,7 @@ const selfAccess = [
         src="/images/silver-temple-front-800.webp"
         srcset="/images/silver-temple-front-480.webp 480w, /images/silver-temple-front-800.webp 800w, /images/silver-temple-front.webp 1024w"
         sizes="100vw"
-        alt="Srisuphan Silver Temple (Wat Sri Suphan) on Wua Lai Road, Chiang Mai — home of the 347 Awakening meditation retreat"
+        alt="Silver Temple (Wat Sri Suphan) on Wua Lai Road, Chiang Mai — home of the 347 Awakening meditation retreat"
         width="1024" height="741"
         class="w-full h-full object-cover" loading="lazy" decoding="async"
       />
@@ -141,7 +141,7 @@ const selfAccess = [
       <div class="text-center mb-16">
         <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-1.5 text-xs mb-6">
           <img src="/images/silver-temple-sunlight.webp" alt="" width="282" height="179" class="w-5 h-5 rounded-full object-cover" loading="lazy" decoding="async" aria-hidden="true" />
-          <span class="text-white/80">Srisuphan Silver Temple, Chiang Mai</span>
+          <span class="text-white/80">Silver Temple, Chiang Mai</span>
         </div>
         <h3 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">The Path of Awakening</h3>
         <p class="text-white/70 mt-4 max-w-xl mx-auto text-base md:text-lg italic font-heading">347 is not just a number — it is a map of human awakening.</p>
@@ -292,7 +292,7 @@ const selfAccess = [
           <div class="flex items-center gap-4 bg-white/[0.05] backdrop-blur-sm rounded-2xl p-5 border border-white/[0.08]">
             <img src="/images/silver-temple-sunlight.webp" alt="Silver Temple sunlight" width="282" height="179" class="w-20 h-20 rounded-xl object-cover border border-white/15 shadow-lg" loading="lazy" decoding="async" />
             <div>
-              <p class="text-white font-semibold text-sm">Practiced at Srisuphan Silver Temple</p>
+              <p class="text-white font-semibold text-sm">Practiced at Silver Temple</p>
               <p class="text-white/45 text-xs mt-1 leading-relaxed">One of Chiang Mai's most sacred temples — entirely handcrafted in silver by local artisans. A place where art and spirituality unite.</p>
             </div>
           </div>
@@ -303,48 +303,126 @@ const selfAccess = [
   </section>
 
   <!-- THE 3 ALIGNMENTS — payoff of the pyramid's top tier -->
-  <section id="three-alignments" class="scroll-mt-20 bg-white">
+  <section id="three-alignments" class="scroll-mt-20 bg-violet-dark">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
       <div class="max-w-2xl mx-auto text-center mb-12 reveal">
-        <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 3 Alignments</p>
-        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-violet leading-tight tracking-tight mb-5 gold-line">
+        <p class="text-deep-calm-light font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 3 Alignments</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-5">
           Spirit, Mind & Body
         </h2>
-        <p class="text-warm-charcoal text-base md:text-lg leading-relaxed">
+        <p class="text-white/70 text-base md:text-lg leading-relaxed">
           True wellbeing begins when all three dimensions of your being are in harmony. Most people live disconnected — the 347 method brings them back into alignment.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto reveal">
-        <!-- Spirit -->
-        <div class="bg-ivory rounded-card border border-soft-aura shadow-card p-7 hover:shadow-elevated transition-shadow card-calm text-center">
-          <div class="w-14 h-14 bg-deep-calm/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-gold-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto stagger">
+
+        <!-- Body — YELLOW CANDLE (1st) -->
+        <div class="group relative rounded-card p-8 pt-10 shadow-card hover:shadow-elevated transition-all duration-500 reveal card-calm overflow-hidden bg-deep-blue border border-white/10 text-center">
+          <!-- Warm glow behind candle -->
+          <div class="absolute top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-deep-calm-light/10 rounded-full blur-2xl group-hover:bg-deep-calm-light/20 transition-all duration-700 pointer-events-none"></div>
+          <div class="relative z-10">
+            <!-- Yellow candle SVG -->
+            <div class="mx-auto mb-6 group-hover:scale-105 transition-transform duration-500">
+              <svg class="w-16 h-28 mx-auto" viewBox="0 0 64 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Flame glow -->
+                <ellipse cx="32" cy="22" rx="14" ry="14" fill="#FFD54F" opacity="0.15" class="candle-glow"/>
+                <!-- Flame outer -->
+                <path d="M32 8c-4 6-8 10-8 16 0 5 3.5 8 8 8s8-3 8-8c0-6-4-10-8-16z" fill="#FF8F00" opacity="0.7"/>
+                <!-- Flame inner -->
+                <path d="M32 14c-2.5 4-5 7-5 11 0 3.5 2.2 5.5 5 5.5s5-2 5-5.5c0-4-2.5-7-5-11z" fill="#FFD54F"/>
+                <!-- Flame core -->
+                <path d="M32 19c-1.5 2.5-3 4.5-3 7 0 2 1.3 3.2 3 3.2s3-1.2 3-3.2c0-2.5-1.5-4.5-3-7z" fill="#FFF9C4"/>
+                <!-- Wick -->
+                <line x1="32" y1="30" x2="32" y2="36" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Candle body — YELLOW -->
+                <rect x="22" y="36" width="20" height="56" rx="3" fill="#FBC02D" stroke="#F9A825" stroke-width="0.5"/>
+                <!-- Candle highlight -->
+                <rect x="25" y="36" width="6" height="56" rx="2" fill="#FFF176" opacity="0.45"/>
+                <!-- Candle base -->
+                <rect x="18" y="88" width="28" height="8" rx="4" fill="#C17900"/>
+                <!-- Drip detail -->
+                <path d="M38 36v8c0 2 3 2 3 0v-8" fill="#FDD835" opacity="0.6"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-deep-calm-light mb-3">Body</h3>
+            <div class="w-12 h-0.5 bg-sacred-yellow/30 mx-auto mb-4"></div>
+            <p class="text-white/70 text-sm leading-relaxed">Your physical vessel and gateway to awareness. Through mindful breathing and body awareness, you ground yourself in the present moment and release tension.</p>
           </div>
-          <h3 class="font-heading text-2xl font-bold text-violet mb-3">Spirit</h3>
-          <p class="text-warm-charcoal text-sm leading-relaxed">Your deepest awareness — the part of you beyond thoughts, emotions, and identity. When spirit is awakened, you experience life with clarity and peace.</p>
         </div>
 
-        <!-- Mind -->
-        <div class="bg-ivory rounded-card border border-soft-aura shadow-card p-7 hover:shadow-elevated transition-shadow card-calm text-center">
-          <div class="w-14 h-14 bg-sky-mist-light/50 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-violet" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        <!-- Mind — RED CANDLE (2nd) -->
+        <div class="group relative rounded-card p-8 pt-10 shadow-card hover:shadow-elevated transition-all duration-500 reveal card-calm overflow-hidden bg-deep-blue border border-white/10 text-center">
+          <!-- Warm glow behind candle -->
+          <div class="absolute top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-deep-calm/10 rounded-full blur-2xl group-hover:bg-deep-calm/20 transition-all duration-700 pointer-events-none"></div>
+          <div class="relative z-10">
+            <!-- Red candle SVG -->
+            <div class="mx-auto mb-6 group-hover:scale-105 transition-transform duration-500">
+              <svg class="w-16 h-28 mx-auto" viewBox="0 0 64 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Flame glow -->
+                <ellipse cx="32" cy="22" rx="14" ry="14" fill="#FF8F00" opacity="0.15" class="candle-glow"/>
+                <!-- Flame outer -->
+                <path d="M32 8c-4 6-8 10-8 16 0 5 3.5 8 8 8s8-3 8-8c0-6-4-10-8-16z" fill="#FF8F00" opacity="0.7"/>
+                <!-- Flame inner -->
+                <path d="M32 14c-2.5 4-5 7-5 11 0 3.5 2.2 5.5 5 5.5s5-2 5-5.5c0-4-2.5-7-5-11z" fill="#FFD54F"/>
+                <!-- Flame core -->
+                <path d="M32 19c-1.5 2.5-3 4.5-3 7 0 2 1.3 3.2 3 3.2s3-1.2 3-3.2c0-2.5-1.5-4.5-3-7z" fill="#FFF9C4"/>
+                <!-- Wick -->
+                <line x1="32" y1="30" x2="32" y2="36" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Candle body — RED -->
+                <rect x="22" y="36" width="20" height="56" rx="3" fill="#C62828" stroke="#B71C1C" stroke-width="0.5"/>
+                <!-- Candle highlight -->
+                <rect x="25" y="36" width="6" height="56" rx="2" fill="#EF5350" opacity="0.4"/>
+                <!-- Candle base -->
+                <rect x="18" y="88" width="28" height="8" rx="4" fill="#8E0000"/>
+                <!-- Drip detail -->
+                <path d="M38 36v8c0 2 3 2 3 0v-8" fill="#D32F2F" opacity="0.6"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-sacred-red-light mb-3">Mind</h3>
+
+            <div class="w-12 h-0.5 bg-sacred-red/30 mx-auto mb-4"></div>
+            <p class="text-white/70 text-sm leading-relaxed">The seat of thoughts, emotions, and perception. A calm mind sees clearly. A restless mind creates suffering. Meditation trains the mind to return to stillness.</p>
           </div>
-          <h3 class="font-heading text-2xl font-bold text-violet mb-3">Mind</h3>
-          <p class="text-warm-charcoal text-sm leading-relaxed">The seat of thoughts, emotions, and perception. A calm mind sees clearly. A restless mind creates suffering. Meditation trains the mind to return to stillness.</p>
         </div>
 
-        <!-- Body -->
-        <div class="bg-ivory rounded-card border border-soft-aura shadow-card p-7 hover:shadow-elevated transition-shadow card-calm text-center">
-          <div class="w-14 h-14 bg-morning-sage/20 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-violet" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        <!-- Spirit — WHITE CANDLE (3rd) -->
+        <div class="group relative rounded-card p-8 pt-10 shadow-card hover:shadow-elevated transition-all duration-500 reveal card-calm overflow-hidden bg-deep-blue border border-white/10 text-center">
+          <!-- Warm glow behind candle -->
+          <div class="absolute top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-deep-calm-light/10 rounded-full blur-2xl group-hover:bg-deep-calm-light/20 transition-all duration-700 pointer-events-none"></div>
+          <div class="relative z-10">
+            <!-- White candle SVG -->
+            <div class="mx-auto mb-6 group-hover:scale-105 transition-transform duration-500">
+              <svg class="w-16 h-28 mx-auto" viewBox="0 0 64 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Flame glow -->
+                <ellipse cx="32" cy="22" rx="14" ry="14" fill="#FFD54F" opacity="0.15" class="candle-glow"/>
+                <!-- Flame outer -->
+                <path d="M32 8c-4 6-8 10-8 16 0 5 3.5 8 8 8s8-3 8-8c0-6-4-10-8-16z" fill="#FF8F00" opacity="0.7"/>
+                <!-- Flame inner -->
+                <path d="M32 14c-2.5 4-5 7-5 11 0 3.5 2.2 5.5 5 5.5s5-2 5-5.5c0-4-2.5-7-5-11z" fill="#FFD54F"/>
+                <!-- Flame core -->
+                <path d="M32 19c-1.5 2.5-3 4.5-3 7 0 2 1.3 3.2 3 3.2s3-1.2 3-3.2c0-2.5-1.5-4.5-3-7z" fill="#FFF9C4"/>
+                <!-- Wick -->
+                <line x1="32" y1="30" x2="32" y2="36" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Candle body — WHITE -->
+                <rect x="22" y="36" width="20" height="56" rx="3" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="0.5"/>
+                <!-- Candle highlight -->
+                <rect x="25" y="36" width="6" height="56" rx="2" fill="white" opacity="0.5"/>
+                <!-- Candle base -->
+                <rect x="18" y="88" width="28" height="8" rx="4" fill="#E0E0E0"/>
+                <!-- Drip detail -->
+                <path d="M38 36v8c0 2 3 2 3 0v-8" fill="#EEEEEE" opacity="0.6"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-white mb-3">Spirit</h3>
+            <div class="w-12 h-0.5 bg-white/20 mx-auto mb-4"></div>
+            <p class="text-white/70 text-sm leading-relaxed">Your deepest awareness — the part of you beyond thoughts, emotions, and identity. When spirit is awakened, you experience life with clarity and peace.</p>
           </div>
-          <h3 class="font-heading text-2xl font-bold text-violet mb-3">Body</h3>
-          <p class="text-warm-charcoal text-sm leading-relaxed">Your physical vessel and gateway to awareness. Through mindful breathing and body awareness, you ground yourself in the present moment and release tension.</p>
         </div>
+
       </div>
 
-      <p class="font-heading text-lg md:text-xl text-violet/70 italic max-w-2xl mx-auto text-center mt-10 reveal">
+      <p class="font-heading text-lg md:text-xl text-white/70 italic max-w-2xl mx-auto text-center mt-10 reveal">
         When these three align, you don't just feel better — you begin to live from a completely different place within yourself.
       </p>
     </div>
@@ -353,7 +431,7 @@ const selfAccess = [
   <!-- THE 4 SELF-ACCESS STEPS — payoff of the pyramid's middle tier -->
   <section id="self-access-path" class="scroll-mt-20 bg-ivory">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
-      <div class="max-w-2xl mx-auto text-center mb-12 reveal">
+      <div class="max-w-2xl mx-auto text-center mb-14 reveal">
         <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 4-Step Self-Access Path</p>
         <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-violet leading-tight tracking-tight mb-5">
           From Clean Life to Free Mind
@@ -363,9 +441,10 @@ const selfAccess = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto stagger">
+
         {selfAccess.map((step, i) => (
-          <div class="bg-ivory rounded-card border border-soft-aura shadow-card p-7 hover:shadow-elevated transition-shadow card-calm">
+          <div class="bg-ivory rounded-card border border-soft-aura shadow-card p-7 hover:shadow-elevated transition-shadow card-calm reveal">
             <div class="flex items-baseline gap-3 mb-3">
               <span class="font-heading text-2xl font-bold text-gold-ink/70 leading-none">
                 {String(i + 1).padStart(2, '0')}
@@ -377,9 +456,10 @@ const selfAccess = [
             <p class="text-gold-ink text-sm italic font-medium border-l-2 border-gold-ink/40 pl-3">{step.principle}</p>
           </div>
         ))}
+
       </div>
 
-      <!-- Path flow: Morality → Mindfulness → Meditation → Wisdom → Awakening -->
+      <!-- Path flow -->
       <div class="mt-10 reveal">
         <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-violet/80">
           <span>Morality</span>
@@ -399,7 +479,7 @@ const selfAccess = [
   <!-- THE 7 LIFE TRANSFORMATIONS — payoff of the pyramid's top tier -->
   <section id="seven-transformations" class="scroll-mt-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
-      <div class="max-w-2xl mx-auto text-center mb-12 reveal">
+      <div class="max-w-2xl mx-auto text-center mb-14 reveal">
         <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">The 7 Life Transformations</p>
         <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-violet leading-tight tracking-tight mb-5">
           Where Awakening Meets Daily Life
@@ -414,7 +494,7 @@ const selfAccess = [
         {firstSix.map((t, i) => (
           <div class="bg-white rounded-card border border-oat-border shadow-card p-6 hover:shadow-elevated transition-shadow card-calm">
             <div class="flex items-start gap-4">
-              <span class="font-heading text-2xl font-bold text-gold-ink/70 shrink-0 leading-none pt-1">
+              <span class={`font-heading text-2xl font-bold shrink-0 leading-none pt-1 ${i % 3 === 0 ? 'text-sacred-yellow-dark/50' : i % 3 === 1 ? 'text-sacred-red/40' : 'text-violet/30'}`}>
                 {String(i + 1).padStart(2, '0')}
               </span>
               <div>
@@ -426,12 +506,12 @@ const selfAccess = [
         ))}
       </div>
 
-      <!-- Summit: Life Purpose (the ultimate transformation) -->
+      <!-- Summit: Life Purpose -->
       <div class="bg-gradient-to-br from-violet to-violet-dark rounded-card shadow-elevated p-7 md:p-9 text-white reveal">
         <div class="flex items-start gap-5 max-w-3xl mx-auto">
-          <span class="font-heading text-3xl font-bold text-sky-mist shrink-0 leading-none pt-1">07</span>
+          <span class="font-heading text-3xl font-bold text-deep-calm-light/40 shrink-0 leading-none pt-1">07</span>
           <div>
-            <p class="text-sky-mist text-xs uppercase tracking-[0.2em] font-semibold mb-2">The Ultimate Transformation</p>
+            <p class="text-deep-calm-light text-xs uppercase tracking-[0.2em] font-semibold mb-2">The Ultimate Transformation</p>
             <h3 class="font-heading text-2xl md:text-3xl font-bold mb-2">{summit.name}</h3>
             <p class="text-white/80 text-base leading-relaxed">{summit.body} When purpose becomes clear, life gains direction — and you begin to live not only for survival, but for contribution and impact.</p>
           </div>
@@ -441,10 +521,10 @@ const selfAccess = [
       <!-- The Essence of 347 — closing brand mantra -->
       <div class="mt-14 text-center reveal">
         <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.25em] mb-5">The Essence of 347</p>
-        <div class="font-heading text-2xl md:text-3xl lg:text-4xl text-violet leading-relaxed">
-          <p>Awaken the mind.</p>
-          <p>Balance the life.</p>
-          <p class="text-gold-ink">Transform the world.</p>
+        <div class="font-heading text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+          <p class="text-sacred-red font-bold">Awaken the mind.</p>
+          <p class="text-violet font-bold">Balance the life.</p>
+          <p class="text-sacred-yellow-dark font-bold">Transform the world.</p>
         </div>
       </div>
     </div>
