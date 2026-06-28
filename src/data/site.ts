@@ -40,6 +40,54 @@ export const mapEmbed =
 export const googleMapsLink =
   'https://www.google.com/maps/place/347+Happy+life+meditation+retreat/@18.7787367,98.9810711,17z/data=!3m1!4b1!4m6!3m5!1s0x30da31004702f2c5:0x4660cea33addd1fc!8m2!3d18.7787316!4d98.983646!16s%2Fg%2F11vt0mkk_0';
 
+// ===== Homepage content =====
+
+// The 347 Method overview cards (homepage "Body. Mind. Spirit. Aligned.")
+export const methodPillars = [
+  {
+    num: '3', title: 'Body Alignment', icon: 'leaf',
+    body: 'Reset your nervous system, awaken your energy, and create balance in your body.',
+    href: '/method#alignment',
+  },
+  {
+    num: '4', title: 'Mind Alignment', icon: 'lotus',
+    body: 'Clear your thoughts, regulate your emotions, and cultivate clarity and presence.',
+    href: '/method#awakening',
+  },
+  {
+    num: '7', title: 'Spirit Alignment', icon: 'sun',
+    body: 'Connect with your inner wisdom, live with purpose, and awaken your highest potential.',
+    href: '/method#transformation',
+  },
+];
+
+// "Find the Path for You" program cards
+export const pathCards = [
+  {
+    title: 'Online Courses', img: '/images/retreat-meditation.webp',
+    body: 'Self-paced courses for your personal growth and awakening.',
+    cta: 'Explore', href: '/programs#online',
+  },
+  {
+    title: 'Membership', img: '/images/retreat-photo-1.webp',
+    body: 'Join our global community and grow together every day.',
+    cta: 'Learn More', href: '/membership',
+  },
+  {
+    title: 'Retreats', img: '/images/retreat-photo-2.webp',
+    body: 'Luxury retreats in stunning locations for deep healing and awakening.',
+    cta: 'View Retreats', href: '/programs#retreats',
+  },
+  {
+    title: 'Private Mentoring', img: '/images/retreat-photo-3.webp',
+    body: 'Receive personalized guidance and support for your transformation.',
+    cta: 'Apply Now', href: '/programs#mentoring',
+  },
+];
+
+// "A Journey Back to Yourself" retreat feature chips
+export const retreatFeatures = ['Meditation', 'Healing', 'Nature', 'Conscious Living', 'Inner Connection'];
+
 // Brand vision (from Transformation Story)
 export const vision = {
   tagline: 'Awaken your mind. Transform your life. Create your happy world.',
