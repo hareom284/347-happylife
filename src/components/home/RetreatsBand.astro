@@ -1,0 +1,41 @@
+---
+import { retreatFeatures } from '../../data/site';
+
+// Tiny inline icon per feature label.
+const icons: Record<string, string> = {
+  Meditation: '<circle cx="12" cy="7" r="3"/><path stroke-linecap="round" d="M5 21c1.5-4 4-6 7-6s5.5 2 7 6"/>',
+  Healing: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 21C7 17 4 14 4 10.5 4 8 6 6 8.5 6c1.5 0 2.8.8 3.5 2 .7-1.2 2-2 3.5-2C18 6 20 8 20 10.5 20 14 17 17 12 21z"/>',
+  Nature: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21c0-8 5-13 14-13 0 8-5 13-14 13zm0 0c2-4 4.5-6.5 7.5-8"/>',
+  'Conscious Living': '<circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/>',
+  'Inner Connection': '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/>',
+};
+---
+
+<section class="relative bg-cream overflow-hidden">
+  <div class="grid lg:grid-cols-2 items-center">
+    <!-- Text side -->
+    <div class="px-4 sm:px-6 lg:px-12 xl:pl-24 py-20 md:py-28 max-w-xl lg:ml-auto">
+      <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">Luxury Awakening Retreats</p>
+      <h2 class="font-heading text-4xl md:text-5xl font-semibold text-deep-blue mb-5">A Journey Back to Yourself</h2>
+      <div class="w-16 h-px bg-gold mb-8"></div>
+
+      <div class="flex flex-wrap gap-x-8 gap-y-6 mb-10">
+        {retreatFeatures.map((f) => (
+          <div class="flex flex-col items-center text-center gap-2 w-20">
+            <svg class="w-7 h-7 text-royal" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" set:html={icons[f]} />
+            <span class="text-[0.7rem] text-body-light leading-tight">{f}</span>
+          </div>
+        ))}
+      </div>
+
+      <a href="/programs#retreats" class="inline-flex items-center justify-center bg-royal text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide hover:bg-royal-mid transition-all hover:-translate-y-0.5 hover:shadow-lg">
+        Explore Retreats
+      </a>
+    </div>
+
+    <!-- Image side -->
+    <div class="relative h-72 sm:h-96 lg:h-full lg:min-h-[36rem]">
+      <img src="/images/retreat-photo-4.webp" alt="Luxury awakening retreat surrounded by nature" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+    </div>
+  </div>
+</section>
