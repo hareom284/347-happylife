@@ -156,6 +156,52 @@ export const methodTransformation = {
   ],
 };
 
+// ===== Programs page content =====
+export const onSiteExperiences = [
+  { title: '347 Awakening Reset™', dur: '3 Hours', tagline: 'Reset Your Mind. Reconnect Your Life.',
+    body: 'A transformative 3-hour experience to reset your mind, release emotional stress, and reconnect with inner peace and clarity.' },
+  { title: '347 Inner Peace Experience™', dur: '1 Day', tagline: 'Return to Your True Self',
+    body: 'A one-day awakening journey to reconnect with yourself, release emotional stress, and rediscover inner peace.' },
+  { title: '347 Deep Awakening Retreat™', dur: '2 Days', tagline: 'Expand Your Consciousness',
+    body: 'A two-day retreat guiding you through deep emotional healing, inner awakening, and conscious life transformation.' },
+  { title: '347 Consciousness Intensive™', dur: '3 Days', tagline: 'The Ultimate Life Transformation Experience',
+    body: 'A three-day journey to expand consciousness, awaken inner wisdom, and create profound life transformation.' },
+];
+
+export const onlineCourses = [
+  { name: 'Awakening Starter Program', price: '$47', tagline: 'Calm Your Mind & Reconnect Yourself',
+    duration: '1.5 Hours · 1 Live Online Session',
+    learn: ['Quiet the busy mind', 'Basic awakening meditation', 'Breath & energy awareness', 'Emotional reset techniques', 'Daily 10-minute routine'],
+    includes: ['Live Zoom Session', 'Guided Meditation Audio', 'Reflection Workbook PDF'], featured: false },
+  { name: 'Deep Awakening Program', price: '$97', tagline: 'Break Inner Blocks & Transform Your Energy',
+    duration: '3 Hours · 2 Live Sessions (90 min each)',
+    learn: ['Deep emotional release meditation', 'Understanding subconscious patterns', 'Energy balancing', 'Reconnect with purpose', 'Confidence & abundance'],
+    includes: ['2 Live Zoom Sessions', 'Guided Meditation Audio Pack', 'Self-Discovery Worksheet', 'Private Community Access'], featured: true },
+  { name: 'Premium Life Transformation Program', price: '$147', tagline: 'Awaken Your True Self & Transform Your Life',
+    duration: '6 Hours · 4 Live Sessions (90 min each)',
+    learn: ['Advanced awakening meditation', 'Mind-body-spirit alignment', 'Healing trauma patterns', 'Finding life mission', 'Inner peace with success', 'Conscious living'],
+    includes: ['4 Premium Live Sessions', 'Personal Meditation Guidance', 'Energy Alignment Practice', 'Life Mission Assessment', 'VIP Private Support', 'Certificate of Completion'], featured: false },
+];
+
+export const mentoringPrograms = [
+  { name: '347 Clarity Session', tagline: 'One Session Can Change Your Direction.', duration: '90 Minutes',
+    includes: ['1:1 Private Mentoring', 'Emotional Clearing', 'Consciousness Guidance', 'Personalized Insight'],
+    pricing: ['Online: $147', 'In-Person: $197'] },
+  { name: '347 Inner Reset Mentoring', tagline: 'Reset Your Energy. Reconnect with Your True Self.', duration: '1 Month',
+    includes: ['4 Private Sessions', 'Meditation Guidance', 'Emotional & Energy Reset', 'Weekly Personal Practice', 'WhatsApp / LINE Support'],
+    pricing: ['Online: $888', 'VIP In-Person: $1,200'] },
+  { name: '347 Conscious Leadership Mentoring', tagline: 'Success Without Inner Suffering.', duration: '2 Months',
+    includes: ['8 Private Sessions', 'Mind Reprogramming', 'Emotional Mastery', 'Business + Life Alignment', 'Voice Message Support', 'Private Meditation Library'],
+    pricing: ['Online: $2,500', 'VIP Private: $3,500'] },
+];
+
+export const programCategories = [
+  { title: 'On-Site — Chiang Mai', body: 'Experience meditation, healing, and conscious living in a peaceful sanctuary in Chiang Mai.', href: '#retreats' },
+  { title: 'Online Programs', body: 'Transform your life through guided meditations and online consciousness courses from anywhere in the world.', href: '#online' },
+  { title: 'Retreats', body: 'Deep awakening and healing retreats designed for inner transformation and renewal.', href: '#retreats' },
+  { title: 'Private Mentoring', body: 'Personalized 1:1 guidance for emotional healing, conscious leadership, and life transformation.', href: '#mentoring' },
+];
+
 // Brand vision (from Transformation Story)
 export const vision = {
   tagline: 'Awaken your mind. Transform your life. Create your happy world.',
