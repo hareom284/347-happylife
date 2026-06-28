@@ -42,22 +42,61 @@ export const googleMapsLink =
 
 // ===== Homepage content =====
 
-// The 347 Method overview cards (homepage "Body. Mind. Spirit. Aligned.")
+// The 347 Method overview cards (homepage) — 3 Alignment · 4 Awakening · 7 Life Transformation
 export const methodPillars = [
   {
-    num: '3', title: 'Body Alignment', icon: 'leaf',
-    body: 'Reset your nervous system, awaken your energy, and create balance in your body.',
+    num: '3', title: 'Alignment', icon: 'leaf',
+    body: 'Align body, mind, and spirit so the three essential dimensions of life flow as one.',
     href: '/method#alignment',
   },
   {
-    num: '4', title: 'Mind Alignment', icon: 'lotus',
-    body: 'Clear your thoughts, regulate your emotions, and cultivate clarity and presence.',
+    num: '4', title: 'Awakening', icon: 'lotus',
+    body: 'A four-step path — Morality, Mindfulness, Meditation, Wisdom — from a clean life to a free mind.',
     href: '/method#awakening',
   },
   {
-    num: '7', title: 'Spirit Alignment', icon: 'sun',
-    body: 'Connect with your inner wisdom, live with purpose, and awaken your highest potential.',
+    num: '7', title: 'Life Transformation', icon: 'sun',
+    body: 'When seven dimensions of life align, life naturally evolves into clarity, abundance, and purpose.',
     href: '/method#transformation',
+  },
+];
+
+// Homepage "Why 347 Awakening?" — the two contrasting lists from the spec.
+export const whyModernLife = [
+  'Stress and overthinking',
+  'Emotional imbalance',
+  'Lack of purpose',
+  'Burnout and loneliness',
+  'Disconnection from self',
+  'Spiritual emptiness',
+];
+
+export const whyReturnTo = [
+  'Inner peace',
+  'Emotional freedom',
+  'Conscious leadership',
+  'Authentic happiness',
+  'Life purpose',
+  'Compassionate living',
+];
+
+// Instructors (spec: INSTRUCTORS section — Master Swan & Master Kaie)
+export const instructors = [
+  {
+    name: 'Master Swan',
+    img: '/images/master-sawan.webp',
+    role: '',
+    blurb:
+      'A consciousness teacher and meditation guide dedicated to helping people awaken inner wisdom, emotional healing, and spiritual clarity.',
+    specialties: ['Chanting & Meditation', 'Consciousness awakening', 'Spiritual guidance', 'Emotional transformation'],
+  },
+  {
+    name: 'Master Kaie',
+    img: '',
+    role: 'Founder of 347 Awakening · Happy Life Happy World',
+    blurb:
+      'Master Kaie combines mindfulness, healing, consciousness work, and transformational coaching to guide people toward authentic happiness and meaningful living.',
+    specialties: ['Conscious leadership', 'Emotional healing', 'Mindfulness coaching', 'Life transformation', 'Spiritual awakening'],
   },
 ];
 
@@ -376,7 +415,7 @@ export const faqs: Faq[] = [
   },
   {
     q: 'How much does a meditation retreat in Chiang Mai cost?',
-    a: '347 Awakening experiences range from $47 (1,700 THB) for a 3-hour session to $347 (12,500 THB) for a full 3-day retreat. Chanting & Meditation with Master Sawan is 500 THB, and private 1:1 sessions are $77 (2,500 THB). Online packages start at $47.',
+    a: '347 Awakening online programs are $47 (Awakening Starter), $97 (Deep Awakening), and $147 (Premium Life Transformation). On-site experiences in Chiang Mai range from a 3-hour Awakening Reset to a 3-day Consciousness Intensive — contact us for current on-site rates. Private 1:1 mentoring ranges from $147 to $3,500, and Inner Circle membership is $27/month or $270/year.',
   },
   {
     q: 'Do I need meditation experience to join?',

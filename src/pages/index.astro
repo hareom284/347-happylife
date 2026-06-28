@@ -2,17 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import {
   Navbar, Footer, WhatsAppBar,
-  HeroPresence, MethodOverview, ProgramsOverview, RetreatsBand,
+  HeroPresence, MissionWhy, MethodOverview, Instructors, ProgramsOverview, RetreatsBand,
   Testimonials, FreeMeditationCTA,
 } from '../components/index.astro';
 import { wa, email, social, googleMapsLink, testimonials } from '../data/site';
 ---
 
-<Layout title="347 Awakening — Awaken Through Presence | Happy Life Happy World">
+<Layout title="347 Awakening — Awaken Your True Self | Happy Life Happy World">
 
   <Navbar wa={wa} />
   <HeroPresence wa={wa} />
+  <MissionWhy />
   <MethodOverview />
+  <Instructors />
   <ProgramsOverview />
   <RetreatsBand />
   <Testimonials testimonials={testimonials} googleMapsLink={googleMapsLink} wa={wa} />

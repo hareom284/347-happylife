@@ -236,6 +236,25 @@
   border-radius: 4px;
 }
 
+/* Skip link: hidden until focused, then pinned top-left (WCAG 2.4.1) */
+.skip-link {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: 0.75rem;
+  top: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-gold);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
 /* Mobile sticky WhatsApp CTA bar.
    Visible by default so it always appears, then softly slides up on load to draw the eye. */
 @keyframes slideUp {
