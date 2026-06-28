@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar, Footer, WhatsAppBar } from '../components/index.astro';
+import {
+  wa, email, social,
+  homeIntro, mission, problemPoints,
+  threePowerfulQuestions, gpsHappiness, silverTemple,
+} from '../data/site';
+---
+
+<Layout title="About 347 Awakening — Awaken Your True Self">
+  <Navbar wa={wa} />
+
+  <!-- Page hero -->
+  <section class="bg-deep-blue text-cream py-24 md:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-5">About</p>
+      <h1 class="font-heading text-5xl md:text-6xl font-semibold mb-6">Awaken Your True Self</h1>
+      <p class="text-cream/80 text-lg leading-relaxed max-w-2xl mx-auto">{homeIntro}</p>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="bg-cream py-20 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">The Problem</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-semibold text-deep-blue mb-5">Successful outside, suffering inside</h2>
+        <p class="text-body-light leading-relaxed mb-4">
+          Today many people are successful externally but suffering internally. 347 Awakening was created to guide people back to their true essence — not through religion, not through escape, but through conscious awakening and practical transformation.
+        </p>
+      </div>
+      <ul class="space-y-3">
+        {problemPoints.map((p) => (
+          <li class="flex items-start gap-3 bg-white rounded-card border border-oat-border/60 px-5 py-4 shadow-clay">
+            <span class="mt-1 w-2 h-2 rounded-full bg-gold shrink-0"></span>
+            <span class="text-body">{p}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3 Powerful Questions -->
+  <section class="bg-cream-dark py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">Three Powerful Questions</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-semibold text-deep-blue mb-4">The foundation of an awakened life</h2>
+        <p class="text-body-light leading-relaxed">Without clear answers to these three questions, life can become filled with confusion and emptiness. They are the foundation of a meaningful and awakened life.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        {threePowerfulQuestions.map((q) => (
+          <div class="bg-white rounded-card border border-oat-border/60 p-8 shadow-card text-center">
+            <div class="w-14 h-14 rounded-full bg-royal text-white font-heading text-2xl flex items-center justify-center mx-auto mb-5">{q.n}</div>
+            <h3 class="font-heading text-2xl font-semibold text-deep-blue mb-3">{q.q}</h3>
+            <p class="text-body-light text-sm leading-relaxed">{q.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Silver Temple & GPS Happiness -->
+  <section class="bg-cream py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div class="rounded-section overflow-hidden shadow-elevated order-2 lg:order-1">
+          <img src="/images/silver-temple-front-800.webp" alt="The Silver Temple (Wat Sri Suphan), Chiang Mai" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="order-1 lg:order-2">
+          <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">A Symbol of Inner Awakening</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-semibold text-deep-blue mb-5">{silverTemple.title}</h2>
+          <p class="text-body-light leading-relaxed">{silverTemple.body}</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {gpsHappiness.map((g) => (
+          <div class="text-center px-6">
+            <div class="w-16 h-16 rounded-full bg-gold text-white font-heading text-3xl flex items-center justify-center mx-auto mb-5">{g.letter}</div>
+            <h3 class="font-heading text-2xl font-semibold text-deep-blue mb-2">{g.title}</h3>
+            <p class="text-body-light text-sm leading-relaxed">{g.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="bg-royal text-cream py-20 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs uppercase tracking-[0.3em] text-cream/70 font-semibold mb-5">Our Mission</p>
+      <p class="font-heading text-2xl md:text-3xl leading-relaxed">{mission}</p>
+      <a href={wa} target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-gold text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide hover:bg-gold-dark transition-all mt-10">
+        Begin Your Journey
+      </a>
+    </div>
+  </section>
+
+  <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
+  <WhatsAppBar wa={wa} />
+</Layout>

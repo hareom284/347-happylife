@@ -88,6 +88,38 @@ export const pathCards = [
 // "A Journey Back to Yourself" retreat feature chips
 export const retreatFeatures = ['Meditation', 'Healing', 'Nature', 'Conscious Living', 'Inner Connection'];
 
+// ===== About page content =====
+export const mission =
+  'To help humanity awaken consciousness, heal from within, and create a peaceful world through inner transformation.';
+
+export const homeIntro =
+  '347 Awakening is a transformational journey designed to help people reconnect with their inner wisdom, emotional balance, purpose, and consciousness through meditation, mindfulness, healing, and spiritual awakening.';
+
+export const problemPoints = [
+  'Mentally exhausted',
+  'Emotionally overwhelmed',
+  'Spiritually disconnected',
+  'Living without meaning',
+  'Searching for happiness outside themselves',
+];
+
+export const threePowerfulQuestions = [
+  { n: '1', q: 'Who Am I?', body: 'Beyond your name, career, status, and identity… who are you truly?' },
+  { n: '2', q: 'Why Was I Born on This Earth?', body: 'Every human being has a unique purpose, gift, and reason for existence.' },
+  { n: '3', q: 'What Is My Mission?', body: 'How can we use our life to create meaning, happiness, and positive impact for the world?' },
+];
+
+export const gpsHappiness = [
+  { letter: 'G', title: 'Gratitude', body: 'Living with appreciation, humility, and gratitude for life.' },
+  { letter: 'P', title: 'Presence', body: 'Being fully aware and mindful in the present moment.' },
+  { letter: 'S', title: 'Service', body: 'Using our life, gifts, and consciousness to serve others and create a better world.' },
+];
+
+export const silverTemple = {
+  title: 'The Silver Temple & GPS Happiness',
+  body: 'Wat Sri Suphan, the "Silver Temple," is one of the most spiritually beautiful temples in Chiang Mai, Thailand. With a history of more than 500 years, it is renowned for its magnificent silver ordination hall. For 347 Awakening, the Silver Temple represents the symbol of inner awakening — the Silver Temple within every human being. In its silence and sacred atmosphere, people reconnect with inner peace, clarity of life, emotional balance, and true happiness from within.',
+};
+
 // Brand vision (from Transformation Story)
 export const vision = {
   tagline: 'Awaken your mind. Transform your life. Create your happy world.',
