@@ -1,0 +1,42 @@
+---
+interface Props {
+  wa: string;
+}
+
+const { wa } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-deep-blue min-h-[88vh] flex items-center">
+  <!-- Background image -->
+  <img
+    src="/images/hero-main.webp"
+    alt="A woman meditating in serene nature at sunrise"
+    class="absolute inset-0 w-full h-full object-cover object-center"
+    fetchpriority="high"
+  />
+  <!-- Readability gradient: stronger on the left where the text sits -->
+  <div class="absolute inset-0 bg-gradient-to-r from-deep-blue/85 via-deep-blue/55 to-deep-blue/10"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-deep-blue/50 via-transparent to-transparent"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+    <div class="max-w-2xl">
+      <p class="text-xs sm:text-sm uppercase tracking-[0.35em] text-gold-light font-semibold mb-6">
+        Return to Alignment
+      </p>
+      <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-semibold text-white leading-[1.05] mb-6" style="text-shadow: 0 2px 18px rgba(0,0,0,0.4);">
+        Awaken Through Presence
+      </h1>
+      <p class="text-lg md:text-xl text-cream/90 leading-relaxed mb-10 max-w-xl" style="text-shadow: 0 1px 8px rgba(0,0,0,0.4);">
+        A sanctuary for conscious leaders to reconnect with peace, clarity, and true awakening.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href={wa} target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-gold text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide hover:bg-gold-dark transition-all hover:-translate-y-0.5 hover:shadow-xl shadow-lg">
+          Begin Your Journey
+        </a>
+        <a href="#free-meditation" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide border border-white/50 hover:bg-white/20 transition-all hover:-translate-y-0.5">
+          Free Meditation
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
