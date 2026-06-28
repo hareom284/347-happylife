@@ -120,6 +120,42 @@ export const silverTemple = {
   body: 'Wat Sri Suphan, the "Silver Temple," is one of the most spiritually beautiful temples in Chiang Mai, Thailand. With a history of more than 500 years, it is renowned for its magnificent silver ordination hall. For 347 Awakening, the Silver Temple represents the symbol of inner awakening — the Silver Temple within every human being. In its silence and sacred atmosphere, people reconnect with inner peace, clarity of life, emotional balance, and true happiness from within.',
 };
 
+// ===== The Method page (347 framework, full) =====
+export const methodAlignment = {
+  num: '3', title: 'Alignment', subtitle: 'Body · Mind · Spirit',
+  intro: 'True transformation begins when the three essential dimensions of life align and flow as one.',
+  items: [
+    { name: 'Body Alignment', body: 'Healing the body through breath, movement, nutrition, rest, and energy balance.' },
+    { name: 'Mind Alignment', body: 'Transforming thoughts, emotions, beliefs, and mental patterns.' },
+    { name: 'Spirit Alignment', body: 'Connecting with consciousness, intuition, inner peace, and higher purpose.' },
+  ],
+};
+
+export const methodAwakening = {
+  num: '4', title: 'Awakening', subtitle: 'Morality · Mindfulness · Meditation · Wisdom',
+  intro: 'A four-step path of inner awakening — from a clean life to a free mind.',
+  items: [
+    { name: 'Morality', body: 'Living with integrity, compassion, and conscious responsibility.' },
+    { name: 'Mindfulness', body: 'Developing awareness in daily life and the present moment.' },
+    { name: 'Meditation', body: 'Cultivating inner silence, clarity, and emotional healing.' },
+    { name: 'Wisdom', body: 'Understanding life deeply beyond fear, ego, and suffering.' },
+  ],
+};
+
+export const methodTransformation = {
+  num: '7', title: 'Life Transformation',
+  intro: 'When these seven dimensions align, life naturally evolves into clarity, abundance, and purpose.',
+  items: [
+    { name: 'Health', body: 'Vitality, energy, and holistic wellbeing.' },
+    { name: 'Emotional Balance', body: 'Inner stability, healing, and peace.' },
+    { name: 'Love & Relationship', body: 'Conscious communication and heart connection.' },
+    { name: 'Self Development', body: 'Growth, confidence, and leadership.' },
+    { name: 'Soul Work', body: 'Living aligned with your soul and authentic self.' },
+    { name: 'Holistic Wealth', body: 'Abundance in health, relationships, purpose, and finances.' },
+    { name: 'Life Purpose', body: 'Discovering and living your mission on Earth.' },
+  ],
+};
+
 // Brand vision (from Transformation Story)
 export const vision = {
   tagline: 'Awaken your mind. Transform your life. Create your happy world.',
