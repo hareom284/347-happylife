@@ -1,0 +1,37 @@
+---
+interface Props {
+  wa: string;
+}
+
+const { wa } = Astro.props;
+
+// The name/email fields are visual only — the button is a WhatsApp link.
+// (No form backend; matches the rest of the site.)
+const waFree = `${wa}?text=${encodeURIComponent("Hi! I'd love free access to the 5-minute reset meditation.")}`;
+---
+
+<section id="free-meditation" class="bg-cream-dark py-16 scroll-mt-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-cream rounded-section shadow-card border border-oat-border/60 p-8 md:p-10 flex flex-col lg:flex-row items-center gap-8">
+      <!-- Copy -->
+      <div class="flex items-start gap-4 lg:max-w-sm">
+        <div class="w-14 h-14 rounded-full bg-royal flex items-center justify-center shrink-0">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8V21M8 8h8M5 8h14v0a2 2 0 002-2 3 3 0 00-5.2-2.1L12 5 10.2 3.9A3 3 0 005 6a2 2 0 002 2z" /></svg>
+        </div>
+        <div>
+          <h2 class="font-heading text-2xl font-semibold text-deep-blue mb-1.5">Free Meditation for Busy Leaders</h2>
+          <p class="text-body-light text-sm leading-relaxed">Get instant access to a 5-minute meditation to reset your mind and nervous system.</p>
+        </div>
+      </div>
+
+      <!-- "Form" (decorative inputs + WhatsApp CTA) -->
+      <form class="flex flex-col sm:flex-row gap-3 w-full lg:flex-1" onsubmit="return false;">
+        <input type="text" placeholder="Your Name" aria-label="Your Name" class="flex-1 px-4 py-3 rounded-full border border-oat-border bg-white text-sm text-body placeholder:text-body-muted focus:outline-none focus:ring-2 focus:ring-gold/40" />
+        <input type="email" placeholder="Your Email" aria-label="Your Email" class="flex-1 px-4 py-3 rounded-full border border-oat-border bg-white text-sm text-body placeholder:text-body-muted focus:outline-none focus:ring-2 focus:ring-gold/40" />
+        <a href={waFree} target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-deep-blue text-white px-7 py-3 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-navy transition-colors whitespace-nowrap">
+          Get Free Access
+        </a>
+      </form>
+    </div>
+  </div>
+</section>

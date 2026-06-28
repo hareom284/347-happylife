@@ -114,7 +114,7 @@ const { title, description = 'Meditation retreat in Chiang Mai — Vipassana & m
         "longitude": 98.983646
       },
       "hasMap": "https://www.google.com/maps/place/347+Happy+life+meditation+retreat/@18.7787367,98.9810711,17z",
-      "priceRange": "$47-$347",
+      "priceRange": "$27-$3500",
       "currenciesAccepted": "THB, USD",
       "paymentAccepted": "Cash, Bank Transfer",
       "openingHours": "Mo-Su 09:00-17:00",
@@ -167,11 +167,11 @@ const { title, description = 'Meditation retreat in Chiang Mai — Vipassana & m
         "address": "Wua Lai Road, Chiang Mai, Thailand"
       },
       "offers": [
-        { "@type": "Offer", "name": "Chanting & Meditation (Master Sawan)", "price": "500", "priceCurrency": "THB", "availability": "https://schema.org/InStock" },
-        { "@type": "Offer", "name": "347 Awakening 3 Hours", "price": "47", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
-        { "@type": "Offer", "name": "347 Awakening 1 Day", "price": "147", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
-        { "@type": "Offer", "name": "347 Awakening 3 Days", "price": "347", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
-        { "@type": "Offer", "name": "Private Session 1:1", "price": "77", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+        { "@type": "Offer", "name": "Awakening Starter Program (Online)", "price": "47", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Deep Awakening Program (Online)", "price": "97", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Premium Life Transformation Program (Online)", "price": "147", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "347 Clarity Session (Private Mentoring)", "price": "147", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "347 Inner Circle Membership", "price": "27", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
       ]
     })} />
 
@@ -312,10 +312,15 @@ const { title, description = 'Meditation retreat in Chiang Mai — Vipassana & m
     </script>
   </head>
   <body class="bg-ivory text-body antialiased font-sans">
+    <!-- Skip link for keyboard / screen-reader users (WCAG 2.4.1) -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
     <!-- Scroll progress indicator -->
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-    <slot />
+    <main id="main-content" tabindex="-1" class="outline-none">
+      <slot />
+    </main>
 
     <!-- Scroll reveal observer + animations -->
     <script>

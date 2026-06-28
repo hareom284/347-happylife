@@ -1,0 +1,52 @@
+---
+import { instructors } from '../../data/site';
+
+const initials = (name: string) =>
+  name.replace(/^Master\s+/i, '').trim().charAt(0).toUpperCase();
+---
+
+<section id="instructors" class="bg-cream-dark py-20 md:py-28 scroll-mt-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">Instructors</p>
+      <h2 class="font-heading text-4xl md:text-5xl font-semibold text-deep-blue mb-5">Guided by Awakened Teachers</h2>
+      <div class="w-16 h-px bg-gold mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+      {instructors.map((t) => (
+        <article class="bg-white rounded-2xl border border-oat-border p-8 shadow-sm flex flex-col">
+          <div class="flex items-center gap-5 mb-6">
+            {t.img ? (
+              <img
+                src={t.img}
+                alt={`${t.name}, meditation teacher at 347 Awakening`}
+                class="w-20 h-20 rounded-full object-cover shrink-0"
+                loading="lazy"
+              />
+            ) : (
+              <div class="w-20 h-20 rounded-full bg-royal flex items-center justify-center shrink-0">
+                <span class="font-heading text-3xl text-cream">{initials(t.name)}</span>
+              </div>
+            )}
+            <div>
+              <h3 class="font-heading text-2xl font-semibold text-deep-blue">{t.name}</h3>
+              {t.role && <p class="text-xs text-gold-ink font-semibold mt-1">{t.role}</p>}
+            </div>
+          </div>
+
+          <p class="text-body-light text-sm leading-relaxed mb-6">{t.blurb}</p>
+
+          <div class="mt-auto">
+            <p class="text-xs uppercase tracking-wide text-body-muted font-semibold mb-3">Specialties</p>
+            <div class="flex flex-wrap gap-2">
+              {t.specialties.map((s) => (
+                <span class="text-xs text-deep-blue bg-soft-aura-dark/40 px-3 py-1.5 rounded-full">{s}</span>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

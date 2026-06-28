@@ -2,6 +2,18 @@
 export const wa = 'https://wa.me/66944265297';
 export const email = '347happylifehappyworld@gmail.com';
 
+// Primary navigation
+export const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'The Method', href: '/method' },
+  { label: 'Programs', href: '/programs' },
+  { label: 'Retreats', href: '/programs#retreats' },
+  { label: 'Membership', href: '/membership' },
+  { label: 'Journal', href: '/blog/best-meditation-retreat-chiang-mai' },
+  { label: 'Contact', href: '/contact' },
+];
+
 // Featured TikTok video on the Master Kaie section.
 // Swap these two values to change which video is embedded — no other code changes needed.
 export const featuredTiktok = {
@@ -27,6 +39,231 @@ export const mapEmbed =
 
 export const googleMapsLink =
   'https://www.google.com/maps/place/347+Happy+life+meditation+retreat/@18.7787367,98.9810711,17z/data=!3m1!4b1!4m6!3m5!1s0x30da31004702f2c5:0x4660cea33addd1fc!8m2!3d18.7787316!4d98.983646!16s%2Fg%2F11vt0mkk_0';
+
+// ===== Homepage content =====
+
+// The 347 Method overview cards (homepage) — 3 Alignment · 4 Awakening · 7 Life Transformation
+export const methodPillars = [
+  {
+    num: '3', title: 'Alignment', icon: 'leaf',
+    body: 'Align body, mind, and spirit so the three essential dimensions of life flow as one.',
+    href: '/method#alignment',
+  },
+  {
+    num: '4', title: 'Awakening', icon: 'lotus',
+    body: 'A four-step path — Morality, Mindfulness, Meditation, Wisdom — from a clean life to a free mind.',
+    href: '/method#awakening',
+  },
+  {
+    num: '7', title: 'Life Transformation', icon: 'sun',
+    body: 'When seven dimensions of life align, life naturally evolves into clarity, abundance, and purpose.',
+    href: '/method#transformation',
+  },
+];
+
+// Homepage "Why 347 Awakening?" — the two contrasting lists from the spec.
+export const whyModernLife = [
+  'Stress and overthinking',
+  'Emotional imbalance',
+  'Lack of purpose',
+  'Burnout and loneliness',
+  'Disconnection from self',
+  'Spiritual emptiness',
+];
+
+export const whyReturnTo = [
+  'Inner peace',
+  'Emotional freedom',
+  'Conscious leadership',
+  'Authentic happiness',
+  'Life purpose',
+  'Compassionate living',
+];
+
+// Instructors (spec: INSTRUCTORS section — Master Swan & Master Kaie)
+export const instructors = [
+  {
+    name: 'Master Swan',
+    img: '/images/master-sawan.webp',
+    role: '',
+    blurb:
+      'A consciousness teacher and meditation guide dedicated to helping people awaken inner wisdom, emotional healing, and spiritual clarity.',
+    specialties: ['Chanting & Meditation', 'Consciousness awakening', 'Spiritual guidance', 'Emotional transformation'],
+  },
+  {
+    name: 'Master Kaie',
+    img: '',
+    role: 'Founder of 347 Awakening · Happy Life Happy World',
+    blurb:
+      'Master Kaie combines mindfulness, healing, consciousness work, and transformational coaching to guide people toward authentic happiness and meaningful living.',
+    specialties: ['Conscious leadership', 'Emotional healing', 'Mindfulness coaching', 'Life transformation', 'Spiritual awakening'],
+  },
+];
+
+// "Find the Path for You" program cards
+export const pathCards = [
+  {
+    title: 'Online Courses', img: '/images/retreat-meditation.webp',
+    body: 'Self-paced courses for your personal growth and awakening.',
+    cta: 'Explore', href: '/programs#online',
+  },
+  {
+    title: 'Membership', img: '/images/retreat-photo-1.webp',
+    body: 'Join our global community and grow together every day.',
+    cta: 'Learn More', href: '/membership',
+  },
+  {
+    title: 'Retreats', img: '/images/retreat-photo-2.webp',
+    body: 'Luxury retreats in stunning locations for deep healing and awakening.',
+    cta: 'View Retreats', href: '/programs#retreats',
+  },
+  {
+    title: 'Private Mentoring', img: '/images/retreat-photo-3.webp',
+    body: 'Receive personalized guidance and support for your transformation.',
+    cta: 'Apply Now', href: '/programs#mentoring',
+  },
+];
+
+// "A Journey Back to Yourself" retreat feature chips
+export const retreatFeatures = ['Meditation', 'Healing', 'Nature', 'Conscious Living', 'Inner Connection'];
+
+// ===== About page content =====
+export const mission =
+  'To help humanity awaken consciousness, heal from within, and create a peaceful world through inner transformation.';
+
+export const homeIntro =
+  '347 Awakening is a transformational journey designed to help people reconnect with their inner wisdom, emotional balance, purpose, and consciousness through meditation, mindfulness, healing, and spiritual awakening.';
+
+export const problemPoints = [
+  'Mentally exhausted',
+  'Emotionally overwhelmed',
+  'Spiritually disconnected',
+  'Living without meaning',
+  'Searching for happiness outside themselves',
+];
+
+export const threePowerfulQuestions = [
+  { n: '1', q: 'Who Am I?', body: 'Beyond your name, career, status, and identity… who are you truly?' },
+  { n: '2', q: 'Why Was I Born on This Earth?', body: 'Every human being has a unique purpose, gift, and reason for existence.' },
+  { n: '3', q: 'What Is My Mission?', body: 'How can we use our life to create meaning, happiness, and positive impact for the world?' },
+];
+
+export const gpsHappiness = [
+  { letter: 'G', title: 'Gratitude', body: 'Living with appreciation, humility, and gratitude for life.' },
+  { letter: 'P', title: 'Presence', body: 'Being fully aware and mindful in the present moment.' },
+  { letter: 'S', title: 'Service', body: 'Using our life, gifts, and consciousness to serve others and create a better world.' },
+];
+
+export const silverTemple = {
+  title: 'The Silver Temple & GPS Happiness',
+  body: 'Wat Sri Suphan, the "Silver Temple," is one of the most spiritually beautiful temples in Chiang Mai, Thailand. With a history of more than 500 years, it is renowned for its magnificent silver ordination hall. For 347 Awakening, the Silver Temple represents the symbol of inner awakening — the Silver Temple within every human being. In its silence and sacred atmosphere, people reconnect with inner peace, clarity of life, emotional balance, and true happiness from within.',
+};
+
+// ===== The Method page (347 framework, full) =====
+export const methodAlignment = {
+  num: '3', title: 'Alignment', subtitle: 'Body · Mind · Spirit',
+  intro: 'True transformation begins when the three essential dimensions of life align and flow as one.',
+  items: [
+    { name: 'Body Alignment', body: 'Healing the body through breath, movement, nutrition, rest, and energy balance.' },
+    { name: 'Mind Alignment', body: 'Transforming thoughts, emotions, beliefs, and mental patterns.' },
+    { name: 'Spirit Alignment', body: 'Connecting with consciousness, intuition, inner peace, and higher purpose.' },
+  ],
+};
+
+export const methodAwakening = {
+  num: '4', title: 'Awakening', subtitle: 'Morality · Mindfulness · Meditation · Wisdom',
+  intro: 'A four-step path of inner awakening — from a clean life to a free mind.',
+  items: [
+    { name: 'Morality', body: 'Living with integrity, compassion, and conscious responsibility.' },
+    { name: 'Mindfulness', body: 'Developing awareness in daily life and the present moment.' },
+    { name: 'Meditation', body: 'Cultivating inner silence, clarity, and emotional healing.' },
+    { name: 'Wisdom', body: 'Understanding life deeply beyond fear, ego, and suffering.' },
+  ],
+};
+
+export const methodTransformation = {
+  num: '7', title: 'Life Transformation',
+  intro: 'When these seven dimensions align, life naturally evolves into clarity, abundance, and purpose.',
+  items: [
+    { name: 'Health', body: 'Vitality, energy, and holistic wellbeing.' },
+    { name: 'Emotional Balance', body: 'Inner stability, healing, and peace.' },
+    { name: 'Love & Relationship', body: 'Conscious communication and heart connection.' },
+    { name: 'Self Development', body: 'Growth, confidence, and leadership.' },
+    { name: 'Soul Work', body: 'Living aligned with your soul and authentic self.' },
+    { name: 'Holistic Wealth', body: 'Abundance in health, relationships, purpose, and finances.' },
+    { name: 'Life Purpose', body: 'Discovering and living your mission on Earth.' },
+  ],
+};
+
+// ===== Programs page content =====
+export const onSiteExperiences = [
+  { title: '347 Awakening Reset™', dur: '3 Hours', tagline: 'Reset Your Mind. Reconnect Your Life.',
+    body: 'A transformative 3-hour experience to reset your mind, release emotional stress, and reconnect with inner peace and clarity.' },
+  { title: '347 Inner Peace Experience™', dur: '1 Day', tagline: 'Return to Your True Self',
+    body: 'A one-day awakening journey to reconnect with yourself, release emotional stress, and rediscover inner peace.' },
+  { title: '347 Deep Awakening Retreat™', dur: '2 Days', tagline: 'Expand Your Consciousness',
+    body: 'A two-day retreat guiding you through deep emotional healing, inner awakening, and conscious life transformation.' },
+  { title: '347 Consciousness Intensive™', dur: '3 Days', tagline: 'The Ultimate Life Transformation Experience',
+    body: 'A three-day journey to expand consciousness, awaken inner wisdom, and create profound life transformation.' },
+];
+
+export const onlineCourses = [
+  { name: 'Awakening Starter Program', price: '$47', tagline: 'Calm Your Mind & Reconnect Yourself',
+    duration: '1.5 Hours · 1 Live Online Session',
+    learn: ['Quiet the busy mind', 'Basic awakening meditation', 'Breath & energy awareness', 'Emotional reset techniques', 'Daily 10-minute routine'],
+    includes: ['Live Zoom Session', 'Guided Meditation Audio', 'Reflection Workbook PDF'], featured: false },
+  { name: 'Deep Awakening Program', price: '$97', tagline: 'Break Inner Blocks & Transform Your Energy',
+    duration: '3 Hours · 2 Live Sessions (90 min each)',
+    learn: ['Deep emotional release meditation', 'Understanding subconscious patterns', 'Energy balancing', 'Reconnect with purpose', 'Confidence & abundance'],
+    includes: ['2 Live Zoom Sessions', 'Guided Meditation Audio Pack', 'Self-Discovery Worksheet', 'Private Community Access'], featured: true },
+  { name: 'Premium Life Transformation Program', price: '$147', tagline: 'Awaken Your True Self & Transform Your Life',
+    duration: '6 Hours · 4 Live Sessions (90 min each)',
+    learn: ['Advanced awakening meditation', 'Mind-body-spirit alignment', 'Healing trauma patterns', 'Finding life mission', 'Inner peace with success', 'Conscious living'],
+    includes: ['4 Premium Live Sessions', 'Personal Meditation Guidance', 'Energy Alignment Practice', 'Life Mission Assessment', 'VIP Private Support', 'Certificate of Completion'], featured: false },
+];
+
+export const mentoringPrograms = [
+  { name: '347 Clarity Session', tagline: 'One Session Can Change Your Direction.', duration: '90 Minutes',
+    includes: ['1:1 Private Mentoring', 'Emotional Clearing', 'Consciousness Guidance', 'Personalized Insight'],
+    pricing: ['Online: $147', 'In-Person: $197'] },
+  { name: '347 Inner Reset Mentoring', tagline: 'Reset Your Energy. Reconnect with Your True Self.', duration: '1 Month',
+    includes: ['4 Private Sessions', 'Meditation Guidance', 'Emotional & Energy Reset', 'Weekly Personal Practice', 'WhatsApp / LINE Support'],
+    pricing: ['Online: $888', 'VIP In-Person: $1,200'] },
+  { name: '347 Conscious Leadership Mentoring', tagline: 'Success Without Inner Suffering.', duration: '2 Months',
+    includes: ['8 Private Sessions', 'Mind Reprogramming', 'Emotional Mastery', 'Business + Life Alignment', 'Voice Message Support', 'Private Meditation Library'],
+    pricing: ['Online: $2,500', 'VIP Private: $3,500'] },
+];
+
+export const programCategories = [
+  { title: 'On-Site — Chiang Mai', body: 'Experience meditation, healing, and conscious living in a peaceful sanctuary in Chiang Mai.', href: '#retreats' },
+  { title: 'Online Programs', body: 'Transform your life through guided meditations and online consciousness courses from anywhere in the world.', href: '#online' },
+  { title: 'Retreats', body: 'Deep awakening and healing retreats designed for inner transformation and renewal.', href: '#retreats' },
+  { title: 'Private Mentoring', body: 'Personalized 1:1 guidance for emotional healing, conscious leadership, and life transformation.', href: '#mentoring' },
+];
+
+// ===== Membership & Contact page content =====
+export const membership = {
+  name: '347 Inner Circle™ Essential',
+  blurb: 'A global conscious community for ongoing growth, healing, and awakening.',
+  priceMonth: '$27', priceMonthUnit: '/ month',
+  priceYear: '$270', priceYearUnit: '/ year',
+  includes: [
+    'Weekly Group Meditation',
+    'Monthly Consciousness Workshop',
+    'Private Community Access',
+    'Emotional Healing Sharing Circle',
+    'Inspirational Teachings & Practices',
+    'Global Conscious Community',
+  ],
+  perfectFor: 'People seeking peace, emotional healing, and spiritual connection.',
+};
+
+export const volunteer = {
+  blurb: '347 Awakening is more than a program. It is a global mission to create a happier and more conscious world.',
+  roles: ['Meditation', 'Healing', 'Conscious living', 'Community service', 'Event support', 'Content creation', 'Global impact'],
+};
+
+export const collaboration = ['Retreat partners', 'Wellness centers', 'Conscious leaders', 'Volunteers', 'Global ambassadors'];
 
 // Brand vision (from Transformation Story)
 export const vision = {
@@ -178,7 +415,7 @@ export const faqs: Faq[] = [
   },
   {
     q: 'How much does a meditation retreat in Chiang Mai cost?',
-    a: '347 Awakening experiences range from $47 (1,700 THB) for a 3-hour session to $347 (12,500 THB) for a full 3-day retreat. Chanting & Meditation with Master Sawan is 500 THB, and private 1:1 sessions are $77 (2,500 THB). Online packages start at $47.',
+    a: '347 Awakening online programs are $47 (Awakening Starter), $97 (Deep Awakening), and $147 (Premium Life Transformation). On-site experiences in Chiang Mai range from a 3-hour Awakening Reset to a 3-day Consciousness Intensive — contact us for current on-site rates. Private 1:1 mentoring ranges from $147 to $3,500, and Inner Circle membership is $27/month or $270/year.',
   },
   {
     q: 'Do I need meditation experience to join?',

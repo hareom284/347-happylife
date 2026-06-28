@@ -1,9 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { wa } from '../../data/site';
+import { Navbar, Footer, WhatsAppBar } from '../../components/index.astro';
+import { wa, email, social } from '../../data/site';
 ---
 
 <Layout title="Best Meditation Retreats in Chiang Mai (2026 Guide) | 347 Awakening" description="Discover the best meditation retreats in Chiang Mai for 2026. Compare Vipassana, mindfulness, and awakening programs. Beginner-friendly guide by 347 Awakening.">
+
+  <Navbar wa={wa} />
 
   <article class="bg-ivory py-20 md:py-28">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
@@ -100,5 +103,8 @@ import { wa } from '../../data/site';
       </div>
     </div>
   </article>
+
+  <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
+  <WhatsAppBar wa={wa} />
 
 </Layout>

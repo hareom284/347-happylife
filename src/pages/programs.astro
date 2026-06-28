@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar, Footer, WhatsAppBar, FAQ, MapSection } from '../components/index.astro';
+import {
+  wa, email, social, waMsg, mapEmbed, faqs,
+  programCategories, onSiteExperiences, onlineCourses, mentoringPrograms,
+} from '../data/site';
+---
+
+<Layout title="Programs — 347 Awakening | Premium Life Transformation Experiences">
+  <Navbar wa={wa} />
+
+  <!-- Page hero -->
+  <section class="bg-deep-blue text-cream py-24 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-5">Programs</p>
+      <h1 class="font-heading text-5xl md:text-6xl font-semibold mb-6">Premium Life Transformation Experiences</h1>
+      <p class="text-cream/80 text-lg leading-relaxed max-w-2xl mx-auto">Find the path that meets you where you are — from a 3-hour reset to deep 1:1 mentoring.</p>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="bg-cream py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {programCategories.map((c) => (
+        <a href={c.href} class="bg-white rounded-card border border-oat-border/60 p-7 shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all">
+          <h3 class="font-heading text-xl font-semibold text-deep-blue mb-2">{c.title}</h3>
+          <p class="text-body-light text-sm leading-relaxed">{c.body}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- On-Site / Retreats -->
+  <section id="retreats" class="bg-cream-dark py-20 md:py-24 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">On Site — Chiang Mai</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-semibold text-deep-blue">Awakening Experiences & Retreats</h2>
+        <div class="w-16 h-px bg-gold mx-auto mt-5"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {onSiteExperiences.map((e) => (
+          <div class="bg-white rounded-card border border-oat-border/60 p-8 shadow-card flex flex-col">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs uppercase tracking-wide font-semibold text-gold-ink bg-gold/10 px-3 py-1 rounded-full">{e.dur}</span>
+            </div>
+            <h3 class="font-heading text-2xl font-semibold text-deep-blue mb-1">{e.title}</h3>
+            <p class="text-gold-ink text-sm italic mb-4">{e.tagline}</p>
+            <p class="text-body-light text-sm leading-relaxed mb-6 flex-1">{e.body}</p>
+            <a href={waMsg(e.title)} target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-royal text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-royal-mid transition-all">
+              Book This Experience
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Online Courses -->
+  <section id="online" class="bg-cream py-20 md:py-24 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">Online Courses</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-semibold text-deep-blue">Transform from Anywhere in the World</h2>
+        <p class="text-body-light leading-relaxed mt-4">Designed for entrepreneurs, professionals, and seekers who want peace, clarity, healing, and awakening.</p>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-6 items-start">
+        {onlineCourses.map((c) => (
+          <div class={`rounded-card p-8 shadow-card flex flex-col ${c.featured ? 'bg-deep-blue text-cream ring-2 ring-gold lg:-mt-4 lg:mb-4' : 'bg-white border border-oat-border/60'}`}>
+            {c.featured && <span class="self-start text-[0.65rem] uppercase tracking-wide font-bold text-deep-blue bg-gold px-3 py-1 rounded-full mb-4">Most Popular</span>}
+            <h3 class={`font-heading text-2xl font-semibold mb-1 ${c.featured ? 'text-cream' : 'text-deep-blue'}`}>{c.name}</h3>
+            <p class={`text-sm italic mb-4 ${c.featured ? 'text-gold-light' : 'text-gold-ink'}`}>{c.tagline}</p>
+            <div class={`font-heading text-4xl font-semibold mb-1 ${c.featured ? 'text-cream' : 'text-deep-blue'}`}>{c.price}</div>
+            <p class={`text-xs mb-6 ${c.featured ? 'text-cream/70' : 'text-body-muted'}`}>{c.duration}</p>
+
+            <p class={`text-xs uppercase tracking-wide font-semibold mb-2 ${c.featured ? 'text-cream/70' : 'text-body-muted'}`}>What You'll Learn</p>
+            <ul class="space-y-2 mb-6">
+              {c.learn.map((l) => (
+                <li class={`flex items-start gap-2 text-sm ${c.featured ? 'text-cream/85' : 'text-body-light'}`}>
+                  <svg class={`w-4 h-4 mt-0.5 shrink-0 ${c.featured ? 'text-gold-light' : 'text-gold-ink'}`} fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  {l}
+                </li>
+              ))}
+            </ul>
+
+            <p class={`text-xs uppercase tracking-wide font-semibold mb-2 ${c.featured ? 'text-cream/70' : 'text-body-muted'}`}>Includes</p>
+            <ul class="space-y-1.5 mb-7 flex-1">
+              {c.includes.map((it) => (
+                <li class={`text-sm ${c.featured ? 'text-cream/85' : 'text-body-light'}`}>• {it}</li>
+              ))}
+            </ul>
+
+            <a href={waMsg(c.name)} target="_blank" rel="noopener" class={`inline-flex items-center justify-center px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wide transition-all ${c.featured ? 'bg-gold text-deep-blue hover:bg-gold-light' : 'bg-royal text-white hover:bg-royal-mid'}`}>
+              Enroll Now
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Private Mentoring -->
+  <section id="mentoring" class="bg-cream-dark py-20 md:py-24 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">Private Mentoring</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-semibold text-deep-blue">Premium 1:1 Consciousness & Life Transformation</h2>
+        <p class="text-body-light leading-relaxed mt-4">Not traditional coaching — a deep transformational experience to reconnect with inner peace, emotional clarity, and conscious living.</p>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-6 items-start">
+        {mentoringPrograms.map((m) => (
+          <div class="bg-white rounded-card border border-oat-border/60 p-8 shadow-card flex flex-col">
+            <h3 class="font-heading text-2xl font-semibold text-deep-blue mb-1">{m.name}</h3>
+            <p class="text-gold-ink text-sm italic mb-3">{m.tagline}</p>
+            <p class="text-xs uppercase tracking-wide text-body-muted font-semibold mb-5">{m.duration}</p>
+            <ul class="space-y-2 mb-6 flex-1">
+              {m.includes.map((it) => (
+                <li class="flex items-start gap-2 text-sm text-body-light">
+                  <svg class="w-4 h-4 mt-0.5 shrink-0 text-gold-ink" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  {it}
+                </li>
+              ))}
+            </ul>
+            <div class="border-t border-oat-border pt-4 mb-6 space-y-1">
+              {m.pricing.map((p) => (<p class="font-heading text-lg text-deep-blue">{p}</p>))}
+            </div>
+            <a href={waMsg(m.name)} target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-royal text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-royal-mid transition-all">
+              Apply Now
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQ faqs={faqs} />
+  <MapSection mapEmbed={mapEmbed} />
+
+  <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
+  <WhatsAppBar wa={wa} />
+</Layout>

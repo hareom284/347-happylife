@@ -1,0 +1,51 @@
+---
+import { mission, whyModernLife, whyReturnTo } from '../../data/site';
+---
+
+<!-- Our Mission -->
+<section class="bg-deep-blue text-white py-20 md:py-24">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-6">Our Mission</p>
+    <p class="font-heading text-2xl md:text-3xl lg:text-4xl leading-snug text-cream">
+      {mission}
+    </p>
+  </div>
+</section>
+
+<!-- Why 347 Awakening? -->
+<section class="bg-cream py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <h2 class="font-heading text-4xl md:text-5xl font-semibold text-deep-blue mb-5">Why 347 Awakening?</h2>
+      <div class="w-16 h-px bg-gold mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+      <!-- The problem -->
+      <div class="bg-white rounded-2xl border border-oat-border p-8 md:p-10 shadow-sm">
+        <h3 class="font-heading text-xl font-semibold text-deep-blue mb-6">Because modern life creates</h3>
+        <ul class="space-y-3.5">
+          {whyModernLife.map((item) => (
+            <li class="flex items-start gap-3 text-body-light">
+              <svg class="w-5 h-5 text-royal/50 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path stroke-linecap="round" d="M15 9l-6 6M9 9l6 6" /></svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- The return -->
+      <div class="bg-royal text-white rounded-2xl p-8 md:p-10 shadow-md">
+        <h3 class="font-heading text-xl font-semibold text-cream mb-6">347 Awakening helps you return to</h3>
+        <ul class="space-y-3.5">
+          {whyReturnTo.map((item) => (
+            <li class="flex items-start gap-3 text-white">
+              <svg class="w-5 h-5 text-cream shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
