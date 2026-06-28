@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar, Footer, WhatsAppBar } from '../components/index.astro';
+import { wa, email, social, waMsg, membership, volunteer } from '../data/site';
+---
+
+<Layout title="Membership — 347 Inner Circle | 347 Awakening">
+  <Navbar wa={wa} />
+
+  <!-- Page hero -->
+  <section class="bg-deep-blue text-cream py-24 md:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-5">Membership</p>
+      <h1 class="font-heading text-5xl md:text-6xl font-semibold mb-6">Join the Inner Circle</h1>
+      <p class="text-cream/80 text-lg leading-relaxed max-w-2xl mx-auto">{membership.blurb}</p>
+    </div>
+  </section>
+
+  <!-- Membership card -->
+  <section class="bg-cream py-20 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-section border border-oat-border/60 shadow-elevated overflow-hidden">
+        <div class="bg-royal text-cream px-8 py-8 text-center">
+          <h2 class="font-heading text-3xl font-semibold">{membership.name}</h2>
+          <div class="flex items-end justify-center gap-6 mt-5">
+            <div>
+              <span class="font-heading text-4xl font-semibold">{membership.priceMonth}</span>
+              <span class="text-cream/70 text-sm">{membership.priceMonthUnit}</span>
+            </div>
+            <span class="text-cream/40 pb-1">or</span>
+            <div>
+              <span class="font-heading text-4xl font-semibold">{membership.priceYear}</span>
+              <span class="text-cream/70 text-sm">{membership.priceYearUnit}</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-8 md:p-10">
+          <p class="text-xs uppercase tracking-wide text-body-muted font-semibold mb-4">Membership Includes</p>
+          <ul class="grid sm:grid-cols-2 gap-3 mb-8">
+            {membership.includes.map((it) => (
+              <li class="flex items-start gap-2.5 text-sm text-body-light">
+                <svg class="w-4 h-4 mt-0.5 shrink-0 text-gold-ink" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                {it}
+              </li>
+            ))}
+          </ul>
+          <div class="bg-cream-dark rounded-card px-5 py-4 mb-8">
+            <span class="text-xs uppercase tracking-wide text-gold-ink font-semibold">Perfect For</span>
+            <p class="text-body-light text-sm mt-1">{membership.perfectFor}</p>
+          </div>
+          <a href={waMsg(membership.name)} target="_blank" rel="noopener" class="flex items-center justify-center bg-gold text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide hover:bg-gold-dark transition-all">
+            Join the Inner Circle
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteer -->
+  <section class="bg-royal text-cream py-20 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-5">Volunteer</p>
+      <h2 class="font-heading text-4xl md:text-5xl font-semibold mb-5">Become Part of the Movement</h2>
+      <p class="text-cream/80 leading-relaxed max-w-2xl mx-auto mb-10">{volunteer.blurb}</p>
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        {volunteer.roles.map((r) => (
+          <span class="px-4 py-2 rounded-full bg-cream/10 border border-cream/20 text-sm">{r}</span>
+        ))}
+      </div>
+      <p class="font-heading text-2xl text-gold-light mb-8">Happy Life • Happy World</p>
+      <a href={waMsg('Volunteer with 347 Awakening')} target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-gold text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide hover:bg-gold-dark transition-all">
+        Apply as Volunteer
+      </a>
+    </div>
+  </section>
+
+  <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
+  <WhatsAppBar wa={wa} />
+</Layout>

@@ -202,6 +202,30 @@ export const programCategories = [
   { title: 'Private Mentoring', body: 'Personalized 1:1 guidance for emotional healing, conscious leadership, and life transformation.', href: '#mentoring' },
 ];
 
+// ===== Membership & Contact page content =====
+export const membership = {
+  name: '347 Inner Circle™ Essential',
+  blurb: 'A global conscious community for ongoing growth, healing, and awakening.',
+  priceMonth: '$27', priceMonthUnit: '/ month',
+  priceYear: '$270', priceYearUnit: '/ year',
+  includes: [
+    'Weekly Group Meditation',
+    'Monthly Consciousness Workshop',
+    'Private Community Access',
+    'Emotional Healing Sharing Circle',
+    'Inspirational Teachings & Practices',
+    'Global Conscious Community',
+  ],
+  perfectFor: 'People seeking peace, emotional healing, and spiritual connection.',
+};
+
+export const volunteer = {
+  blurb: '347 Awakening is more than a program. It is a global mission to create a happier and more conscious world.',
+  roles: ['Meditation', 'Healing', 'Conscious living', 'Community service', 'Event support', 'Content creation', 'Global impact'],
+};
+
+export const collaboration = ['Retreat partners', 'Wellness centers', 'Conscious leaders', 'Volunteers', 'Global ambassadors'];
+
 // Brand vision (from Transformation Story)
 export const vision = {
   tagline: 'Awaken your mind. Transform your life. Create your happy world.',
