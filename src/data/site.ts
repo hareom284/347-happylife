@@ -2,6 +2,18 @@
 export const wa = 'https://wa.me/66944265297';
 export const email = '347happylifehappyworld@gmail.com';
 
+// Primary navigation
+export const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'The Method', href: '/method' },
+  { label: 'Programs', href: '/programs' },
+  { label: 'Retreats', href: '/programs#retreats' },
+  { label: 'Membership', href: '/membership' },
+  { label: 'Journal', href: '/blog/best-meditation-retreat-chiang-mai' },
+  { label: 'Contact', href: '/contact' },
+];
+
 // Featured TikTok video on the Master Kaie section.
 // Swap these two values to change which video is embedded — no other code changes needed.
 export const featuredTiktok = {
