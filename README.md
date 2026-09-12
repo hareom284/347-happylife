@@ -24,6 +24,7 @@ npm run dev        # http://localhost:4321
 | `npm run build`   | Build production site to `./dist/`            |
 | `npm run preview` | Preview the built site locally                |
 | `npm run astro`   | Run Astro CLI (e.g. `npm run astro -- check`) |
+| `npm run validate`| Build and validate generated HTML and assets  |
 
 ## Project layout
 
@@ -49,7 +50,7 @@ Almost every piece of copy — pricing, testimonials, FAQs, contact links, the 3
 philosophy framework — lives in [`src/data/site.ts`](./src/data/site.ts). Update
 that file and the rest of the site re-renders from the same data.
 
-- **Pricing and courses** — `src/components/CourseCards.astro` and `PricingOverview.astro`
+- **Pricing and courses** — `src/data/site.ts` and `PricingOverview.astro`
 - **Hero copy** — `src/components/Hero.astro`
 - **Testimonials** — `testimonials` in `src/data/site.ts` (JSON-LD review count auto-syncs)
 - **FAQ** — `faqs` in `src/data/site.ts` (FAQPage JSON-LD auto-generates from this)
