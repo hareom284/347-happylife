@@ -1,14 +1,15 @@
 ---
 import '../styles/global.css';
-import { faqs, testimonials, featuredTiktok, onSiteExperiences, onlineCourses, retreatOptions, mentoringPrograms, membership } from '../data/site';
+import { faqs, featuredTiktok, onSiteExperiences, onlineCourses, retreatOptions, mentoringPrograms, membership } from '../data/site';
 import type { ProgramPrice } from '../data/site';
 
 interface Props {
   title: string;
   description?: string;
+  type?: string;
 }
 
-const { title, description = 'Meditation retreat in Chiang Mai — Vipassana & mindfulness with Master Kaie at Silver Temple. Beginner-friendly, English-speaking. From $47.' } = Astro.props;
+const { title, description = 'Meditation retreat in Chiang Mai — Vipassana & mindfulness with Master Kaie at Silver Temple. Beginner-friendly, English-speaking. From $27.', type = 'website' } = Astro.props;
 const siteOrigin = Astro.site?.origin ?? Astro.url.origin;
 const routeUrl = new URL(Astro.url.pathname, `${siteOrigin}/`);
 const canonicalUrl = routeUrl.href;
@@ -84,13 +85,13 @@ courseOffers.push(
     <!-- GEO Tags -->
     <meta name="geo.region" content="TH-50" />
     <meta name="geo.placename" content="Chiang Mai" />
-    <meta name="geo.position" content="18.7762;98.9865" />
-    <meta name="ICBM" content="18.7762, 98.9865" />
+    <meta name="geo.position" content="18.7787367;98.9810711" />
+    <meta name="ICBM" content="18.7787367, 98.9810711" />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="347 Happy Life Happy World" />
@@ -103,7 +104,7 @@ courseOffers.push(
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content="Awakening meditation & life transformation retreat at Silver Temple, Chiang Mai. Guided by Master Kaie. From $47." />
+    <meta name="twitter:description" content="Awakening meditation & life transformation retreat at Silver Temple, Chiang Mai. Guided by Master Kaie. From $27." />
     <meta name="twitter:site" content="@347_happylifehappyworld" />
     <meta name="twitter:image" content="https://347awakening.com/images/silver-temple-peter-borter.webp" />
 
@@ -170,7 +171,7 @@ courseOffers.push(
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 18.7787367,
-        "longitude": 98.983646
+        "longitude": 98.9810711
       },
       "hasMap": "https://www.google.com/maps/place/347+Happy+life+meditation+retreat/@18.7787367,98.9810711,17z",
       "priceRange": "$27-$3500",
@@ -190,12 +191,6 @@ courseOffers.push(
         "@type": "Person",
         "name": "Master Kaie",
         "jobTitle": "Meditation Master for Awakening & a Better Life"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": String(testimonials.length),
-        "bestRating": "5"
       },
       "areaServed": [
         { "@type": "City", "name": "Chiang Mai" },
@@ -302,29 +297,6 @@ courseOffers.push(
         "https://youtube.com/@kaie347happylife",
         "https://www.tiktok.com/@347_happylifehappyworld"
       ]
-    })} />
-
-    <!-- Structured Data: Individual Reviews (Google may show star snippets for each) -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": testimonials.map((t, i) => ({
-        "@type": "Review",
-        "position": i + 1,
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        "author": { "@type": "Person", "name": t.name },
-        "reviewBody": t.text,
-        "itemReviewed": {
-          "@type": "LocalBusiness",
-          "name": "347 Happy Life Happy World",
-          "image": "https://347awakening.com/images/silver-temple-peter-borter.webp",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Chiang Mai",
-            "addressCountry": "TH"
-          }
-        }
-      }))
     })} />
 
     <!-- Structured Data: VideoObject for featured TikTok -->
