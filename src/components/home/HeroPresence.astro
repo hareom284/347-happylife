@@ -6,37 +6,42 @@ interface Props {
 const { wa } = Astro.props;
 ---
 
-<section class="relative overflow-hidden bg-deep-blue min-h-[88vh] flex items-center">
-  <!-- Background image -->
-  <img
-    src="/images/retreat-meditation.webp"
-    alt="A woman meditating in serene presence"
-    class="absolute inset-0 w-full h-full object-cover object-[75%_center]"
-    fetchpriority="high"
-  />
-  <!-- Readability gradient: stronger on the left where the text sits -->
-  <div class="absolute inset-0 bg-gradient-to-r from-deep-blue/90 via-deep-blue/65 to-deep-blue/25"></div>
-  <div class="absolute inset-0 bg-gradient-to-t from-deep-blue/60 via-transparent to-deep-blue/20"></div>
+<section class="hero-presence relative overflow-hidden bg-deep-blue min-h-[min(760px,calc(100svh-5rem))] flex items-center">
+  <picture class="absolute inset-0">
+    <source media="(min-width: 1280px)" srcset="/images/silver-temple-front.webp" />
+    <source media="(min-width: 768px)" srcset="/images/silver-temple-front-800.webp" />
+    <img
+      src="/images/silver-temple-front-480.webp"
+      alt="The Silver Temple in Chiang Mai, Thailand"
+      width="480"
+      height="640"
+      class="h-full w-full object-cover object-[62%_center] md:object-center"
+      fetchpriority="high"
+    />
+  </picture>
+  <div class="absolute inset-0 bg-gradient-to-r from-deep-blue/95 via-deep-blue/70 to-deep-blue/25"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-deep-blue/75 via-transparent to-deep-blue/20"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
     <div class="max-w-2xl">
       <p class="text-xs sm:text-sm uppercase tracking-[0.35em] text-gold-light font-semibold mb-6">
-        Happy Life · Happy World
+        347 Awakening · Happy Life Happy World
       </p>
-      <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-semibold text-white leading-[1.05] mb-6" style="text-shadow: 0 2px 18px rgba(0,0,0,0.4);">
-        Awaken Your True Self
+      <h1 class="font-heading text-5xl sm:text-6xl md:text-8xl font-semibold text-white leading-[0.98] mb-6 max-w-3xl" style="text-shadow: 0 2px 18px rgba(0,0,0,0.4);">
+        Awaken Through Presence
       </h1>
       <p class="text-lg md:text-xl text-cream/90 leading-relaxed mb-10 max-w-xl" style="text-shadow: 0 1px 8px rgba(0,0,0,0.4);">
-        Create a Happy Life. Create a Happy World. A transformational journey to reconnect with your inner wisdom, emotional balance, purpose, and consciousness.
+         A transformational journey to reconnect with your inner wisdom, emotional balance, purpose, and consciousness.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
          <a href={wa} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gold text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide hover:bg-gold-dark transition-all hover:-translate-y-0.5 hover:shadow-xl shadow-lg">
           Join the Journey
         </a>
-        <a href="/programs" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide border border-white/50 hover:bg-white/20 transition-all hover:-translate-y-0.5">
-          Explore Programs
-        </a>
+         <a href="#free-meditation" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide border border-white/50 hover:bg-white/20 transition-all hover:-translate-y-0.5">
+           Free Meditation
+         </a>
       </div>
+      <p class="mt-8 text-xs uppercase tracking-[0.25em] text-white/70">Chiang Mai · Thailand</p>
     </div>
   </div>
 </section>

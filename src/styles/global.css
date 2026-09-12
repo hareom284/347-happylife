@@ -324,6 +324,16 @@
   }
 }
 
+/* Homepage sections use a restrained editorial rhythm and keep anchors clear
+   of the sticky navigation when linked directly. */
+.hero-presence picture,
+.hero-presence picture img {
+  display: block;
+}
+.home-section-anchor {
+  scroll-margin-top: 5rem;
+}
+
 /* Silver-temple hero background — served at the size actually needed.
    The Layout <link rel="preload"> must point at the same URL the mobile
    breakpoint loads (480w), since Lighthouse audits the mobile viewport. */
