@@ -50,8 +50,9 @@ The prior commit changed exactly 30 files: the 22 assets above, the two reports/
 ## Asset Inventory and Usage
 
 - Existing temple, retreat gallery, logo, and instructor assets were retained.
-- `mountain-hero` replaced the reused temple image as the homepage hero and homepage-only LCP preload.
-- `retreat-practice` replaced the reused temple image in the homepage retreat feature.
+- The initial implementation added `mountain-hero` and `retreat-practice` as generic image candidates; the later Chiang Mai imagery follow-up superseded both active uses with the existing local Silver Temple asset family.
+- The final homepage hero and homepage-only LCP preload use the existing `silver-temple-front.webp` responsive family.
+- The final homepage retreat feature uses the existing `silver-temple-front.webp` responsive family.
 - `mentoring-session` replaced the reused retreat image in the Private Mentoring pathway card.
 - `community-circle` replaced the reused retreat image in the Membership pathway card.
 - `retreat-photo-2-480.webp` and `retreat-photo-3-400.webp` were generated for the active gallery filenames.
@@ -71,10 +72,10 @@ All four new image sources are Unsplash-hosted originals, downloaded locally and
 ## Responsive and Optimization Work
 
 - Hero sources use mobile/tablet/desktop `<picture>` variants with `srcset`, `sizes="100vw"`, intrinsic dimensions, `fetchpriority="high"`, and async decoding.
-- The homepage-only preload now points to `mountain-hero` and matches the hero responsive source set.
+- The homepage-only preload now points to `silver-temple-front` and matches the final hero responsive source set.
 - Retreat and pathway images use local `srcset` variants, responsive `sizes`, intrinsic dimensions, lazy loading, and async decoding.
 - The hero is the only image intentionally marked high priority.
-- New source dimensions were mountain 2400x1600, retreat 1600x2000, mentoring 1600x1067, and community 1600x900. Generated variants do not upscale.
+- Final location imagery dimensions are Silver Temple 1024x741, 800x579, and 480x347. Mentoring and community source dimensions remain 1600x1067 and 1600x900. Generated variants do not upscale.
 
 ## Commands Run and Outputs
 
@@ -132,7 +133,7 @@ Result: 31 checked, 0 missing.
 
 ### Rendered output check
 
-The generated `dist/index.html` was searched for the new hero preload, hero sources, retreat `srcset`, and responsive image paths. The homepage contained the expected `mountain-hero` preload and sources and the `retreat-practice` responsive markup.
+The generated `dist/index.html` was searched for the final hero preload, hero sources, retreat `srcset`, and responsive image paths. The final homepage contains the expected Silver Temple preload and sources and the Silver Temple responsive retreat markup.
 
 ### Diff check
 
@@ -187,7 +188,7 @@ Addressed the three Task 5 review findings without changing pricing, copy, or im
 
 2. `PhotoGallery.astro` now uses `retreat-photo-2-480.webp` at 480x282 and `retreat-photo-3-400.webp` at 400x177, with each original included as its 600w responsive source.
 
-3. `Layout.astro` now uses `https://347awakening.com/images/mountain-hero.webp` consistently for Open Graph, Twitter, and all structured-data image references. OG dimensions are corrected to 2400x1600 and the alt text identifies the mountain hero.
+3. `Layout.astro` now uses `https://347awakening.com/images/silver-temple-front.webp` consistently for Open Graph, Twitter, and all structured-data image references. OG dimensions are corrected to 1024x741 and the alt text identifies the Silver Temple in Chiang Mai.
 
 The optimizer manifest now includes `retreat-meditation.webp` so its required 400x537 card variant is reproducible.
 
@@ -197,14 +198,14 @@ The optimizer manifest now includes `retreat-meditation.webp` so its required 40
 - `npm run build`: passed; Astro generated 11 static pages successfully.
 - Image dimension inspection: passed; confirmed 400x537, 480x282, 400x177, 600x806, 600x352, 600x265, 800x534, and 800x450 values against the active card/gallery files.
 - Local image path check: passed; 34 referenced local image paths checked, 0 missing.
-- Rendered output check: passed; `dist/index.html` contains all five pathway `srcset` declarations, the two corrected PhotoGallery `srcset` declarations, and the mountain hero in OG/Twitter/structured data.
+- Rendered output check: passed; `dist/index.html` contains all five pathway `srcset` declarations, the two corrected PhotoGallery `srcset` declarations, and the Silver Temple image in OG/Twitter/structured data.
 - `git diff --check`: passed before staging the review fixes.
 
 Final rerun after the review-fix edits:
 
 - `node scripts/optimize-images.mjs && npm run build`: optimizer completed with `done`; Astro completed with 11 static pages built.
 - Combined rendered/path assertion: `checked 34 local image paths; required rendered image/metadata markers 6`.
-- The same assertion confirmed no `hero-main.webp` reference remains in `Layout.astro`, all five pathway responsive markers are present in `dist/index.html`, both corrected gallery variants are present, and the mountain social image is present.
+- The same assertion confirmed no `hero-main.webp` reference remains in `Layout.astro`, all five pathway responsive markers are present in `dist/index.html`, both corrected gallery variants are present, and the Silver Temple social image is present.
 - Final `git diff --check`: passed.
 
 ## Review-Fix Scope
