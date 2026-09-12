@@ -80,3 +80,11 @@ and untracked redesign plan/spec documents were not staged.
   booking metadata, typed mentoring data, and normalized schema consumption.
 - `npm run build`: passed; 11 static pages generated.
 - `git diff --check`: passed before staging.
+
+## Approved Instructor Follow-up
+
+- Added the existing approved instructor section to About immediately before
+  the mission CTA, reusing `Instructors.astro` and centralized instructor data.
+  Master Swan renders `/images/master-sawan.webp`; Master Kaie retains the
+  existing initials fallback until a photo is supplied. The homepage was not
+  changed.
