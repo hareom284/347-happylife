@@ -114,31 +114,37 @@ type PathCard = {
 
 export const pathCards: PathCard[] = [
   {
-    title: 'On-Site Courses', img: '/images/retreat-photo-3.webp',
+    title: 'On-Site Courses', img: '/images/retreat-photo-3-400.webp',
+    imgSrcset: '/images/retreat-photo-3-400.webp 400w, /images/retreat-photo-3.webp 600w',
+    width: 400, height: 177,
     body: 'Guided meditation and awakening experiences at the Silver Temple in Chiang Mai.',
     cta: 'Explore', href: '/programs#onsite',
   },
   {
-    title: 'Online Courses', img: '/images/retreat-meditation.webp',
+    title: 'Online Courses', img: '/images/retreat-meditation-400.webp',
+    imgSrcset: '/images/retreat-meditation-400.webp 400w, /images/retreat-meditation.webp 600w',
+    width: 400, height: 537,
     body: 'Guided courses for personal growth and awakening from anywhere in the world.',
     cta: 'Explore', href: '/programs#online',
   },
   {
-    title: 'Retreats', img: '/images/retreat-photo-2.webp',
+    title: 'Retreats', img: '/images/retreat-photo-2-480.webp',
+    imgSrcset: '/images/retreat-photo-2-480.webp 480w, /images/retreat-photo-2.webp 600w',
+    width: 480, height: 282,
     body: 'Immersive retreats in Chiang Mai for deep healing and awakening.',
     cta: 'View Retreats', href: '/programs#retreats',
   },
   {
     title: 'Private Mentoring', img: '/images/mentoring-session-800.webp',
     imgSrcset: '/images/mentoring-session-400.webp 400w, /images/mentoring-session-800.webp 800w, /images/mentoring-session-1280.webp 1280w, /images/mentoring-session-1600.webp 1600w',
-    width: 1600, height: 1067,
+    width: 800, height: 534,
     body: 'Receive personalized guidance and support for your transformation.',
     cta: 'Apply Now', href: '/programs#mentoring',
   },
   {
     title: 'Membership', img: '/images/community-circle-800.webp',
     imgSrcset: '/images/community-circle-400.webp 400w, /images/community-circle-800.webp 800w, /images/community-circle-1280.webp 1280w, /images/community-circle-1600.webp 1600w',
-    width: 1600, height: 900,
+    width: 800, height: 450,
     body: 'Join our global community and grow together every day.',
     cta: 'Learn More', href: '/membership',
   },

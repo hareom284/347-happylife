@@ -172,3 +172,54 @@ Results:
 
 - `astro check` remains unavailable in this environment because the default shell uses Node 18 and the project does not currently include `@astrojs/check`.
 - The worktree still contains unrelated unstaged changes to `package-lock.json`, four previously optimized WebP files, and the redesign plan/spec documents. They were not included in the Task 5 commit or this documentation-only follow-up.
+
+## Review Fixes
+
+Addressed the three Task 5 review findings without changing pricing, copy, or image source records:
+
+1. `ProgramsOverview` now uses the actual dimensions and responsive sources for every pathway card:
+   - On-Site Courses: `retreat-photo-3-400.webp` at 400x177; source fallback `retreat-photo-3.webp` at 600w.
+   - Online Courses: `retreat-meditation-400.webp` at 400x537; source fallback `retreat-meditation.webp` at 600w.
+   - Retreats: `retreat-photo-2-480.webp` at 480x282; source fallback `retreat-photo-2.webp` at 600w.
+   - Private Mentoring: `mentoring-session-800.webp` at 800x534 with 400/800/1280/1600w sources.
+   - Membership: `community-circle-800.webp` at 800x450 with 400/800/1280/1600w sources.
+   - All five cards retain responsive `sizes`, lazy loading, async decoding, and accurate intrinsic dimensions.
+
+2. `PhotoGallery.astro` now uses `retreat-photo-2-480.webp` at 480x282 and `retreat-photo-3-400.webp` at 400x177, with each original included as its 600w responsive source.
+
+3. `Layout.astro` now uses `https://347awakening.com/images/mountain-hero.webp` consistently for Open Graph, Twitter, and all structured-data image references. OG dimensions are corrected to 2400x1600 and the alt text identifies the mountain hero.
+
+The optimizer manifest now includes `retreat-meditation.webp` so its required 400x537 card variant is reproducible.
+
+## Review-Fix Verification
+
+- `node scripts/optimize-images.mjs`: passed; generated `retreat-meditation-400.webp` at 400x537 and completed with `done`; no missing-target warnings.
+- `npm run build`: passed; Astro generated 11 static pages successfully.
+- Image dimension inspection: passed; confirmed 400x537, 480x282, 400x177, 600x806, 600x352, 600x265, 800x534, and 800x450 values against the active card/gallery files.
+- Local image path check: passed; 34 referenced local image paths checked, 0 missing.
+- Rendered output check: passed; `dist/index.html` contains all five pathway `srcset` declarations, the two corrected PhotoGallery `srcset` declarations, and the mountain hero in OG/Twitter/structured data.
+- `git diff --check`: passed before staging the review fixes.
+
+Final rerun after the review-fix edits:
+
+- `node scripts/optimize-images.mjs && npm run build`: optimizer completed with `done`; Astro completed with 11 static pages built.
+- Combined rendered/path assertion: `checked 34 local image paths; required rendered image/metadata markers 6`.
+- The same assertion confirmed no `hero-main.webp` reference remains in `Layout.astro`, all five pathway responsive markers are present in `dist/index.html`, both corrected gallery variants are present, and the mountain social image is present.
+- Final `git diff --check`: passed.
+
+## Review-Fix Scope
+
+Changed implementation files:
+
+- `scripts/optimize-images.mjs`
+- `src/components/PhotoGallery.astro`
+- `src/data/site.ts`
+- `src/layouts/Layout.astro`
+
+Changed documentation file:
+
+- `.superpowers/sdd/2026-09-12-full-site-reference-redesign/task-5-report.md`
+
+Added review-fix asset:
+
+- `public/images/retreat-meditation-400.webp` (400x537)

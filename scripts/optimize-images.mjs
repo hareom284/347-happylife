@@ -27,6 +27,8 @@ const TARGETS = [
   { src: 'retreat-photo-2.webp',     widths: [480],       quality: 72 },
   // PhotoGallery only. Source is 600x265.
   { src: 'retreat-photo-3.webp',     widths: [400],       quality: 72 },
+  // ProgramsOverview only. Source is 600x806 — portrait card.
+  { src: 'retreat-meditation.webp',   widths: [400],       quality: 72 },
   // PhotoGallery only. Source is 1024x1024 — square.
   { src: 'hero-main.webp',           widths: [400, 800],       quality: 74 },
   // Homepage hero. Source is 2400x1600.
