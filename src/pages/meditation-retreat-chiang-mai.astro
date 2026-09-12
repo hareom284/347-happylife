@@ -1,72 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Navbar, Footer, WhatsAppBar } from '../components/index.astro';
-import { wa, email, social } from '../data/site';
+import { wa, email, social, waMsg, onSiteExperiences, retreatOptions } from '../data/site';
 ---
 
 <Layout title="Meditation Retreat in Chiang Mai | Vipassana Course Thailand | 347 Awakening" description="Join a meditation retreat in Chiang Mai. Beginner-friendly Vipassana courses at 347 Awakening. 3-hour, 1-day, and 3-day meditation programs in Thailand.">
-
   <Navbar wa={wa} />
+  <section class="bg-cream py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Silver Temple · Chiang Mai</p>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-deep-blue leading-tight mb-6">Meditation Retreats in Chiang Mai</h1>
+      <p class="text-body-light text-lg leading-relaxed mb-6">At 347 Awakening, meditation is more than a technique. It is an awakening journey designed to align Body, Mind, and Spirit, release emotional weight, and return you to a clear and meaningful life.</p>
+      <p class="text-body-light text-lg leading-relaxed mb-12">Practice at Wat Sri Suphan, Chiang Mai's Silver Temple, with English-speaking guidance from Master Kaie. Choose a 3-hour experience or an immersive 1–3 day retreat. No previous meditation experience is required.</p>
 
-  <section class="bg-ivory py-20 md:py-28">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-
-      <h1 class="font-heading text-4xl md:text-5xl font-bold text-violet leading-tight mb-6">
-        Meditation Retreat in Chiang Mai
-      </h1>
-
-      <p class="text-body-light text-lg leading-relaxed mb-6">
-        Looking for a meditation retreat in Chiang Mai? At 347 Awakening, we offer beginner-friendly Vipassana meditation courses designed to help you reduce stress, gain clarity, and transform your life.
-      </p>
-
-      <p class="text-body-light text-lg leading-relaxed mb-12">
-        Join our guided meditation programs in Chiang Mai, Thailand — from 3-hour sessions to 3-day immersive retreats. Perfect for beginners and those seeking deep personal growth.
-      </p>
-
-      <h2 class="font-heading text-2xl md:text-3xl font-bold text-violet mb-5">Our Meditation Programs</h2>
-      <ul class="space-y-3 text-body text-lg mb-12">
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-gold-ink mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>3-Hour Introduction Session</strong> — Experience the 347 method with guided Vipassana and mindfulness practice.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-gold-ink mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>1-Day Meditation Retreat</strong> — A deeper dive into awareness, self-inquiry, and inner coaching.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-gold-ink mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>3-Day Deep Awakening Program</strong> — Full immersion in body-mind-spirit alignment for lasting transformation.</span>
-        </li>
-      </ul>
-
-      <h2 class="font-heading text-2xl md:text-3xl font-bold text-violet mb-5">Why Choose Our Retreat</h2>
-      <p class="text-body-light text-lg leading-relaxed mb-12">
-        Our Vipassana-based meditation courses help you build awareness, reduce stress, and reconnect with your inner self. Guided by Master Kaie and Master Swan at the sacred Silver Temple, each session blends ancient Buddhist practice with modern inner coaching techniques.
-      </p>
-
-      <h2 class="font-heading text-2xl md:text-3xl font-bold text-violet mb-5">Location</h2>
-      <p class="text-body-light text-lg leading-relaxed mb-12">
-        Located at Silver Temple in the heart of Chiang Mai, Thailand — a peaceful, sacred environment perfect for meditation and self-discovery. Easily accessible for travelers, digital nomads, and locals alike.
-      </p>
-
-      <h2 class="font-heading text-2xl md:text-3xl font-bold text-violet mb-5">Who Is This For?</h2>
-      <p class="text-body-light text-lg leading-relaxed mb-12">
-        Beginners, travelers, digital nomads, and anyone seeking mental clarity and emotional balance. No prior meditation experience needed — our English-speaking teachers guide you every step of the way.
-      </p>
-
-      <div class="text-center">
-        <a href={wa} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-deep-calm text-violet-dark px-8 py-4 rounded-full text-lg font-semibold hover:bg-deep-calm-dark hover:text-white transition-all hover:shadow-lg">
-          Book Your Retreat Now
-        </a>
-        <p class="mt-4 text-body-muted text-sm">
-          <a href="/" class="hover:text-deep-calm transition-colors underline">Back to homepage</a>
-        </p>
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Current Experiences & Retreats</h2>
+      <div class="grid sm:grid-cols-2 gap-4 text-body mb-12">
+        {onSiteExperiences.slice(0, 2).map((program) => (
+          <div class="bg-white rounded-card border border-oat-border/60 p-5"><strong class="block text-deep-blue">{program.title}</strong><span class="text-sm text-body-light">{program.dur} · {program.price.display}</span></div>
+        ))}
+        {retreatOptions.map((retreat) => (
+          <div class="bg-white rounded-card border border-oat-border/60 p-5"><strong class="block text-deep-blue">{retreat.duration} retreat</strong><span class="text-sm text-body-light">{retreat.price.display}</span></div>
+        ))}
       </div>
 
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Why Choose 347 Awakening?</h2>
+      <p class="text-body-light text-lg leading-relaxed mb-12">Our Vipassana-based meditation courses help you build awareness, reduce stress, and reconnect with your inner self. Guided by Master Kaie at the sacred Silver Temple, each session blends ancient Buddhist practice with modern inner coaching.</p>
+
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Location</h2>
+      <p class="text-body-light text-lg leading-relaxed mb-12">Located at Silver Temple in the heart of Chiang Mai, Thailand, the practice space offers a peaceful setting for meditation and self-discovery. It is accessible for travelers, digital nomads, and locals alike.</p>
+
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Who Is This For?</h2>
+      <p class="text-body-light text-lg leading-relaxed mb-12">Beginners, travelers, digital nomads, and anyone seeking mental clarity and emotional balance. No prior meditation experience is needed; our English-speaking teacher guides you every step of the way.</p>
+
+      <div class="text-center">
+        <a href={waMsg('a Chiang Mai meditation retreat')} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-royal text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-royal-mid transition-all hover:shadow-lg">Book Your Retreat Now</a>
+        <p class="mt-4 text-body-muted text-sm"><a href="/programs#retreats" class="hover:text-gold-ink transition-colors underline">See all retreat options</a> · <a href="/" class="hover:text-gold-ink transition-colors underline">Back to homepage</a></p>
+      </div>
     </div>
   </section>
-
   <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
   <WhatsAppBar wa={wa} />
-
 </Layout>

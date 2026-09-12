@@ -105,7 +105,7 @@ export const pathCards = [
   {
     title: 'On-Site Courses', img: '/images/retreat-photo-3.webp',
     body: 'Guided meditation and awakening experiences at the Silver Temple in Chiang Mai.',
-    cta: 'Explore', href: '/programs#retreats',
+    cta: 'Explore', href: '/programs#onsite',
   },
   {
     title: 'Online Courses', img: '/images/retreat-meditation.webp',
@@ -258,7 +258,7 @@ export const mentoringPrograms = [
 ];
 
 export const programCategories = [
-  { title: 'On-Site — Chiang Mai', body: 'Experience meditation, healing, and conscious living in a peaceful sanctuary in Chiang Mai.', href: '#retreats' },
+  { title: 'On-Site — Chiang Mai', body: 'Experience meditation, healing, and conscious living in a peaceful sanctuary in Chiang Mai.', href: '#onsite' },
   { title: 'Online Programs', body: 'Transform your life through guided meditations and online consciousness courses from anywhere in the world.', href: '#online' },
   { title: 'Retreats', body: 'Deep awakening and healing retreats designed for inner transformation and renewal.', href: '#retreats' },
   { title: 'Private Mentoring', body: 'Personalized 1:1 guidance for emotional healing, conscious leadership, and life transformation.', href: '#mentoring' },

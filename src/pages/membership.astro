@@ -23,16 +23,17 @@ import { wa, email, social, waMsg, membership, volunteer } from '../data/site';
         <div class="bg-royal text-cream px-8 py-8 text-center">
           <h2 class="font-heading text-3xl font-semibold">{membership.name}</h2>
           <div class="flex items-end justify-center gap-6 mt-5">
-            <div>
-              <span class="font-heading text-4xl font-semibold">{membership.priceMonth}</span>
-              <span class="text-cream/70 text-sm">{membership.priceMonthUnit}</span>
+           <div>
+               <span class="font-heading text-4xl font-semibold">{membership.priceMonth}</span>
+               <span class="text-cream/70 text-sm">{membership.priceMonthUnit}</span>
             </div>
             <span class="text-cream/40 pb-1">or</span>
             <div>
               <span class="font-heading text-4xl font-semibold">{membership.priceYear}</span>
               <span class="text-cream/70 text-sm">{membership.priceYearUnit}</span>
-            </div>
-          </div>
+             </div>
+           </div>
+           <p class="text-center text-cream/65 text-xs mt-4">THB pricing available on request</p>
         </div>
         <div class="p-8 md:p-10">
           <p class="text-xs uppercase tracking-wide text-body-muted font-semibold mb-4">Membership Includes</p>

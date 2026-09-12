@@ -1,21 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { wa } from '../data/site';
+import { Navbar, Footer, WhatsAppBar } from '../components/index.astro';
+import { wa, email, social, waMsg, onSiteExperiences, onlineCourses, retreatOptions } from '../data/site';
 ---
 
-<Layout title="Book Your Retreat | 347 Awakening — Meditation Retreat Chiang Mai" description="Book your meditation retreat at 347 Awakening in Chiang Mai. Fill out the form to reserve your spot with Master Kaie at Silver Temple.">
+  <Layout title="Book Your Retreat | 347 Awakening — Meditation Retreat Chiang Mai" description="Book your meditation retreat at 347 Awakening in Chiang Mai. Fill out the form to reserve your spot with Master Kaie at Silver Temple.">
+    <Navbar wa={wa} />
 
-  <section class="bg-ivory py-16 md:py-24">
+  <section class="bg-cream py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
 
       <div class="text-center mb-10">
-        <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Reserve Your Spot</p>
-        <h1 class="font-heading text-4xl md:text-5xl font-bold text-violet leading-tight mb-4">
-          Book Your Retreat
+        <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Reserve Your Path</p>
+        <h1 class="font-heading text-4xl md:text-5xl font-bold text-deep-blue leading-tight mb-4">
+          Book Your Awakening Experience
         </h1>
         <p class="text-warm-charcoal text-lg leading-relaxed max-w-xl mx-auto">
-          Fill out the form below to book your meditation retreat at Silver Temple, Chiang Mai.
+          Choose an on-site experience, online program, or 1–3 day retreat. We will confirm the right format, date, and next steps with you.
         </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+        {[...onSiteExperiences.slice(0, 2), ...retreatOptions.slice(0, 1)].map((item) => (
+          <div class="bg-cream-dark rounded-card border border-oat-border/60 p-5">
+            <p class="text-xs uppercase tracking-wide text-gold-ink font-semibold mb-2">{'title' in item ? item.title : `${item.duration} retreat`}</p>
+            <p class="font-heading text-xl text-deep-blue">{item.price.display}</p>
+          </div>
+        ))}
       </div>
 
       <div class="bg-white rounded-card border border-soft-aura shadow-card overflow-hidden">
@@ -33,12 +44,15 @@ import { wa } from '../data/site';
       </div>
 
       <p class="mt-6 text-center text-body-muted text-sm">
-        Prefer to book directly? <a href={wa} target="_blank" rel="noopener noreferrer" class="text-gold-ink hover:text-gold-ink-dark underline transition-colors">Message us on WhatsApp</a>
+         Prefer to book directly? <a href={waMsg('a 347 Awakening program')} target="_blank" rel="noopener noreferrer" class="text-gold-ink hover:text-gold-ink-dark underline transition-colors">Message us on WhatsApp</a> or <a href={`mailto:${email}`} class="text-gold-ink hover:text-gold-ink-dark underline transition-colors">send an email</a>
         &middot;
         <a href="/" class="text-gold-ink hover:text-gold-ink-dark underline transition-colors">Back to homepage</a>
       </p>
 
     </div>
   </section>
+
+  <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
+  <WhatsAppBar wa={wa} />
 
 </Layout>
