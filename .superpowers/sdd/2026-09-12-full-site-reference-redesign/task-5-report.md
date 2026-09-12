@@ -247,6 +247,28 @@ The location-specific hero and retreat imagery now uses the existing local Silve
 - Rendered output check: passed; `dist/index.html` contains the Silver Temple preload/source set, Chiang Mai alt text, and `https://347awakening.com/images/silver-temple-front.webp` social/structured-data references.
 - `git diff --check`: passed.
 
+## Additional User-Supplied Below-the-Fold Imagery
+
+Integrated four small, user-provided WebP previews below the fold without changing the higher-resolution hero or retreat feature, pricing, or existing mentoring/community imagery:
+
+- `buddha-statue-in-chiang-mai-thailand.webp` -> supporting meditation/teaching image in the About location gallery. Supplied dimensions: 612x408; displayed source: 480x320.
+- `chiang-mai-thailand.webp` -> Silver Temple interior/About gallery image. Supplied dimensions: 612x407; displayed source: 480x319.
+- `the-silver-temple-in-chiang-mai.webp` -> retreat/location gallery image. Supplied dimensions: 612x408; displayed source: 480x320.
+- `wat-sri-suphan-in-chiang-mai-thailand.webp` -> retreat/location gallery image. Supplied dimensions: 612x407; displayed source: 480x319.
+
+Each supplied file is retained in `public/images` with 320, 480, and 600px WebP variants. The original supplied-width WebP is also retained as the 612/`srcset` fallback. All four gallery images use accurate intrinsic dimensions, responsive `srcset`/`sizes`, meaningful lazy-loaded markup, and neutral visible-content alt text. The exact user-provided filenames are recorded in `docs/image-sources.md`; no Unsplash or royalty-free provenance is claimed for these files.
+
+The active implementation change is in `src/pages/about.astro`, which adds a below-the-fold four-image location/teaching gallery. The optimizer manifest in `scripts/optimize-images.mjs` includes all four supplied source files. Existing high-resolution Peter Borter hero, Sergei Bezzubov retreat feature, and Vishal Chokkala About image assignments remain unchanged.
+
+## Additional Imagery Verification
+
+- `node scripts/optimize-images.mjs`: passed; generated all 12 responsive variants for the four supplied sources and completed with `done`; no missing-target warnings.
+- `npm run build`: passed; Astro generated 11 static pages successfully.
+- Supplied source dimension inspection: passed; confirmed 612x408, 612x407, 612x408, and 612x407 before variant generation.
+- Local path/render assertion: passed; `checked 54 local image paths; supplied gallery assets 4 lazy images 5`.
+- The assertion confirmed all four supplied images render on `/about/`, with responsive 320/480/600/612w sources and lazy loading.
+- `git diff --check`: passed.
+
 ## Supplied Unsplash Imagery Follow-Up
 
 Integrated the three supplied local JPEGs as optimized WebP families without removing existing assets or changing pricing/content:

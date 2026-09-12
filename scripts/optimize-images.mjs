@@ -41,6 +41,11 @@ const TARGETS = [
   { src: 'silver-temple-sergei-bezzubov.webp', widths: [480, 800, 1280], quality: 76 },
   // About page image. Source is 2400x1600 after local optimization.
   { src: 'silver-temple-vishal-chokkala.webp', widths: [480, 800, 1280], quality: 76 },
+  // Below-the-fold About/location gallery. Supplied source is 612px wide.
+  { src: 'buddha-statue-in-chiang-mai-thailand.webp', widths: [320, 480, 600], quality: 78 },
+  { src: 'chiang-mai-thailand.webp', widths: [320, 480, 600], quality: 78 },
+  { src: 'the-silver-temple-in-chiang-mai.webp', widths: [320, 480, 600], quality: 78 },
+  { src: 'wat-sri-suphan-in-chiang-mai-thailand.webp', widths: [320, 480, 600], quality: 78 },
 ];
 
 if (!existsSync(IMG_DIR)) {
