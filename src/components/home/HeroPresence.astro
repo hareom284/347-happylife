@@ -8,15 +8,18 @@ const { wa } = Astro.props;
 
 <section class="hero-presence relative overflow-hidden bg-deep-blue min-h-[min(760px,calc(100svh-5rem))] flex items-center">
   <picture class="absolute inset-0">
-    <source media="(min-width: 1280px)" srcset="/images/silver-temple-front.webp" />
-    <source media="(min-width: 768px)" srcset="/images/silver-temple-front-800.webp" />
+    <source media="(min-width: 1280px)" srcset="/images/mountain-hero-1280.webp 1280w, /images/mountain-hero-2400.webp 2400w" />
+    <source media="(min-width: 768px)" srcset="/images/mountain-hero-800.webp 800w, /images/mountain-hero-1280.webp 1280w" />
     <img
-      src="/images/silver-temple-front-480.webp"
-      alt="The Silver Temple in Chiang Mai, Thailand"
+      src="/images/mountain-hero-480.webp"
+      srcset="/images/mountain-hero-480.webp 480w, /images/mountain-hero-800.webp 800w"
+      sizes="100vw"
+      alt="Misty mountain landscape representing the awakening journey"
       width="480"
-      height="347"
+      height="320"
       class="h-full w-full object-cover object-[62%_center] md:object-center"
       fetchpriority="high"
+      decoding="async"
     />
   </picture>
   <div class="absolute inset-0 bg-gradient-to-r from-deep-blue/95 via-deep-blue/70 to-deep-blue/25"></div>

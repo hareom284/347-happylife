@@ -101,7 +101,18 @@ export const instructors = [
 ];
 
 // "Find the Path for You" program cards
-export const pathCards = [
+type PathCard = {
+  title: string;
+  img: string;
+  imgSrcset?: string;
+  width?: number;
+  height?: number;
+  body: string;
+  cta: string;
+  href: string;
+};
+
+export const pathCards: PathCard[] = [
   {
     title: 'On-Site Courses', img: '/images/retreat-photo-3.webp',
     body: 'Guided meditation and awakening experiences at the Silver Temple in Chiang Mai.',
@@ -118,12 +129,16 @@ export const pathCards = [
     cta: 'View Retreats', href: '/programs#retreats',
   },
   {
-    title: 'Private Mentoring', img: '/images/retreat-photo-3.webp',
+    title: 'Private Mentoring', img: '/images/mentoring-session-800.webp',
+    imgSrcset: '/images/mentoring-session-400.webp 400w, /images/mentoring-session-800.webp 800w, /images/mentoring-session-1280.webp 1280w, /images/mentoring-session-1600.webp 1600w',
+    width: 1600, height: 1067,
     body: 'Receive personalized guidance and support for your transformation.',
     cta: 'Apply Now', href: '/programs#mentoring',
   },
   {
-    title: 'Membership', img: '/images/retreat-photo-1.webp',
+    title: 'Membership', img: '/images/community-circle-800.webp',
+    imgSrcset: '/images/community-circle-400.webp 400w, /images/community-circle-800.webp 800w, /images/community-circle-1280.webp 1280w, /images/community-circle-1600.webp 1600w',
+    width: 1600, height: 900,
     body: 'Join our global community and grow together every day.',
     cta: 'Learn More', href: '/membership',
   },

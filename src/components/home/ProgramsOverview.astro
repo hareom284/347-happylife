@@ -14,7 +14,17 @@ import { pathCards } from '../../data/site';
       {pathCards.map((card) => (
         <a href={card.href} class="group bg-ivory rounded-card shadow-card overflow-hidden flex flex-col hover:shadow-elevated hover:-translate-y-1 transition-all duration-300">
           <div class="aspect-[1.35] overflow-hidden">
-            <img src={card.img} alt={card.title} width="640" height="475" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <img
+              src={card.img}
+              srcset={card.imgSrcset}
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 20vw"
+              alt={card.title}
+              width={card.width ?? 640}
+              height={card.height ?? 475}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="p-5 flex flex-col flex-1">
             <h3 class="font-heading text-xl font-semibold text-deep-blue mb-2">{card.title}</h3>

@@ -21,14 +21,22 @@ const IMG_DIR = join(__dirname, '..', 'public', 'images');
 // Source -> target widths to generate. We pick widths that cover common
 // display sizes on mobile (~400), tablet (~800) and desktop (~1200-1600).
 const TARGETS = [
-  // Hero background + About/PhotoGallery/FinalCTA usage. Source is 1024x741.
+  // About/FinalCTA usage. Source is 1024x741.
   { src: 'silver-temple-front.webp', widths: [480, 800, 1280], quality: 72 },
-  // PhotoGallery only. Source is 1742x940 — way bigger than displayed.
-  { src: 'retreat-2.webp',           widths: [480, 800, 1280], quality: 72 },
-  // PhotoGallery only. Source is 1080x1434 — portrait card.
-  { src: 'retreat-3.webp',           widths: [400, 800, 1080], quality: 72 },
+  // PhotoGallery only. Source is 600x352.
+  { src: 'retreat-photo-2.webp',     widths: [480],       quality: 72 },
+  // PhotoGallery only. Source is 600x265.
+  { src: 'retreat-photo-3.webp',     widths: [400],       quality: 72 },
   // PhotoGallery only. Source is 1024x1024 — square.
   { src: 'hero-main.webp',           widths: [400, 800],       quality: 74 },
+  // Homepage hero. Source is 2400x1600.
+  { src: 'mountain-hero.webp',       widths: [480, 800, 1280], quality: 76 },
+  // Homepage retreat feature. Source is 1600x2000 — portrait crop.
+  { src: 'retreat-practice.webp',     widths: [400, 800, 1280], quality: 74 },
+  // Homepage mentoring card. Source is 1600x1067.
+  { src: 'mentoring-session.webp',    widths: [400, 800, 1280], quality: 74 },
+  // Homepage membership card. Source is 1600x900.
+  { src: 'community-circle.webp',     widths: [400, 800, 1280], quality: 74 },
 ];
 
 if (!existsSync(IMG_DIR)) {
