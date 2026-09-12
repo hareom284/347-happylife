@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, rm, symlink, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { test } from 'node:test';
@@ -36,11 +36,35 @@ test('accepts a real generated route index and local asset', async () => {
     const page = join(siteRoot, 'pages', 'index.html');
     await mkdir(join(siteRoot, 'pages'), { recursive: true });
     await mkdir(join(siteRoot, 'valid-route'));
+    await mkdir(join(siteRoot, 'about'));
     await writeFile(join(siteRoot, 'valid-route', 'index.html'), 'route');
+    await writeFile(join(siteRoot, 'about', 'index.html'), 'about');
     await writeFile(join(siteRoot, 'asset.webp'), 'asset');
     assert.equal(await isValidLocalReference('/valid-route', page, siteRoot), true);
+    assert.equal(await isValidLocalReference('../about/', join(siteRoot, 'pages', 'index.html'), siteRoot), true);
     assert.equal(await isValidLocalReference('../asset.webp', page, siteRoot), true);
   } finally {
     await rm(siteRoot, { recursive: true, force: true });
+  }
+});
+
+test('rejects files and route indexes reached through symlinks outside dist', async () => {
+  const parent = await mkdtemp(join(tmpdir(), 'validate-site-'));
+  const siteRoot = join(parent, 'dist');
+  const outside = join(parent, 'outside');
+  try {
+    const page = join(siteRoot, 'index.html');
+    await mkdir(siteRoot);
+    await mkdir(outside);
+    await writeFile(page, 'page');
+    await writeFile(join(outside, 'asset.webp'), 'outside asset');
+    await mkdir(join(outside, 'route'));
+    await writeFile(join(outside, 'route', 'index.html'), 'outside route');
+    await symlink(join(outside, 'asset.webp'), join(siteRoot, 'asset.webp'));
+    await symlink(join(outside, 'route'), join(siteRoot, 'route'));
+    assert.equal(await isValidLocalReference('/asset.webp', page, siteRoot), false);
+    assert.equal(await isValidLocalReference('/route/', page, siteRoot), false);
+  } finally {
+    await rm(parent, { recursive: true, force: true });
   }
 });

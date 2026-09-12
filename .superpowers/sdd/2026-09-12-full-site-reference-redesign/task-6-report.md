@@ -101,3 +101,28 @@ Follow-up verification:
 - `npm run astro -- check`: still reports the same 10 pre-existing errors in
   `MasterKaie.astro` and `Layout.astro`; no new Astro errors were introduced.
 - `git diff --check`: passed before follow-up commit.
+
+## Review Fix Follow-Up 2
+
+The second validator follow-up addresses relative route resolution and symlink
+escape handling:
+
+- Document-relative references such as `../about/` now resolve against the
+  referring HTML file and accept `about/index.html` when it exists.
+- Candidate paths are checked using `realpath()` for both the candidate and the
+  generated `dist` root. A file or route directory symlink that resolves outside
+  `dist` is rejected even when the symlink itself is inside `dist`.
+- Existing file-only and route-index requirements remain enforced.
+- Added a fourth focused test covering an external symlinked asset and an
+  external symlinked route directory. The existing valid-route fixture now also
+  covers `../about/`.
+
+Verification:
+
+- `node --check scripts/validate-site.mjs`: passed.
+- `node --test scripts/validate-site.test.mjs`: passed, 4 tests / 0 failures.
+- `npm run validate`: passed; Astro built 11 pages and generated-site
+  validation passed.
+- `npm run astro -- check`: still reports the same 10 pre-existing errors in
+  `MasterKaie.astro` and `Layout.astro`, with no new errors from this follow-up.
+- `git diff --check`: passed before follow-up commit.

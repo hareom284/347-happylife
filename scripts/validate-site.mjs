@@ -1,5 +1,5 @@
-import { readdir, readFile, stat } from 'node:fs/promises';
-import { dirname, extname, join, relative, resolve } from 'node:path';
+import { readdir, readFile, realpath, stat } from 'node:fs/promises';
+import { dirname, extname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -30,9 +30,10 @@ async function htmlFiles(directory) {
   return files;
 }
 
-async function isFile(path) {
+async function isFileWithinRoot(path, siteRoot) {
   try {
-    return (await stat(path)).isFile();
+    const [realPath, realRoot] = await Promise.all([realpath(path), realpath(siteRoot)]);
+    return isWithinRoot(realPath, realRoot) && (await stat(realPath)).isFile();
   } catch {
     return false;
   }
@@ -62,14 +63,16 @@ function localPath(value) {
 function isWithinRoot(path, siteRoot) {
   const normalizedPath = resolve(path);
   const normalizedRoot = resolve(siteRoot);
-  return normalizedPath === normalizedRoot || normalizedPath.startsWith(`${normalizedRoot}/`);
+  return normalizedPath === normalizedRoot || normalizedPath.startsWith(`${normalizedRoot}${sep}`);
+}
+
+function candidatesForBase(basePath, siteRoot) {
+  return [basePath, join(basePath, 'index.html'), `${basePath}.html`]
+    .filter((candidate) => isWithinRoot(candidate, siteRoot));
 }
 
 function generatedCandidates(pathname, siteRoot = dist) {
-  const path = pathname.replace(/^\/+|\/+$/g, '');
-  if (!path) return [join(siteRoot, 'index.html')];
-  return [join(siteRoot, path), join(siteRoot, path, 'index.html'), join(siteRoot, `${path}.html`)]
-    .filter((candidate) => isWithinRoot(candidate, siteRoot));
+  return candidatesForBase(resolve(siteRoot, `.${pathname}`), siteRoot);
 }
 
 async function isValidLocalReference(value, page, siteRoot = dist) {
@@ -78,8 +81,8 @@ async function isValidLocalReference(value, page, siteRoot = dist) {
   if (local === null) return true;
   const candidates = local.rootRelative
     ? generatedCandidates(local.pathname, siteRoot)
-    : [resolve(dirname(page), local.pathname)].filter((candidate) => isWithinRoot(candidate, siteRoot));
-  return (await Promise.all(candidates.map((candidate) => isFile(candidate)))).some(Boolean);
+    : candidatesForBase(resolve(dirname(page), local.pathname), siteRoot);
+  return (await Promise.all(candidates.map((candidate) => isFileWithinRoot(candidate, siteRoot)))).some(Boolean);
 }
 
 async function checkLocalReference(value, page) {
