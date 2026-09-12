@@ -36,7 +36,7 @@ const channels = [
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {channels.map((c) => (
-          <a href={c.href} target={c.ext ? '_blank' : undefined} rel={c.ext ? 'noopener' : undefined} class="group bg-white rounded-card border border-oat-border/60 p-7 shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all flex items-center gap-4">
+          <a href={c.href} target={c.ext ? '_blank' : undefined} rel={c.ext ? 'noopener noreferrer' : undefined} class="group bg-white rounded-card border border-oat-border/60 p-7 shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all flex items-center gap-4">
             <span class="w-12 h-12 rounded-full bg-royal text-white flex items-center justify-center shrink-0 group-hover:bg-gold transition-colors">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" set:html={c.icon} />
             </span>

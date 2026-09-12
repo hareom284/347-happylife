@@ -71,6 +71,17 @@ The follow-up review found three issues in the original Task 2 commit. The fixes
 - Structured-data assertion: PASS; `LocalBusiness origin, 18 offers, and FAQ schema: PASS`.
 - `git diff --check`: PASS.
 
+## Final Task 2 Review Fix
+
+- Updated the conditional external-link relation in `src/pages/contact.astro` from `noopener` to `noopener noreferrer`.
+- Preserved the email channel behavior: it remains a same-page `mailto:` link with no `target` or `rel` attributes.
+
+### Final Fix Verification
+
+- `npm run build`: PASS; all 11 static routes generated.
+- Conditional contact-link assertion: PASS; external channels use `target="_blank"` and `rel="noopener noreferrer"`, while the email channel has no target/rel.
+- `git diff --check`: PASS.
+
 ### `npm test`
 
 NOT AVAILABLE: `package.json` has no `test` script.
