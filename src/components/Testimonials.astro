@@ -6,7 +6,11 @@ interface Props {
 }
 
 const { testimonials, googleMapsLink, wa } = Astro.props;
-const featuredTestimonial = testimonials[0];
+const featuredTestimonial = testimonials[0] ?? {
+  name: 'Joanna J Wilkin',
+  text: 'This meditation retreat really challenges you to think deeply about your life and what it means. Even after just one session, my mind calmed down and I could see things more clearly.',
+  time: '7 months ago',
+};
 ---
 
 <section id="testimonials" class="scroll-mt-20 bg-ivory-dark">

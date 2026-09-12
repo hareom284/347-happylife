@@ -225,15 +225,15 @@ export const onSiteExperiences = [
 ];
 
 export const onlineCourses = [
-  { name: '347 Awakening Starter Program', price: 'THB 800 / USD 27', priceThb: 'THB 800', priceUsd: 'USD 27', tagline: 'Calm Your Mind & Reconnect Yourself',
+  { name: '347 Awakening Starter Program', price: price('800', '27'), tagline: 'Calm Your Mind & Reconnect Yourself',
     duration: '1.5 Hours · 1 Live Online Session',
     learn: ['Quiet the busy mind', 'Basic awakening meditation', 'Breath & energy awareness', 'Emotional reset techniques', 'Daily 10-minute routine'],
     includes: ['Live Zoom Session', 'Guided Meditation Audio', 'Reflection Workbook PDF'], featured: false },
-  { name: '347 Deep Awakening Program', price: 'THB 2,500 / USD 77', priceThb: 'THB 2,500', priceUsd: 'USD 77', tagline: 'Break Inner Blocks & Transform Your Energy',
+  { name: '347 Deep Awakening Program', price: price('2,500', '77'), tagline: 'Break Inner Blocks & Transform Your Energy',
     duration: '3 Hours · 2 Live Sessions (90 min each)',
     learn: ['Deep emotional release meditation', 'Understanding subconscious patterns', 'Energy balancing', 'Reconnect with purpose', 'Confidence & abundance'],
     includes: ['2 Live Zoom Sessions', 'Guided Meditation Audio Pack', 'Self-Discovery Worksheet', 'Private Community Access'], featured: true },
-  { name: '347 Premium Life Transformation Program', price: 'THB 7,000 / USD 219', priceThb: 'THB 7,000', priceUsd: 'USD 219', tagline: 'Awaken Your True Self & Transform Your Life',
+  { name: '347 Premium Life Transformation Program', price: price('7,000', '219'), tagline: 'Awaken Your True Self & Transform Your Life',
     duration: '6 Hours · 4 Live Sessions (90 min each)',
     learn: ['Advanced awakening meditation', 'Mind-body-spirit alignment', 'Healing trauma patterns', 'Finding life mission', 'Inner peace with success', 'Conscious living'],
     includes: ['4 Premium Live Sessions', 'Personal Meditation Guidance', 'Energy Alignment Practice', 'Life Mission Assessment', 'VIP Private Support', 'Certificate of Completion'], featured: false },

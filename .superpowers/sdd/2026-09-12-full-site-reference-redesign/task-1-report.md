@@ -57,3 +57,20 @@ A test-first Node assertion was attempted before implementation, but the availab
 - Stale `$47`, `$97`, and `$147` values remain in pre-existing `src/layouts/Layout.astro` metadata and `src/components/CourseCards.astro`; changing them would exceed the Task 1 file scope and the instruction not to modify unrelated SEO/layout files.
 - The existing private mentoring `$147` price remains because the brief explicitly permits preserving useful private-mentoring details where the DOCX lacks complete details.
 - `retreatOptions` is centralized data for later consumers; the current Task 1 programs page was intentionally not modified because it is outside the listed Task 1 files.
+
+## Review Fixes
+
+### Finding 1: Empty testimonials input
+
+Root cause: the data-backed featured review read `testimonials[0]` without a fallback and then dereferenced its fields. Fixed `src/components/Testimonials.astro` by retaining the prior Joanna J Wilkin featured-review values as a fallback for an empty array, while using the first supplied testimonial whenever data is present.
+
+### Finding 2: Online pricing normalization
+
+Root cause: each online course duplicated one display string and two currency strings, allowing them to drift. Fixed `src/data/site.ts` so every online course uses the typed `ProgramPrice` helper as its sole pricing value. `programs.astro` was intentionally not modified; Task 4 must render the normalized `price.display` value when updating visible programme pricing.
+
+## Review-Fix Checks
+
+- Focused empty-array fallback check: passed (`PASS: empty testimonials fallback present`).
+- Focused pricing-shape check: passed (`PASS: online prices use ProgramPrice only`).
+- `npm run build`: passed with exit code 0; 9 static routes generated.
+- `git diff --check`: passed with no output.
