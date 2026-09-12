@@ -44,11 +44,11 @@ const isActive = (href: string) => {
 
     <!-- CTA + mobile toggle -->
     <div class="flex items-center gap-3 shrink-0">
-      <a href={wa} target="_blank" rel="noopener" class="hidden sm:inline-flex bg-gold text-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-gold-dark transition-all hover:shadow-lg">
+       <a href={wa} target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex bg-gold text-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-gold-dark transition-all hover:shadow-lg">
         Join the Journey
       </a>
-      <button id="menu-toggle" class="lg:hidden p-2 -mr-2 text-deep-blue" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+       <button type="button" id="menu-toggle" class="lg:hidden p-2 -mr-2 text-deep-blue" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+         <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
     </div>
   </div>
@@ -59,7 +59,7 @@ const isActive = (href: string) => {
       {navLinks.map((link) => (
         <a href={link.href} class={`py-3 px-2 rounded-lg hover:bg-soft-aura-dark/40 uppercase tracking-wide text-xs ${isActive(link.href) ? 'text-gold-ink' : 'text-body'}`}>{link.label}</a>
       ))}
-      <a href={wa} target="_blank" rel="noopener" class="mt-3 bg-gold text-white text-center px-5 py-3 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-gold-dark transition-all">
+       <a href={wa} target="_blank" rel="noopener noreferrer" class="mt-3 bg-gold text-white text-center px-5 py-3 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-gold-dark transition-all">
         Join the Journey
       </a>
     </div>

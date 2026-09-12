@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar, Footer, WhatsAppBar } from '../components/index.astro';
+import { wa, email, social } from '../data/site';
+---
+
+<Layout title="Terms & Conditions | 347 Awakening">
+  <Navbar wa={wa} />
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+    <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Before You Book</p>
+    <h1 class="font-heading text-4xl md:text-5xl font-bold text-deep-blue mb-8">Terms &amp; Conditions</h1>
+    <div class="space-y-6 text-body leading-relaxed">
+      <p>Bookings are confirmed after we agree on the date, time, service, and payment arrangement. Please provide accurate contact details so we can reach you.</p>
+      <p>Free cancellation is available up to 24 hours before a scheduled session. Private or group bookings should be cancelled at least 48 hours in advance for a full refund.</p>
+      <p>For questions about a booking or these terms, contact <a class="text-gold-ink underline" href={`mailto:${email}`}>{email}</a>.</p>
+    </div>
+  </article>
+  <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
+  <WhatsAppBar wa={wa} />
+</Layout>

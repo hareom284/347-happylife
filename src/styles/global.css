@@ -236,6 +236,12 @@
   border-radius: 4px;
 }
 
+@media (max-width: 767px) {
+  #main-content {
+    padding-bottom: calc(5.75rem + env(safe-area-inset-bottom));
+  }
+}
+
 /* Skip link: hidden until focused, then pinned top-left (WCAG 2.4.1) */
 .skip-link {
   position: fixed;
@@ -264,6 +270,9 @@
 .whatsapp-bar {
   opacity: 1;
   animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 400ms both;
+}
+.whatsapp-bar > div {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
 }
 
 /* ===== AMBIENCE LAYER ===== */
