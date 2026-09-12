@@ -48,7 +48,7 @@ import {
             <h3 class="font-heading text-2xl font-semibold text-deep-blue mb-1">{e.title}</h3>
             <p class="text-gold-ink text-sm italic mb-4">{e.tagline}</p>
             <p class="text-body-light text-sm leading-relaxed mb-6 flex-1">{e.body}</p>
-            <a href={waMsg(e.title)} target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-royal text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-royal-mid transition-all">
+             <a href={waMsg(e.title)} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-royal text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-royal-mid transition-all">
               Book This Experience
             </a>
           </div>
@@ -91,7 +91,7 @@ import {
               ))}
             </ul>
 
-            <a href={waMsg(c.name)} target="_blank" rel="noopener" class={`inline-flex items-center justify-center px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wide transition-all ${c.featured ? 'bg-gold text-deep-blue hover:bg-gold-light' : 'bg-royal text-white hover:bg-royal-mid'}`}>
+             <a href={waMsg(c.name)} target="_blank" rel="noopener noreferrer" class={`inline-flex items-center justify-center px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wide transition-all ${c.featured ? 'bg-gold text-deep-blue hover:bg-gold-light' : 'bg-royal text-white hover:bg-royal-mid'}`}>
               Enroll Now
             </a>
           </div>
@@ -125,7 +125,7 @@ import {
             <div class="border-t border-oat-border pt-4 mb-6 space-y-1">
               {m.pricing.map((p) => (<p class="font-heading text-lg text-deep-blue">{p}</p>))}
             </div>
-            <a href={waMsg(m.name)} target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-royal text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-royal-mid transition-all">
+             <a href={waMsg(m.name)} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-royal text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-royal-mid transition-all">
               Apply Now
             </a>
           </div>

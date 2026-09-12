@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { faqs, testimonials, featuredTiktok, onSiteExperiences, onlineCourses, retreatOptions } from '../data/site';
+import { faqs, testimonials, featuredTiktok, onSiteExperiences, onlineCourses, retreatOptions, mentoringPrograms, membership } from '../data/site';
 
 interface Props {
   title: string;
@@ -11,8 +11,9 @@ const { title, description = 'Meditation retreat in Chiang Mai — Vipassana & m
 const siteOrigin = Astro.site?.origin ?? Astro.url.origin;
 const routeUrl = new URL(Astro.url.pathname, `${siteOrigin}/`);
 const canonicalUrl = routeUrl.href;
-const isHomepage = Astro.url.pathname === '/';
-const hasFaqs = Astro.url.pathname === '/programs';
+const routePath = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const isHomepage = routePath === '/';
+const hasFaqs = routePath === '/programs';
 const breadcrumbLabels: Record<string, string> = {
   '/about': 'About',
   '/method': 'The Method',
@@ -25,9 +26,9 @@ const breadcrumbLabels: Record<string, string> = {
   '/privacy': 'Privacy Policy',
   '/terms': 'Terms & Conditions',
 };
-const breadcrumbLabel = breadcrumbLabels[Astro.url.pathname];
+const breadcrumbLabel = breadcrumbLabels[routePath];
 const courseOffers = [...onSiteExperiences, ...onlineCourses, ...retreatOptions].map((item) => {
-  const name = 'title' in item ? item.title : 'name' in item ? item.name : `347 Retreat - ${item.duration}`;
+  const name = 'title' in item ? item.title : 'name' in item ? item.name : `${item.duration} Retreat`;
   return {
     '@type': 'Offer',
     name,
@@ -36,6 +37,21 @@ const courseOffers = [...onSiteExperiences, ...onlineCourses, ...retreatOptions]
     availability: 'https://schema.org/InStock',
   };
 });
+const mentoringOffers = mentoringPrograms.flatMap((program) => program.pricing.map((pricing) => {
+  const match = pricing.match(/^(.*?): \$([\d,]+)$/);
+  return match ? {
+    '@type': 'Offer',
+    name: `${program.name} (${match[1]})`,
+    price: match[2].replaceAll(',', ''),
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+  } : null;
+})).filter((offer): offer is NonNullable<typeof offer> => offer !== null);
+courseOffers.push(
+  ...mentoringOffers,
+  { '@type': 'Offer', name: `${membership.name} (Monthly)`, price: membership.priceMonth.replace('$', ''), priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+  { '@type': 'Offer', name: `${membership.name} (Yearly)`, price: membership.priceYear.replace('$', ''), priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+);
 ---
 
 <!doctype html>
@@ -125,7 +141,7 @@ const courseOffers = [...onSiteExperiences, ...onlineCourses, ...retreatOptions]
       "name": "347 Happy Life Happy World",
       "alternateName": "347 Awakening",
       "description": "Awakening meditation & life transformation experience at Silver Temple, Chiang Mai, Thailand. Vipassana, mindfulness & inner coaching with Master Kaie.",
-       "url": canonicalUrl,
+       "url": siteOrigin,
       "telephone": "+66944265297",
       "email": "347happylifehappyworld@gmail.com",
       "address": {
@@ -176,7 +192,7 @@ const courseOffers = [...onSiteExperiences, ...onlineCourses, ...retreatOptions]
     })} />
 
      <!-- Structured Data: Course offerings (only on the programs page) -->
-     {Astro.url.pathname === '/programs' && <script type="application/ld+json" set:html={JSON.stringify({
+     {hasFaqs && <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Course",
       "name": "347 Awakening — Life Transformation Experience",

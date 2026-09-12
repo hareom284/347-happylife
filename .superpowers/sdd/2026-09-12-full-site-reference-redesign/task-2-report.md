@@ -55,6 +55,22 @@ BLOCKED by the existing direct script using Node `v18.20.8`; Astro requires Node
 
 PASS.
 
+## Follow-up Review Resolution
+
+The follow-up review found three issues in the original Task 2 commit. The fixes were applied without changing visual layout or Task 1 data:
+
+- Added `rel="noopener noreferrer"` to all 29 `target="_blank"` links across pages and components, including the existing TikTok embed links.
+- Kept `LocalBusiness.url` at `https://347awakening.com`; route-specific canonical and OG URLs are unchanged.
+- Expanded the `/programs/` Course offers to 18 modeled offers: four on-site, three online, three centralized retreat-duration products, six mentoring variants, and two membership variants. Retreat names derive from the centralized retreat duration values.
+- Normalized trailing-slash route matching so `/programs/` emits both Course and FAQ schema during static generation.
+
+### Follow-up Commands and Outputs
+
+- `npm run build`: PASS; 11 static routes generated.
+- External-link invariant script: PASS; `target=_blank links checked: 29`.
+- Structured-data assertion: PASS; `LocalBusiness origin, 18 offers, and FAQ schema: PASS`.
+- `git diff --check`: PASS.
+
 ### `npm test`
 
 NOT AVAILABLE: `package.json` has no `test` script.
@@ -74,3 +90,30 @@ NOT AVAILABLE: `package.json` has no `test` script.
 - `npm run astro -- check` remains incompatible with the installed Node 18 runtime because the existing `astro` script bypasses `scripts/run-node.sh`; changing `package.json` is outside Task 2 scope.
 - No automated test suite is configured (`npm test` reports a missing script).
 - The shared shell continues to include some existing global structured data such as LocalBusiness and reviews on every route; this task only scoped the explicitly homepage/content-matching FAQ, Course, and breadcrumb schemas.
+
+## Review Fixes
+
+- Updated every `target="_blank"` link under `src` to use `rel="noopener noreferrer"`, including page CTAs, homepage CTAs, the TikTok embed links, and existing component links.
+- Restored `LocalBusiness.url` to the configured site origin while retaining route-specific canonical and `og:url` values.
+- Expanded the `/programs` Course offers from centralized on-site, online, and retreat data, plus modeled mentoring prices and membership monthly/yearly prices. Retreat offer names now derive directly from each centralized duration instead of using an unrelated synthetic product label.
+- Normalized trailing-slash route keys so static `/programs/` output receives the intended Course and FAQ schemas.
+
+## Review-Fix Verification
+
+### External-link inventory
+
+`grep -R -n 'target="_blank"' src --include='*.astro'`
+
+PASS. All 29 matches include `rel="noopener noreferrer"`.
+
+### `npm run build`
+
+PASS. Built all 11 static routes after the fixes.
+
+### Structured-data assertions
+
+PASS. Confirmed generated `/programs/` data contains 18 offers: 4 on-site, 3 online, 3 retreat-duration offers, 6 mentoring variants, and 2 membership variants. Confirmed `LocalBusiness.url` is `https://347awakening.com` while `/programs/` canonical and OG URLs remain route-specific. Confirmed `/programs/` emits FAQ schema.
+
+### `git diff --check`
+
+PASS.
