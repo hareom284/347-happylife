@@ -30,45 +30,68 @@ async function htmlFiles(directory) {
   return files;
 }
 
-async function exists(path) {
+async function isFile(path) {
   try {
-    await stat(path);
-    return true;
+    return (await stat(path)).isFile();
+  } catch {
+    return false;
+  }
+}
+
+async function isDirectory(path) {
+  try {
+    return (await stat(path)).isDirectory();
   } catch {
     return false;
   }
 }
 
 function localPath(value) {
+  if (value.startsWith('#') || /^(?:mailto:|tel:|javascript:|data:)/i.test(value)) return null;
   try {
-    const url = new URL(value, 'https://validation.invalid');
-    if (url.origin !== 'https://validation.invalid') return null;
-    return decodeURIComponent(url.pathname);
+    if (value.startsWith('/') && !value.startsWith('//')) {
+      return { pathname: decodeURIComponent(new URL(value, 'https://validation.invalid').pathname), rootRelative: true };
+    }
+    if (/^[a-z][a-z\d+.-]*:/i.test(value) || value.startsWith('//')) return null;
+    return { pathname: decodeURIComponent(value.split(/[?#]/, 1)[0]), rootRelative: false };
   } catch {
     return null;
   }
 }
 
-function generatedCandidates(pathname) {
-  const path = pathname.replace(/^\/+/, '');
-  if (!path) return [join(dist, 'index.html')];
-  return [join(dist, path, 'index.html'), join(dist, `${path}.html`), join(dist, path)];
+function isWithinRoot(path, siteRoot) {
+  const normalizedPath = resolve(path);
+  const normalizedRoot = resolve(siteRoot);
+  return normalizedPath === normalizedRoot || normalizedPath.startsWith(`${normalizedRoot}/`);
+}
+
+function generatedCandidates(pathname, siteRoot = dist) {
+  const path = pathname.replace(/^\/+|\/+$/g, '');
+  if (!path) return [join(siteRoot, 'index.html')];
+  return [join(siteRoot, path), join(siteRoot, path, 'index.html'), join(siteRoot, `${path}.html`)]
+    .filter((candidate) => isWithinRoot(candidate, siteRoot));
+}
+
+async function isValidLocalReference(value, page, siteRoot = dist) {
+  if (!value || value.startsWith('#') || /^(?:mailto:|tel:|javascript:|data:)/i.test(value)) return true;
+  const local = localPath(value);
+  if (local === null) return true;
+  const candidates = local.rootRelative
+    ? generatedCandidates(local.pathname, siteRoot)
+    : [resolve(dirname(page), local.pathname)].filter((candidate) => isWithinRoot(candidate, siteRoot));
+  return (await Promise.all(candidates.map((candidate) => isFile(candidate)))).some(Boolean);
 }
 
 async function checkLocalReference(value, page) {
-  if (!value || value.startsWith('#') || /^(?:mailto:|tel:|javascript:|data:)/i.test(value)) return;
-  const pathname = localPath(value);
-  if (pathname === null) return;
-  const candidates = pathname.startsWith('/')
-    ? generatedCandidates(pathname)
-    : [resolve(dirname(page), pathname)];
-  const found = (await Promise.all(candidates.map((candidate) => exists(candidate)))).some(Boolean);
-  if (!found) {
+  if (!await isValidLocalReference(value, page)) {
     errors.push(`${relative(dist, page)} references missing local path: ${value}`);
   }
 }
 
-if (!await exists(dist)) {
+export { generatedCandidates, isValidLocalReference, isWithinRoot };
+
+async function validateSite() {
+if (!await isDirectory(dist)) {
   errors.push('dist/ does not exist; run the production build first');
 } else {
   const pages = await htmlFiles(dist);
@@ -109,3 +132,7 @@ if (errors.length) {
 } else {
   console.log('Site validation passed: local references, routes, h1 counts, canonical metadata, placeholder links, and DOCX pricing.');
 }
+}
+
+const isMain = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isMain) await validateSite();

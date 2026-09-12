@@ -78,3 +78,26 @@ Astro also reported non-failing unused-variable/deprecated-attribute warnings an
 - Manual browser QA from the brief was not performed: keyboard navigation, visible focus, reduced-motion behavior, 375px layout, desktop layout, fixed WhatsApp bar clearance, image loading, mailto behavior, and external embeds remain outside this static validator.
 - `npm install` reported 3 audit vulnerabilities: 1 low, 1 high, and 1 critical. No audit fix was applied because it could change unrelated dependency versions.
 - Astro check remains red on the pre-existing type errors listed above, although it is now repeatable and non-interactive under the supported Node setup.
+
+## Review Fix Follow-Up
+
+The follow-up fixes the two validator findings without amending commit `16d09a6`:
+
+- Local references now pass only when a candidate is a real file. A route is
+  valid through its generated `index.html`, and an explicit `.html` file is
+  valid; an existing directory by itself is rejected.
+- Relative references retain their original traversal before normalization and
+  are rejected when the resolved candidate is outside the generated `dist`
+  root. Root-relative paths are also constrained to that root.
+- Added `scripts/validate-site.test.mjs` with three Node built-in tests covering
+  the two regressions and valid route/asset references. No dependency was added.
+
+Follow-up verification:
+
+- `node --check scripts/validate-site.mjs`: passed.
+- `node --test scripts/validate-site.test.mjs`: passed, 3 tests / 0 failures.
+- `npm run validate`: passed; build generated 11 pages and site validation
+  passed.
+- `npm run astro -- check`: still reports the same 10 pre-existing errors in
+  `MasterKaie.astro` and `Layout.astro`; no new Astro errors were introduced.
+- `git diff --check`: passed before follow-up commit.
