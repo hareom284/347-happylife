@@ -113,11 +113,6 @@ export const pathCards = [
     cta: 'Explore', href: '/programs#online',
   },
   {
-    title: 'Membership', img: '/images/retreat-photo-1.webp',
-    body: 'Join our global community and grow together every day.',
-    cta: 'Learn More', href: '/membership',
-  },
-  {
     title: 'Retreats', img: '/images/retreat-photo-2.webp',
     body: 'Immersive retreats in Chiang Mai for deep healing and awakening.',
     cta: 'View Retreats', href: '/programs#retreats',
@@ -126,6 +121,11 @@ export const pathCards = [
     title: 'Private Mentoring', img: '/images/retreat-photo-3.webp',
     body: 'Receive personalized guidance and support for your transformation.',
     cta: 'Apply Now', href: '/programs#mentoring',
+  },
+  {
+    title: 'Membership', img: '/images/retreat-photo-1.webp',
+    body: 'Join our global community and grow together every day.',
+    cta: 'Learn More', href: '/membership',
   },
 ];
 

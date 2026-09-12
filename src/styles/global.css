@@ -334,23 +334,6 @@
   scroll-margin-top: 5rem;
 }
 
-/* Silver-temple hero background — served at the size actually needed.
-   The Layout <link rel="preload"> must point at the same URL the mobile
-   breakpoint loads (480w), since Lighthouse audits the mobile viewport. */
-.hero-temple-bg {
-  background-image: url('/images/silver-temple-front-480.webp');
-}
-@media (min-width: 768px) {
-  .hero-temple-bg {
-    background-image: url('/images/silver-temple-front-800.webp');
-  }
-}
-@media (min-width: 1280px) {
-  .hero-temple-bg {
-    background-image: url('/images/silver-temple-front.webp');
-  }
-}
-
 /* Lotus draw-in — concentric circles draw themselves on reveal */
 .lotus-draw circle[stroke] {
   stroke-dasharray: 1;

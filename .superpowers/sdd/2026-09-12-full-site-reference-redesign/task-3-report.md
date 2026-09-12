@@ -54,3 +54,24 @@ to assets, `package-lock.json`, and planning/spec documents were not staged.
   Task 3 because Astro requested an interactive dependency mutation.
 - The hero and retreat sections reuse the existing local Silver Temple assets;
   image sourcing/replacement remains intentionally deferred to Task 5.
+
+## Task 3 Review Fixes
+
+- Reordered `pathCards` to On-Site Courses, Online Courses, Retreats, Private
+  Mentoring, and Membership.
+- Changed the free meditation Name and Email labels from screen-reader-only
+  labels to visibly rendered labels above their fields.
+- Corrected homepage image dimensions to the actual local asset ratios:
+  `silver-temple-front-480.webp` is `480x347` and
+  `silver-temple-front-800.webp` is `800x579`.
+- Added `aria-hidden="true"` to decorative SVGs across the homepage component
+  set, including unused legacy homepage sections.
+- Removed the unused `.hero-temple-bg` CSS and its breakpoint rules.
+
+## Review-Fix Verification
+
+- Review-fix invariant assertion: passed (`review-fix assertions passed`).
+- `npm run build` under Node 24: passed, 11 pages generated.
+- `git diff --check`: passed.
+- The first broad pathway assertion failed because it matched later unrelated
+  `title` fields; the narrowed assertion against the `pathCards` block passed.

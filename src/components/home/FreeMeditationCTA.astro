@@ -12,7 +12,7 @@ const { email } = Astro.props;
       <!-- Copy -->
       <div class="flex items-start gap-4 lg:max-w-sm">
         <div class="w-14 h-14 rounded-full bg-royal flex items-center justify-center shrink-0">
-          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8V21M8 8h8M5 8h14v0a2 2 0 002-2 3 3 0 00-5.2-2.1L12 5 10.2 3.9A3 3 0 005 6a2 2 0 002 2z" /></svg>
+          <svg aria-hidden="true" class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8V21M8 8h8M5 8h14v0a2 2 0 002-2 3 3 0 00-5.2-2.1L12 5 10.2 3.9A3 3 0 005 6a2 2 0 002 2z" /></svg>
         </div>
         <div>
           <h2 class="font-heading text-2xl font-semibold text-deep-blue mb-1.5">Free Meditation for Busy Leaders</h2>
@@ -24,11 +24,11 @@ const { email } = Astro.props;
       <div class="w-full lg:flex-1">
         <form id="free-meditation-form" action={`mailto:${email}`} method="post" class="flex flex-col sm:flex-row gap-3 w-full">
           <div class="flex-1">
-            <label for="free-name" class="sr-only">Name</label>
+            <label for="free-name" class="block text-xs uppercase tracking-[0.15em] text-body-light font-semibold mb-2">Name</label>
             <input id="free-name" name="name" type="text" autocomplete="name" required placeholder="Your name" class="w-full min-h-12 px-4 py-3 rounded-full border border-oat-border bg-white text-body placeholder:text-body-muted focus:outline-none focus:ring-2 focus:ring-gold/40" />
           </div>
           <div class="flex-1">
-            <label for="free-email" class="sr-only">Email</label>
+            <label for="free-email" class="block text-xs uppercase tracking-[0.15em] text-body-light font-semibold mb-2">Email</label>
             <input id="free-email" name="email" type="email" autocomplete="email" required placeholder="Your email" class="w-full min-h-12 px-4 py-3 rounded-full border border-oat-border bg-white text-body placeholder:text-body-muted focus:outline-none focus:ring-2 focus:ring-gold/40" />
           </div>
           <button type="submit" class="inline-flex items-center justify-center bg-deep-blue text-white px-7 py-3 min-h-12 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-navy transition-colors whitespace-nowrap">
