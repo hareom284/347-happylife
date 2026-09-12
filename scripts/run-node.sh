@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Astro 6 needs Node >= 22.12. The local shell may default to an older Node
+# Astro 7 needs Node >= 22.12. The local shell may default to an older Node
 # (e.g. Herd injecting v20), so activate a new-enough version via nvm when
 # needed, then run the passed command. On CI — or any shell already on a
 # new-enough Node — this is a transparent passthrough (no nvm required).
@@ -26,6 +26,6 @@ if [ "$(node_major)" -ge 22 ] 2>/dev/null; then
   exec "$@"
 fi
 
-echo "Error: Astro 6 needs Node >= 22.12, but found $(node -v 2>/dev/null || echo 'no node')." >&2
+echo "Error: Astro 7 needs Node >= 22.12, but found $(node -v 2>/dev/null || echo 'no node')." >&2
 echo "Install and activate it, e.g.:  nvm install 24 && nvm use" >&2
 exit 1

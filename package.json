@@ -12,13 +12,10 @@
     "astro": "bash scripts/run-node.sh astro",
     "validate": "npm run build && node scripts/validate-site.mjs"
   },
-  "overrides": {
-    "vite": "^7"
-  },
   "dependencies": {
     "@astrojs/sitemap": "^3.3.1",
     "@tailwindcss/vite": "^4.1.4",
-    "astro": "^6.1.6",
+    "astro": "^7.3.2",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {

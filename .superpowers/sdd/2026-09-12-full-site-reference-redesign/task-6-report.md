@@ -102,6 +102,75 @@ Follow-up verification:
   `MasterKaie.astro` and `Layout.astro`; no new Astro errors were introduced.
 - `git diff --check`: passed before follow-up commit.
 
+## Review Fix Follow-Up 3
+
+Date: 2026-09-12
+
+This follow-up is a new commit and does not amend the earlier Task 6 commits.
+It addresses the final whole-branch review findings while preserving the
+approved content, pricing values, and image choices.
+
+### Changes
+
+- Upgraded Astro from the vulnerable 6.x line to `astro@^7.3.2` and refreshed
+  `package-lock.json`. The old Vite override was removed because Astro 7.3.2
+  declares Vite 8; retaining the Vite 7 override caused the static build to
+  fail before route generation.
+- Fixed the ten Astro check errors in `MasterKaie.astro` and `Layout.astro`.
+  DOM callbacks and Analytics initialization are now typed in checked source;
+  Analytics was moved to `src/scripts/analytics.ts` rather than suppressing
+  diagnostics. Added `src/env.d.ts` for the Analytics data layer shape.
+- Made `.reveal` visible by default and applied the hidden animation state only
+  under `html.js`. The document adds the `js` class before body content runs;
+  missing IntersectionObserver support and reduced motion explicitly reveal
+  targets. Testimonial markup therefore remains available without JavaScript.
+- Extended Course Offer JSON-LD with separate valid THB and USD Offer objects,
+  generated from the same `ProgramPrice` values used by visible cards. Existing
+  USD-only mentoring and membership values remain unchanged because no THB
+  values were authoritative for those entries.
+- Replaced the short privacy text with factual disclosures for Google
+  Analytics, Google Fonts, Google Forms, Google Maps, TikTok, WhatsApp, email,
+  and the mailto form flow. It does not make unsupported promises about
+  third-party policies or legal rights.
+- Corrected an existing unmatched closing `div` in `About.astro`, required by
+  Astro 7's stricter compiler during the production build. No rendered content
+  was changed.
+- Added `scripts/final-review.test.mjs`, a dependency-free regression check for
+  the fallback, Offer currencies, privacy service list, and Astro version.
+
+### Verification
+
+- `bash scripts/run-node.sh node -v`: passed with Node `v24.19.0`.
+- `npm audit --omit=optional`: passed, `found 0 vulnerabilities`.
+- `npm run astro -- check`: passed with `0 errors` and `0 warnings`; 24
+  non-failing existing hints remain, including unused props, deprecated iframe
+  attributes, and inline-script hints.
+- `node --test scripts/final-review.test.mjs scripts/validate-site.test.mjs`:
+  passed, 8 tests / 0 failures.
+- `npm run validate`: passed; Astro generated 11 static pages and the generated
+  site validator passed local references, routes, h1 counts, canonical metadata,
+  placeholder links, and required DOCX pricing.
+- Generated `/programs/index.html` JSON-LD assertion: passed with 28 THB/USD
+  Offer entries and both currencies present.
+- `git diff --check`: passed.
+
+### QA Boundary
+
+Not verified in a real browser in this environment: JavaScript-disabled
+rendering, IntersectionObserver failure behavior, reveal animation timing,
+375px/tablet/desktop visual layout, keyboard focus traversal, reduced-motion
+visual behavior, fixed WhatsApp-bar clearance, live mail client behavior,
+Google Analytics/Forms/Maps requests, TikTok loading, and external third-party
+policy behavior. Static source assertions, Astro compilation, production
+generation, generated HTML validation, and dependency audit were verified.
+
+### Remaining Concerns
+
+- The Astro check is clean for errors and warnings, but the existing 24 hints
+  remain outside this focused wave.
+- Browser and third-party integration QA still requires a real browser and
+  network-enabled environment.
+
 ## Review Fix Follow-Up 2
 
 The second validator follow-up addresses relative route resolution and symlink

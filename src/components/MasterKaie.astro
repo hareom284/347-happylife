@@ -97,7 +97,7 @@ const tiktokProfile = `https://www.tiktok.com/@${featuredTiktok.username}?refer=
         // Suppress TikTok's noisy console output during startup.
         const origLog = console.log;
         const origWarn = console.warn;
-        const filter = (fn) => (...args) => {
+        const filter = (fn: (...args: unknown[]) => void) => (...args: unknown[]) => {
           if (args[0] && typeof args[0] === 'string' && (args[0].includes('TikTok') || args[0].includes('SES Removing'))) return;
           fn.apply(console, args);
         };

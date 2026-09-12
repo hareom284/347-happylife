@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { faqs, testimonials, featuredTiktok, onSiteExperiences, onlineCourses, retreatOptions, mentoringPrograms, membership } from '../data/site';
+import type { ProgramPrice } from '../data/site';
 
 interface Props {
   title: string;
@@ -27,15 +28,29 @@ const breadcrumbLabels: Record<string, string> = {
   '/terms': 'Terms & Conditions',
 };
 const breadcrumbLabel = breadcrumbLabels[routePath];
-const courseOffers = [...onSiteExperiences, ...onlineCourses, ...retreatOptions].map((item) => {
-  const name = 'title' in item ? item.title : 'name' in item ? item.name : `${item.duration} Retreat`;
-  return {
+const offersForPrice = (name: string, price: { thb: string; usd: string }) => [
+  {
     '@type': 'Offer',
     name,
-    price: item.price.usd.replace('USD ', ''),
+    price: price.thb.replace('THB ', '').replaceAll(',', ''),
+    priceCurrency: 'THB',
+    availability: 'https://schema.org/InStock',
+  },
+  {
+    '@type': 'Offer',
+    name,
+    price: price.usd.replace('USD ', '').replaceAll(',', ''),
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
-  };
+  },
+];
+const courseOffers = [...onSiteExperiences, ...onlineCourses, ...retreatOptions].flatMap((item) => {
+  const name = 'title' in item && typeof item.title === 'string'
+    ? item.title
+    : 'name' in item && typeof item.name === 'string'
+      ? item.name
+      : `${'duration' in item ? item.duration : item.dur} Retreat`;
+  return offersForPrice(name, item.price as ProgramPrice);
 });
 const mentoringOffers = mentoringPrograms.flatMap((program) => program.pricing.map((pricing) => {
   return {
@@ -132,6 +147,7 @@ courseOffers.push(
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <title>{title}</title>
+    <script is:inline>document.documentElement.classList.add('js');</script>
 
     <!-- Structured Data: LocalBusiness -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -339,13 +355,8 @@ courseOffers.push(
      })} />}
 
     <!-- Google Analytics (loaded last in head so it never blocks critical render) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCM8XJXS9T"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NCM8XJXS9T');
-    </script>
+        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-NCM8XJXS9T"></script>
+        <script src="../scripts/analytics.ts"></script>
   </head>
   <body class="bg-ivory text-body antialiased font-sans">
     <!-- Skip link for keyboard / screen-reader users (WCAG 2.4.1) -->
@@ -361,9 +372,10 @@ courseOffers.push(
     <!-- Scroll reveal observer + animations -->
     <script>
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealTargets = document.querySelectorAll<HTMLElement>('.reveal, .gold-line, .lotus-draw');
 
       // Scroll reveal — adds .visible to .reveal, .gold-line, .lotus-draw
-      if (!reduce) {
+      if (!reduce && 'IntersectionObserver' in window) {
         const obs = new IntersectionObserver((entries) => {
           entries.forEach(e => {
             if (e.isIntersecting) {
@@ -372,13 +384,15 @@ courseOffers.push(
             }
           });
         }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal, .gold-line, .lotus-draw').forEach(el => obs.observe(el));
+        revealTargets.forEach(el => obs.observe(el));
+      } else {
+        revealTargets.forEach((el) => el.classList.add('visible'));
       }
 
       // Stat counter — counts up from 0 to data-target when scrolled into view
-      const counters = document.querySelectorAll('.stat-counter');
+      const counters = document.querySelectorAll<HTMLElement>('.stat-counter');
       if (counters.length) {
-        const animateCount = (el) => {
+        const animateCount = (el: HTMLElement) => {
           const target = Number(el.dataset.target || el.textContent || 0);
           const suffix = el.dataset.suffix || '';
           if (reduce || !target) {
@@ -387,7 +401,7 @@ courseOffers.push(
           }
           const duration = 1500;
           const start = performance.now();
-          const tick = (now) => {
+          const tick = (now: number) => {
             const elapsed = now - start;
             const progress = Math.min(elapsed / duration, 1);
             // out-expo easing
@@ -398,20 +412,23 @@ courseOffers.push(
           };
           requestAnimationFrame(tick);
         };
-        const cobs = new IntersectionObserver((entries) => {
-          entries.forEach(e => {
-            if (e.isIntersecting) {
-              animateCount(e.target);
-              cobs.unobserve(e.target);
-            }
+        if (!reduce && 'IntersectionObserver' in window) {
+          const cobs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                if (e.target instanceof HTMLElement) animateCount(e.target);
+                cobs.unobserve(e.target);
+              }
+            });
+          }, { threshold: 0.6 });
+          counters.forEach(c => {
+            // Initialize to 0 so it doesn't flash the final number before animation
+            c.textContent = '0' + (c.dataset.suffix || '');
+            cobs.observe(c);
           });
-        }, { threshold: 0.6 });
-        counters.forEach(c => {
-          // Initialize to 0 so it doesn't flash the final number before animation
-          c.textContent = '0' + (c.dataset.suffix || '');
-          cobs.observe(c);
-        });
-      }
+        } else {
+          counters.forEach(animateCount);
+        }
 
       // Scroll progress bar
       const bar = document.getElementById('scroll-progress');
@@ -425,6 +442,7 @@ courseOffers.push(
         };
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
+        }
       }
     </script>
   </body>
