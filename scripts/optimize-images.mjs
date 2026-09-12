@@ -35,6 +35,12 @@ const TARGETS = [
   { src: 'mentoring-session.webp',    widths: [400, 800, 1280], quality: 74 },
   // Homepage membership card. Source is 1600x900.
   { src: 'community-circle.webp',     widths: [400, 800, 1280], quality: 74 },
+  // Homepage hero. Source is 2400x1351 after local optimization.
+  { src: 'silver-temple-peter-borter.webp', widths: [480, 800, 1280], quality: 76 },
+  // Homepage retreat feature. Source is 2400x1600 after local optimization.
+  { src: 'silver-temple-sergei-bezzubov.webp', widths: [480, 800, 1280], quality: 76 },
+  // About page image. Source is 2400x1600 after local optimization.
+  { src: 'silver-temple-vishal-chokkala.webp', widths: [480, 800, 1280], quality: 76 },
 ];
 
 if (!existsSync(IMG_DIR)) {

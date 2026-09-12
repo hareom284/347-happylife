@@ -246,3 +246,48 @@ The location-specific hero and retreat imagery now uses the existing local Silve
 - Active source scan: passed; no active `mountain-hero` or `retreat-practice` references remain under `src`.
 - Rendered output check: passed; `dist/index.html` contains the Silver Temple preload/source set, Chiang Mai alt text, and `https://347awakening.com/images/silver-temple-front.webp` social/structured-data references.
 - `git diff --check`: passed.
+
+## Supplied Unsplash Imagery Follow-Up
+
+Integrated the three supplied local JPEGs as optimized WebP families without removing existing assets or changing pricing/content:
+
+- `peter-borter-Hz-N7tCgCUo-unsplash.jpg` (Unsplash photo ID `Hz-N7tCgCUo`, Peter Borter) -> homepage hero, homepage preload, OG/Twitter, and structured data. The optimized source is 2400x1351; variants are 480x270, 800x450, 1280x721, and 2400x1351.
+- `sergei-bezzubov-owVNM2n4cjw-unsplash.jpg` (Unsplash photo ID `owVNM2n4cjw`, Sergei Bezzubov) -> homepage retreat feature. The optimized source is 2400x1600; variants are 480x320, 800x533, 1280x853, and 2400x1600.
+- `vishal-chokkala-96g7CzNbzl8-unsplash.jpg` (Unsplash photo ID `96g7CzNbzl8`, Vishal Chokkala) -> active About/Silver Temple image. The optimized source is 2400x1600; variants are 480x320, 800x533, 1280x853, and 2400x1600.
+
+Added files under `public/images`:
+
+- `silver-temple-peter-borter.webp`
+- `silver-temple-peter-borter-480.webp`
+- `silver-temple-peter-borter-800.webp`
+- `silver-temple-peter-borter-1280.webp`
+- `silver-temple-peter-borter-2400.webp`
+- `silver-temple-sergei-bezzubov.webp`
+- `silver-temple-sergei-bezzubov-480.webp`
+- `silver-temple-sergei-bezzubov-800.webp`
+- `silver-temple-sergei-bezzubov-1280.webp`
+- `silver-temple-sergei-bezzubov-2400.webp`
+- `silver-temple-vishal-chokkala.webp`
+- `silver-temple-vishal-chokkala-480.webp`
+- `silver-temple-vishal-chokkala-800.webp`
+- `silver-temple-vishal-chokkala-1280.webp`
+- `silver-temple-vishal-chokkala-2400.webp`
+
+Changed implementation files:
+
+- `scripts/optimize-images.mjs`
+- `src/components/home/HeroPresence.astro`
+- `src/components/home/RetreatsBand.astro`
+- `src/layouts/Layout.astro`
+- `src/pages/about.astro`
+
+`docs/image-sources.md` records each exact supplied filename, ID, author, source page, and `https://unsplash.com/license`. Active alt text describes the visible temple/photo role and does not assert Wat Sri Suphan identity for images whose source does not establish it. Existing mentoring/community imagery remains active. The earlier generic `mountain-hero` and `retreat-practice` files remain retained legacy assets and are not active references.
+
+## Supplied Imagery Verification
+
+- `node scripts/optimize-images.mjs`: passed; generated all active responsive variants and completed with `done`; no missing-target warnings.
+- `npm run build`: passed; Astro generated 11 static pages successfully.
+- Supplied image dimension inspection: passed; source JPEGs confirmed as 5472x3080, 5472x3648, and 5361x3574 before conversion; optimized WebPs confirmed at the dimensions listed above.
+- Local image path and rendered-output assertion: passed; `checked 38 local image paths; supplied image families 3 responsive markers 7`.
+- The assertion confirmed Peter markers in the homepage hero/preload/metadata, Sergei markers in the retreat feature, and Vishal markers in the About page.
+- `git diff --check`: passed.
