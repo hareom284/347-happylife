@@ -142,7 +142,7 @@ approved content, pricing values, and image choices.
 
 - `bash scripts/run-node.sh node -v`: passed with Node `v24.19.0`.
 - `npm audit --omit=optional`: passed, `found 0 vulnerabilities`.
-- `npm run astro -- check`: passed with `0 errors` and `0 warnings`; 24
+- `npm run astro -- check`: passed with `0 errors` and `0 warnings`; 23
   non-failing existing hints remain, including unused props, deprecated iframe
   attributes, and inline-script hints.
 - `node --test scripts/final-review.test.mjs scripts/validate-site.test.mjs`:
@@ -166,7 +166,7 @@ generation, generated HTML validation, and dependency audit were verified.
 
 ### Remaining Concerns
 
-- The Astro check is clean for errors and warnings, but the existing 24 hints
+- The Astro check is clean for errors and warnings, but the existing 23 hints
   remain outside this focused wave.
 - Browser and third-party integration QA still requires a real browser and
   network-enabled environment.
