@@ -223,3 +223,25 @@ Changed documentation file:
 Added review-fix asset:
 
 - `public/images/retreat-meditation-400.webp` (400x537)
+
+## Chiang Mai Imagery Follow-Up
+
+The location-specific hero and retreat imagery now uses the existing local Silver Temple asset family rather than generic Unsplash imagery:
+
+- `src/components/home/HeroPresence.astro` uses `silver-temple-front-480.webp` for the mobile fallback and `silver-temple-front-800.webp`/`silver-temple-front.webp` for tablet and desktop sources. The active intrinsic dimensions are 480x347.
+- `src/components/home/RetreatsBand.astro` uses `silver-temple-front-800.webp` with 480/800/1024w responsive sources and accurate 800x579 intrinsic dimensions.
+- `src/layouts/Layout.astro` uses `silver-temple-front.webp` consistently for Open Graph, Twitter, LocalBusiness, Organization, Review, and VideoObject image references. OG dimensions are 1024x741, and the homepage preload matches the Silver Temple responsive source set.
+- Alt text now identifies the Silver Temple (Wat Sri Suphan) in Chiang Mai for the hero and retreat feature.
+- `docs/image-sources.md` records the existing local asset provenance limitation and license confirmation requirement, while preserving the exact Unsplash source/license records for the retained legacy generic files.
+- `scripts/optimize-images.mjs` no longer targets the unused `mountain-hero` or `retreat-practice` families. Those files remain on disk as documented legacy assets because they are ignored by active source code and deleting them is unnecessary for this follow-up.
+- Mentoring and community image families remain active in their semantically appropriate pathway cards.
+
+## Chiang Mai Imagery Verification
+
+- `node scripts/optimize-images.mjs`: passed; completed with `done`, generated all active responsive targets, and emitted no missing-target warnings.
+- `npm run build`: passed; Astro generated 11 static pages successfully.
+- Asset dimension inspection: passed; Silver Temple files confirmed as `1024x741`, `480x347`, and `800x579`.
+- Local image path check: passed; `checked 25 local image paths; required Chiang Mai markers 5`.
+- Active source scan: passed; no active `mountain-hero` or `retreat-practice` references remain under `src`.
+- Rendered output check: passed; `dist/index.html` contains the Silver Temple preload/source set, Chiang Mai alt text, and `https://347awakening.com/images/silver-temple-front.webp` social/structured-data references.
+- `git diff --check`: passed.

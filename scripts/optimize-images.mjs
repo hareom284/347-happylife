@@ -31,10 +31,6 @@ const TARGETS = [
   { src: 'retreat-meditation.webp',   widths: [400],       quality: 72 },
   // PhotoGallery only. Source is 1024x1024 — square.
   { src: 'hero-main.webp',           widths: [400, 800],       quality: 74 },
-  // Homepage hero. Source is 2400x1600.
-  { src: 'mountain-hero.webp',       widths: [480, 800, 1280], quality: 76 },
-  // Homepage retreat feature. Source is 1600x2000 — portrait crop.
-  { src: 'retreat-practice.webp',     widths: [400, 800, 1280], quality: 74 },
   // Homepage mentoring card. Source is 1600x1067.
   { src: 'mentoring-session.webp',    widths: [400, 800, 1280], quality: 74 },
   // Homepage membership card. Source is 1600x900.
