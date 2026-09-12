@@ -207,10 +207,22 @@ export type ProgramPrice = {
   display: string;
 };
 
+export type MentoringPrice = {
+  label: string;
+  usd: string;
+  display: string;
+};
+
 const price = (thb: string, usd: string): ProgramPrice => ({
   thb: `THB ${thb}`,
   usd: `USD ${usd}`,
   display: `THB ${thb} / USD ${usd}`,
+});
+
+const mentoringPrice = (label: string, usd: string): MentoringPrice => ({
+  label,
+  usd: `USD ${usd}`,
+  display: `THB pricing on request / USD ${usd}`,
 });
 
 export const onSiteExperiences = [
@@ -248,13 +260,13 @@ export const retreatOptions = [
 export const mentoringPrograms = [
   { name: '347 Clarity Session', tagline: 'One Session Can Change Your Direction.', duration: '90 Minutes',
     includes: ['1:1 Private Mentoring', 'Emotional Clearing', 'Consciousness Guidance', 'Personalized Insight'],
-    pricing: ['Online: $147', 'In-Person: $197'] },
+    pricing: [mentoringPrice('Online', '147'), mentoringPrice('In-Person', '197')] },
   { name: '347 Inner Reset Mentoring', tagline: 'Reset Your Energy. Reconnect with Your True Self.', duration: '1 Month',
     includes: ['4 Private Sessions', 'Meditation Guidance', 'Emotional & Energy Reset', 'Weekly Personal Practice', 'WhatsApp / LINE Support'],
-    pricing: ['Online: $888', 'VIP In-Person: $1,200'] },
+    pricing: [mentoringPrice('Online', '888'), mentoringPrice('VIP In-Person', '1,200')] },
   { name: '347 Conscious Leadership Mentoring', tagline: 'Success Without Inner Suffering.', duration: '2 Months',
     includes: ['8 Private Sessions', 'Mind Reprogramming', 'Emotional Mastery', 'Business + Life Alignment', 'Voice Message Support', 'Private Meditation Library'],
-    pricing: ['Online: $2,500', 'VIP Private: $3,500'] },
+    pricing: [mentoringPrice('Online', '2,500'), mentoringPrice('VIP Private', '3,500')] },
 ];
 
 export const programCategories = [

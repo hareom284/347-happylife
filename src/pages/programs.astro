@@ -146,7 +146,7 @@ import {
               ))}
             </ul>
              <div class="border-t border-oat-border pt-4 mb-6 space-y-1">
-               {m.pricing.map((p) => (<p class="font-heading text-lg text-deep-blue">{p.replace('$', 'USD $')} <span class="font-sans text-xs text-body-muted">· THB price on request</span></p>))}
+               {m.pricing.map((p) => (<p class="font-heading text-lg text-deep-blue"><span class="font-sans text-xs uppercase tracking-wide text-body-muted">{p.label}</span> · {p.display}</p>))}
             </div>
              <a href={waMsg(m.name)} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-royal text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wide hover:bg-royal-mid transition-all">
               Apply Now

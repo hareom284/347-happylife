@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Navbar, Footer, WhatsAppBar } from '../components/index.astro';
-import { wa, email, social, waMsg, onSiteExperiences, onlineCourses, retreatOptions } from '../data/site';
+import { wa, email, social, waMsg, onSiteExperiences, onlineCourses, retreatOptions, mentoringPrograms } from '../data/site';
 ---
 
-  <Layout title="Book Your Retreat | 347 Awakening — Meditation Retreat Chiang Mai" description="Book your meditation retreat at 347 Awakening in Chiang Mai. Fill out the form to reserve your spot with Master Kaie at Silver Temple.">
+  <Layout title="Book a Program | 347 Awakening — On-Site, Online & Retreats" description="Book an on-site experience, online program, retreat, or private mentoring path with 347 Awakening. Choose your format and connect with Master Kaie.">
     <Navbar wa={wa} />
 
   <section class="bg-cream py-16 md:py-24">
@@ -20,13 +20,36 @@ import { wa, email, social, waMsg, onSiteExperiences, onlineCourses, retreatOpti
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-        {[...onSiteExperiences.slice(0, 2), ...retreatOptions.slice(0, 1)].map((item) => (
-          <div class="bg-cream-dark rounded-card border border-oat-border/60 p-5">
-            <p class="text-xs uppercase tracking-wide text-gold-ink font-semibold mb-2">{'title' in item ? item.title : `${item.duration} retreat`}</p>
-            <p class="font-heading text-xl text-deep-blue">{item.price.display}</p>
+      <div class="space-y-8 mb-10">
+        <div>
+          <h2 class="font-heading text-2xl text-deep-blue mb-3">On-Site Experiences · Chiang Mai</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {onSiteExperiences.map((item) => (
+              <div class="bg-cream-dark rounded-card border border-oat-border/60 p-5"><p class="text-xs uppercase tracking-wide text-gold-ink font-semibold mb-2">{item.title}</p><p class="text-sm text-body-light">{item.dur}</p><p class="font-heading text-xl text-deep-blue">{item.price.display}</p></div>
+            ))}
           </div>
-        ))}
+        </div>
+        <div>
+          <h2 class="font-heading text-2xl text-deep-blue mb-3">Online Programs</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {onlineCourses.map((item) => (
+              <div class="bg-cream-dark rounded-card border border-oat-border/60 p-5"><p class="text-xs uppercase tracking-wide text-gold-ink font-semibold mb-2">{item.name}</p><p class="font-heading text-xl text-deep-blue">{item.price.display}</p></div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h2 class="font-heading text-2xl text-deep-blue mb-3">Retreats</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {retreatOptions.map((item) => (
+              <div class="bg-cream-dark rounded-card border border-oat-border/60 p-5"><p class="text-xs uppercase tracking-wide text-gold-ink font-semibold mb-2">{item.duration} guided retreat</p><p class="font-heading text-xl text-deep-blue">{item.price.display}</p></div>
+            ))}
+          </div>
+        </div>
+        <div class="bg-deep-blue text-cream rounded-card p-6">
+          <h2 class="font-heading text-2xl mb-2">Private Mentoring</h2>
+          <p class="text-cream/75 text-sm leading-relaxed">Private mentoring is available online or in person. Current USD guidance and THB pricing are confirmed directly for your chosen format. Contact us to discuss the right programme.</p>
+          <p class="text-gold-light text-sm mt-3">{mentoringPrograms.map((item) => item.name).join(' · ')}</p>
+        </div>
       </div>
 
       <div class="bg-white rounded-card border border-soft-aura shadow-card overflow-hidden">

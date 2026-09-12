@@ -58,3 +58,25 @@ and untracked redesign plan/spec documents were not staged.
   outside the Task 4 file list. It remains a Task 6/cleanup consideration.
 - No automated test script is configured. The checks above are generated-site
   assertions executed directly with Node.
+
+## Task 4 Follow-up Fixes
+
+- Expanded Booking to render every item from the centralized on-site,
+  online-course, and retreat arrays, plus a clear private-mentoring
+  contact/on-request panel. No pricing tiers are hardcoded in the page.
+- Changed Booking metadata to describe booking an on-site experience, online
+  program, retreat, or private mentoring path rather than only a retreat.
+- Added the typed `MentoringPrice` shape and normalized `label`, `usd`, and
+  `display` values in `src/data/site.ts`. Programs now renders `display`
+  directly, and Layout structured data consumes `label`/`usd` without
+  render-time string replacement.
+- Left legacy `CourseCards.astro` unchanged as requested.
+
+## Follow-up Verification
+
+- Pre-fix regression assertion: failed as expected because Booking used sliced
+  partial data, stale retreat metadata, and render-time mentoring formatting.
+- Follow-up source assertion: passed for full centralized collections, general
+  booking metadata, typed mentoring data, and normalized schema consumption.
+- `npm run build`: passed; 11 static pages generated.
+- `git diff --check`: passed before staging.

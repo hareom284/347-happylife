@@ -38,15 +38,14 @@ const courseOffers = [...onSiteExperiences, ...onlineCourses, ...retreatOptions]
   };
 });
 const mentoringOffers = mentoringPrograms.flatMap((program) => program.pricing.map((pricing) => {
-  const match = pricing.match(/^(.*?): \$([\d,]+)$/);
-  return match ? {
+  return {
     '@type': 'Offer',
-    name: `${program.name} (${match[1]})`,
-    price: match[2].replaceAll(',', ''),
+    name: `${program.name} (${pricing.label})`,
+    price: pricing.usd.replace('USD ', '').replaceAll(',', ''),
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
-  } : null;
-})).filter((offer): offer is NonNullable<typeof offer> => offer !== null);
+  };
+}));
 courseOffers.push(
   ...mentoringOffers,
   { '@type': 'Offer', name: `${membership.name} (Monthly)`, price: membership.priceMonth.replace('$', ''), priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
