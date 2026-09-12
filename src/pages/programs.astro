@@ -71,7 +71,7 @@ import {
             {c.featured && <span class="self-start text-[0.65rem] uppercase tracking-wide font-bold text-deep-blue bg-gold px-3 py-1 rounded-full mb-4">Most Popular</span>}
             <h3 class={`font-heading text-2xl font-semibold mb-1 ${c.featured ? 'text-cream' : 'text-deep-blue'}`}>{c.name}</h3>
             <p class={`text-sm italic mb-4 ${c.featured ? 'text-gold-light' : 'text-gold-ink'}`}>{c.tagline}</p>
-            <div class={`font-heading text-4xl font-semibold mb-1 ${c.featured ? 'text-cream' : 'text-deep-blue'}`}>{c.price}</div>
+            <div class={`font-heading text-4xl font-semibold mb-1 ${c.featured ? 'text-cream' : 'text-deep-blue'}`}>{c.price.display}</div>
             <p class={`text-xs mb-6 ${c.featured ? 'text-cream/70' : 'text-body-muted'}`}>{c.duration}</p>
 
             <p class={`text-xs uppercase tracking-wide font-semibold mb-2 ${c.featured ? 'text-cream/70' : 'text-body-muted'}`}>What You'll Learn</p>

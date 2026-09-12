@@ -74,3 +74,16 @@ Root cause: each online course duplicated one display string and two currency st
 - Focused pricing-shape check: passed (`PASS: online prices use ProgramPrice only`).
 - `npm run build`: passed with exit code 0; 9 static routes generated.
 - `git diff --check`: passed with no output.
+
+## Re-Review Fix
+
+### Finding: Online price object rendered directly
+
+Root cause: `src/pages/programs.astro` interpolated the normalized `ProgramPrice` object as `{c.price}`, which rendered as `[object Object]`. The consumer now renders `{c.price.display}`. This is the only programs-page change; no layout or redesign work was included.
+
+## Re-Review Checks
+
+- Pre-fix consumer regression check: failed as expected (`FAIL: programs consumer renders ProgramPrice object directly`).
+- Post-fix consumer check: passed (`PASS: programs consumer uses display string`).
+- `npm run build`: passed with exit code 0; 9 static routes generated.
+- `git diff --check`: passed with no output.
