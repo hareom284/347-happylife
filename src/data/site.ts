@@ -103,8 +103,13 @@ export const instructors = [
 // "Find the Path for You" program cards
 export const pathCards = [
   {
+    title: 'On-Site Courses', img: '/images/retreat-photo-3.webp',
+    body: 'Guided meditation and awakening experiences at the Silver Temple in Chiang Mai.',
+    cta: 'Explore', href: '/programs#retreats',
+  },
+  {
     title: 'Online Courses', img: '/images/retreat-meditation.webp',
-    body: 'Self-paced courses for your personal growth and awakening.',
+    body: 'Guided courses for personal growth and awakening from anywhere in the world.',
     cta: 'Explore', href: '/programs#online',
   },
   {
@@ -114,7 +119,7 @@ export const pathCards = [
   },
   {
     title: 'Retreats', img: '/images/retreat-photo-2.webp',
-    body: 'Luxury retreats in stunning locations for deep healing and awakening.',
+    body: 'Immersive retreats in Chiang Mai for deep healing and awakening.',
     cta: 'View Retreats', href: '/programs#retreats',
   },
   {
@@ -196,30 +201,48 @@ export const methodTransformation = {
 };
 
 // ===== Programs page content =====
+export type ProgramPrice = {
+  thb: string;
+  usd: string;
+  display: string;
+};
+
+const price = (thb: string, usd: string): ProgramPrice => ({
+  thb: `THB ${thb}`,
+  usd: `USD ${usd}`,
+  display: `THB ${thb} / USD ${usd}`,
+});
+
 export const onSiteExperiences = [
-  { title: '347 Awakening Reset™', dur: '3 Hours', tagline: 'Reset Your Mind. Reconnect Your Life.',
-    body: 'A transformative 3-hour experience to reset your mind, release emotional stress, and reconnect with inner peace and clarity.' },
-  { title: '347 Inner Peace Experience™', dur: '1 Day', tagline: 'Return to Your True Self',
-    body: 'A one-day awakening journey to reconnect with yourself, release emotional stress, and rediscover inner peace.' },
-  { title: '347 Deep Awakening Retreat™', dur: '2 Days', tagline: 'Expand Your Consciousness',
-    body: 'A two-day retreat guiding you through deep emotional healing, inner awakening, and conscious life transformation.' },
-  { title: '347 Consciousness Intensive™', dur: '3 Days', tagline: 'The Ultimate Life Transformation Experience',
-    body: 'A three-day journey to expand consciousness, awaken inner wisdom, and create profound life transformation.' },
+  { title: '347 Alignment Experience', dur: '3 Hours', price: price('1,500', '47'), tagline: 'Align Body, Mind & Spirit',
+    body: 'A guided experience to align body, mind, and spirit and reconnect with inner peace and clarity.' },
+  { title: '347 Awakening Experience', dur: '3 Hours', price: price('2,500', '77'), tagline: 'Awaken Your Inner Wisdom',
+    body: 'A deeper guided experience to develop awareness, release emotional stress, and reconnect with your true self.' },
+  { title: '347 Life Transformation Experience', dur: '3 Hours', price: price('3,500', '111'), tagline: 'Transform Your Way of Living',
+    body: 'An immersive session for emotional healing, inner awakening, and conscious life transformation.' },
+  { title: '347 Awakening Journey', dur: '1 Day', price: price('7,000', '219'), tagline: 'A Full Day of Awakening',
+    body: 'A full-day journey through meditation, healing, and conscious living to create lasting inner transformation.' },
 ];
 
 export const onlineCourses = [
-  { name: 'Awakening Starter Program', price: '$47', tagline: 'Calm Your Mind & Reconnect Yourself',
+  { name: '347 Awakening Starter Program', price: 'THB 800 / USD 27', priceThb: 'THB 800', priceUsd: 'USD 27', tagline: 'Calm Your Mind & Reconnect Yourself',
     duration: '1.5 Hours · 1 Live Online Session',
     learn: ['Quiet the busy mind', 'Basic awakening meditation', 'Breath & energy awareness', 'Emotional reset techniques', 'Daily 10-minute routine'],
     includes: ['Live Zoom Session', 'Guided Meditation Audio', 'Reflection Workbook PDF'], featured: false },
-  { name: 'Deep Awakening Program', price: '$97', tagline: 'Break Inner Blocks & Transform Your Energy',
+  { name: '347 Deep Awakening Program', price: 'THB 2,500 / USD 77', priceThb: 'THB 2,500', priceUsd: 'USD 77', tagline: 'Break Inner Blocks & Transform Your Energy',
     duration: '3 Hours · 2 Live Sessions (90 min each)',
     learn: ['Deep emotional release meditation', 'Understanding subconscious patterns', 'Energy balancing', 'Reconnect with purpose', 'Confidence & abundance'],
     includes: ['2 Live Zoom Sessions', 'Guided Meditation Audio Pack', 'Self-Discovery Worksheet', 'Private Community Access'], featured: true },
-  { name: 'Premium Life Transformation Program', price: '$147', tagline: 'Awaken Your True Self & Transform Your Life',
+  { name: '347 Premium Life Transformation Program', price: 'THB 7,000 / USD 219', priceThb: 'THB 7,000', priceUsd: 'USD 219', tagline: 'Awaken Your True Self & Transform Your Life',
     duration: '6 Hours · 4 Live Sessions (90 min each)',
     learn: ['Advanced awakening meditation', 'Mind-body-spirit alignment', 'Healing trauma patterns', 'Finding life mission', 'Inner peace with success', 'Conscious living'],
     includes: ['4 Premium Live Sessions', 'Personal Meditation Guidance', 'Energy Alignment Practice', 'Life Mission Assessment', 'VIP Private Support', 'Certificate of Completion'], featured: false },
+];
+
+export const retreatOptions = [
+  { duration: '1 day', price: price('7,000', '219') },
+  { duration: '2 days', price: price('12,000', '347') },
+  { duration: '3 days', price: price('15,000', '477') },
 ];
 
 export const mentoringPrograms = [
@@ -415,7 +438,7 @@ export const faqs: Faq[] = [
   },
   {
     q: 'How much does a meditation retreat in Chiang Mai cost?',
-    a: '347 Awakening online programs are $47 (Awakening Starter), $97 (Deep Awakening), and $147 (Premium Life Transformation). On-site experiences in Chiang Mai range from a 3-hour Awakening Reset to a 3-day Consciousness Intensive — contact us for current on-site rates. Private 1:1 mentoring ranges from $147 to $3,500, and Inner Circle membership is $27/month or $270/year.',
+    a: '347 Awakening online programs are THB 800 / USD 27 (Starter), THB 2,500 / USD 77 (Deep Awakening), and THB 7,000 / USD 219 (Premium Life Transformation). On-site experiences in Chiang Mai range from the 3-hour Alignment Experience at THB 1,500 / USD 47 to the 1-day Awakening Journey at THB 7,000 / USD 219. Retreats are available for 1 day at THB 7,000 / USD 219, 2 days at THB 12,000 / USD 347, or 3 days at THB 15,000 / USD 477. Private 1:1 mentoring details are available by request, and Inner Circle membership is $27/month or $270/year.',
   },
   {
     q: 'Do I need meditation experience to join?',
@@ -455,7 +478,7 @@ export const faqs: Faq[] = [
   },
   {
     q: 'Can I join the meditation retreat online?',
-    a: 'Yes. We offer online sessions via WhatsApp or Zoom for students who cannot visit Chiang Mai in person. Online course packages are available at $47, $97, and $147. Contact us via WhatsApp to arrange a session in your time zone.',
+    a: 'Yes. We offer online sessions via WhatsApp or Zoom for students who cannot visit Chiang Mai in person. Online course packages are available at THB 800 / USD 27, THB 2,500 / USD 77, and THB 7,000 / USD 219. Contact us via WhatsApp to arrange a session in your time zone.',
   },
   {
     q: 'Is this a silent retreat or a guided retreat?',
