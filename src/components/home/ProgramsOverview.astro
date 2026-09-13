@@ -12,7 +12,7 @@ const avifSrcsetFor = (srcset?: string): string | undefined => {
     .split(', ')
     .filter((entry) => {
       const [url] = entry.split(' ');
-      const avifPath = join(process.cwd(), 'public', url.replace(/^\/images\//, '').replace(/\.webp$/, '.avif'));
+      const avifPath = join(process.cwd(), 'public', url.replace(/^\//, '').replace(/\.webp$/, '.avif'));
       return existsSync(avifPath);
     })
     .map((entry) => entry.replace(/\.webp /g, '.avif '))

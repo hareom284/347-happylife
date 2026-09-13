@@ -23,12 +23,12 @@ const { wa } = Astro.props;
     />
   </picture>
   <video
+    id="hero-video"
     class="hero-video absolute inset-0 h-full w-full object-cover object-[62%_center] md:object-center"
-    autoplay
     muted
     loop
     playsinline
-    preload="metadata"
+    preload="none"
     poster="/images/silver-temple-peter-borter-800.webp"
     aria-hidden="true"
     tabindex="-1"
@@ -63,3 +63,21 @@ const { wa } = Astro.props;
     </div>
   </div>
 </section>
+
+<script>
+  // Defer the ambient video until after the page has loaded so the LCP hero
+  // image wins the bandwidth race; the video then fades in over the poster.
+  const video = document.getElementById('hero-video') as HTMLVideoElement | null;
+  if (video && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const start = () => {
+      video.classList.add('opacity-0');
+      video.load();
+      video.play().then(() => {
+        video.classList.remove('opacity-0');
+        video.classList.add('transition-opacity', 'duration-1000');
+      }).catch(() => {});
+    };
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start, { once: true });
+  }
+</script>

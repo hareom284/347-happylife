@@ -23,16 +23,12 @@ const SRC_DIR = join(__dirname, 'source-images');
 // Source -> target widths to generate. We pick widths that cover common
 // display sizes on mobile (~400), tablet (~800) and desktop (~1200-1600).
 const TARGETS = [
-  // About/FinalCTA usage. Source is 1024x741.
+  // About/hero background usage. Source is 1024x741.
   { src: 'silver-temple-front.webp', widths: [480, 800, 1280], quality: 72 },
-  // PhotoGallery only. Source is 600x352.
+  // ProgramsOverview gallery cards. Sources kept in scripts/source-images.
   { src: 'retreat-photo-2.webp',     widths: [480],       quality: 72 },
-  // PhotoGallery only. Source is 600x265.
   { src: 'retreat-photo-3.webp',     widths: [400],       quality: 72 },
-  // ProgramsOverview only. Source is 600x806 — portrait card.
   { src: 'retreat-meditation.webp',   widths: [400],       quality: 72 },
-  // PhotoGallery only. Source is 1024x1024 — square.
-  { src: 'hero-main.webp',           widths: [400, 800],       quality: 74 },
   // Homepage mentoring card. Source is 1600x1067.
   { src: 'mentoring-session.webp',    widths: [400, 800, 1280], quality: 74 },
   // Homepage membership card. Source is 1600x900.
@@ -64,8 +60,6 @@ const TARGETS = [
   { src: 'misty-mountains.jpg', widths: [400, 640, 960], quality: 76 },
   // Booking page hero background. Pexels misty sunrise, 1920x1281.
   { src: 'misty-sunrise.jpg', widths: [480, 800, 1280, 1600], quality: 74 },
-  // Instructor avatar. User-provided Master Kaie portrait, 640x640.
-  { src: 'master-kaie.jpg', widths: [320, 480], quality: 82 },
 ];
 
 if (!existsSync(IMG_DIR)) {

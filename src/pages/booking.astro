@@ -53,9 +53,19 @@ import { wa, email, social, waMsg, onSiteExperiences, onlineCourses, retreatOpti
           </div>
         </div>
         <div class="bg-deep-blue text-cream rounded-card p-6">
-          <h2 class="font-heading text-2xl mb-2">Private Mentoring</h2>
-          <p class="text-cream/75 text-sm leading-relaxed">Private mentoring is available online or in person. Current USD guidance and THB pricing are confirmed directly for your chosen format. Contact us to discuss the right programme.</p>
-          <p class="text-gold-light text-sm mt-3">{mentoringPrograms.map((item) => item.name).join(' · ')}</p>
+          <h2 class="font-heading text-2xl mb-4">Private Mentoring</h2>
+          <div class="space-y-4">
+            {mentoringPrograms.map((item) => (
+              <div class="border-t border-cream/10 pt-4 first:border-t-0 first:pt-0">
+                <p class="text-gold-light text-sm font-semibold mb-1">{item.name}</p>
+                <p class="text-cream/85 text-sm">
+                  {item.pricing.map((p) => `${p.label}: USD $${p.usd.replace('USD ', '')}`).join(' · ')}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p class="text-cream/60 text-xs mt-4">THB pricing on request.</p>
+          <a href="/programs#mentoring" class="inline-flex items-center gap-1.5 text-gold-light text-sm font-semibold mt-4 hover:opacity-80 transition-opacity">See program details <span aria-hidden="true">→</span></a>
         </div>
       </div>
 

@@ -344,7 +344,7 @@ export type Faq = { q: string; a: string };
 export const faqs: Faq[] = [
   {
     q: 'What is the best meditation retreat in Chiang Mai?',
-    a: 'The 347 Awakening meditation retreat at Silver Temple is one of the most recommended experiences in Chiang Mai, with 5-star Google reviews from over 800 international students from 38+ countries. Led by Master Kaie, it blends Buddhist Vipassana meditation with modern inner coaching — suitable for beginners and experienced practitioners alike.',
+    a: 'The 347 Awakening meditation retreat at Silver Temple is one of the most recommended experiences in Chiang Mai, with 4.9-star Google reviews from over 800 international students from 38+ countries. Led by Master Kaie, it blends Buddhist Vipassana meditation with modern inner coaching — suitable for beginners and experienced practitioners alike.',
   },
   {
     q: 'How much does a meditation retreat in Chiang Mai cost?',

@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Navbar, Footer, WhatsAppBar } from '../components/index.astro';
-import { wa, email, social, collaboration } from '../data/site';
+import { Navbar, Footer, WhatsAppBar, MapSection } from '../components/index.astro';
+import { wa, email, social, collaboration, mapEmbed } from '../data/site';
 
 const channels = [
   { label: 'WhatsApp', value: '+66 94-426-5297', href: wa, ext: true,
@@ -56,6 +56,8 @@ const channels = [
       </div>
     </div>
   </section>
+
+  <MapSection mapEmbed={mapEmbed} />
 
   <!-- Collaboration -->
   <section class="bg-cream-dark py-20 md:py-24">

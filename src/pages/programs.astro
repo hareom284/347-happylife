@@ -21,13 +21,20 @@ import {
 
   <!-- Categories -->
   <section class="bg-cream py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {programCategories.map((c) => (
-        <a href={c.href} class="bg-white rounded-card border border-oat-border/60 p-7 shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all">
-          <h3 class="font-heading text-xl font-semibold text-deep-blue mb-2">{c.title}</h3>
-          <p class="text-body-light text-sm leading-relaxed">{c.body}</p>
-        </a>
-      ))}
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">Explore</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-semibold text-deep-blue">Find Your Path</h2>
+        <div class="w-16 h-px bg-gold mx-auto mt-5"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {programCategories.map((c) => (
+          <a href={c.href} class="bg-white rounded-card border border-oat-border/60 p-7 shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all">
+            <h3 class="font-heading text-xl font-semibold text-deep-blue mb-2">{c.title}</h3>
+            <p class="text-body-light text-sm leading-relaxed">{c.body}</p>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
