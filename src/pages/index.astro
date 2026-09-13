@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import {
   Navbar, Footer, WhatsAppBar,
-  HeroPresence, MethodOverview, ProgramsOverview, RetreatsBand,
+  HeroPresence, MethodOverview, ProgramsOverview, RetreatsBand, BreathingExercise, GlimpsesBand,
   Testimonials, FreeMeditationCTA,
 } from '../components/index.astro';
 import { wa, email, social, googleMapsLink, testimonials } from '../data/site';
@@ -12,9 +12,19 @@ import { wa, email, social, googleMapsLink, testimonials } from '../data/site';
 
   <Navbar wa={wa} />
   <HeroPresence wa={wa} />
+
+  <section class="bg-gradient-to-b from-ivory to-sky-mist/40 py-10 md:py-12">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <p class="font-heading text-2xl md:text-3xl text-deep-blue/90">No experience needed. Everyone is welcome. Come as you are.</p>
+      <p class="text-body-muted text-sm mt-3">Step away from the noise for a while — a softer pace begins here.</p>
+    </div>
+  </section>
+
   <MethodOverview />
   <ProgramsOverview />
   <RetreatsBand />
+  <BreathingExercise />
+  <GlimpsesBand />
   <Testimonials testimonials={testimonials} googleMapsLink={googleMapsLink} wa={wa} />
   <FreeMeditationCTA email={email} />
   <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />

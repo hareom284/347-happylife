@@ -1,0 +1,46 @@
+---
+const photos = [
+  { src: '/images/retreat-photo-1.webp', w: 600, h: 820, alt: 'Meditation practice at a 347 Awakening retreat' },
+  { src: '/images/chiang-mai-thailand-600.webp', w: 600, h: 399, alt: 'Silver-toned temple interior in Chiang Mai' },
+  { src: '/images/retreat-photo-2.webp', w: 600, h: 352, alt: 'Guided group meditation in Chiang Mai' },
+  { src: '/images/buddha-statue-in-chiang-mai-thailand-600.webp', w: 600, h: 400, alt: 'Buddha statue detail' },
+  { src: '/images/retreat-photo-3.webp', w: 600, h: 265, alt: 'Temple surroundings in Chiang Mai' },
+  { src: '/images/the-silver-temple-in-chiang-mai-600.webp', w: 600, h: 400, alt: 'The Silver Temple exterior' },
+  { src: '/images/retreat-photo-4.webp', w: 600, h: 267, alt: 'Calm scenery from the retreat grounds' },
+  { src: '/images/wat-sri-suphan-in-chiang-mai-thailand-600.webp', w: 600, h: 399, alt: 'Wat Sri Suphan entrance' },
+  { src: '/images/retreat-photo-5.webp', w: 600, h: 399, alt: 'Peaceful moment during a retreat' },
+];
+
+const track = [...photos, ...photos];
+---
+
+<section id="glimpses" class="bg-ivory py-16 md:py-20 overflow-hidden scroll-mt-20" aria-label="Glimpses of the Silver Temple">
+  <div class="text-center max-w-2xl mx-auto px-4 mb-10">
+    <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">A Softer Pace</p>
+    <h2 class="font-heading text-3xl md:text-4xl font-semibold text-deep-blue">Glimpses of the Silver Temple</h2>
+  </div>
+  <div class="glimpses-track flex gap-4 w-max pl-4">
+    {track.map((p) => (
+      <img
+        src={p.src}
+        alt={p.alt}
+        width={p.w}
+        height={p.h}
+        loading="lazy"
+        decoding="async"
+        class="h-40 md:h-56 w-auto rounded-card shadow-card object-cover"
+      />
+    ))}
+  </div>
+</section>
+
+<style>
+  @keyframes glimpsesScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .glimpses-track { animation: glimpsesScroll 70s linear infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .glimpses-track { animation: none; flex-wrap: wrap; justify-content: center; }
+  }
+</style>

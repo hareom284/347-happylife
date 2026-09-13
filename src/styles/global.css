@@ -121,6 +121,35 @@
 }
 .breathe { animation: breathe 4s ease-in-out infinite; }
 
+/* 3b. Breathing exercise rings — 12s box breath (inhale 4 · hold 4 · exhale 4).
+   The three rings drift on slight delays so the motion ripples outward. */
+@keyframes breatheRing {
+  0%, 100% { transform: scale(0.82); opacity: 0.45; }
+  33%      { transform: scale(1.08); opacity: 0.75; }
+  66%      { transform: scale(1.08); opacity: 0.75; }
+}
+.breathe-ring { animation: breatheRing 12s ease-in-out infinite; }
+.breathe-ring-lag { animation-delay: -4s; }
+.breathe-ring-lag-2 { animation-delay: -8s; }
+
+/* 3c. Hero slow ken-burns — barely-noticeable zoom so the image feels alive,
+   never busy. Compositor-friendly (transform only). */
+@keyframes heroKenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+.hero-kenburns {
+  animation: heroKenBurns 30s ease-in-out infinite alternate;
+}
+
+/* 3d. Hero drifting mist — wide soft blurred shapes that wander slowly. */
+@keyframes mistDrift {
+  from { transform: translateX(-4%) translateY(0); opacity: 0.5; }
+  to   { transform: translateX(6%) translateY(-3%); opacity: 0.85; }
+}
+.hero-mist { animation: mistDrift 26s ease-in-out infinite alternate; }
+.hero-mist-lag { animation-duration: 34s; animation-direction: alternate-reverse; }
+
 /* 4. Gentle scroll reveal — long, slow exhale */
 .reveal {
   opacity: 1;
@@ -386,10 +415,30 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   .lotus-draw circle[fill] { opacity: 0.3 !important; }
   .mandala-spin { animation: none !important; }
   .scroll-progress { display: none !important; }
+  .breathe-ring { animation: none !important; }
+  .hero-kenburns { animation: none !important; }
+  .hero-mist { animation: none !important; opacity: 0.4 !important; }
   /* Show the WhatsApp bar instantly instead of waiting for the slide-in */
   .whatsapp-bar { animation: none !important; opacity: 1 !important; transform: none !important; }
   /* Skip every transition-delay on staggered children */
   .stagger > .reveal { transition-delay: 0ms !important; }
+}
+
+/* Gentle smooth scrolling between sections; disabled for reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Warm paper grain over the whole page — fixed, non-interactive, ~2% opacity.
+   Adds a tactile, analog calm without affecting readability or performance. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* FAQ accordion */

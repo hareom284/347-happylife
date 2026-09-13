@@ -17,13 +17,15 @@ const { wa } = Astro.props;
       alt="Wide temple photograph used for 347 Awakening in Chiang Mai"
       width="480"
       height="270"
-      class="h-full w-full object-cover object-[62%_center] md:object-center"
+      class="hero-kenburns h-full w-full object-cover object-[62%_center] md:object-center"
       fetchpriority="high"
       decoding="async"
     />
   </picture>
   <div class="absolute inset-0 bg-gradient-to-r from-deep-blue/95 via-deep-blue/70 to-deep-blue/25"></div>
   <div class="absolute inset-0 bg-gradient-to-t from-deep-blue/75 via-transparent to-deep-blue/20"></div>
+  <div aria-hidden="true" class="hero-mist absolute -left-1/4 top-1/4 h-72 w-3/4 rounded-full bg-white/8 blur-3xl"></div>
+  <div aria-hidden="true" class="hero-mist hero-mist-lag absolute -right-1/4 top-1/2 h-64 w-2/3 rounded-full bg-cream/8 blur-3xl"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
     <div class="max-w-2xl">
