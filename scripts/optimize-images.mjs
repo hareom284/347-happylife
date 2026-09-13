@@ -1,10 +1,11 @@
 /**
- * Generate responsive WebP variants for the large images in public/images/.
+ * Generate responsive WebP and AVIF variants for the large images in public/images/.
  *
  * Run with:  node scripts/optimize-images.mjs
  *
  * Output files are written alongside the source in public/images/ as:
  *   <name>-<width>.webp    (e.g. silver-temple-front-800.webp)
+ *   <name>-<width>.avif    (e.g. silver-temple-front-800.avif)
  *
  * Keep in sync with the <img srcset="..."> declarations in the Astro components
  * (Hero, PhotoGallery, About, FinalCTA). When you add a new oversized source,
@@ -46,6 +47,12 @@ const TARGETS = [
   { src: 'chiang-mai-thailand.webp', widths: [320, 480, 600], quality: 78 },
   { src: 'the-silver-temple-in-chiang-mai.webp', widths: [320, 480, 600], quality: 78 },
   { src: 'wat-sri-suphan-in-chiang-mai-thailand.webp', widths: [320, 480, 600], quality: 78 },
+  // Membership hero background. Pexels monk meditation, 1920x1280.
+  { src: 'monk-meditation-chiang-mai.jpg', widths: [480, 800, 1280, 1600], quality: 76 },
+  // Contact hero background. Pexels temple & lotus pond, 1920x1281.
+  { src: 'temple-lotus-pond.jpg', widths: [480, 800, 1280, 1600], quality: 76 },
+  // Homepage free-meditation band. Pexels lotus pond, 1920x1278.
+  { src: 'lotus-pond-thailand.jpg', widths: [480, 800, 1280, 1600], quality: 76 },
 ];
 
 if (!existsSync(IMG_DIR)) {
@@ -59,7 +66,7 @@ for (const { src, widths, quality } of TARGETS) {
     continue;
   }
   const meta = await sharp(srcPath).metadata();
-  const base = src.replace(/\.webp$/, '');
+  const base = src.replace(/\.(webp|jpe?g)$/, '');
   for (const w of widths) {
     if (w >= meta.width) {
       // Don't upscale; skip wider targets than the source.
@@ -71,6 +78,13 @@ for (const { src, widths, quality } of TARGETS) {
       .webp({ quality, effort: 6 })
       .toFile(outPath);
     console.log(`  ${base}-${w}.webp`);
+
+    const avifPath = join(IMG_DIR, `${base}-${w}.avif`);
+    await sharp(srcPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .avif({ quality, effort: 6 })
+      .toFile(avifPath);
+    console.log(`  ${base}-${w}.avif`);
   }
 }
 

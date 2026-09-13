@@ -35,17 +35,20 @@ const icons: Record<string, string> = {
 
     <!-- Image side -->
     <div class="relative h-72 sm:h-96 lg:h-full lg:min-h-[36rem]">
-      <img
-        src="/images/silver-temple-sergei-bezzubov-800.webp"
-        srcset="/images/silver-temple-sergei-bezzubov-480.webp 480w, /images/silver-temple-sergei-bezzubov-800.webp 800w, /images/silver-temple-sergei-bezzubov-1280.webp 1280w, /images/silver-temple-sergei-bezzubov-2400.webp 2400w"
-        sizes="(max-width: 1023px) 100vw, 50vw"
-        alt="Temple courtyard photograph for the Chiang Mai retreat feature"
-        width="800"
-        height="533"
-        class="absolute inset-0 w-full h-full object-cover"
-        loading="lazy"
-        decoding="async"
-      />
+      <picture>
+        <source type="image/avif" srcset="/images/silver-temple-sergei-bezzubov-480.avif 480w, /images/silver-temple-sergei-bezzubov-800.avif 800w, /images/silver-temple-sergei-bezzubov-1280.avif 1280w" sizes="(max-width: 1023px) 100vw, 50vw" />
+        <img
+          src="/images/silver-temple-sergei-bezzubov-800.webp"
+          srcset="/images/silver-temple-sergei-bezzubov-480.webp 480w, /images/silver-temple-sergei-bezzubov-800.webp 800w, /images/silver-temple-sergei-bezzubov-1280.webp 1280w, /images/silver-temple-sergei-bezzubov-2400.webp 2400w"
+          sizes="(max-width: 1023px) 100vw, 50vw"
+          alt="Temple courtyard photograph for the Chiang Mai retreat feature"
+          width="800"
+          height="533"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
     </div>
   </div>
 </section>

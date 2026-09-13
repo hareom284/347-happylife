@@ -8,6 +8,7 @@ const { wa } = Astro.props;
 
 <section class="hero-presence relative overflow-hidden bg-deep-blue min-h-[min(760px,calc(100svh-5rem))] flex items-center">
   <picture class="absolute inset-0">
+    <source type="image/avif" srcset="/images/silver-temple-peter-borter-480.avif 480w, /images/silver-temple-peter-borter-800.avif 800w, /images/silver-temple-peter-borter-1280.avif 1280w" sizes="100vw" />
     <source media="(min-width: 768px)" srcset="/images/silver-temple-peter-borter-800.webp 800w, /images/silver-temple-peter-borter-1280.webp 1280w, /images/silver-temple-peter-borter-2400.webp 2400w" />
     <img
       src="/images/silver-temple-peter-borter-480.webp"

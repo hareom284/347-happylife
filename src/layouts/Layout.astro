@@ -111,15 +111,15 @@ courseOffers.push(
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Preload LCP hero background. imagesrcset tells the browser which
-         variant to fetch so we don't preload a bigger one than we'll render. -->
+    <!-- Preload LCP hero background. AVIF-only link: browsers without AVIF
+         support ignore it and fetch the WebP fallback from the hero picture. -->
     {isHomepage && <link
       rel="preload"
       as="image"
-      type="image/webp"
+      type="image/avif"
       fetchpriority="high"
-      href="/images/silver-temple-peter-borter-480.webp"
-      imagesrcset="/images/silver-temple-peter-borter-480.webp 480w, /images/silver-temple-peter-borter-800.webp 800w, /images/silver-temple-peter-borter-1280.webp 1280w, /images/silver-temple-peter-borter-2400.webp 2400w"
+      href="/images/silver-temple-peter-borter-480.avif"
+      imagesrcset="/images/silver-temple-peter-borter-480.avif 480w, /images/silver-temple-peter-borter-800.avif 800w, /images/silver-temple-peter-borter-1280.avif 1280w"
       imagesizes="100vw"
     />}
 

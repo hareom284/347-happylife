@@ -61,25 +61,6 @@ export const methodPillars = [
   },
 ];
 
-// Homepage "Why 347 Awakening?" — the two contrasting lists from the spec.
-export const whyModernLife = [
-  'Stress and overthinking',
-  'Emotional imbalance',
-  'Lack of purpose',
-  'Burnout and loneliness',
-  'Disconnection from self',
-  'Spiritual emptiness',
-];
-
-export const whyReturnTo = [
-  'Inner peace',
-  'Emotional freedom',
-  'Conscious leadership',
-  'Authentic happiness',
-  'Life purpose',
-  'Compassionate living',
-];
-
 // Instructors (spec: INSTRUCTORS section — Master Swan & Master Kaie)
 export const instructors = [
   {
@@ -320,110 +301,6 @@ export const volunteer = {
 };
 
 export const collaboration = ['Retreat partners', 'Wellness centers', 'Conscious leaders', 'Volunteers', 'Global ambassadors'];
-
-// Brand vision (from Transformation Story)
-export const vision = {
-  tagline: 'Awaken your mind. Transform your life. Create your happy world.',
-  mission:
-    'To guide people from mental chaos to inner clarity — from suffering to understanding, from unconscious living to awakened life.',
-};
-
-// 347 Life Reset Experience (entry-level offering)
-export const lifeReset = {
-  title: '347 Life Reset Experience',
-  location: 'Chiang Mai',
-  promise: 'Reset Your Life in 3 Hours',
-  duration: '3 Hours',
-  groupPriceUsd: 47,
-  groupPriceThb: 1700,
-  privatePriceUsd: 77,
-  privatePriceThb: 2500,
-  benefits: [
-    'Release Stress',
-    'Clear Your Mind',
-    'Reconnect to Your True Self',
-    'Feel Inner Peace',
-  ],
-};
-
-// Why people trust Kaie — the 4 qualities, exactly as listed in the doc.
-export const trustQualities: string[] = [
-  'Authenticity',
-  'Compassion',
-  'Deep Inner Stability',
-  'Genuine Intention',
-];
-
-// 5 pillars of Kaie's teaching method
-export const teachingPillars: { number: string; title: string; body: string }[] = [
-  {
-    number: '01',
-    title: 'Awareness Before Technique',
-    body: 'Students first learn how the mind works — recognising thoughts, emotions, and patterns through observer consciousness — so meditation becomes natural, not forced.',
-  },
-  {
-    number: '02',
-    title: 'Experiential Awakening',
-    body: 'Practice over theory. Carefully designed sessions guide students to observe the mind, release emotional tension, and reconnect with deep awareness.',
-  },
-  {
-    number: '03',
-    title: 'The 347 Transformation System',
-    body: '3 Alignments · 4 Self-Access steps · 7 Life Transformations — a complete framework for everyday awakening.',
-  },
-  {
-    number: '04',
-    title: 'Modern Spiritual Teaching',
-    body: 'Bridges ancient Buddhist wisdom and modern life so students from any background can apply it immediately.',
-  },
-  {
-    number: '05',
-    title: 'A Safe Space for Inner Transformation',
-    body: 'A supportive container where students feel safe to explore their inner world. Many describe sessions as a turning point in their life.',
-  },
-];
-
-// 347 Philosophy framework (3-4-7)
-export const philosophy347 = {
-  alignment: {
-    number: '3',
-    title: 'Alignment',
-    subtitle: 'Body · Mind · Spirit',
-    body: 'True transformation begins when the three essential dimensions of life are aligned and flow as one.',
-    items: [
-      { name: 'Body', body: 'The physical foundation — when cared for and relaxed, the mind opens to awareness.' },
-      { name: 'Mind', body: 'The centre of thoughts, emotions, and perception — the key to freedom from suffering.' },
-      { name: 'Spirit', body: 'The deeper awareness beyond thoughts and emotions — the true nature of being.' },
-    ],
-  },
-  awakening: {
-    number: '4',
-    title: 'Self-Access',
-    subtitle: 'Morality · Mindfulness · Meditation · Wisdom',
-    body: 'A four-step path of inner awakening — from a clean life to a free mind.',
-    items: [
-      { name: 'Morality', body: 'Clean life — the foundation of inner stability.' },
-      { name: 'Mindfulness', body: 'Aware mind — observing the present moment with clarity.' },
-      { name: 'Meditation', body: 'Stable mind — training awareness to become still and expanded.' },
-      { name: 'Wisdom', body: 'Free mind — seeing the true nature of life.' },
-    ],
-  },
-  transformations: {
-    number: '7',
-    title: 'Life Transformations',
-    subtitle: 'A holistic awakening across every dimension of life',
-    body: 'When these seven dimensions align, life naturally evolves into clarity, abundance, and purpose.',
-    items: [
-      { name: 'Health', body: 'Awakening the intelligence of the body.' },
-      { name: 'Emotional Balance', body: 'Mastering the inner emotional world.' },
-      { name: 'Love & Relationships', body: 'Transforming how we connect with others.' },
-      { name: 'Self Development', body: 'Awakening your highest human potential.' },
-      { name: 'Soul Work', body: 'Connecting with the deeper dimension of being.' },
-      { name: 'Holistic Wealth', body: 'Abundance in every dimension of life.' },
-      { name: 'Life Purpose', body: 'Discovering why you are here.' },
-    ],
-  },
-};
 
 // Testimonials
 export type Testimonial = { name: string; text: string; time: string };

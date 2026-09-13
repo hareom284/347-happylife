@@ -1,5 +1,24 @@
 ---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { pathCards } from '../../data/site';
+
+// AVIF variants are emitted alongside the WebP ones by scripts/optimize-images.mjs,
+// but only for widths narrower than the source. Build the AVIF srcset from the
+// WebP one, keeping only entries whose .avif file actually exists on disk.
+const avifSrcsetFor = (srcset?: string): string | undefined => {
+  if (!srcset) return undefined;
+  const kept = srcset
+    .split(', ')
+    .filter((entry) => {
+      const [url] = entry.split(' ');
+      const avifPath = join(process.cwd(), 'public', url.replace(/^\/images\//, '').replace(/\.webp$/, '.avif'));
+      return existsSync(avifPath);
+    })
+    .map((entry) => entry.replace(/\.webp /g, '.avif '))
+    .join(', ');
+  return kept || undefined;
+};
 ---
 
 <section id="pathways" class="bg-ivory-dark py-20 md:py-28 scroll-mt-20">
@@ -11,31 +30,37 @@ import { pathCards } from '../../data/site';
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-      {pathCards.map((card) => (
-        <a href={card.href} class="group bg-ivory rounded-card shadow-card overflow-hidden flex flex-col hover:shadow-elevated hover:-translate-y-1 transition-all duration-300">
-          <div class="aspect-[1.35] overflow-hidden">
-            <img
-              src={card.img}
-              srcset={card.imgSrcset}
-              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 20vw"
-              alt={card.title}
-              width={card.width ?? 640}
-              height={card.height ?? 475}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="p-5 flex flex-col flex-1">
-            <h3 class="font-heading text-xl font-semibold text-deep-blue mb-2">{card.title}</h3>
-            <p class="text-body-light text-sm leading-relaxed mb-5 flex-1">{card.body}</p>
-            <span class="inline-flex items-center gap-1.5 text-xs uppercase tracking-wide font-semibold text-gold-ink group-hover:text-gold-ink-dark transition-colors">
-              {card.cta}
-              <svg aria-hidden="true" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-            </span>
-          </div>
-        </a>
-      ))}
+      {pathCards.map((card) => {
+        const avifSrcset = avifSrcsetFor(card.imgSrcset);
+        return (
+          <a href={card.href} class="group bg-ivory rounded-card shadow-card overflow-hidden flex flex-col hover:shadow-elevated hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[1.35] overflow-hidden">
+              <picture>
+                {avifSrcset && <source type="image/avif" srcset={avifSrcset} sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 20vw" />}
+                <img
+                  src={card.img}
+                  srcset={card.imgSrcset}
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 20vw"
+                  alt={card.title}
+                  width={card.width ?? 640}
+                  height={card.height ?? 475}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-heading text-xl font-semibold text-deep-blue mb-2">{card.title}</h3>
+              <p class="text-body-light text-sm leading-relaxed mb-5 flex-1">{card.body}</p>
+              <span class="inline-flex items-center gap-1.5 text-xs uppercase tracking-wide font-semibold text-gold-ink group-hover:text-gold-ink-dark transition-colors">
+                {card.cta}
+                <svg aria-hidden="true" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+            </div>
+          </a>
+        );
+      })}
     </div>
   </div>
 </section>
