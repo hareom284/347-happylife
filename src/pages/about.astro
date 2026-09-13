@@ -12,8 +12,13 @@ import {
   <Navbar wa={wa} />
 
   <!-- Page hero -->
-  <section class="bg-deep-blue text-cream py-24 md:py-28">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="relative overflow-hidden text-cream py-24 md:py-28">
+    <picture class="absolute inset-0">
+      <source type="image/avif" srcset="/images/silver-temple-front-480.avif 480w, /images/silver-temple-front-800.avif 800w" sizes="100vw" />
+      <img src="/images/silver-temple-front-800.webp" srcset="/images/silver-temple-front-480.webp 480w, /images/silver-temple-front-800.webp 800w" sizes="100vw" alt="" width="1024" height="741" class="h-full w-full object-cover object-[50%_40%]" decoding="async" />
+    </picture>
+    <div class="absolute inset-0 bg-deep-blue/88"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <p class="text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-5">About</p>
       <h1 class="font-heading text-5xl md:text-6xl font-semibold mb-6">Awaken Your True Self</h1>
       <p class="text-cream/80 text-lg leading-relaxed max-w-2xl mx-auto">{homeIntro}</p>

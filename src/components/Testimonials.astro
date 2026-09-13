@@ -13,8 +13,13 @@ const featuredTestimonial = testimonials[0] ?? {
 };
 ---
 
-<section id="testimonials" class="scroll-mt-20 bg-deep-blue">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+<section id="testimonials" class="scroll-mt-20 relative overflow-hidden bg-deep-blue">
+    <picture class="absolute inset-0">
+      <source type="image/avif" srcset="/images/morning-mist-mountains-480.avif 480w, /images/morning-mist-mountains-800.avif 800w, /images/morning-mist-mountains-1280.avif 1280w" sizes="100vw" />
+      <img src="/images/morning-mist-mountains-800.webp" srcset="/images/morning-mist-mountains-480.webp 480w, /images/morning-mist-mountains-800.webp 800w, /images/morning-mist-mountains-1280.webp 1280w" sizes="100vw" alt="" width="1600" height="900" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+    </picture>
+    <div class="absolute inset-0 bg-deep-blue/92"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
       <div class="text-center mb-16 reveal">
         <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Google Reviews</p>
         <h2 class="font-heading text-4xl md:text-5xl font-bold text-cream gold-line">What Our Students Say</h2>

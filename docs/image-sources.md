@@ -19,5 +19,10 @@ New images added for Task 5 are downloaded locally to `public/images` and conver
 | `monk-meditation-chiang-mai*` | Pexels | `https://www.pexels.com/photo/buddhist-monk-meditating-in-chiang-mai-temple-35446051/` | [Pexels License](https://www.pexels.com/license/) | Membership page hero background |
 | `temple-lotus-pond*` | Pexels | `https://www.pexels.com/photo/temple-and-a-pond-with-waterlilies-14021868/` | [Pexels License](https://www.pexels.com/license/) | Contact page hero background |
 | `lotus-pond-thailand*` | Pexels | `https://www.pexels.com/photo/vibrant-lotus-blossoms-in-serene-pond-35322559/` | [Pexels License](https://www.pexels.com/license/) | Homepage free-meditation band background |
+| `serene-meditation-lotus*` | Pexels | `https://www.pexels.com/photo/serene-meditation-on-a-misty-morning-lotus-30944868/` | [Pexels License](https://www.pexels.com/license/) | Homepage method section side image |
+| `morning-mist-mountains*` | Pexels | `https://www.pexels.com/photo/morning-fogs-19024735/` | [Pexels License](https://www.pexels.com/license/) | Homepage testimonials band background |
+| `incense-meditation*` | Pexels | `https://www.pexels.com/photo/serene-meditation-with-incense-and-book-31373536/` | [Pexels License](https://www.pexels.com/license/) | Method page hero side image |
+| `misty-mountains*` | Pexels | `https://www.pexels.com/photo/serene-mountain-range-in-tranquil-morning-mist-36175236/` | [Pexels License](https://www.pexels.com/license/) | Programs page retreats header image |
+| `misty-sunrise*` | Pexels | `https://www.pexels.com/photo/serene-misty-mountain-at-sunrise-28711105/` | [Pexels License](https://www.pexels.com/license/) | Booking page calm banner |
 
 Existing images in `public/images` were retained and are not re-documented here because Task 5 did not replace or redownload them.

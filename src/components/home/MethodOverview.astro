@@ -13,9 +13,17 @@ import { methodPillars } from '../../data/site';
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-10 md:gap-0">
-      {methodPillars.map((p, i) => (
-        <div class={`text-center px-6 ${i > 0 ? 'md:border-l md:border-oat-border' : ''}`}>
+    <div class="grid lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-10 lg:gap-16 items-center">
+      <div class="rounded-section overflow-hidden shadow-elevated">
+        <picture>
+          <source type="image/avif" srcset="/images/serene-meditation-lotus-400.avif 400w, /images/serene-meditation-lotus-640.avif 640w, /images/serene-meditation-lotus-960.avif 960w" sizes="(max-width: 1023px) 100vw, 33vw" />
+          <img src="/images/serene-meditation-lotus-640.webp" srcset="/images/serene-meditation-lotus-400.webp 400w, /images/serene-meditation-lotus-640.webp 640w, /images/serene-meditation-lotus-960.webp 960w" sizes="(max-width: 1023px) 100vw, 33vw" alt="A woman meditating on a lotus platform in a misty, serene setting" width="1600" height="2397" class="w-full h-64 md:h-96 lg:h-[540px] object-cover object-[50%_20%]" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-10 md:gap-0">
+        {methodPillars.map((p, i) => (
+          <div class={`text-center px-6 ${i > 0 ? 'sm:border-l sm:border-oat-border' : ''}`}>
           <div class={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${p.icon === 'sun' ? 'bg-gold' : 'bg-royal'}`}>
             {p.icon === 'leaf' && (
               <svg aria-hidden="true" class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21c0-9 6-15 18-15 0 9-6 15-18 15zm0 0c2.5-5 5.5-8 9-9.5" /></svg>
@@ -32,9 +40,10 @@ import { methodPillars } from '../../data/site';
           <a href={p.href} class="inline-flex items-center gap-1.5 text-xs uppercase tracking-wide font-semibold text-gold-ink hover:text-gold-ink-dark transition-colors">
             Learn More
             <svg aria-hidden="true" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-          </a>
-        </div>
-      ))}
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
