@@ -150,6 +150,12 @@
 .hero-mist { animation: mistDrift 26s ease-in-out infinite alternate; }
 .hero-mist-lag { animation-duration: 34s; animation-direction: alternate-reverse; }
 
+/* Hero ambient video: hide it for reduced-motion users so the static image
+   (ken-burns also disabled) is the calm fallback. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+}
+
 /* 4. Gentle scroll reveal — long, slow exhale */
 .reveal {
   opacity: 1;

@@ -25,5 +25,6 @@ New images added for Task 5 are downloaded locally to `public/images` and conver
 | `misty-mountains*` | Pexels | `https://www.pexels.com/photo/serene-mountain-range-in-tranquil-morning-mist-36175236/` | [Pexels License](https://www.pexels.com/license/) | Programs page retreats header image |
 | `misty-sunrise*` | Pexels | `https://www.pexels.com/photo/serene-misty-mountain-at-sunrise-28711105/` | [Pexels License](https://www.pexels.com/license/) | Booking page calm banner |
 | `master-kaie*` | User-provided photo: `210cd25c-a39e-4185-9d5d-8df27cbe05a5.jpeg` (supplied by the site owner) | No external source URL; supplied locally and optimized to WebP/AVIF. | License/provenance confirmed by the site owner. | Master Kaie instructor portrait (About page instructors section) |
+| `hero-mist-pagoda.mp4` | Pexels video | `https://www.pexels.com/video/the-white-pagoda-on-top-of-a-mountain-27807377/` | [Pexels License](https://www.pexels.com/license/) | Homepage hero ambient loop (muted, compressed to 960x540 H.264, image poster fallback) |
 
 Existing images in `public/images` were retained and are not re-documented here because Task 5 did not replace or redownload them.

@@ -1,0 +1,29 @@
+---
+const outcomes = [
+  { title: 'A Calmer Mind', body: 'A quieter mind, and simple tools to return to stillness whenever life gets loud.', icon: '<path d="M12 21c-4 0-7.5-2-9-5 2-1 4-1 6 0-1.5-2.5-1.5-5.5 0-8 1.5 2.5 1.5 5.5 0 8 1.5-3 4.5-5 8-5-1 3.5-3.5 6-6 7.5M12 21c4 0 7.5-2 9-5-2-1-4-1-6 0 1.5-2.5 1.5-5.5 0-8 1.5 2.5 1.5 5.5 0 8" />' },
+  { title: 'Clearer Direction', body: 'Clarity about what matters, so decisions come with less second-guessing and more peace.', icon: '<path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1" />' },
+  { title: 'A Lighter Heart', body: 'Emotional weight released through guided meditation and honest self-inquiry.', icon: '<path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z" />' },
+  { title: 'Deeper Rest', body: 'A nervous system that remembers how to soften, sleep, and recover between sessions.', icon: '<path d="M20 12a8 8 0 11-16 0 8 8 0 0116 0zM12 6v6l4 2" />' },
+];
+---
+
+<section id="take-home" class="bg-cream py-20 md:py-28 scroll-mt-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">What You Take Home</p>
+      <h2 class="font-heading text-4xl md:text-5xl font-semibold text-deep-blue mb-5">A Softer Way to Be</h2>
+      <p class="text-body-light leading-relaxed">Students tell us the change stays long after the session ends. This is what they take home.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {outcomes.map((o) => (
+        <div class="bg-white rounded-card border border-oat-border/60 p-7 shadow-card card-calm text-center">
+          <div class="w-14 h-14 rounded-full bg-royal/10 text-royal flex items-center justify-center mx-auto mb-5">
+            <svg aria-hidden="true" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" set:html={o.icon} />
+          </div>
+          <h3 class="font-heading text-xl font-semibold text-deep-blue mb-2">{o.title}</h3>
+          <p class="text-body-light text-sm leading-relaxed">{o.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

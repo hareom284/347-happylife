@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import {
   Navbar, Footer, WhatsAppBar,
-  HeroPresence, MethodOverview, ProgramsOverview, RetreatsBand, BreathingExercise, GlimpsesBand,
+  HeroPresence, MethodOverview, ProgramsOverview, RetreatsBand, BreathingExercise, GlimpsesBand, TakeHome,
   Testimonials, FreeMeditationCTA,
 } from '../components/index.astro';
 import { wa, email, social, googleMapsLink, testimonials } from '../data/site';
@@ -25,6 +25,7 @@ import { wa, email, social, googleMapsLink, testimonials } from '../data/site';
   <RetreatsBand />
   <BreathingExercise />
   <GlimpsesBand />
+  <TakeHome />
   <Testimonials testimonials={testimonials} googleMapsLink={googleMapsLink} wa={wa} />
   <FreeMeditationCTA email={email} />
   <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />

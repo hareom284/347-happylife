@@ -20,6 +20,11 @@
 
     <p id="breath-phase" class="font-heading text-2xl text-deep-blue mt-10 min-h-8" aria-live="polite">Find a comfortable seat and follow along.</p>
     <p class="text-body-muted text-sm mt-3">Inhale 4 · Hold 4 · Exhale 4 · Repeat</p>
+
+    <button id="sound-toggle" type="button" aria-pressed="false" class="mt-8 inline-flex items-center gap-2.5 bg-white border border-oat-border text-deep-blue px-6 py-3 rounded-full text-sm font-semibold shadow-clay hover:shadow-card transition-all">
+      <svg id="sound-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5zM15.5 8.5a5 5 0 010 7M19 5a9 9 0 010 14" /></svg>
+      <span id="sound-label">Play a soft tone</span>
+    </button>
   </div>
 </section>
 
@@ -39,4 +44,56 @@
   } else if (phase) {
     phase.textContent = 'Inhale slowly for four counts, hold for four, and exhale for four.';
   }
+
+  // Opt-in "sound of stillness": a soft synthesized bell, gentle fade in/out.
+  // No audio files, no autoplay — only starts on an explicit tap.
+  const toggle = document.getElementById('sound-toggle');
+  const label = document.getElementById('sound-label');
+  let audioContext: AudioContext | null = null;
+  let timer: number | null = null;
+  let playing = false;
+
+  const playBell = (ctx: AudioContext, when: number) => {
+    const master = ctx.createGain();
+    master.gain.setValueAtTime(0.0001, when);
+    master.gain.exponentialRampToValueAtTime(0.12, when + 0.08);
+    master.gain.exponentialRampToValueAtTime(0.0001, when + 3.2);
+    master.connect(ctx.destination);
+
+    [261.63, 329.63].forEach((freq) => {
+      const osc = ctx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, when);
+      osc.frequency.exponentialRampToValueAtTime(freq * 0.995, when + 3);
+      const g = ctx.createGain();
+      g.gain.setValueAtTime(freq === 329.63 ? 0.5 : 1, when);
+      osc.connect(g).connect(master);
+      osc.start(when);
+      osc.stop(when + 3.2);
+    });
+  };
+
+  const scheduleLoop = (ctx: AudioContext) => {
+    const step = 4;
+    for (let i = 0; i < 4; i += 1) playBell(ctx, ctx.currentTime + 0.1 + i * step);
+    timer = window.setInterval(() => playBell(ctx, ctx.currentTime + 0.1), step * 4);
+  };
+
+  toggle?.addEventListener('click', async () => {
+    if (!playing) {
+      audioContext = audioContext ?? new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+      if (audioContext.state === 'suspended') await audioContext.resume();
+      scheduleLoop(audioContext);
+      playing = true;
+      toggle.setAttribute('aria-pressed', 'true');
+      if (label) label.textContent = 'Pause the tone';
+    } else {
+      if (timer) clearInterval(timer);
+      if (audioContext) await audioContext.close();
+      audioContext = null;
+      playing = false;
+      toggle.setAttribute('aria-pressed', 'false');
+      if (label) label.textContent = 'Play a soft tone';
+    }
+  });
 </script>
