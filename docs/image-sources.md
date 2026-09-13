@@ -16,5 +16,8 @@ New images added for Task 5 are downloaded locally to `public/images` and conver
 | `retreat-practice*.webp` | Unsplash | `https://images.unsplash.com/photo-1545389336-cf090694435e?fm=jpg&q=85&w=1600&fit=crop` | `https://unsplash.com/license` | Retained legacy asset from the prior Task 5 implementation; no longer referenced by active site code |
 | `mentoring-session*.webp` | Unsplash | `https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?fm=jpg&q=85&w=1600&fit=crop` | `https://unsplash.com/license` | Private Mentoring pathway card |
 | `community-circle*.webp` | Unsplash | `https://images.unsplash.com/photo-1529156069898-49953e39b3ac?fm=jpg&q=85&w=1600&fit=crop` | `https://unsplash.com/license` | Membership pathway card |
+| `monk-meditation-chiang-mai*` | Pexels | `https://www.pexels.com/photo/buddhist-monk-meditating-in-chiang-mai-temple-35446051/` | [Pexels License](https://www.pexels.com/license/) | Membership page hero background |
+| `temple-lotus-pond*` | Pexels | `https://www.pexels.com/photo/temple-and-a-pond-with-waterlilies-14021868/` | [Pexels License](https://www.pexels.com/license/) | Contact page hero background |
+| `lotus-pond-thailand*` | Pexels | `https://www.pexels.com/photo/vibrant-lotus-blossoms-in-serene-pond-35322559/` | [Pexels License](https://www.pexels.com/license/) | Homepage free-meditation band background |
 
 Existing images in `public/images` were retained and are not re-documented here because Task 5 did not replace or redownload them.

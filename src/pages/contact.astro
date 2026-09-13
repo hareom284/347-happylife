@@ -23,8 +23,13 @@ const channels = [
   <Navbar wa={wa} />
 
   <!-- Page hero -->
-  <section class="bg-deep-blue text-cream py-24 md:py-28">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="relative overflow-hidden text-cream py-24 md:py-28">
+    <picture class="absolute inset-0">
+      <source type="image/avif" srcset="/images/temple-lotus-pond-480.avif 480w, /images/temple-lotus-pond-800.avif 800w, /images/temple-lotus-pond-1280.avif 1280w, /images/temple-lotus-pond-1600.avif 1600w" sizes="100vw" />
+      <img src="/images/temple-lotus-pond-800.webp" srcset="/images/temple-lotus-pond-480.webp 480w, /images/temple-lotus-pond-800.webp 800w, /images/temple-lotus-pond-1280.webp 1280w, /images/temple-lotus-pond-1600.webp 1600w" sizes="100vw" alt="Historic temple with a tranquil lotus pond" width="1920" height="1281" class="h-full w-full object-cover" decoding="async" />
+    </picture>
+    <div class="absolute inset-0 bg-deep-blue/85"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <p class="text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-5">Contact</p>
       <h1 class="font-heading text-5xl md:text-6xl font-semibold mb-6">Begin Your Awakening Journey</h1>
       <p class="text-cream/80 text-lg leading-relaxed max-w-2xl mx-auto">

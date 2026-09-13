@@ -18,6 +18,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const IMG_DIR = join(__dirname, '..', 'public', 'images');
+const SRC_DIR = join(__dirname, 'source-images');
 
 // Source -> target widths to generate. We pick widths that cover common
 // display sizes on mobile (~400), tablet (~800) and desktop (~1200-1600).
@@ -53,6 +54,16 @@ const TARGETS = [
   { src: 'temple-lotus-pond.jpg', widths: [480, 800, 1280, 1600], quality: 76 },
   // Homepage free-meditation band. Pexels lotus pond, 1920x1278.
   { src: 'lotus-pond-thailand.jpg', widths: [480, 800, 1280, 1600], quality: 76 },
+  // Homepage method section side image. Pexels misty lotus meditation, 1600x2397.
+  { src: 'serene-meditation-lotus.jpg', widths: [400, 640, 960], quality: 76 },
+  // Testimonials band background. Pexels morning mist mountains, 1600x900.
+  { src: 'morning-mist-mountains.jpg', widths: [480, 800, 1280, 1600], quality: 74 },
+  // Method page hero side image. Pexels incense meditation, 1600x2844.
+  { src: 'incense-meditation.jpg', widths: [400, 640, 960], quality: 76 },
+  // Programs retreats header side image. Pexels misty mountains, 1600x2400.
+  { src: 'misty-mountains.jpg', widths: [400, 640, 960], quality: 76 },
+  // Booking page hero background. Pexels misty sunrise, 1920x1281.
+  { src: 'misty-sunrise.jpg', widths: [480, 800, 1280, 1600], quality: 74 },
 ];
 
 if (!existsSync(IMG_DIR)) {
@@ -61,11 +72,13 @@ if (!existsSync(IMG_DIR)) {
 
 for (const { src, widths, quality } of TARGETS) {
   const srcPath = join(IMG_DIR, src);
-  if (!existsSync(srcPath)) {
+  const altPath = join(SRC_DIR, src);
+  const resolvedPath = existsSync(srcPath) ? srcPath : existsSync(altPath) ? altPath : null;
+  if (!resolvedPath) {
     console.warn(`skip (missing): ${src}`);
     continue;
   }
-  const meta = await sharp(srcPath).metadata();
+  const meta = await sharp(resolvedPath).metadata();
   const base = src.replace(/\.(webp|jpe?g)$/, '');
   for (const w of widths) {
     if (w >= meta.width) {
@@ -73,14 +86,14 @@ for (const { src, widths, quality } of TARGETS) {
       continue;
     }
     const outPath = join(IMG_DIR, `${base}-${w}.webp`);
-    await sharp(srcPath)
+    await sharp(resolvedPath)
       .resize({ width: w, withoutEnlargement: true })
       .webp({ quality, effort: 6 })
       .toFile(outPath);
     console.log(`  ${base}-${w}.webp`);
 
     const avifPath = join(IMG_DIR, `${base}-${w}.avif`);
-    await sharp(srcPath)
+    await sharp(resolvedPath)
       .resize({ width: w, withoutEnlargement: true })
       .avif({ quality, effort: 6 })
       .toFile(avifPath);

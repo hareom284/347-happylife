@@ -6,8 +6,13 @@ interface Props {
 const { email } = Astro.props;
 ---
 
-<section id="free-meditation" class="bg-gold py-16 scroll-mt-20">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="free-meditation" class="relative overflow-hidden bg-gold py-16 scroll-mt-20">
+  <picture class="absolute inset-0">
+    <source type="image/avif" srcset="/images/lotus-pond-thailand-480.avif 480w, /images/lotus-pond-thailand-800.avif 800w, /images/lotus-pond-thailand-1280.avif 1280w, /images/lotus-pond-thailand-1600.avif 1600w" sizes="100vw" />
+    <img src="/images/lotus-pond-thailand-800.webp" srcset="/images/lotus-pond-thailand-480.webp 480w, /images/lotus-pond-thailand-800.webp 800w, /images/lotus-pond-thailand-1280.webp 1280w, /images/lotus-pond-thailand-1600.webp 1600w" sizes="100vw" alt="Lotus blossoms floating on a serene pond in Thailand" width="1920" height="1278" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+  </picture>
+  <div class="absolute inset-0 bg-gold/90"></div>
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-ivory rounded-section shadow-card border border-gold-dark/30 p-8 md:p-10 flex flex-col lg:flex-row items-center gap-8">
       <!-- Copy -->
       <div class="flex items-start gap-4 lg:max-w-sm">
