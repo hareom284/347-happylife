@@ -9,7 +9,10 @@ const { wa } = Astro.props;
 const path = Astro.url.pathname;
 
 // Active when the link's base path matches the current page.
+// Hash links (e.g. /programs#retreats) never get the active state, so the
+// parent "Programs" item is the only one highlighted on /programs.
 const isActive = (href: string) => {
+  if (href.includes('#')) return false;
   const base = href.split('#')[0];
   if (base === '/') return path === '/';
   return path === base || path.startsWith(base + '/');

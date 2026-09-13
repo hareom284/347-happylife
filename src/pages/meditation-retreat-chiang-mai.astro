@@ -15,7 +15,7 @@ import { wa, email, social, waMsg, onSiteExperiences, retreatOptions } from '../
 
       <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Current Experiences & Retreats</h2>
       <div class="grid sm:grid-cols-2 gap-4 text-body mb-12">
-        {onSiteExperiences.slice(0, 2).map((program) => (
+        {onSiteExperiences.map((program) => (
           <div class="bg-white rounded-card border border-oat-border/60 p-5"><strong class="block text-deep-blue">{program.title}</strong><span class="text-sm text-body-light">{program.dur} · {program.price.display}</span></div>
         ))}
         {retreatOptions.map((retreat) => (

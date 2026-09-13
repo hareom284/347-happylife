@@ -96,7 +96,7 @@ import {
   </section>
 
   <!-- Online Courses -->
-  <section id="online" class="bg-cream py-20 md:py-24 scroll-mt-20">
+  <section id="online" class="bg-cream-dark py-20 md:py-24 scroll-mt-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-14">
         <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">Online Courses</p>
@@ -139,7 +139,7 @@ import {
   </section>
 
   <!-- Private Mentoring -->
-  <section id="mentoring" class="bg-cream-dark py-20 md:py-24 scroll-mt-20">
+  <section id="mentoring" class="bg-cream py-20 md:py-24 scroll-mt-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-14">
         <p class="text-xs uppercase tracking-[0.3em] text-gold-ink font-semibold mb-4">Private Mentoring</p>
@@ -174,6 +174,22 @@ import {
 
   <FAQ faqs={faqs} />
   <MapSection mapEmbed={mapEmbed} />
+
+  <!-- Closing CTA — don't end the funnel cold -->
+  <section class="bg-deep-blue text-cream py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="font-heading text-3xl md:text-4xl font-semibold mb-4">Ready to Begin?</h2>
+      <p class="text-cream/80 leading-relaxed max-w-xl mx-auto mb-8">Reserve your path today — an on-site experience, an online program, or a quiet retreat at Silver Temple.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/booking" class="inline-flex items-center justify-center bg-gold text-deep-blue px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide hover:bg-gold-light transition-all hover:-translate-y-0.5 hover:shadow-xl shadow-lg">
+          Reserve Your Path
+        </a>
+        <a href={wa} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wide border border-white/50 hover:bg-white/20 transition-all">
+          Message Us on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
 
   <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
   <WhatsAppBar wa={wa} />

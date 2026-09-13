@@ -348,7 +348,7 @@ export const faqs: Faq[] = [
   },
   {
     q: 'How much does a meditation retreat in Chiang Mai cost?',
-    a: '347 Awakening online programs are THB 800 / USD 27 (Starter), THB 2,500 / USD 77 (Deep Awakening), and THB 7,000 / USD 219 (Premium Life Transformation). On-site experiences in Chiang Mai range from the 3-hour Alignment Experience at THB 1,500 / USD 47 to the 1-day Awakening Journey at THB 7,000 / USD 219. Retreats are available for 1 day at THB 7,000 / USD 219, 2 days at THB 12,000 / USD 347, or 3 days at THB 15,000 / USD 477. Private 1:1 mentoring details are available by request, and Inner Circle membership is $27/month or $270/year.',
+    a: '347 Awakening online programs are THB 800 / USD 27 (Starter), THB 2,500 / USD 77 (Deep Awakening), and THB 7,000 / USD 219 (Premium Life Transformation). On-site experiences in Chiang Mai range from the 3-hour Alignment Experience at THB 1,500 / USD 47 to the 1-day Awakening Journey at THB 7,000 / USD 219. Retreats are available for 1 day at THB 7,000 / USD 219, 2 days at THB 12,000 / USD 347, or 3 days at THB 15,000 / USD 477. Private 1:1 mentoring starts at USD 147 (90-minute Clarity Session) up to USD 3,500 (2-month Conscious Leadership), with THB pricing available on request. Inner Circle membership is $27/month or $270/year.',
   },
   {
     q: 'Do I need meditation experience to join?',

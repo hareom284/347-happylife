@@ -7,14 +7,14 @@ import { wa, email, social, waMsg, onSiteExperiences, onlineCourses, retreatOpti
   <Layout title="Book Your Awakening Experience | 347 Awakening — On-Site, Online & Retreats" description="Book an on-site experience, online program, retreat, or private mentoring path with 347 Awakening. Choose your format and connect with Master Kaie.">
     <Navbar wa={wa} />
 
-  <section class="bg-cream py-16 md:py-24">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <section class="bg-cream py-16 md:py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
 
-      <div class="text-center mb-10">
-        <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Reserve Your Path</p>
-        <h1 class="font-heading text-4xl md:text-5xl font-bold text-deep-blue leading-tight mb-4">
-          Book Your Awakening Experience
-        </h1>
+        <div class="text-center mb-10">
+          <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Reserve Your Path</p>
+          <h1 class="font-heading text-5xl md:text-6xl font-bold text-deep-blue leading-tight mb-4">
+            Book Your Awakening Experience
+          </h1>
         <p class="text-warm-charcoal text-lg leading-relaxed max-w-xl mx-auto">
           Choose an on-site experience, online program, or 1–3 day retreat. We will confirm the right format, date, and next steps with you.
         </p>
@@ -83,7 +83,11 @@ import { wa, email, social, waMsg, onSiteExperiences, onlineCourses, retreatOpti
         >Loading…</iframe>
       </div>
 
-      <p class="mt-6 text-center text-body-muted text-sm">
+      <p class="mt-4 text-center text-sm text-body-light">
+        Free cancellation up to 24 hours before your session · We reply within 24 hours
+      </p>
+
+      <p class="mt-4 text-center text-body-muted text-sm">
          Prefer to book directly? <a href={waMsg('a 347 Awakening program')} target="_blank" rel="noopener noreferrer" class="text-gold-ink hover:text-gold-ink-dark underline transition-colors">Message us on WhatsApp</a> or <a href={`mailto:${email}`} class="text-gold-ink hover:text-gold-ink-dark underline transition-colors">send an email</a>
         &middot;
         <a href="/" class="text-gold-ink hover:text-gold-ink-dark underline transition-colors">Back to homepage</a>
