@@ -64,6 +64,8 @@ const TARGETS = [
   { src: 'misty-mountains.jpg', widths: [400, 640, 960], quality: 76 },
   // Booking page hero background. Pexels misty sunrise, 1920x1281.
   { src: 'misty-sunrise.jpg', widths: [480, 800, 1280, 1600], quality: 74 },
+  // Instructor avatar. User-provided Master Kaie portrait, 640x640.
+  { src: 'master-kaie.jpg', widths: [320, 480], quality: 82 },
 ];
 
 if (!existsSync(IMG_DIR)) {

@@ -73,7 +73,7 @@ export const instructors = [
   },
   {
     name: 'Master Kaie',
-    img: '',
+    img: '/images/master-kaie-320.webp',
     role: 'Founder of 347 Awakening · Happy Life Happy World',
     blurb:
       'Master Kaie combines mindfulness, healing, consciousness work, and transformational coaching to guide people toward authentic happiness and meaningful living.',
