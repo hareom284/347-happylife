@@ -1,12 +1,14 @@
 ---
 import '../styles/global.css';
-import { faqs, onSiteExperiences, onlineCourses, retreatOptions, mentoringPrograms, membership } from '../data/site';
+import { faqs as allFaqs, googleMapsLink, onSiteExperiences, onlineCourses, retreatOptions, mentoringPrograms, membership } from '../data/site';
 import type { ProgramPrice } from '../data/site';
 
 interface Props {
   title: string;
   description?: string;
   type?: string;
+  /** FAQs to publish as FAQPage structured data; defaults to the full list on /programs. */
+  faqs?: { q: string; a: string }[];
 }
 
 const { title, description = 'Meditation retreat in Chiang Mai — Vipassana & mindfulness with Master Kaie at Silver Temple. Beginner-friendly, English-speaking. From $27.', type = 'website' } = Astro.props;
@@ -15,7 +17,10 @@ const routeUrl = new URL(Astro.url.pathname, `${siteOrigin}/`);
 const canonicalUrl = routeUrl.href;
 const routePath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const isHomepage = routePath === '/';
-const hasFaqs = routePath === '/programs';
+const isPrograms = routePath === '/programs';
+const pageFaqs = Astro.props.faqs ?? (isPrograms ? allFaqs : undefined);
+// Exact pin of the Google Maps listing (not the map viewport centre).
+const geo = { lat: 18.7787316, lng: 98.983646 };
 const breadcrumbLabels: Record<string, string> = {
   '/about': 'About',
   '/method': 'The Method',
@@ -75,7 +80,6 @@ courseOffers.push(
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="keywords" content="meditation retreat Chiang Mai, vipassana retreat Thailand, mindfulness retreat Chiang Mai, Buddhist meditation retreat Thailand, Master Kaie, 347 Awakening, Silver Temple Chiang Mai" />
     <meta name="author" content="Master Kaie" />
     <meta name="publisher" content="347 Happy Life Happy World" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -85,8 +89,8 @@ courseOffers.push(
     <!-- GEO Tags -->
     <meta name="geo.region" content="TH-50" />
     <meta name="geo.placename" content="Chiang Mai" />
-    <meta name="geo.position" content="18.7787367;98.9810711" />
-    <meta name="ICBM" content="18.7787367, 98.9810711" />
+    <meta name="geo.position" content={`${geo.lat};${geo.lng}`} />
+    <meta name="ICBM" content={`${geo.lat}, ${geo.lng}`} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -95,17 +99,17 @@ courseOffers.push(
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="347 Happy Life Happy World" />
-    <meta property="og:image" content="https://347awakening.com/images/silver-temple-peter-borter.webp" />
-    <meta property="og:image:alt" content="Wide temple photograph used for 347 Awakening in Chiang Mai" />
-    <meta property="og:image:width" content="2400" />
-    <meta property="og:image:height" content="1351" />
-    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image" content="https://347awakening.com/images/og-silver-temple.jpg" />
+    <meta property="og:image:alt" content="The Silver Temple (Wat Sri Suphan) in Chiang Mai, home of 347 Awakening meditation retreats" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content="Awakening meditation & life transformation retreat at Silver Temple, Chiang Mai. Guided by Master Kaie. From $27." />
-    <meta name="twitter:image" content="https://347awakening.com/images/silver-temple-peter-borter.webp" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://347awakening.com/images/og-silver-temple.jpg" />
 
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
@@ -171,10 +175,10 @@ courseOffers.push(
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 18.7787367,
-        "longitude": 98.9810711
+        "latitude": geo.lat,
+        "longitude": geo.lng
       },
-      "hasMap": "https://www.google.com/maps/place/347+Happy+life+meditation+retreat/@18.7787367,98.9810711,17z",
+      "hasMap": googleMapsLink,
       "priceRange": "USD 27 - USD 3,500",
       "currenciesAccepted": "THB, USD",
       "paymentAccepted": "Cash, Bank Transfer",
@@ -202,7 +206,7 @@ courseOffers.push(
     })} />
 
      <!-- Structured Data: Course offerings (only on the programs page) -->
-     {hasFaqs && <script type="application/ld+json" set:html={JSON.stringify({
+     {isPrograms && <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Course",
       "name": "347 Awakening — Life Transformation Experience",
@@ -224,10 +228,10 @@ courseOffers.push(
      })} />}
 
      <!-- Structured Data: FAQPage (generated from the same data the page renders) -->
-     {hasFaqs && <script type="application/ld+json" set:html={JSON.stringify({
+     {pageFaqs && <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": faqs.map(({ q, a }) => ({
+      "mainEntity": pageFaqs.map(({ q, a }) => ({
         "@type": "Question",
         "name": q,
         "acceptedAnswer": { "@type": "Answer", "text": a }

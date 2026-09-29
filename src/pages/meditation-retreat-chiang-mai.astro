@@ -1,43 +1,125 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Navbar, Footer, WhatsAppBar } from '../components/index.astro';
-import { wa, email, social, waMsg, onSiteExperiences, retreatOptions } from '../data/site';
+import { Navbar, Footer, WhatsAppBar, FAQ, MapSection } from '../components/index.astro';
+import { wa, email, social, waMsg, mapEmbed, googleMapsLink, faqs, testimonials, onSiteExperiences, onlineCourses, retreatOptions } from '../data/site';
+
+// Questions people ask before booking a retreat — the same answers the programs page renders.
+const retreatFaqQuestions = [
+  'What is the best meditation retreat in Chiang Mai?',
+  'How much does a meditation retreat in Chiang Mai cost?',
+  'Do I need meditation experience to join?',
+  'What is Vipassana meditation and is it good for beginners?',
+  'Is this a silent retreat or a guided retreat?',
+  'What language is instruction in?',
+  'How do I get to Srisuphan Temple from Chiang Mai Airport?',
+  'What should I wear to a meditation retreat?',
+  "What's included in the price?",
+  'Is accommodation or food included?',
+  'What is the cancellation policy?',
+  'How do I book?',
+];
+const retreatFaqs = retreatFaqQuestions
+  .map((q) => faqs.find((faq) => faq.q === q))
+  .filter((faq): faq is (typeof faqs)[number] => Boolean(faq));
+
+const cheapestOnline = onlineCourses[0];
+const quickFacts = [
+  { label: 'Where', value: 'Silver Temple (Wat Sri Suphan), Wua Lai Road, Chiang Mai Old City 50100, Thailand' },
+  { label: 'Teacher', value: 'Master Kaie, founder of 347 Awakening' },
+  { label: 'Style', value: 'Guided Vipassana (insight) meditation and mindfulness, combined with inner coaching' },
+  { label: 'Language', value: 'English' },
+  { label: 'Level', value: 'Beginner-friendly; no experience needed. Deeper practice for experienced meditators' },
+  { label: 'Formats', value: '3-hour experiences, 1-day journey, 1–3 day retreats, and live online sessions' },
+  { label: 'Price', value: `From ${onSiteExperiences[0].price.display} on-site; online from ${cheapestOnline.price.display}` },
+  { label: 'Included', value: 'Instruction, guided practice, course materials, tea and water' },
+  { label: 'Not included', value: 'Accommodation and meals (we recommend nearby guesthouses)' },
+  { label: 'Booking', value: 'WhatsApp +66 94 426 5297 · pay cash or bank transfer · free cancellation up to 24 hours before' },
+];
 ---
 
-<Layout title="Meditation Retreats in Chiang Mai | Vipassana Course Thailand | 347 Awakening" description="Join a meditation retreat in Chiang Mai. Beginner-friendly Vipassana courses at 347 Awakening. 3-hour, 1-day, and 3-day meditation programs in Thailand.">
+<Layout
+  title="Meditation Retreat in Chiang Mai | Silver Temple Vipassana | 347 Awakening"
+  description="Guided meditation retreats in Chiang Mai at the Silver Temple (Wat Sri Suphan). English-speaking, beginner-friendly Vipassana: 3-hour sessions and 1–3 day retreats from THB 1,500."
+  faqs={retreatFaqs}
+>
   <Navbar wa={wa} />
   <section class="bg-cream py-20 md:py-28">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Silver Temple · Chiang Mai</p>
-      <h1 class="font-heading text-4xl md:text-5xl font-bold text-deep-blue leading-tight mb-6">Meditation Retreats in Chiang Mai</h1>
-      <p class="text-body-light text-lg leading-relaxed mb-6">At 347 Awakening, meditation is more than a technique. It is an awakening journey designed to align Body, Mind, and Spirit, release emotional weight, and return you to a clear and meaningful life.</p>
-      <p class="text-body-light text-lg leading-relaxed mb-12">Practice at Wat Sri Suphan, Chiang Mai's Silver Temple, with English-speaking guidance from Master Kaie. Choose a 3-hour experience or an immersive 1–3 day retreat. No previous meditation experience is required.</p>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-deep-blue leading-tight mb-6">Meditation Retreat in Chiang Mai at the Silver Temple</h1>
+      <p class="text-body-light text-lg leading-relaxed mb-6"><strong class="text-deep-blue">347 Awakening</strong> runs guided, English-speaking meditation retreats at Wat Sri Suphan, Chiang Mai's Silver Temple, in the Old City. Master Kaie teaches Vipassana-based meditation and mindfulness combined with inner coaching. You can join a 3-hour session or a 1, 2 or 3-day retreat, and no previous experience is needed.</p>
+      <p class="text-body-light text-lg leading-relaxed mb-12">At 347 Awakening, meditation is more than a technique. It is an awakening journey designed to align Body, Mind, and Spirit, release emotional weight, and return you to a clear and meaningful life.</p>
 
-      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Current Experiences & Retreats</h2>
-      <div class="grid sm:grid-cols-2 gap-4 text-body mb-12">
-        {onSiteExperiences.map((program) => (
-          <div class="bg-white rounded-card border border-oat-border/60 p-5"><strong class="block text-deep-blue">{program.title}</strong><span class="text-sm text-body-light">{program.dur} · {program.price.display}</span></div>
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Quick Facts</h2>
+      <dl class="bg-white rounded-card border border-oat-border/60 divide-y divide-oat-border/60 mb-12">
+        {quickFacts.map((fact) => (
+          <div class="grid sm:grid-cols-[9rem_1fr] gap-1 sm:gap-4 p-4 sm:px-6">
+            <dt class="font-semibold text-deep-blue">{fact.label}</dt>
+            <dd class="text-body-light">{fact.value}</dd>
+          </div>
         ))}
+      </dl>
+
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Retreats & Experiences with Prices</h2>
+      <p class="text-body-light text-lg leading-relaxed mb-6">Every format is held in person at the Silver Temple. Choose by how much time you have in Chiang Mai.</p>
+      <h3 class="font-heading text-xl font-bold text-deep-blue mb-3">Multi-day retreats</h3>
+      <div class="grid sm:grid-cols-3 gap-4 text-body mb-8">
         {retreatOptions.map((retreat) => (
           <div class="bg-white rounded-card border border-oat-border/60 p-5"><strong class="block text-deep-blue">{retreat.duration} retreat</strong><span class="text-sm text-body-light">{retreat.price.display}</span></div>
         ))}
       </div>
+      <h3 class="font-heading text-xl font-bold text-deep-blue mb-3">Half-day and full-day experiences</h3>
+      <div class="grid sm:grid-cols-2 gap-4 text-body mb-6">
+        {onSiteExperiences.map((program) => (
+          <div class="bg-white rounded-card border border-oat-border/60 p-5">
+            <strong class="block text-deep-blue">{program.title}</strong>
+            <span class="block text-sm text-body-light mb-2">{program.dur} · {program.price.display}</span>
+            <span class="block text-sm text-body-light">{program.body}</span>
+          </div>
+        ))}
+      </div>
+      <p class="text-body-light leading-relaxed mb-12">Can't come to Chiang Mai? Live online programs over Zoom start at {cheapestOnline.price.display}. <a href="/programs" class="text-royal underline hover:text-gold-ink">Compare all programs</a>.</p>
 
-      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Why Choose 347 Awakening?</h2>
-      <p class="text-body-light text-lg leading-relaxed mb-12">Our Vipassana-based meditation courses help you build awareness, reduce stress, and reconnect with your inner self. Guided by Master Kaie at the sacred Silver Temple, each session blends ancient Buddhist practice with modern inner coaching.</p>
-
-      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Location</h2>
-      <p class="text-body-light text-lg leading-relaxed mb-12">Located at Silver Temple in the heart of Chiang Mai, Thailand, the practice space offers a peaceful setting for meditation and self-discovery. It is accessible for travelers, digital nomads, and locals alike.</p>
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">What You Practice</h2>
+      <p class="text-body-light text-lg leading-relaxed mb-6">Sessions follow the <a href="/method" class="text-royal underline hover:text-gold-ink">347 Method</a>: align Body, Mind and Spirit (3), awaken through Morality, Mindfulness, Meditation and Wisdom (4), and carry the change into seven areas of daily life (7).</p>
+      <ul class="list-disc pl-6 space-y-2 text-body-light text-lg leading-relaxed mb-12">
+        <li><strong class="text-deep-blue">Vipassana (insight) meditation:</strong> observing breath, body and mind with calm awareness.</li>
+        <li><strong class="text-deep-blue">Sitting, walking and lying meditation</strong>, so the practice fits your body.</li>
+        <li><strong class="text-deep-blue">Mindfulness for daily life:</strong> tools to handle stress, overthinking and emotions after you leave.</li>
+        <li><strong class="text-deep-blue">Inner coaching:</strong> Master Kaie explains each step and adapts it to your level and intention.</li>
+        <li><strong class="text-deep-blue">Guided, not silent:</strong> there are periods of silent practice, but you are never left without instruction.</li>
+      </ul>
 
       <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">Who Is This For?</h2>
-      <p class="text-body-light text-lg leading-relaxed mb-12">Beginners, travelers, digital nomads, and anyone seeking mental clarity and emotional balance. No prior meditation experience is needed; our English-speaking teacher guides you every step of the way.</p>
+      <p class="text-body-light text-lg leading-relaxed mb-12">Beginners, travelers, digital nomads, and anyone seeking mental clarity and emotional balance. Most students have never meditated before; experienced meditators come for deeper, practical guidance. It is a gentler alternative to a traditional 10-day silent Vipassana course.</p>
+
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">What Students Say</h2>
+      <div class="grid sm:grid-cols-2 gap-4 mb-4">
+        {testimonials.slice(0, 4).map((review) => (
+          <figure class="bg-white rounded-card border border-oat-border/60 p-5">
+            <blockquote class="text-body-light leading-relaxed mb-3">“{review.text}”</blockquote>
+            <figcaption class="text-sm font-semibold text-deep-blue">{review.name} · Google review</figcaption>
+          </figure>
+        ))}
+      </div>
+      <p class="text-body-muted text-sm mb-12"><a href={googleMapsLink} target="_blank" rel="noopener noreferrer" class="underline hover:text-gold-ink">Read all reviews on Google Maps</a></p>
+
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-deep-blue mb-5">How to Get to the Silver Temple</h2>
+      <ul class="list-disc pl-6 space-y-2 text-body-light text-lg leading-relaxed mb-6">
+        <li><strong class="text-deep-blue">From Chiang Mai Airport:</strong> about 15 minutes by Grab or taxi (around 80–100 THB).</li>
+        <li><strong class="text-deep-blue">From the Old City:</strong> a 5-minute walk from Chiang Mai Gate.</li>
+        <li><strong class="text-deep-blue">By red songthaew:</strong> tell the driver "Wua Lai, Wat Sri Suphan" (30–50 THB).</li>
+      </ul>
+      <p class="text-body-light text-lg leading-relaxed mb-12">Wear modest, comfortable, preferably light-coloured clothing that lets you sit and walk freely.</p>
 
       <div class="text-center">
-        <a href={waMsg('a Chiang Mai meditation retreat')} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-royal text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-royal-mid transition-all hover:shadow-lg">Book Your Retreat Now</a>
-        <p class="mt-4 text-body-muted text-sm"><a href="/programs#retreats" class="hover:text-gold-ink transition-colors underline">See all retreat options</a> · <a href="/" class="hover:text-gold-ink transition-colors underline">Back to homepage</a></p>
+        <a href={waMsg('a Chiang Mai meditation retreat')} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-royal text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-royal-mid transition-all hover:shadow-lg">Book Your Retreat on WhatsApp</a>
+        <p class="mt-4 text-body-muted text-sm"><a href="/blog/best-meditation-retreat-chiang-mai" class="hover:text-gold-ink transition-colors underline">Compare retreats in Chiang Mai</a> · <a href="/about" class="hover:text-gold-ink transition-colors underline">About Master Kaie</a></p>
       </div>
     </div>
   </section>
+  <FAQ faqs={retreatFaqs} />
+  <MapSection mapEmbed={mapEmbed} />
   <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
   <WhatsAppBar wa={wa} />
 </Layout>

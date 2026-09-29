@@ -78,6 +78,27 @@ There you are on page 2 and get 0 clicks.
     ("347 Happy life meditation retreat") as an `alternateName`. This helps Google connect the
     website to the Maps listing.
 
+## Round 2: SEO + GEO fixes
+
+"GEO" here covers both **local geo** (Google Maps / local search) and **generative engine
+optimization** (being quoted by Google AI Overviews, ChatGPT, Perplexity, Gemini).
+
+* **Map pin fixed.** The site told Google the business was at 18.7787367, 98.9810711. That is
+  the map viewport centre from the Maps URL and is about 270 m west of the real pin. The
+  LocalBusiness `geo`, `geo.position`, and `ICBM` now use the Maps listing's pin
+  (18.7787316, 98.983646), and `hasMap` links to the exact listing.
+* **`/meditation-retreat-chiang-mai/` rewritten** (~400 → ~1,080 words). It opens with a
+  direct answer, then has a Quick Facts table, retreat and experience prices, what you practice,
+  who it's for, four Google reviews, directions, a 12-question FAQ, and the map. The page also
+  outputs its own FAQPage structured data. Every fact comes from existing site content.
+  Answer-first paragraphs and fact tables are the format AI answers quote from.
+* **`/llms.txt`** added: a plain-text summary of the business and key pages for AI crawlers.
+* **Titles** for Programs, About, and Method now say what the page is about (for example,
+  "Meditation Classes, Retreats & Online Courses in Chiang Mai").
+* **Social share image** is now a 1200×630 JPEG (`og-silver-temple.jpg`), which WhatsApp,
+  LINE, Facebook and LinkedIn all preview reliably. The Twitter description now matches each page.
+* Removed the `meta keywords` tag, which Google ignores.
+
 ## What you need to do (outside the code), in priority order
 
 1. **Google Business Profile**
