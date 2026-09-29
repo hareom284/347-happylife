@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { faqs, featuredTiktok, onSiteExperiences, onlineCourses, retreatOptions, mentoringPrograms, membership } from '../data/site';
+import { faqs, onSiteExperiences, onlineCourses, retreatOptions, mentoringPrograms, membership } from '../data/site';
 import type { ProgramPrice } from '../data/site';
 
 interface Props {
@@ -153,8 +153,10 @@ courseOffers.push(
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": `${siteOrigin}/#business`,
       "name": "347 Happy Life Happy World",
-      "alternateName": "347 Awakening",
+      "alternateName": ["347 Awakening", "347 Happy life meditation retreat"],
+      "logo": "https://347awakening.com/images/logo.png",
       "description": "Awakening meditation & life transformation experience at Silver Temple, Chiang Mai, Thailand. Vipassana, mindfulness & inner coaching with Master Kaie.",
        "url": siteOrigin,
       "telephone": "+66944265297",
@@ -250,7 +252,7 @@ courseOffers.push(
       ]
     })} />
 
-     <!-- Structured Data: WebSite (enables Google sitelinks search box) -->
+     <!-- Structured Data: WebSite (tells Google the preferred site name) -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -258,25 +260,18 @@ courseOffers.push(
       "alternateName": "347 Happy Life Happy World",
        "url": siteOrigin,
       "inLanguage": "en",
-      "publisher": { "@type": "Organization", "name": "347 Happy Life Happy World" },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-           "urlTemplate": `${siteOrigin}/?q={search_term_string}`
-        },
-        "query-input": "required name=search_term_string"
-      }
+      "publisher": { "@type": "Organization", "name": "347 Happy Life Happy World" }
     })} />
 
     <!-- Structured Data: Organization (broader than LocalBusiness; helps entity recognition) -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": `${siteOrigin}/#organization`,
       "name": "347 Happy Life Happy World",
-      "alternateName": "347 Awakening",
+      "alternateName": ["347 Awakening", "347 Happy life meditation retreat"],
        "url": siteOrigin,
-      "logo": "https://347awakening.com/images/logo.webp",
+      "logo": { "@type": "ImageObject", "url": "https://347awakening.com/images/logo.png", "width": 512, "height": 512 },
       "image": "https://347awakening.com/images/silver-temple-peter-borter.webp",
       "email": "347happylifehappyworld@gmail.com",
       "telephone": "+66944265297",
@@ -296,23 +291,6 @@ courseOffers.push(
         "https://youtube.com/@kaie347happylife",
         "https://www.tiktok.com/@347_happylifehappyworld"
       ]
-    })} />
-
-    <!-- Structured Data: VideoObject for featured TikTok -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": "Awakening Meditation with Master Kaie — Silver Temple, Chiang Mai",
-      "description": "A glimpse into the 347 Awakening meditation experience at Silver Temple in Chiang Mai, Thailand.",
-      "thumbnailUrl": "https://347awakening.com/images/silver-temple-peter-borter.webp",
-      "uploadDate": "2025-01-01T00:00:00+07:00",
-      "contentUrl": `https://www.tiktok.com/@${featuredTiktok.username}/video/${featuredTiktok.videoId}`,
-      "embedUrl": `https://www.tiktok.com/embed/v2/${featuredTiktok.videoId}`,
-      "publisher": {
-        "@type": "Organization",
-        "name": "347 Happy Life Happy World",
-        "logo": { "@type": "ImageObject", "url": "https://347awakening.com/images/logo.webp" }
-      }
     })} />
 
      <!-- Structured Data: BreadcrumbList (helps Google understand site hierarchy) -->
