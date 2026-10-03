@@ -1,0 +1,113 @@
+---
+// Shared shell for Journal articles: page chrome, header, BlogPosting schema,
+// FAQ (rendered + FAQPage schema via Layout), and the booking CTA.
+import Layout from '../layouts/Layout.astro';
+import { Navbar, Footer, WhatsAppBar, FAQ } from './index.astro';
+import { wa, email, social, waMsg } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  headline: string;
+  eyebrow: string;
+  published: string; // YYYY-MM-DD
+  modified?: string; // YYYY-MM-DD
+  faqs?: { q: string; a: string }[];
+  ctaCourse: string;
+}
+
+const { title, description, headline, eyebrow, published, modified = published, faqs, ctaCourse } = Astro.props;
+const siteOrigin = Astro.site?.origin ?? Astro.url.origin;
+const pageUrl = new URL(Astro.url.pathname, `${siteOrigin}/`).href;
+const updatedLabel = new Date(`${modified}T00:00:00+07:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'Asia/Bangkok' });
+---
+
+<Layout title={title} description={description} type="article" faqs={faqs}>
+  <Navbar wa={wa} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline,
+    description,
+    datePublished: `${published}T00:00:00+07:00`,
+    dateModified: `${modified}T00:00:00+07:00`,
+    inLanguage: 'en',
+    image: `${siteOrigin}/images/og-silver-temple.jpg`,
+    author: { '@type': 'Organization', name: '347 Awakening', url: siteOrigin },
+    publisher: {
+      '@type': 'Organization',
+      name: '347 Happy Life Happy World',
+      logo: { '@type': 'ImageObject', url: `${siteOrigin}/images/logo.png` },
+    },
+    mainEntityOfPage: pageUrl,
+  })} />
+
+  <article class="bg-cream py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4"><a href="/blog" class="hover:underline">Journal</a> · {eyebrow}</p>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-deep-blue leading-tight mb-6">{headline}</h1>
+      <p class="text-body-muted text-sm mb-10">Updated {updatedLabel} · By 347 Awakening</p>
+
+      <div class="article-body text-body text-lg leading-relaxed">
+        <slot />
+      </div>
+
+      <div class="text-center mt-14">
+        <a href={waMsg(ctaCourse)} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-royal text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-royal-mid transition-all hover:shadow-lg">
+          Ask About a Session on WhatsApp
+        </a>
+        <p class="mt-4 text-body-muted text-sm">
+          <a href="/meditation-retreat-chiang-mai" class="hover:text-gold-ink transition-colors underline">Retreat formats & prices</a>
+          &middot;
+          <a href="/blog" class="hover:text-gold-ink transition-colors underline">More from the Journal</a>
+        </p>
+      </div>
+    </div>
+  </article>
+
+  {faqs && faqs.length > 0 && <FAQ faqs={faqs} />}
+
+  <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
+  <WhatsAppBar wa={wa} />
+</Layout>
+
+<style>
+  .article-body :global(p) { margin-bottom: 1.5rem; }
+  .article-body :global(h2) {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--color-deep-blue);
+    margin: 3rem 0 1.25rem;
+  }
+  .article-body :global(h3) {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-deep-blue);
+    margin: 2rem 0 0.75rem;
+  }
+  .article-body :global(ul), .article-body :global(ol) { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+  .article-body :global(ul) { list-style: disc; }
+  .article-body :global(ol) { list-style: decimal; }
+  .article-body :global(li) { margin-bottom: 0.5rem; }
+  .article-body :global(strong) { color: var(--color-deep-blue); }
+  .article-body :global(a) { color: var(--color-royal); text-decoration: underline; }
+  .article-body :global(a:hover) { color: var(--color-gold-ink); }
+  .article-body :global(.answer) {
+    background: #fff;
+    border: 1px solid var(--color-oat-border);
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+  .article-body :global(table) { width: 100%; border-collapse: collapse; font-size: 1rem; margin-bottom: 1.5rem; background: #fff; }
+  .article-body :global(th), .article-body :global(td) { border: 1px solid var(--color-oat-border); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
+  .article-body :global(th) { color: var(--color-deep-blue); background: var(--color-cream-dark); }
+  .article-body :global(.table-wrap) { overflow-x: auto; margin-bottom: 1.5rem; }
+  @media (max-width: 480px) {
+    .article-body :global(table) { font-size: 0.875rem; }
+    .article-body :global(th), .article-body :global(td) { padding: 0.5rem; }
+  }
+</style>

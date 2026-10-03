@@ -99,6 +99,19 @@ optimization** (being quoted by Google AI Overviews, ChatGPT, Perplexity, Gemini
   LINE, Facebook and LinkedIn all preview reliably. The Twitter description now matches each page.
 * Removed the `meta keywords` tag, which Google ignores.
 
+## Round 3: Journal articles (2026-10-03)
+
+* `/blog/vipassana-meditation-chiang-mai/` targets "vipassana chiang mai" (position 26) and
+  "vipassana meditation chiang mai" (21).
+* `/blog/silent-meditation-retreat-chiang-mai/` targets "silent meditation retreat chiang mai"
+  (position 2) and "silent retreat chiang mai" (1). It says plainly that 347 Awakening is a
+  guided retreat, not a fully silent one.
+* Each article opens with a direct answer and includes comparison tables, a 5-question FAQ
+  (FAQPage schema), and BlogPosting schema. Both link to each other and to the retreat page.
+* New `/blog/` index page; the "Journal" link in the menu and footer now goes there.
+* Master Kaie should review the teaching descriptions. The general facts about other
+  Chiang Mai centres are hedged ("check directly") because schedules change.
+
 ## What you need to do (outside the code), in priority order
 
 1. **Google Business Profile**

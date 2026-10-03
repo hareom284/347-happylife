@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar, Footer, WhatsAppBar } from '../../components/index.astro';
+import { wa, email, social } from '../../data/site';
+
+const articles = [
+  {
+    href: '/blog/vipassana-meditation-chiang-mai',
+    title: "Vipassana Meditation in Chiang Mai: A Beginner's Guide",
+    summary: 'What Vipassana is, how it is taught, and how to choose between a temple course, a 10-day silent course, or a guided English class.',
+  },
+  {
+    href: '/blog/silent-meditation-retreat-chiang-mai',
+    title: 'Silent Meditation Retreats in Chiang Mai: What to Expect',
+    summary: 'Noble silence, a typical daily schedule, who a silent retreat suits, and gentler guided alternatives for beginners.',
+  },
+  {
+    href: '/blog/best-meditation-retreat-chiang-mai',
+    title: 'Best Meditation Retreats in Chiang Mai (2026 Guide)',
+    summary: 'Why Chiang Mai is special for meditation, the main retreat styles, and how to choose the right one.',
+  },
+];
+---
+
+<Layout title="Meditation Journal: Guides to Meditating in Chiang Mai | 347 Awakening" description="Practical guides to meditation in Chiang Mai: Vipassana for beginners, silent retreats, and how to choose a retreat, from 347 Awakening at the Silver Temple.">
+  <Navbar wa={wa} />
+  <section class="bg-cream py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <p class="text-gold-ink font-semibold text-xs uppercase tracking-[0.2em] mb-4">Journal</p>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-deep-blue leading-tight mb-6">Meditation in Chiang Mai: Guides & Insights</h1>
+      <p class="text-body-light text-lg leading-relaxed mb-12">Honest, practical guides for anyone planning to meditate in Chiang Mai, from your first Vipassana session to a full silent retreat.</p>
+      <ul class="space-y-5">
+        {articles.map((article) => (
+          <li>
+            <a href={article.href} class="block bg-white rounded-card border border-oat-border/60 p-6 hover:shadow-card transition-shadow group">
+              <h2 class="font-heading text-2xl font-bold text-deep-blue group-hover:text-gold-ink transition-colors mb-2">{article.title}</h2>
+              <p class="text-body-light leading-relaxed">{article.summary}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <Footer wa={wa} email={email} fb={social.fb} ig={social.ig} yt={social.yt} tt={social.tt} />
+  <WhatsAppBar wa={wa} />
+</Layout>

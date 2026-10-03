@@ -10,7 +10,7 @@ export const navLinks = [
   { label: 'Programs', href: '/programs' },
   { label: 'Retreats', href: '/programs#retreats' },
   { label: 'Membership', href: '/membership' },
-  { label: 'Journal', href: '/blog/best-meditation-retreat-chiang-mai' },
+  { label: 'Journal', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
 
